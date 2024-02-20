@@ -7,3 +7,5 @@ https://preline.co/docs/index.html
 https://tailwindcss.com/docs/installation
 
 https://www.figma.com/file/TFuT3mLoyZ6TJ3853QrkMC/Untitled?type=design&node-id=0%3A1&mode=design&t=cOT7VdkaNz1QJkYT-1
+
+https://tailwindcss.com/showcase
