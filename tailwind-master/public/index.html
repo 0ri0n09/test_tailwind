@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tailwind Test Composants</title>
+  <title>Kookie Web</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
@@ -11,383 +12,57 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
-<style>
-  * {
-    font-family: 'Ubuntu', sans-serif;
-  }
-  :root {
-    --color-kapp: #0899b1;
-  }
-</style>
-
 <body>
-
-<!-- SIDE BAR BEGIN -->
-<div class="relative">
-  <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="fixed top-0 left-0 z-40 p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
-    <span class="sr-only">Open sidebar</span>
-    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-    </svg>
-  </button>
-  <aside id="default-sidebar" class="fixed bg-[--color-kapp] top-0 left-0 z-40 w-56 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-    <div class="h-full px-3 py-4 overflow-y-auto">
-      <ul class="space-y-2 font-medium">
-        <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group">
-            <svg class="w-5 h-5 text-white transition duration-75" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-              <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
-              <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
-            </svg>
-            <span class="ms-3 text-white">Accueil</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
-            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
-            </svg>
-            <span class="flex-1 text-white text-xl">Test</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-</div>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
-    const sidebar = document.getElementById("default-sidebar");
-    //Open
-    sidebarButton.addEventListener("click", function() {
-      sidebar.classList.toggle("translate-x-0");
-    });
-    //Close
-    document.addEventListener("click", function(event) {
-      if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
-        sidebar.classList.remove("translate-x-0");
-      }
-    });
-  });
-</script>
-<!-- SIDE BAR END -->
-
-<!-- STEP BAR BEGIN -->
-<div class="sm:ml-64 flex justify-center mt-4 mx-auto">
-  <ol class="w-full flex items-center">
-    <li class="flex w-full items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-100 after:border-4 after:inline-block">
-        <span class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full lg:h-12 lg:w-12">
-            <svg class="w-3.5 h-3.5 text-blue-600 lg:w-4 lg:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-            </svg>
-        </span>
-    </li>
-    <li class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
-        <span class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 shrink-0">
-            <svg class="w-4 h-4 text-gray-500 lg:w-5 lg:h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
-                <path d="M18 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2ZM6.5 3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3.014 13.021l.157-.625A3.427 3.427 0 0 1 6.5 9.571a3.426 3.426 0 0 1 3.322 2.805l.159.622-6.967.023ZM16 12h-3a1 1 0 0 1 0-2h3a1 1 0 0 1 0 2Zm0-3h-3a1 1 0 1 1 0-2h3a1 1 0 1 1 0 2Zm0-3h-3a1 1 0 1 1 0-2h3a1 1 0 1 1 0 2Z"/>
-            </svg>
-        </span>
-    </li>
-    <li class="flex items-center w-full">
-        <span class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 shrink-0">
-            <svg class="w-4 h-4 text-gray-500 lg:w-5 lg:h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2ZM7 2h4v3H7V2Zm5.7 8.289-3.975 3.857a1 1 0 0 1-1.393 0L5.3 12.182a1.002 1.002 0 1 1 1.4-1.436l1.328 1.289 3.28-3.181a1 1 0 1 1 1.392 1.435Z"/>
-            </svg>
-        </span>
-    </li>
-  </ol>
-</div>
-<!-- STEP BAR END -->
-
-<!-- LOGIN FORM BEGIN -->
-<div class="sm:ml-64 animate__animated animate__fadeInLeft animate__slower flex justify-center mt-8 mx-2">
-  <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
-    <form class="space-y-6" action="#">
-      <h5 class="text-xl font-medium">Sign in to our platform</h5>
-      <div>
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required />
-      </div>
-      <div>
-        <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Your password</label>
-        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
-      </div>
-      <div class="flex items-start">
-        <div class="flex items-start">
-          <div class="flex items-center h-5">
-            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required />
-          </div>
-          <label for="remember" class="ms-2 text-sm font-medium text-gray-900">Remember me</label>
-        </div>
-        <a href="#" class="ms-auto text-sm text-blue-700 hover:underline">Lost Password?</a>
-      </div>
-      <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login to your account</button>
-      <div class="text-sm font-medium text-gray-500">
-        Not registered? <a href="#" class="text-blue-700 hover:underline ">Create account</a>
-      </div>
-    </form>
-  </div>
-</div>
-<!-- LOGIN FORM BEGIN -->
-
-<!-- BUTTON HIDE BEGIN -->
-<div class="sm:ml-64 flex justify-center mt-4">
-  <button id="btnHide" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto">Test Hide</button>
-</div>
-<!-- BUTTON HIDE END -->
-
-<!-- FORM BEGIN -->
-<div class="sm:ml-64 flex justify-center mt-4">
-  <form class="max-w-sm mx-auto mx-5">
-    <label for="genres" class="block mb-2 text-sm font-medium text-gray-900">Sélectionnez un genre</label>
-    <select id="genres" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-blue-300 block w-full p-2.5 outline-none" required>
-      <option selected>Genre</option>
-      <option value="Mr">Mr</option>
-      <option value="Mme">Mme</option>
-      <option value="AutreR">Autre</option>
-    </select>
-  </form >
-</div>
-<div class="sm:ml-64 flex justify-center mt-4">
-  <form class="max-w-xs mx-auto my-4 text-center">
-    <label for="picker" class="block mb-2 text-sm font-medium text-gray-900">Sélectionnez une heure de départ</label>
-    <select id="picker" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-300 focus:border-blue-300 block w-full p-2.5 outline-none">
-      <option selected>-- : --</option>
-      <option value="8:00">8:00</option>
-      <option value="9:00">9:00</option>
-      <option value="10:00">10:00</option>
-      <option value="11:00">11:00</option>
-      <option value="12:00">12:00</option>
-      <option value="14:00">14:00</option>
-      <option value="15:00">15:00</option>
-      <option value="16:00">16:00</option>
-    </select>
-  </form>
-</div>
-<script>
-  document.getElementById ("btnHide").addEventListener ("click", function() {
-    const elements = document.getElementsByClassName("hideTile");
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].classList.add ("animate__fadeOut" , "animate__faster");
-    }
-  });
-</script>
-<!-- FORM END -->
-
-<!-- MODAL BEGIN -->
-<div class="sm:ml-64 flex justify-center mt-4">
-  <button class="bg-red-500 text-white rounded-md px-4 py-2 hover:bg-rose-700 transition" onclick="openModal('modelConfirm')">Test modal</button>
-</div>
-<div id="modelConfirm" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-  <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
-    <div class="flex justify-end p-2">
-      <button onclick="closeModal('modelConfirm')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="p-6 pt-0 text-center">
-      <svg class="w-20 h-20 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+<main>
+  <!-- SIDE BAR BEGIN -->
+  <div class="relative">
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="fixed top-0 left-0 z-40 p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+      <span class="sr-only">Open sidebar</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
       </svg>
-      <h3 class="text-xl font-normal text-gray-500 mt-5 mb-6">Are you sure you want to delete this user?</h3>
-      <label for="picker2" class="block mb-2 text-sm font-medium text-gray-900">Sélectionnez une heure de départ</label>
-      <select id="picker2" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-300 focus:border-blue-300 block p-2.5 w-auto mx-auto m-2 outline-none">
-        <option selected>-- : --</option>
-        <option value="8:00">8:00</option>
-        <option value="9:00">9:00</option>
-        <option value="10:00">10:00</option>
-        <option value="11:00">11:00</option>
-        <option value="12:00">12:00</option>
-        <option value="14:00">14:00</option>
-        <option value="15:00">15:00</option>
-        <option value="16:00">16:00</option>
-      </select>
-      <a href="#"  onclick="closeModal('modelConfirm')" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">Yes, I'm sure</a>
-      <a href="#" onclick="closeModal('modelConfirm')"
-         class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-cyan-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center"
-         data-modal-toggle="delete-user-modal">
-        No, cancel
-      </a>
-    </div>
+    </button>
+    <aside id="default-sidebar" class="fixed bg-[--color-kapp] top-0 left-0 z-40 w-56 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+      <div class="h-full px-3 py-4 overflow-y-auto">
+        <ul class="space-y-2 font-medium">
+          <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group">
+              <svg class="w-5 h-5 text-white transition duration-75" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+              </svg>
+              <span class="ms-3 text-white">Accueil</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+              <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
+              </svg>
+              <span class="flex-1 text-white text-xl">Test</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
   </div>
-</div>
-<script>
-  window.openModal = function(modalId) {
-    document.getElementById(modalId).style.display = 'block'
-    document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
-  }
-  window.closeModal = function(modalId) {
-    document.getElementById(modalId).style.display = 'none'
-    document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
-  }
-</script>
-<!-- MODAL END -->
-
-<!-- CARDS BEGIN -->
-<div class="sm:ml-64 hideTile animate__animated animate__fadeIn animate__slower flex flex-wrap justify-center mt-8 my-3">
-  <a href="#" class="w-full max-w-sm flex flex-col mt-3 mx-2 items-center bg-gray-400 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-red-100 transform transition-transform hover:scale-105">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_1280.jpg" alt="img">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
-      <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-    </div>
-  </a>
-  <a href="#" class="w-full max-w-sm flex flex-col mt-3 mx-2 items-center bg-gray-400 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-red-100 transform transition-transform hover:scale-105">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_1280.jpg" alt="img">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
-      <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-    </div>
-  </a>
-  <a href="#" class="w-full max-w-sm flex flex-col mt-3 mx-2 items-center bg-gray-400 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-red-100 transform transition-transform hover:scale-105">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_1280.jpg" alt="img">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
-      <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-    </div>
-  </a>
-  <a href="#" class="w-full max-w-sm flex flex-col mt-3 mx-2 items-center bg-gray-400 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-red-100 transform transition-transform hover:scale-105">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_1280.jpg" alt="img">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
-      <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-    </div>
-  </a>
-  <a href="#" class="w-full max-w-sm flex flex-col mt-3 mx-2 items-center bg-gray-400 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-red-100 transform transition-transform hover:scale-105">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_1280.jpg" alt="img">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
-      <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-    </div>
-  </a>
-</div>
-<!-- CARDS END -->
-
-<!-- CAROUSEL BEGIN -->
-<div class="sm:ml-64 flex justify-center mt-4">
-  <div class="slider">
-    <!-- slide 1 -->
-    <div class="slide">
-      <img src="https://source.unsplash.com/random?landscape,mountain" alt=""/>
-    </div>
-    <!-- slide 2 -->
-    <div class="slide">
-      <img src="https://source.unsplash.com/random?landscape,cars" alt="" />
-    </div>
-    <!-- slide 3 -->
-    <div class="slide">
-      <img src="https://source.unsplash.com/random?landscape,night" alt="" />
-    </div>
-    <!-- slide 4 -->
-    <div class="slide">
-      <img src="https://source.unsplash.com/random?landscape,city" alt="" />
-    </div>
-    <!-- Control buttons -->
-    <button class="btn btn-next">></button>
-    <button class="btn btn-prev"><</button>
-  </div>
-</div>
-<script>
-  "use strict";
-  // Select all slides
-  const slides = document.querySelectorAll(".slide");
-
-  // loop through slides and set each slides translateX
-  slides.forEach((slide, indx) => {
-    slide.style.transform = `translateX(${indx * 100}%)`;
-  });
-
-  // select next slide button
-  const nextSlide = document.querySelector(".btn-next");
-
-  // current slide counter
-  let curSlide = 0;
-  // maximum number of slides
-  let maxSlide = slides.length - 1;
-
-  // add event listener and navigation functionality
-  nextSlide.addEventListener("click", function () {
-    // check if current slide is the last and reset current slide
-    if (curSlide === maxSlide) {
-      curSlide = 0;
-    } else {
-      curSlide++;
-    }
-
-    //   move slide by -100%
-    slides.forEach((slide, indx) => {
-      slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+      const sidebar = document.getElementById("default-sidebar");
+      //Open
+      sidebarButton.addEventListener("click", function() {
+        sidebar.classList.toggle("translate-x-0");
+      });
+      //Close
+      document.addEventListener("click", function(event) {
+        if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
+          sidebar.classList.remove("translate-x-0");
+        }
+      });
     });
-  });
-
-  // select next slide button
-  const prevSlide = document.querySelector(".btn-prev");
-
-  // add event listener and navigation functionality
-  prevSlide.addEventListener("click", function () {
-    // check if current slide is the first and reset current slide to last
-    if (curSlide === 0) {
-      curSlide = maxSlide;
-    } else {
-      curSlide--;
-    }
-
-    //   move slide by 100%
-    slides.forEach((slide, indx) => {
-      slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-    });
-  });
-</script>
-<style>
-  .slider {
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-    position: relative;
-    overflow: hidden; /* <===  */
-    border-radius: 15px;
-  }
-  .slide {
-    width: 100%;
-    max-width: 800px;
-    height: 350px;
-    position: absolute;
-    transition: all 0.5s;
-  }
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .btn {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    border: none;
-    border-radius: 50%;
-    z-index: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    font-size: 18px;
-  }
-  .btn:active {
-    transform: scale(1.1);
-  }
-  .btn-prev {
-    top: 45%;
-    left: 2%;
-  }
-  .btn-next {
-    top: 45%;
-    right: 2%;
-  }
-</style>
-<!-- CAROUSEL END -->
+  </script>
+  <!-- SIDE BAR END -->
+</main>
 </body>
 </html>
