@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40"
+   height="40"
+   viewBox="0 0 10.583333 10.583333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="heart-broken.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="13.455443"
+     inkscape:cx="18.691321"
+     inkscape:cy="19.471674"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1569"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.529168;stroke-linecap:round;stroke-linejoin:round"
+       d="M 3.1228068 0.67024333 C 2.3433773 0.67024327 1.5641045 0.96907426 0.96686605 1.5663127 C -0.22761074 2.7607897 -0.22761059 4.6837176 0.96686605 5.8781942 L 5.1294027 10.040731 L 4.4441732 7.4326213 L 5.1319865 5.6239461 L 4.3847453 4.0116414 L 5.2503255 2.5367961 L 4.8214111 1.1890747 C 4.3086621 0.84340394 3.715779 0.67024337 3.1228068 0.67024333 z M 7.4352051 0.67024333 C 6.9294767 0.67024339 6.4240716 0.79656148 5.9681112 1.047998 L 6.4300985 2.517159 L 5.8203166 3.5393188 L 6.095752 5.466333 L 5.2895996 7.6098714 L 5.4652995 10.004557 L 9.5911458 5.8781942 C 10.785623 4.683718 10.785623 2.7607894 9.5911458 1.5663127 C 8.9939075 0.96907434 8.2146347 0.67024323 7.4352051 0.67024333 z " />
+  </g>
+</svg>

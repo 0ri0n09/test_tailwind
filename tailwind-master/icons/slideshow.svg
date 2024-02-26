@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="slideshow.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 5.2916665 5.2916668"
+   height="20"
+   width="20">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="2.114605"
+     inkscape:cx="9.261896"
+     inkscape:zoom="18.575"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#000000"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Calque 1">
+    <path
+       style="stroke-width:0.264583;fill:#000000"
+       id="path897"
+       stroke="none"
+       fill="#000000"
+       d="M 2.2678571,0.64255959 H 0 V 4.4223593 h 1.889881 l -1.29e-5,0.3779761 H 1.5118919 V 5.1782738 H 3.779749 V 4.8003354 H 3.4017728 l 1.28e-5,-0.3779761 h 1.889881 V 0.64255959 H 3.0238095 c 0,-0.37797626 0,-0.37797626 -0.3779761,-0.37797626 -0.3779763,0 -0.3779763,0 -0.3779763,0.37797626 z M 0.37796337,1.0205357 H 4.9136776 V 4.0443453 H 0.37796337 Z M 2.2678442,4.4223214 h 0.7559524 l -1.28e-5,0.3779764 H 2.2678313 Z" />
+  </g>
+</svg>
