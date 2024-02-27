@@ -1,4 +1,24 @@
 * {
     font-family: 'Ubuntu', sans-serif;
-    --color-kapp: #0899b1;
+    --color-kapp:        #0899b1;
+    --color-primary:     #ffffff;
+    --color-bgSecondary: #fafafa;
+    --color-bgHighlight: #ffccbc;
+    --color-bgClickable: #fd5e0f;
+    --color-Gradient1:   #ffdb8f;
+    --color-bgGradient2: #fa5f6e;
+    --color-bgDanger:    #d40000;
+    --color-bgSuccess:   #5b993e;
+    --color-bgWarning:   #f3b000;
+    --color-fgText:      #000000;
+    --color-fgSoft:      #616161;
+    --color-fgBorder:    #e4e4e4;
+    --color-fgNormal:    #b9b9b9;
+    --color-fgSelected:  #fd5e0f;
+    --color-fgDanger:    #b40000;
+    --color-fgSuccess:   #2e710c;
+}
+
+.fill-white {
+    fill: white;
 }
