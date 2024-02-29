@@ -26,38 +26,37 @@
                   fill-rule="evenodd"></path>
         </svg>
     </button>
-    <aside class="fixed top-0 left-0 z-40 w-64 h-screen bg-[--color-kapp] transition-transform -translate-x-full sm:translate-x-0"
+    <aside class="fixed top-0 left-0 z-40 w-64 h-screen bg-white border-r border-gray-200 transition-transform -translate-x-full sm:translate-x-0"
            id="default-sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto">
+        <div class="h-full overflow-y-auto">
             <div class="text-center">
-                <div class="max-w-sm">
-                    <p class="text-xl font-bold tracking-tight text-white mb-4">La Pension Kookie</p>
-                    <img class="rounded-lg" alt="Img business"
-                         src="https://media.istockphoto.com/id/639321736/fr/photo/celui-ci-aime-les-toiletteurs.webp?s=2048x2048&w=is&k=20&c=3ffoZBCk6WhazrpfZdKWXAz827Bshyh_1ctpfNe_d1Q="/>
-                </div>
-                <button class="inline-flex items-center mt-4 mb-4 m-3 px-3 py-2 bg-white text-white rounded-lg transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100">
-                    <p class="text-[--color-kapp]">Plus d'infos</p>
+                <img class="" alt="Img business"
+                     src="https://media.istockphoto.com/id/639321736/fr/photo/celui-ci-aime-les-toiletteurs.webp?s=2048x2048&w=is&k=20&c=3ffoZBCk6WhazrpfZdKWXAz827Bshyh_1ctpfNe_d1Q="/>
+                <button class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-600 hover:scale-105">
+                    <p class="text-white">Infos sur l'établissement</p>
                 </button>
             </div>
-            <hr class="w-15 h-1 mx-auto bg-white border-0 rounded">
-            <ul class="text-xl mt-4">
+            <hr class="h-px mx-auto w-48 bg-gray-200">
+            <ul class="flex flex-col items-center text-xl mt-4">
                 <li class="mb-2">
-                    <a class="flex items-center p-2 text-white rounded-lg group bg-green-500 hover:bg-green-400 transition-transform transform scale-100 hover:scale-105" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
-                        <span class="ms-3 text-white whitespace-nowrap">Réserver un séjour</span>
-                    </a>
-                </li>
-                <li class="mb-2">
-                    <a class="flex items-center p-2 text-white rounded-lg group bg-cyan-500 hover:bg-cyan-400 transition-transform transform scale-100 hover:scale-105" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
-                        <span class="ms-3 text-white whitespace-nowrap">Mes réservations</span>
+                    <a class="flex items-center py-1 px-5 text-[--color-fgSoft] rounded-lg group transition-transform transform scale-100 hover:scale-105 hover:bg-green-400 hover:text-white"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
+                             class="text-blue-500 hover:text-blue-600">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                        </svg>
+                        <span class="ms-3 whitespace-nowrap">Réserver un séjour</span>
                     </a>
                 </li>
             </ul>
         </div>
     </aside>
-    <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
 </div>
+<!-- Footer -->
+<footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center py-4">
+    &copy; 2024 Mon Site Web. Tous droits réservés.
+</footer>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
@@ -72,6 +71,7 @@
         document.addEventListener("click", function (event) {
             if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
                 sidebar.classList.remove("translate-x-0");
+                sidebar.classList.remove("border-r");
                 sidebarOverlay.classList.remove("opacity-50");
             }
         });
