@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kookie Web - Création du profil</title>
+    <link href="./style.css" rel="stylesheet">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+</head>
+<body>
+<main class="animate__animated animate__fadeIn">
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+        </svg>
+    </button>
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto">
+            <div class="text-center">
+                <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo de votre business">
+                <button class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
+                    <p class="text-white">Infos de l'établissement</p>
+                </button>
+            </div>
+            <hr class="mt-2 h-px mx-auto w-48 bg-gray-200">
+            <ul class="mt-4 space-y-2 font-medium">
+                <li class="flex items-center justify-center mb-2">
+                    <a href="index.html" class="w-60 flex items-center text-center py-1 px-2 text-[--color-fgSoft] rounded-lg group border border-gray-200 shadow transition-transform transform scale-100 hover:border-none hover:scale-105 hover:bg-red-500 hover:text-white">
+                        <svg fill="#616161" class="h-8 w-8" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+                        <span class="ms-3 whitespace-nowrap font-bold">Se déconnecter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
+
+    <!-- CONTENT BEGIN -->
+    <div class="p-2 sm:ml-64">
+        <div class="p-1 border border-red-500">
+            <div class="flex items-end justify-center mb-3">
+                <svg class="w-10 h-10 mr-2" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                <h1 class="text-2xl text-[--color-fgSoft] font-bold">Création du profil de vos animaux</h1>
+            </div>
+            <hr>
+            <!-- STEP BAR BEGIN -->
+            <div class="flex items-start max-w-screen-lg mx-auto mb-8 mt-4">
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">1</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+                    </div>
+                    <div class="mt-2 mr-4">
+                        <h6 class="text-base font-bold text-[--color-kapp]">Profil</h6>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">2</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+                    </div>
+                    <div class="mt-2 mr-4">
+                        <h6 class="text-base font-bold text-[--color-kapp]">Contact d'urgence</h6>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">3</span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <h6 class="text-base font-bold text-[--color-kapp]">Animaux</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- STEP BAR END -->
+        </div>
+        <div class="flex items-center justify-center h-64 mb-4 mt-2 border border-blue-500">
+
+        </div>
+    </div>
+    <!-- CONTENT END -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+        const sidebar = document.getElementById("default-sidebar");
+        const sidebarOverlay = document.getElementById("sidebar-overlay");
+        //Open
+        sidebarButton.addEventListener("click", function () {
+            sidebar.classList.toggle("translate-x-0");
+            sidebarOverlay.classList.toggle("opacity-50");
+        });
+        //Close
+        document.addEventListener("click", function (event) {
+            if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
+                sidebar.classList.remove("translate-x-0");
+                sidebar.classList.remove("border-r");
+                sidebarOverlay.classList.remove("opacity-50");
+            }
+        });
+    });
+    </script>
+</main>
+</body>
+</html>
