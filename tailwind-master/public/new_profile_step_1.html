@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Kookie Web - Création du profil</title>
+    <title>Création du profil</title>
     <link href="./style.css" rel="stylesheet">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -19,23 +19,43 @@
             <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
         </svg>
     </button>
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto sm:border-r sm:border-gray-200">
             <div class="text-center">
-                <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo de votre business">
+                <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo business">
                 <button class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
                     <p class="text-white">Infos de l'établissement</p>
                 </button>
             </div>
             <hr class="mt-2 h-px mx-auto w-48 bg-gray-200">
             <div class="text-center mt-4">
-                <button type="button" onclick="window.location='index.html'" class="w-45 h-10 px-4 py-2 justify-center inline-flex items-center rounded-lg border border-2 border-red-300 transition-transform transform scale-100 hover:scale-105 shadow">
-                    <div class="flex items-center justify-center">
-                        <svg class="h-8 w-8 mr-1 text-[--color-fgSoft]" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.5 7.5L10.5 10.75M13.5 7.5L10.5 4.5M13.5 7.5L4 7.5M8 13.5H1.5L1.5 1.5L8 1.5" stroke="#000000"/>
-                        </svg>
-                        <p class="text-[--color-fgSoft] font-bold">Se déconnecter</p>
-                    </div>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Tableau de bord</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-green-300 transition-transform transform scale-100 hover:scale-105 hover:bg-green-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-room_service.svg" alt="reservation">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Réserver un séjour</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-pets.svg" alt="pets">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mes animaux</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mon profil</p>
+                </button>
+                <button type="button" onclick="window.location='index.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-red-300 transition-transform transform scale-100 hover:scale-105 hover:bg-red-100">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/logout.svg" alt="logout">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Se déconnecter</p>
                 </button>
             </div>
         </div>
@@ -43,10 +63,10 @@
     <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
 
     <!-- CONTENT BEGIN -->
-    <div class="p-2 sm:ml-64">
+    <div class="p-2 sm:ml-72">
         <div class="p-1">
             <div class="flex items-end justify-center mb-3">
-                <svg class="w-10 h-10 mr-2" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="profil">
                 <h1 class="text-2xl text-[--color-fgSoft] font-bold">Création du profil</h1>
             </div>
             <hr>
@@ -93,7 +113,7 @@
                         <div class="px-4">
                             <div class="flex items-center mb-1">
                                 <div class="border-t border-gray-300 flex-1 mr-4"></div>
-                                <svg class="w-8 h-8" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                                 <div class="border-t border-gray-300 flex-1 ml-4"></div>
                             </div>
                             <!-- Genre -->
@@ -116,7 +136,7 @@
                             </div>
                             <!-- Numéro de téléphone portable-->
                             <div class="flex mb-4 items-center">
-                                <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18Z" fill="#0F0F0F"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M19 4C19 2.34315 17.6569 1 16 1H8C6.34315 1 5 2.34315 5 4V20C5 21.6569 6.34315 23 8 23H16C17.6569 23 19 21.6569 19 20V4ZM17 4C17 3.44772 16.5523 3 16 3H8C7.44772 3 7 3.44772 7 4V15H17V4ZM7 20V17H17V20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20Z" fill="#0F0F0F"></path> </g></svg>
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-smartphone.svg" alt="smartphone">
                                 <div class="mr-2">
                                     <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
                                         <option disabled selected style="display:none;">Indicatif pays</option>
@@ -131,7 +151,7 @@
                             </div>
                             <!-- Numéro de téléphone fixe-->
                             <div class="flex mb-4 items-center">
-                                <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#231F20" d="M62.79,29.172l-28-28C34.009,0.391,32.985,0,31.962,0s-2.047,0.391-2.828,1.172l-28,28 c-1.562,1.566-1.484,4.016,0.078,5.578c1.566,1.57,3.855,1.801,5.422,0.234L8,33.617V60c0,2.211,1.789,4,4,4h16V48h8v16h16 c2.211,0,4-1.789,4-4V33.695l1.195,1.195c1.562,1.562,3.949,1.422,5.516-0.141C64.274,33.188,64.356,30.734,62.79,29.172z"></path> </g></svg>
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-phone.svg" alt="phone">
                                 <div class="mr-2">
                                     <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
                                         <option disabled selected style="display:none;">Indicatif pays</option>
@@ -146,7 +166,7 @@
                             </div>
                             <!-- Numéro de téléphone autre-->
                             <div class="flex mb-4 items-center">
-                                <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M13 6C14.1046 6 15 5.10457 15 4C15 2.89543 14.1046 2 13 2C11.8955 2 11 2.89543 11 4C11 5.10457 11.8955 6 13 6ZM11.0528 6.60557C11.3841 6.43992 11.7799 6.47097 12.0813 6.68627L13.0813 7.40056C13.3994 7.6278 13.5559 8.01959 13.482 8.40348L12.4332 13.847L16.8321 20.4453C17.1384 20.9048 17.0143 21.5257 16.5547 21.8321C16.0952 22.1384 15.4743 22.0142 15.168 21.5547L10.5416 14.6152L9.72611 13.3919C9.58336 13.1778 9.52866 12.9169 9.57338 12.6634L10.1699 9.28309L8.38464 10.1757L7.81282 13.0334C7.70445 13.575 7.17759 13.9261 6.63604 13.8178C6.09449 13.7094 5.74333 13.1825 5.85169 12.641L6.51947 9.30379C6.58001 9.00123 6.77684 8.74356 7.05282 8.60557L11.0528 6.60557ZM16.6838 12.9487L13.8093 11.9905L14.1909 10.0096L17.3163 11.0513C17.8402 11.226 18.1234 11.7923 17.9487 12.3162C17.7741 12.8402 17.2078 13.1234 16.6838 12.9487ZM6.12844 20.5097L9.39637 14.7001L9.70958 15.1699L10.641 16.5669L7.87159 21.4903C7.60083 21.9716 6.99111 22.1423 6.50976 21.8716C6.0284 21.6008 5.85768 20.9911 6.12844 20.5097Z" fill="#000000"></path> </g></svg>
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/walker.svg" alt="walker">
                                 <div class="mr-2">
                                     <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
                                         <option disabled selected style="display:none;">Indicatif pays</option>
@@ -161,7 +181,7 @@
                             </div>
                             <!-- Email-->
                             <div class="flex mb-4 items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg" alt="email">
                                 <div class="mr-2">
                                     <h4 class="text-xl text-[--color-fgSoft] font-bold">monemail@gmail.com</h4>
                                 </div>
@@ -169,7 +189,7 @@
                             <!-- Adresse -->
                             <div class="flex items-center mb-3">
                                 <div class="border-t border-gray-300 flex-1 mr-4"></div>
-                                <svg class="w-8 h-8" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#231F20" d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24 C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24 C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"></path> </g></svg>
+                                <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-location_on.svg" alt="location">
                                 <div class="border-t border-gray-300 flex-1 ml-4"></div>
                             </div>
                             <div class="mb-4">
@@ -179,7 +199,7 @@
                             <div class="mb-4">
                                 <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'adresse"/>
                             </div>
-                            <!-- Code postale & Ville -->
+                            <!-- Code postal & Ville -->
                             <div class="flex mb-4">
                                 <div class="w-1/2 mr-2">
                                     <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postal"/>
@@ -201,7 +221,7 @@
                     <div class="flex justify-between">
                         <button type="button" onclick="location.href='new_profile_step_2.html'" class="flex items-center text-white border border-lg bg-[--color-bgClickable] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 ml-auto">
                             Suivant
-                            <svg style="fill: white" class="w-6 h-6 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+                            <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="arrow-right">
                         </button>
                     </div>
                 </div>

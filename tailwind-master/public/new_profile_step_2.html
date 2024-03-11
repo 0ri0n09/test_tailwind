@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Kookie Web - Création du profil</title>
+    <title>Création du profil</title>
     <link href="./style.css" rel="stylesheet">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -19,23 +19,43 @@
             <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
         </svg>
     </button>
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto sm:border-r sm:border-gray-200">
             <div class="text-center">
-                <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo de votre business">
+                <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo business">
                 <button class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
                     <p class="text-white">Infos de l'établissement</p>
                 </button>
             </div>
             <hr class="mt-2 h-px mx-auto w-48 bg-gray-200">
             <div class="text-center mt-4">
-                <button type="button" onclick="window.location='index.html'" class="w-45 h-10 px-4 py-2 justify-center inline-flex items-center rounded-lg border border-2 border-red-300 transition-transform transform scale-100 hover:scale-105 shadow">
-                    <div class="flex items-center justify-center">
-                        <svg class="h-8 w-8 mr-1 text-[--color-fgSoft]" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.5 7.5L10.5 10.75M13.5 7.5L10.5 4.5M13.5 7.5L4 7.5M8 13.5H1.5L1.5 1.5L8 1.5" stroke="#000000"/>
-                        </svg>
-                        <p class="text-[--color-fgSoft] font-bold">Se déconnecter</p>
-                    </div>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Tableau de bord</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-green-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-room_service.svg" alt="reservation">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Réserver un séjour</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-pets.svg" alt="pets">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mes animaux</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mon profil</p>
+                </button>
+                <button type="button" onclick="window.location='index.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-red-300 transition-transform transform scale-100 hover:scale-105 hover:bg-red-100">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/logout.svg" alt="logout">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Se déconnecter</p>
                 </button>
             </div>
         </div>
@@ -43,10 +63,10 @@
     <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
 
     <!-- CONTENT BEGIN -->
-    <div class="p-2 sm:ml-64">
+    <div class="p-2 sm:ml-72">
         <div class="p-1">
             <div class="flex items-end justify-center mb-3">
-                <svg class="w-10 h-10 mr-2" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                 <h1 class="text-2xl text-[--color-fgSoft] font-bold">Création du profil</h1>
             </div>
             <hr>
@@ -93,13 +113,13 @@
                         <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mb-4 mt-2">
                             Contact d'urgence
                             <button id="tip" type="button" class="transition-transform transform scale-100 hover:scale-105">
-                                <svg fill="#0899b1" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g transform="translate(1 1)"> <g> <g> <path d="M331.8-1H178.2C112.493-1,58.733,52.76,58.733,118.467v153.6c0,65.707,53.76,119.467,119.467,119.467h28.16 c7.68,0,14.507,6.827,14.507,14.507v84.48c0,9.387,5.973,17.067,14.507,19.627C237.08,511,239.64,511,241.347,511 c6.827,0,12.8-3.413,17.067-8.533l52.053-74.24c13.653-20.48,34.133-34.987,58.027-42.667 c49.493-16.213,82.773-61.44,82.773-113.493v-153.6C451.267,52.76,397.507-1,331.8-1z M434.2,272.92 c0,44.373-28.16,83.627-70.827,97.28c-27.307,9.387-50.347,25.6-66.56,48.64l-52.907,74.24c-0.853,1.707-2.56,0.853-3.413,0.853 c-0.853-0.853-2.56-0.853-2.56-3.413v-84.48c0-17.067-14.507-31.573-31.573-31.573H178.2c-56.32,0-102.4-46.08-102.4-102.4 v-153.6c0-56.32,46.08-102.4,102.4-102.4h153.6c56.32,0,102.4,46.08,102.4,102.4V272.92z"></path> <path d="M297.667,289.133h-8.533v-128c0-14.507-11.093-25.6-25.6-25.6H229.4c-14.507,0-25.6,11.093-25.6,25.6 c0,14.507,11.093,25.6,25.6,25.6h8.533v102.4H229.4c-14.507,0-25.6,11.093-25.6,25.6c0,14.507,11.093,25.6,25.6,25.6h68.267 c14.507,0,25.6-11.093,25.6-25.6C323.267,300.227,312.173,289.133,297.667,289.133z M297.667,323.267H229.4 c-5.12,0-8.533-3.413-8.533-8.533s3.413-8.533,8.533-8.533h17.067c5.12,0,8.533-3.413,8.533-8.533V178.2 c0-5.12-3.413-8.533-8.533-8.533H229.4c-5.12,0-8.533-3.413-8.533-8.533s3.413-8.533,8.533-8.533h34.133 c4.267,0,8.533,3.413,8.533,8.533v136.533c0,5.12,3.413,8.533,8.533,8.533h17.067c5.12,0,8.533,3.413,8.533,8.533 S302.787,323.267,297.667,323.267z"></path> <path d="M255,118.467c18.773,0,34.133-15.36,34.133-34.133c0-18.773-15.36-34.133-34.133-34.133s-34.133,15.36-34.133,34.133 C220.867,103.107,236.227,118.467,255,118.467z M255,67.267c9.387,0,17.067,7.68,17.067,17.067 c0,9.387-7.68,17.067-17.067,17.067c-9.387,0-17.067-7.68-17.067-17.067C237.933,74.947,245.613,67.267,255,67.267z"></path> </g> </g> </g> </g></svg>
+                                <svg fill="#0899b1" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g transform="translate(1 1)"> <g> <g> <path d="M331.8-1H178.2C112.493-1,58.733,52.76,58.733,118.467v153.6c0,65.707,53.76,119.467,119.467,119.467h28.16 c7.68,0,14.507,6.827,14.507,14.507v84.48c0,9.387,5.973,17.067,14.507,19.627C237.08,511,239.64,511,241.347,511 c6.827,0,12.8-3.413,17.067-8.533l52.053-74.24c13.653-20.48,34.133-34.987,58.027-42.667 c49.493-16.213,82.773-61.44,82.773-113.493v-153.6C451.267,52.76,397.507-1,331.8-1z M434.2,272.92 c0,44.373-28.16,83.627-70.827,97.28c-27.307,9.387-50.347,25.6-66.56,48.64l-52.907,74.24c-0.853,1.707-2.56,0.853-3.413,0.853 c-0.853-0.853-2.56-0.853-2.56-3.413v-84.48c0-17.067-14.507-31.573-31.573-31.573H178.2c-56.32,0-102.4-46.08-102.4-102.4 v-153.6c0-56.32,46.08-102.4,102.4-102.4h153.6c56.32,0,102.4,46.08,102.4,102.4V272.92z"></path> <path d="M297.667,289.133h-8.533v-128c0-14.507-11.093-25.6-25.6-25.6H229.4c-14.507,0-25.6,11.093-25.6,25.6 c0,14.507,11.093,25.6,25.6,25.6h8.533v102.4H229.4c-14.507,0-25.6,11.093-25.6,25.6c0,14.507,11.093,25.6,25.6,25.6h68.267 c14.507,0,25.6-11.093,25.6-25.6C323.267,300.227,312.173,289.133,297.667,289.133z M297.667,323.267H229.4 c-5.12,0-8.533-3.413-8.533-8.533s3.413-8.533,8.533-8.533h17.067c5.12,0,8.533-3.413,8.533-8.533V178.2 c0-5.12-3.413-8.533-8.533-8.533H229.4c-5.12,0-8.533-3.413-8.533-8.533s3.413-8.533,8.533-8.533h34.133 c4.267,0,8.533,3.413,8.533,8.533v136.533c0,5.12,3.413,8.533,8.533,8.533h17.067c5.12,0,8.533,3.413,8.533,8.533 S302.787,323.267,297.667,323.267z"></path> <path d="M255,118.467c18.773,0,34.133-15.36,34.133-34.133c0-18.773-15.36-34.133-34.133-34.133s-34.133,15.36-34.133,34.133 C220.867,103.107,236.227,118.467,255,118.467z M255,67.267c9.387,0,17.067,7.68,17.067,17.067 c0,9.387-7.68,17.067-17.067,17.067c-9.387,0-17.067-7.68-17.067-17.067C237.933,74.947,245.613,67.267,255,67.267z"></path> </g> </g> </g> </g></svg>
                             </button>
                         </h3>
                         <div class="px-4">
                             <div class="flex items-center mb-1">
                                 <div class="border-t border-gray-300 flex-1 mr-4"></div>
-                                <svg class="w-8 h-8" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                                <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                                 <div class="border-t border-gray-300 flex-1 ml-4"></div>
                             </div>
                             <!-- Nom & Prénom -->
@@ -113,7 +133,7 @@
                             </div>
                             <!-- Numéro de téléphone portable-->
                             <div class="flex mb-4 items-center">
-                                <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18Z" fill="#0F0F0F"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M19 4C19 2.34315 17.6569 1 16 1H8C6.34315 1 5 2.34315 5 4V20C5 21.6569 6.34315 23 8 23H16C17.6569 23 19 21.6569 19 20V4ZM17 4C17 3.44772 16.5523 3 16 3H8C7.44772 3 7 3.44772 7 4V15H17V4ZM7 20V17H17V20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20Z" fill="#0F0F0F"></path> </g></svg>
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-smartphone.svg" alt="smartphone">
                                 <div class="mr-2">
                                     <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
                                         <option disabled selected style="display:none;">Indicatif pays</option>
@@ -129,7 +149,7 @@
                             <!-- Adresse -->
                             <div class="flex items-center mb-3">
                                 <div class="border-t border-gray-300 flex-1 mr-4"></div>
-                                <svg class="w-8 h-8" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#231F20" d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24 C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24 C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"></path> </g></svg>
+                                <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-location_on.svg" alt="location">
                                 <div class="border-t border-gray-300 flex-1 ml-4"></div>
                             </div>
                             <div class="mb-4">
@@ -139,7 +159,7 @@
                             <div class="mb-4">
                                 <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'adresse"/>
                             </div>
-                            <!-- Code postale & Ville -->
+                            <!-- Code postal & Ville -->
                             <div class="flex mb-4">
                                 <div class="w-1/2 mr-2">
                                     <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postal"/>
@@ -154,7 +174,7 @@
                             </div>
                             <!-- Remarques -->
                             <div class="flex mb-4 items-center">
-                                <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="#000000"></path> <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="#000000"></path> <path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44771 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> <path d="M6 18C6 17.4477 6.44772 17 7 17H11C11.5523 17 12 17.4477 12 18C12 18.5523 11.5523 19 11 19H7C6.44772 19 6 18.5523 6 18Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 2.34315 3.34315 1 5 1H19C20.6569 1 22 2.34315 22 4V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V4ZM5 3H19C19.5523 3 20 3.44771 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4C4 3.44772 4.44771 3 5 3Z" fill="#000000"></path> </g></svg>
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
                                 <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Remarque ..."></textarea>
                             </div>
                         </div>
@@ -169,7 +189,7 @@
                         </button>
                         <button type="button" onclick="location.href='new_profile_step_3.html'" class="flex items-center text-white border border-lg bg-[--color-bgClickable] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                             Suivant
-                            <svg style="fill: white" class="w-6 h-6 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+                            <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="arrow-right">
                         </button>
                     </div>
                 </div>
@@ -227,7 +247,7 @@
                     <li>Si vous êtes en retard pour venir chercher votre animal, la pension aura besoin de vous contacter pour savoir quoi faire.</li>
                     <li>Le contact d'urgence peut venir chercher votre animal si vous ne pouvez pas le faire vous-même.</li>
                 </ul>
-                <h4 class="text-l text-gray-600 mb-4">Pour la tranquilité d'esprit:</h4>
+                <h4 class="text-l text-gray-600 mb-4">Pour la tranquilité d'esprit :</h4>
                 <ul class="list-disc text-sm text-gray-600 mb-4 text-left">
                     <li>Savoir qu'il y a quelqu'un qui peut prendre soin de votre animal en cas d'urgence vous apportera une grande tranquillité d'esprit.</li>
                     <li>Cela permettra également à la pension de se concentrer sur le bien-être de votre animal sans avoir à se soucier de vous contacter en cas de problème.</li>
@@ -237,7 +257,7 @@
                     <li>Choisissez quelqu'un qui est fiable et qui peut être facilement joint.</li>
                     <li>Assurez-vous que la personne est à l'aise avec les animaux et qu'elle est capable de prendre des décisions en cas d'urgence.</li>
                     <li>Donnez à la personne toutes les informations nécessaires sur votre animal, y compris ses besoins médicaux et ses problèmes de comportement.</li>
-                    <h4 class="text-l text-gray-600 mb-4 mt-4">En renseignant un contact d'urgence pour un séjour en pension pour animaux, vous vous assurez que votre animal sera bien pris en charge en cas de problème.</h4>
+                    <p class="text-l text-gray-600 mb-4 mt-4">En renseignant un contact d'urgence pour un séjour en pension pour animaux, vous vous assurez que votre animal sera bien pris en charge en cas de problème.</p>
                 </ul>
             </div>
         </div>
