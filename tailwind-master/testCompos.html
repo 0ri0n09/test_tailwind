@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tailwind Test Composants</title>
+  <link href="./public/style.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
@@ -19,6 +20,7 @@
 </style>
 
 <body>
+<img class="w-8 h-8 mr-2 fgSoftSvg" src="public/icons/collar.svg" alt="Puce" />
 <!-- SIDEBAR BEGIN -->
 <div class="relative">
   <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="fixed top-0 left-0 z-40 p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
@@ -68,6 +70,20 @@
   });
 </script>
 <!-- SIDEBAR END -->
+
+<!-- TABS BEGIN -->
+<ul class="flex flex-row text-sm font-medium text-center mx-4 mb-4 sm:mx-20">
+  <li class="flex-1">
+    <a href="#" class="w-full flex justify-center items-center p-4 rounded-l-lg inline-block border border-white text-white text-l bg-[--color-kapp] font-bold">Informations</a>
+  </li>
+  <li class="flex-1">
+    <a href="#" class="w-full flex justify-center items-center p-4 inline-block text-white text-l bg-cyan-400 border border-white font-bold">Vaccins</a>
+  </li>
+  <li class="flex-1">
+    <a href="#" class="w-full flex justify-center items-center p-4 rounded-r-lg inline-block text-white text-l bg-cyan-400 border border-white font-bold">Vétérinaire</a>
+  </li>
+</ul>
+<!-- TABS END -->
 
 <!-- STEP BAR BEGIN -->
 <div class="sm:ml-64 flex justify-center mt-4 mx-auto">

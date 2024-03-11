@@ -22,3 +22,11 @@
 .fill-white {
     fill: white;
 }
+
+.fgSoftSvg {
+    filter: invert(40%) sepia(3%) saturate(13%) hue-rotate(24deg) brightness(90%) contrast(86%);
+}
+
+.fgDangerSvg {
+    filter: invert(10%) sepia(66%) saturate(5895%) hue-rotate(356deg) brightness(104%) contrast(115%);
+}
