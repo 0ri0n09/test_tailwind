@@ -61,7 +61,26 @@
         </div>
     </aside>
     <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+            const sidebar = document.getElementById("default-sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+            //Open
+            sidebarButton.addEventListener("click", function () {
+                sidebar.classList.toggle("translate-x-0");
+                sidebarOverlay.classList.toggle("opacity-50");
+            });
+            //Close
+            document.addEventListener("click", function (event) {
+                if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
+                    sidebar.classList.remove("translate-x-0");
+                    sidebar.classList.remove("border-r");
+                    sidebarOverlay.classList.remove("opacity-50");
+                }
+            });
+        });
+    </script>
     <!-- CONTENT BEGIN -->
     <div class="p-2 sm:ml-72">
         <div class="p-1">
@@ -195,26 +214,6 @@
             </button>
         </div>
         <!-- CONTENT END -->
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
-            const sidebar = document.getElementById("default-sidebar");
-            const sidebarOverlay = document.getElementById("sidebar-overlay");
-            //Open
-            sidebarButton.addEventListener("click", function () {
-                sidebar.classList.toggle("translate-x-0");
-                sidebarOverlay.classList.toggle("opacity-50");
-            });
-            //Close
-            document.addEventListener("click", function (event) {
-                if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
-                    sidebar.classList.remove("translate-x-0");
-                    sidebar.classList.remove("border-r");
-                    sidebarOverlay.classList.remove("opacity-50");
-                }
-            });
-        });
-        </script>
         <!-- MODAL BEGIN -->
         <div id="modal" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
             <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
