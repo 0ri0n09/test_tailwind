@@ -157,116 +157,67 @@
         </div>
         <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto">
             <div class="flex flex-col sm:flex-row flex-wrap">
-                <!-- Card 1 BEGIN -->
-                <button id="dogCard1" class="max-w-xs m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-300 transform transition-transform hover:scale-105 hover:bg-orange-200 shadow">
-                    <img class="w-50 h-40 mx-auto rounded rounded-t-lg rounded-b-none" src="dog_teckel.jpg" alt="Dog Img">
-                    <div class="px-2 py-2">
-                        <div class="flex justify-between mb-1">
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/male.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">Saucisse</label>
-                            </div>
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/age.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">2 ans</label>
-                            </div>
-                        </div>
-                        <div class="flex mb-1">
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/dog-face-outline.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">Teckel</label>
-                            </div>
-                        </div>
-                        <div class="flex justify-between mb-1">
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/weight.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">5 kg</label>
-                            </div>
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/sterilization.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">Stérilisé</label>
-                            </div>
-                        </div>
+                <!-- Card 1 -->
+                <div id="card1" class="w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
+                    <div class="text-center m-4">
+                        <div class="text-xl font-bold truncate">Saucisse</div>
                     </div>
-                </button>
-                <script>
-                    let dogCard1Selected = false;
-                    const dogCard1 = document.getElementById('dogCard1');
-                    function handleInteraction(event) {
-                        event.preventDefault();
-                        dogCard1Selected = !dogCard1Selected;
-                        if (dogCard1Selected) {
-                            this.classList.add('border-[--color-fgSelected]');
-                            this.classList.add('bg-orange-100');
-                        }
-                        else {
-                            this.classList.remove('border-[--color-fgSelected]');
-                            this.classList.remove('bg-orange-100');
-                        }
-                    }
-                    dogCard1.addEventListener('click', handleInteraction);
-                    dogCard1.addEventListener('touchstart', handleInteraction);
-                </script>
-                <!-- Card 1 END-->
-                <!-- Card 2 BEGIN -->
-                <button id="dogCard2" class="max-w-xs m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-300 transform transition-transform hover:scale-105 hover:bg-orange-200 shadow">
-                    <img class="w-50 h-40 mx-auto rounded rounded-t-lg rounded-b-none" src="dog_teckel.jpg" alt="Dog Img">
-                    <div class="px-2 py-2">
-                        <div class="flex justify-between mb-1">
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/male.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">Saucisse</label>
-                            </div>
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/age.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">2 ans</label>
-                            </div>
-                        </div>
-                        <div class="flex mb-1">
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/dog-face-outline.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">Teckel</label>
-                            </div>
-                        </div>
-                        <div class="flex justify-between mb-1">
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/weight.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">5 kg</label>
-                            </div>
-                            <div class="flex flex-row items-center">
-                                <img class="w-5 h-5 mr-1 fgSoftSvg" src="icons/sterilization.svg">
-                                <label class="flex items-center text-[--color-fgSoft] font-bold">Stérilisé</label>
-                            </div>
-                        </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/dog-face.png" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">NomArallongeTresL</div>
                     </div>
-                </button>
-                <script>
-                    let dogCard2Selected = false;
-                    const dogCard2 = document.getElementById('dogCard2');
-                    function handleInteraction(event) {
-                        event.preventDefault();
-                        dogCard2Selected = !dogCard2Selected;
-                        if (dogCard2Selected) {
-                            this.classList.add('border-[--color-fgSelected]');
-                            this.classList.add('bg-orange-100');
-                        }
-                        else {
-                            this.classList.remove('border-[--color-fgSelected]');
-                            this.classList.remove('bg-orange-100');
-                        }
-                    }
-                    dogCard2.addEventListener('click', handleInteraction);
-                    dogCard2.addEventListener('touchstart', handleInteraction);
-                </script>
-                <!-- Card 2 END-->
+                </div>
+                <!-- Card 3 -->
+                <div class="w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/cat-face.png" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">Pixel</div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/rabbit-face.svg" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">Nova</div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/horse-face.svg" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">Foudre</div>
+                    </div>
+                </div>
                 <!-- Card Add -->
-                <button onclick="openModal('modal');" class="w-52 h-64 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 shadow transform transition-transform hover:scale-105 hover:bg-gray-50 shadow">
+                <div onclick="openModal('modal');" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
                     <div class="flex flex-col items-center justify-center w-full h-full">
-                        <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add-circle">
+                        <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
                         <label class="mx-2 text-[--color-fgSoft] font-bold">Ajouter un animal</label>
                     </div>
-                </button>
+                </div>
                 <!-- Card Add END-->
+                <script>
+                    let card1Selected = false;
+                    const card1 = document.getElementById('card1');
+                    function handleInteraction(event) {
+                        event.preventDefault();
+                        card1Selected = !card1Selected;
+                        if (card1Selected) {
+                            this.classList.add('bg-sky-50');
+                            this.classList.add('scale-105');
+                        }
+                        else {
+                            this.classList.remove('bg-sky-50');
+                            this.classList.remove('scale-105');
+                        }
+                    }
+                    card1.addEventListener('click', handleInteraction);
+                    card1.addEventListener('touchstart', handleInteraction);
+                </script>
             </div>
         </div>
         <div class="flex flex-row justify-center items-center m-4">
