@@ -40,7 +40,7 @@
     filter: invert(10%) sepia(66%) saturate(5895%) hue-rotate(356deg) brightness(104%) contrast(115%);
 }
 
-.fgSucessSvg {
+.fgSuccessSvg {
     filter: invert(27%) sepia(54%) saturate(3385%) hue-rotate(75deg) brightness(85%) contrast(91%);
 }
 
