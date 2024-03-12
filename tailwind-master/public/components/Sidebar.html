@@ -12,8 +12,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
 </head>
-
 <body>
+<!-- SIDEBAR BEGIN -->
 <!-- SIDEBAR BEGIN -->
 <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden">
     <span class="sr-only">Open sidebar</span>
@@ -21,8 +21,8 @@
         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
     </svg>
 </button>
-<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-    <div class="h-full px-3 py-4 overflow-y-auto sm:border-r sm:border-gray-200">
+<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0 overflow-y-auto overflow-hidden" aria-label="Sidebar">
+    <div class="h-full px-3 py-4 sm:border-r sm:border-gray-200">
         <div class="text-center">
             <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo business">
             <button class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
@@ -31,27 +31,27 @@
         </div>
         <hr class="mt-2 h-px mx-auto w-48 bg-gray-200">
         <div class="text-center mt-4">
-            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100">
                 <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
                 <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Tableau de bord</p>
             </button>
-            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-green-300 transition-transform transform scale-100 hover:scale-105 hover:bg-green-100 pointer-events-none opacity-25">
+            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-green-300 transition-transform transform scale-100 hover:scale-105 hover:bg-green-100">
                 <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-room_service.svg" alt="reservation">
                 <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Réserver un séjour</p>
             </button>
-            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100">
                 <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
                 <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
             </button>
-            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100">
                 <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
                 <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
             </button>
-            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100">
                 <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-pets.svg" alt="pets">
                 <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mes animaux</p>
             </button>
-            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
+            <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100">
                 <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                 <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mon profil</p>
             </button>
@@ -59,15 +59,14 @@
                 <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/logout.svg" alt="logout">
                 <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Se déconnecter</p>
             </button>
+            <div class="mb-4 text-xs">
+                &copy; 2024 Mon Site Web. Tous droits réservés.
+            </div>
         </div>
     </div>
 </aside>
-<div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
+<div class="fixed top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
 <!-- SIDEBAR END -->
-<!-- Footer -->
-<footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center py-4">
-    &copy; 2024 Mon Site Web. Tous droits réservés.
-</footer>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
@@ -81,11 +80,39 @@
         //Close
         document.addEventListener("click", function (event) {
             if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
+                if (sidebarOverlay.classList.contains("opacity-50")) {
+                    footer.classList.toggle('hidden');
+                }
                 sidebar.classList.remove("translate-x-0");
                 sidebar.classList.remove("border-r");
                 sidebarOverlay.classList.remove("opacity-50");
             }
         });
+    });
+    function adjustSidebarHeight() {
+        if (window.innerWidth >= 768) {
+            var windowHeight = window.innerHeight;
+            var footerHeight = document.querySelector('footer').offsetHeight;
+            var adjustedHeight = windowHeight - footerHeight;
+
+            document.getElementById('default-sidebar').style.height = adjustedHeight + 'px';
+        }
+    }
+
+    window.addEventListener('resize', adjustSidebarHeight);
+    window.addEventListener('load', adjustSidebarHeight);
+
+    const sidebarButton = document.querySelector('[data-drawer-toggle="default-sidebar"]');
+    const footer = document.querySelector('footer');
+
+    sidebarButton.addEventListener('click', () => {
+        footer.classList.toggle('hidden');
+
+        if (footer.classList.contains('hidden')) {
+            sidebar.classList.add('h-full');
+        } else {
+            sidebar.classList.remove('h-full');
+        }
     });
 </script>
 </body>

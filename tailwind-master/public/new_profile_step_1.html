@@ -13,6 +13,7 @@
 </head>
 <body>
 <main class="animate__animated animate__fadeIn">
+    <!-- SIDEBAR BEGIN -->
     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -61,6 +62,7 @@
         </div>
     </aside>
     <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
+    <!-- SIDEBAR END -->
 
     <!-- CONTENT BEGIN -->
     <div class="p-2 sm:ml-72">
@@ -229,6 +231,7 @@
         </div>
     </div>
     <!-- CONTENT END -->
+
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
