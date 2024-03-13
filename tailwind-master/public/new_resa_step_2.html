@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Nouvelle réservation</title>
+    <link href="./style.css" rel="stylesheet">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+</head>
+<body>
+<main class="animate__animated animate__fadeIn">
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+        </svg>
+    </button>
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto sm:border-r sm:border-gray-200">
+            <div class="text-center">
+                <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo business">
+                <button class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
+                    <p class="text-white">Infos de l'établissement</p>
+                </button>
+            </div>
+            <hr class="mt-2 h-px mx-auto w-48 bg-gray-200">
+            <div class="text-center mt-4">
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Tableau de bord</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-room_service.svg" alt="reservation">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Réserver un séjour</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-pets.svg" alt="pets">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mes animaux</p>
+                </button>
+                <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mon profil</p>
+                </button>
+                <button type="button" onclick="window.location='index.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-red-300 transition-transform transform scale-100 hover:scale-105 hover:bg-red-100">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/logout.svg" alt="logout">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Se déconnecter</p>
+                </button>
+            </div>
+        </div>
+    </aside>
+    <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+            const sidebar = document.getElementById("default-sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+            //Open
+            sidebarButton.addEventListener("click", function () {
+                sidebar.classList.toggle("translate-x-0");
+                sidebarOverlay.classList.toggle("opacity-50");
+            });
+            //Close
+            document.addEventListener("click", function (event) {
+                if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
+                    sidebar.classList.remove("translate-x-0");
+                    sidebar.classList.remove("border-r");
+                    sidebarOverlay.classList.remove("opacity-50");
+                }
+            });
+        });
+    </script>
+    <!-- CONTENT BEGIN -->
+    <div class="p-2 sm:ml-72">
+        <div class="p-1">
+            <div class="flex items-end justify-center mb-3">
+                <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="romm_service">
+                <h1 class="text-2xl text-[--color-fgSoft] font-bold">Nouvelle réservation</h1>
+            </div>
+            <hr>
+            <!-- STEP BAR BEGIN -->
+            <div class="flex items-start max-w-screen-lg mx-auto mb-4 mt-4">
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">1</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-pets.svg" alt="pet">
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">2</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-event.svg" alt="calendar">
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">3</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-search.svg" alt="search">
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">4</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/round-add_circle_outline.svg" alt="add">
+                    </div>
+                </div>
+            </div>
+            <!-- STEP BAR END -->
+        </div>
+        <div class="flex flex-col justify-center mb-4">
+            <h3 class="text-3xl text-center font-bold text-[--color-fgSelected]">
+                Quand ?
+            </h3>
+            <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
+        </div>
+        <h1 class="mb-4 text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez les dates de début et fin du séjour</h1>
+        <div class="flex flex-col sm:flex-row justify-center items-center h-auto mb-4 overflow-x-auto">
+            <!-- DatePicker BEGIN -->
+            <div class="text-center my-2 sm:my-1 mx-2">
+                <input type="text" id="datepickerArrival" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de début">
+            </div>
+            <div class="text-center my-2 sm:my-1 mx-2">
+                <input type="text" id="datepickerDeparture" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de fin">
+            </div>
+            <style>
+                #datepickerArrival::placeholder {
+                    font-weight: bold;
+                }
+                #datepickerDeparture::placeholder {
+                    font-weight: bold;
+                }
+            </style>
+            <!-- DatePicker END-->
+        </div>
+        <h1 class="mb-4 mt-8 text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez les horaires de début et fin du séjour</h1>
+        <div class="flex flex-col sm:flex-row justify-center items-center h-auto mb-4 overflow-x-auto">
+
+        </div>
+        <div class="flex justify-between">
+            <button type="button" onclick="location.href='new_resa_step_1.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                Retour
+            </button>
+            <button type="button" onclick="location.href='new_resa_step_3.html'" class="flex items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                Suivant
+                <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+            </button>
+        </div>
+        <!-- CONTENT END -->
+        <!-- MODAL BEGIN -->
+        <div id="modalResaBegin" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+            <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
+                <div class="flex justify-end p-2">
+                    <button onclick="closeModal('modalResaBegin');" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="content" class="flex flex-col m-1 justify-center items-center">
+                    <div class="lg:w-full h-96">
+                        <div class="h-auto m-1 rounded">
+                            <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4">
+                                Date de début du séjour
+                            </h3>
+                            <hr>
+                        </div>
+                        <div id="calendarArrival" class="p-4"></div>
+                        <script>
+                            const datePicker = document.getElementById('datepickerArrival');
+                            const calendar = document.getElementById('calendarArrival');
+                            let selectedDate = null;
+                            datePicker.addEventListener('click', function() {
+                                openModal('modalResaBegin');
+                            });
+
+                            function generateCalendar(year, month) {
+                                const months = [
+                                    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                                    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+                                ];
+                                const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+                                const currentDate = new Date();
+                                const currentYear = currentDate.getFullYear();
+                                const currentMonth = currentDate.getMonth();
+                                const currentDay = currentDate.getDate();
+                                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                                let calendarHTML = '<div class="flex justify-between mb-2">' +
+                                                        '<img id="prevMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_left.svg">' +
+                                                        '<div class="text-lg font-semibold text-[--color-kapp] font-bold">' + months[month] + ' ' + year + '</div>' +
+                                                        '<img id="nextMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_right.svg">' +
+                                                   '</div>';
+                                calendarHTML += '<div class="grid grid-cols-7 gap-1">';
+                                for (let day of days) {
+                                    calendarHTML += '<div class="m-1 text-center text-[--color-fgSoft] font-bold">' + day + '</div>';
+                                }
+                                for (let i = 0; i < firstDayOfMonth; i++) {
+                                    calendarHTML += '<div></div>';
+                                }
+                                for (let i = 1; i <= daysInMonth; i++) {
+                                    if (year === currentYear && month === currentMonth && i === currentDay) {
+                                        calendarHTML += '<div class="p-1 text-center text-white cursor-pointer bg-[--color-fgSelected] rounded">' + i + '</div>';
+                                    } else {
+                                        calendarHTML += '<div class="p-1 text-center text-[--color-fgSoft] cursor-pointer hover:bg-sky-100 rounded">' + i + '</div>';
+                                    }
+                                }
+                                calendarHTML += '</div>';
+                                calendar.innerHTML = calendarHTML;
+                                //Clics days
+                                const dayElements = calendar.querySelectorAll('.text-center');
+                                dayElements.forEach(function(dayElement) {
+                                    dayElement.addEventListener('click', function() {
+                                        const selectedDay = parseInt(dayElement.textContent);
+                                        selectedDate = new Date(year, month, selectedDay);
+                                        datePicker.value = formatDate(selectedDate);
+                                        closeModal('modalResaBegin')
+                                    });
+                                });
+                                // Btn prev & next
+                                document.getElementById('prevMonth').addEventListener('click', function() {
+                                    month--;
+                                    if (month < 0) {
+                                        year--;
+                                        month = 11;
+                                    }
+                                    generateCalendar(year, month);
+                                });
+                                document.getElementById('nextMonth').addEventListener('click', function() {
+                                    month++;
+                                    if (month > 11) {
+                                        year++;
+                                        month = 0;
+                                    }
+                                    generateCalendar(year, month);
+                                });
+                            }
+                            //Format date selected
+                            function formatDate(date) {
+                                const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                                return date.toLocaleDateString('fr-FR', options);
+                            }
+                            //Init calendar
+                            const currentDate = new Date();
+                            const currentYear = currentDate.getFullYear();
+                            const currentMonth = currentDate.getMonth();
+                            generateCalendar(currentYear, currentMonth);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL END -->
+        <!-- MODAL BEGIN -->
+        <div id="modalResaEnd" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+            <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
+                <div class="flex justify-end p-2">
+                    <button onclick="closeModal('modalResaEnd');" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="content2" class="flex flex-col m-1 justify-center items-center">
+                    <div class="lg:w-full h-96">
+                        <div class="h-auto m-1 rounded">
+                            <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4">
+                                Date de fin du séjour
+                            </h3>
+                            <hr>
+                        </div>
+                        <div id="calendarDeparture" class="p-4"></div>
+                        <script>
+                            const datePickerDeparture = document.getElementById('datepickerDeparture');
+                            const calendarDeparture = document.getElementById('calendarDeparture');
+                            let selectedDateEnd = null;
+                            datePickerDeparture.addEventListener('click', function() {
+                                openModal('modalResaEnd');
+                            });
+
+                            function generateCalendar(year, month) {
+                                const months = [
+                                    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                                    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+                                ];
+                                const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+                                const currentYear = currentDate.getFullYear();
+                                const currentMonth = currentDate.getMonth();
+                                const currentDay = currentDate.getDate();
+                                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                                let calendarHTML = '<div class="flex justify-between mb-2">' +
+                                                        '<img id="prevMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_left.svg">' +
+                                                        '<div class="text-lg font-semibold text-[--color-kapp] font-bold">' + months[month] + ' ' + year + '</div>' +
+                                                        '<img id="nextMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_right.svg">' +
+                                                    '</div>';
+                                calendarHTML += '<div class="grid grid-cols-7 gap-1">';
+                                for (let day of days) {
+                                    calendarHTML += '<div class="m-1 text-center text-[--color-fgSoft] font-bold">' + day + '</div>';
+                                }
+                                for (let i = 0; i < firstDayOfMonth; i++) {
+                                    calendarHTML += '<div></div>';
+                                }
+                                for (let i = 1; i <= daysInMonth; i++) {
+                                    if (year === currentYear && month === currentMonth && i === currentDay) {
+                                        calendarHTML += '<div class="p-1 text-center text-white cursor-pointer bg-[--color-fgSelected] rounded">' + i + '</div>';
+                                    } else {
+                                        calendarHTML += '<div class="p-1 text-center text-[--color-fgSoft] cursor-pointer hover:bg-sky-100 rounded">' + i + '</div>';
+                                    }
+                                }
+                                calendarHTML += '</div>';
+                                calendarDeparture.innerHTML = calendarHTML;
+                                //Clics days
+                                const dayElements = calendarDeparture.querySelectorAll('.text-center');
+                                dayElements.forEach(function(dayElement) {
+                                    dayElement.addEventListener('click', function() {
+                                        const selectedDayEnd = parseInt(dayElement.textContent);
+                                        selectedDateEnd = new Date(year, month, selectedDayEnd);
+                                        datePickerDeparture.value = formatDate(selectedDateEnd);
+                                        closeModal('modalResaEnd')
+                                    });
+                                });
+                                // Btn prev & next
+                                document.getElementById('prevMonth').addEventListener('click', function() {
+                                    month--;
+                                    if (month < 0) {
+                                        year--;
+                                        month = 11;
+                                    }
+                                    generateCalendar(year, month);
+                                });
+                                document.getElementById('nextMonth').addEventListener('click', function() {
+                                    month++;
+                                    if (month > 11) {
+                                        year++;
+                                        month = 0;
+                                    }
+                                    generateCalendar(year, month);
+                                });
+                            }
+                            //Format date selected
+                            function formatDate(date) {
+                                const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                                return date.toLocaleDateString('fr-FR', options);
+                            }
+                            //Init calendar
+                            generateCalendar(currentYear, currentMonth);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL END -->
+        <script>
+        window.openModal = function(modalId) {
+                document.getElementById(modalId).style.display = 'block'
+                document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+            }
+            window.closeModal = function(modalId) {
+                document.getElementById(modalId).style.display = 'none'
+                document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+            }
+        </script>
+    </div>
+</main>
+</body>
+</html>
