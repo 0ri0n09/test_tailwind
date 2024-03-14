@@ -118,15 +118,6 @@
                                 <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                                 <div class="border-t border-gray-300 flex-1 ml-4"></div>
                             </div>
-                            <!-- Genre -->
-                            <div class="flex items-center mb-4">
-                                <select id="genres" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                    <option disabled selected style="display:none;">Séléctionnez votre genre</option>
-                                    <option value="Mr">Mr</option>
-                                    <option value="Mme">Mme</option>
-                                    <option value="N/C">Non renseigné</option>
-                                </select>
-                            </div>
                             <!-- Nom & Prénom -->
                             <div class="flex mb-4 items-center">
                                 <div class="w-1/2 mr-2">
@@ -138,88 +129,119 @@
                                 </div>
                             </div>
                             <!-- Numéro de téléphone portable-->
-                            <div class="flex mb-4 items-center">
+                            <div class="w-full flex mb-4 items-center">
                                 <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-smartphone.svg" alt="smartphone">
-                                <div class="mr-2 w-15">
-                                    <select class="country-select bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                        <option disabled selected style="display:none;">Indicatif pays</option>
-                                    </select>
+                                <div class="relative group">
+                                    <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+                                        <p id="selected-country" class="text-[--color-fgSoft]">Indicatif pays</p>
+                                        <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+                                    </button>
+                                    <div id="dropdown-menu" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+                                        <div class="space-y-1">
+                                            <input id="search-input" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
-                                <div class="w-1/2 md:w-1/4 ml-2">
-                                    <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro mobile"/>
+                                <p class="mr-[-10px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                <div class="w-1/2 ml-4">
+                                    <input id="numero-autre" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro mobile"/>
                                 </div>
-                                <p class="ml-1 mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                <p class="mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
                             </div>
                             <!-- Numéro de téléphone fixe-->
-                            <div class="flex mb-4 items-center">
-                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-phone.svg" alt="phone">
-                                <div class="mr-2">
-                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                        <option disabled selected style="display:none;">Indicatif pays</option>
-                                    </select>
+                            <div class="w-full flex mb-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-phone.svg" alt="fixe">
+                                <div class="relative group">
+                                    <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+                                        <p id="selected-country2" class="text-[--color-fgSoft]">Indicatif pays</p>
+                                        <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+                                    </button>
+                                    <div id="dropdown-menu2" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+                                        <div class="space-y-1">
+                                            <input id="search-input2" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
-                                <div class="w-1/2 md:w-1/4 ml-2">
-                                    <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro autre"/>
+                                <p class="mr-[-10px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                <div class="w-1/2 ml-4">
+                                    <input id="numero-autre2" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro fixe"/>
                                 </div>
-                                <p class="ml-1 mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                <p class="mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
                             </div>
                             <!-- Numéro de téléphone autre-->
-                            <div class="flex mb-4 items-center">
-                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/walk.png" alt="walker">
-                                <div class="mr-2">
-                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                        <option disabled selected style="display:none;">Indicatif pays</option>
-                                    </select>
+                            <div class="w-full flex mb-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/walk.png" alt="other">
+                                <div class="relative group">
+                                    <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+                                        <p id="selected-country3" class="text-[--color-fgSoft]">Indicatif pays</p>
+                                        <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+                                    </button>
+                                    <div id="dropdown-menu3" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+                                        <div class="space-y-1">
+                                            <input id="search-input3" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
-                                <div class="w-1/2 md:w-1/4 ml-2">
-                                    <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro autre"/>
+                                <p class="mr-[-10px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                <div class="w-1/2 ml-4">
+                                    <input id="numero-autre3" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro autre"/>
                                 </div>
-                                <p class="ml-1 mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                <p class="mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
                             </div>
                             <script>
-                                function fillSelect(selectElement, data) {
+                                function fillSelect(dropdownContent, data) {
                                     data.forEach(country => {
                                         let countryCode = country.cca2;
                                         let countryName = country.translations.fra.common || country.name.common;
-                                        if (countryName && countryName.length > 20) {
-                                            countryName = countryName.substring(0, 20) + '..';
-                                        }
-                                        console.log (countryName);
                                         let countryNum = parseInt(country.idd.root).toString() + parseInt(country.idd.suffixes).toString();
-
-                                        let option = document.createElement('option');
-                                        option.value = countryNum;
-
-                                        let countryFlag = country.flags.png;
-                                        let img = document.createElement('img');
-                                        img.className = 'mr-2';
-                                        img.src = countryFlag;
-                                        img.alt = countryName;
-
-                                        let optionText = document.createTextNode(`(+${countryNum}) ${countryName}`);
-
-                                        option.appendChild(img);
-                                        option.appendChild(optionText);
-
-                                        if (countryCode === 'FR') {
-                                            selectElement.insertBefore(option, selectElement.firstChild);
-                                        } else if (countryNum.length <= 3){
-                                            selectElement.appendChild(option);
+                                        if(countryNum.length <= 3) {
+                                            const option = document.createElement('a');
+                                            option.classList.add('block', 'px-4', 'py-2', 'text-gray-700', 'hover:bg-sky-100', 'active:bg-blue-100', 'cursor-pointer', 'rounded-md');
+                                            option.textContent = `(+${countryNum}) ${countryName}`;
+                                            option.addEventListener('click', () => {
+                                                document.getElementById('selected-country').textContent = countryName;
+                                                document.getElementById('dropdown-menu').classList.add('hidden');
+                                                initDropdown(dropdownButton, dropdownMenu, searchInput);
+                                            });
+                                            dropdownContent.appendChild(option);
                                         }
                                     });
                                 }
-                                fetch('https://restcountries.com/v3.1/all')
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        const selectElements = document.querySelectorAll('.country-select');
-                                        selectElements.forEach(select => {
-                                            fillSelect(select, data);
+
+                                function initDropdown(dropdownButton, dropdownMenu, searchInput) {
+                                    let isOpen = false;
+                                    function toggleDropdown() {
+                                        isOpen = !isOpen;
+                                        dropdownMenu.classList.toggle('hidden', !isOpen);
+                                    }
+                                    dropdownButton.addEventListener('click', toggleDropdown);
+                                    searchInput.addEventListener('input', () => {
+                                        const searchTerm = searchInput.value.toLowerCase();
+                                        const items = dropdownMenu.querySelectorAll('a');
+
+                                        items.forEach((item) => {
+                                            const text = item.textContent.toLowerCase();
+                                            if (text.includes(searchTerm)) {
+                                                item.style.display = 'block';
+                                            } else {
+                                                item.style.display = 'none';
+                                            }
                                         });
-                                    })
-                                    .catch(error => console.error('Erreur lors de la récupération des données :', error));
+                                    });
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        fetch('https://restcountries.com/v3.1/all')
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                const dropdownContent = dropdownMenu.querySelector('.space-y-1');
+                                                fillSelect(dropdownContent, data);
+                                            })
+                                            .catch(error => console.error('Erreur lors de la récupération des données :', error));
+                                    });
+                                }
+                                const dropdownButton = document.querySelector('.dropdown-button');
+                                const dropdownMenu = document.getElementById('dropdown-menu');
+                                const searchInput = document.getElementById('search-input');
+                                initDropdown(dropdownButton, dropdownMenu, searchInput);
                             </script>
                             <!-- Email-->
                             <div class="flex mb-4 items-center">

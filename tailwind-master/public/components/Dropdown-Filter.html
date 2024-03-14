@@ -1,0 +1,75 @@
+<!-- Numéro de téléphone portable-->
+<div class="w-full flex mb-4 items-center">
+    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-smartphone.svg" alt="smartphone">
+    <div class="relative group">
+        <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+            <p id="selected-country" class="text-[--color-fgSoft]">Indicatif pays</p>
+            <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+        </button>
+        <div id="dropdown-menu" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+            <div class="space-y-1">
+                <input id="search-input" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <p class="mr-[-10px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+    <div class="w-1/2 ml-4">
+        <input id="numero-autre" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro mobile"/>
+    </div>
+    <p class="mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
+</div>
+
+<script>
+    function fillSelect(dropdownContent, data) {
+        data.forEach(country => {
+            let countryCode = country.cca2;
+            let countryName = country.translations.fra.common || country.name.common;
+            let countryNum = parseInt(country.idd.root).toString() + parseInt(country.idd.suffixes).toString();
+            if(countryNum.length <= 3) {
+                const option = document.createElement('a');
+                option.classList.add('block', 'px-4', 'py-2', 'text-gray-700', 'hover:bg-sky-100', 'active:bg-blue-100', 'cursor-pointer', 'rounded-md');
+                option.textContent = `(+${countryNum}) ${countryName}`;
+                option.addEventListener('click', () => {
+                    document.getElementById('selected-country').textContent = countryName;
+                    document.getElementById('dropdown-menu').classList.add('hidden');
+                    initDropdown(dropdownButton, dropdownMenu, searchInput);
+                });
+                dropdownContent.appendChild(option);
+            }
+        });
+    }
+    function initDropdown(dropdownButton, dropdownMenu, searchInput) {
+        let isOpen = false;
+        function toggleDropdown() {
+            isOpen = !isOpen;
+            dropdownMenu.classList.toggle('hidden', !isOpen);
+        }
+        dropdownButton.addEventListener('click', toggleDropdown);
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const items = dropdownMenu.querySelectorAll('a');
+
+            items.forEach((item) => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://restcountries.com/v3.1/all')
+                .then(response => response.json())
+                .then(data => {
+                    const dropdownContent = dropdownMenu.querySelector('.space-y-1');
+                    fillSelect(dropdownContent, data);
+                })
+                .catch(error => console.error('Erreur lors de la récupération des données :', error));
+        });
+    }
+    const dropdownButton = document.querySelector('.dropdown-button');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const searchInput = document.getElementById('search-input');
+    initDropdown(dropdownButton, dropdownMenu, searchInput);
+</script>
