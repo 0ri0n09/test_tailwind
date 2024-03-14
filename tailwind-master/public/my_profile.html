@@ -68,35 +68,70 @@
         <div class="p-1">
             <div class="flex items-end justify-center mb-3">
                 <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
-                <h1 class="text-l sm:text-2xl text-[--color-fgSoft] font-bold">Mon profil</h1>
+                <h1 class="text-2xl text-[--color-fgSoft] font-bold">Mon profil</h1>
             </div>
             <hr>
-            <div class="mt-10 flex flex-col justify-center">
+            <div class="mt-20 flex flex-col justify-center">
                 <div class="flex justify-center">
-                    <button class="w-40 h-40 flex flex-col m-2 p-4 border-2 border-[--color-fgSoft] rounded-lg justify-center items-center">
+                    <button class="w-40 h-40 flex flex-col m-2 p-4 border border-gray-300 rounded-lg justify-center items-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
                         <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                         <p class="text-[--color-fgSoft]">Modifier mon profil</p>
                     </button>
-                    <button class="w-40 h-40 flex flex-col m-2 p-4 border-2 border-[--color-fgSoft] rounded-lg justify-center items-center">
+                    <button id="open-modal-password" class="w-40 h-40 flex flex-col m-2 p-4 border border-gray-300 rounded-lg justify-center items-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
                         <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-lock.svg" alt="Lock">
                         <p class="text-[--color-fgSoft]">Changer mon pot de passe</p>
                     </button>
                 </div>
                 <div class="flex justify-center">
-                    <button class="w-40 h-40 flex flex-col m-2 p-4 border-2 border-[--color-fgSoft] rounded-lg justify-center items-center">
+                    <button class="w-40 h-40 flex flex-col m-2 p-4 border border-gray-300 rounded-lg justify-center items-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
                         <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/attach.svg" alt="Paperclip">
                         <p class="text-[--color-fgSoft]">Envoyer un documents</p>
                     </button>
-                    <button class="w-40 h-40 flex flex-col m-2 p-4 border-2 border-[--color-fgSoft] rounded-lg justify-center items-center">
+                    <button class="w-40 h-40 flex flex-col m-2 p-4 border border-gray-300 rounded-lg justify-center items-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
                         <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                         <p class="text-[--color-fgSoft]">Supprimer mon compte</p>
                     </button>
                 </div>
             </div>
         </div>
-
         <!-- CONTENT END -->
     </div>
+
+    <!-- MODAL PASSWORD BEGIN -->
+    <div id="modal-password" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+        <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-md bg-white max-w-md justify-center">
+            <div class="flex justify-end p-2">
+                <button onclick="closeModal('modal-password')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="p-3 pt-0 text-center">
+                    <h1 class="text-2xl text-[--color-kapp] mb-4">Changer mon mot de passe</h1>
+                    <hr class="mb-8">
+                    <h1 class="text-xl text-[--color-kapp] mb-6">Envoyer un lien de réinitialisation dans votre boite mail ?</h1>
+                    <div class="flex justify-between mb-8 mt-6">
+                        <button type="button" onclick="closeModal('modal-password')" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            Annuler
+                        </button>
+                        <button type="button" onclick="closeModal('modal-password')" class="flex items-center text-white border border-lg bg-green-600 hover:bg-green-500 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            Oui, envoyer le mail
+                            <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+                        </button>
+                    </div>
+                    <h4 class="text-l text-gray-600 mb-4">Après avoir cliqué sur le bouton ci-dessus rendez-vous dans votre messagerie pour y trouver le lien de confirmation dans l'email de création de votre compte.</h4>
+                    <h4 class="text-l text-gray-600 italic mb-6">Si l'email n'apparait pas dans votre boite de réception vérifiez dans vos spams.</h4>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- MODAL PASSWORD END -->
+
     <!-- MOBILE FOOTER BEGIN -->
     <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
         <div class="flex justify-between items-center ml-8 mr-8">
@@ -166,6 +201,20 @@
 
             document.getElementById('default-sidebar').style.height = adjustedHeight + 'px';
         }
+    }
+</script>
+<script>
+    document.getElementById('open-modal-password').addEventListener('click', function(event) {
+        openModal('modal-password');
+        event.preventDefault();
+    });
+    window.openModal = function (modalId) {
+        document.getElementById(modalId).style.display = 'block';
+        document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+    }
+    window.closeModal = function (modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
     }
 </script>
 </body>
