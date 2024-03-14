@@ -104,24 +104,24 @@
                 </div>
                 <div class="w-full">
                     <div class="flex items-center w-full">
-                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
                             <span class="text-base text-white font-bold">2</span>
                         </div>
-                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
                     </div>
                     <div class="mt-2 mr-2 ml-[0.2rem]">
-                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-event.svg" alt="calendar">
+                        <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-event.svg" alt="calendar">
                     </div>
                 </div>
                 <div class="w-full">
                     <div class="flex items-center w-full">
-                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
                             <span class="text-base text-white font-bold">3</span>
                         </div>
-                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
                     </div>
                     <div class="mt-2 mr-2 ml-[0.2rem]">
-                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-search.svg" alt="search">
+                        <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-search.svg" alt="search">
                     </div>
                 </div>
                 <div class="w-full">
@@ -140,133 +140,133 @@
         </div>
         <div class="flex flex-col justify-center mb-4">
             <h3 class="text-3xl text-center font-bold text-[--color-fgSelected]">
-                Pour qui ?
+                Résultats de recherche
             </h3>
             <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
-            <h1 class="text-lg text-center text-[--color-fgSoft] opacity-70">Effectuer une réservation par espèce</h1>
-            <div class="flex flex-row justify-center mt-2">
-                <button type="button" class="flex flex-row mr-1 items-center text-[--color-fgSoft] border border-lg border-[--color-fgSoft] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
-                    <img class="w-6 h-6 mr-2 fgSoftSvg" src="icons/dog-face-outline.svg">
-                    Mes chiens
-                </button>
-                <button type="button" class="flex flex-row ml-1 items-center text-[--color-fgSoft] border border-lg border-[--color-fgSoft] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
-                    <img class="w-6 h-6 mr-2 fgSoftSvg" src="icons/cat-face-outline.svg">
-                    Mes chats
-                </button>
-            </div>
+            <h1 class="text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez un logement</h1>
         </div>
-        <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto">
-            <div class="cards-container flex flex-col sm:flex-row flex-wrap">
+        <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto justify-center">
+            <div class="cards-container flex flex-col sm:flex-row flex-wrap m-1 sm:m-4 justify-center">
                 <!-- Card 1 -->
-                <div id="card1" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
-                    <img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
-                    <div class="text-center m-4">
-                        <div class="text-xl font-bold truncate">Saucisse</div>
+                <div id="card1" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <div class="flex flex-row">
+                        <div class="flex flex-col m-3">
+                            <div class="flex flex-col">
+                                <p class="text-base sm:text-xl font-bold">Chambre suite</p>
+                                <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center m-3">
+                            <div class="flex flex-col">
+                                <p class="text-base sm:text-xl font-bold">25.00 €</p>
+                                <p class="text-xs sm:text-lg text-[--color-fgSuccess]">Disponible</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center mt-4">
+                            <div class="flex flex-col">
+                                <img class="img-room w-10 h-10 items-end fgSuccessSvg hidden" src="icons/baseline-check.svg" alt="img check">
+                            </div>
+                        </div>
                     </div>
+                    <img class="w-full h-full object-cover" src="room.jpg" alt="img room">
                 </div>
-                <!-- Card 2 -->
-                <div id="card2" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
-                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/dog-face.png" alt="img">
-                    <div class="text-center m-3">
-                        <div class="text-xl font-bold truncate">NomArallongeTresL</div>
+                <div id="card2" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <div class="flex flex-row">
+                        <div class="flex flex-col m-3">
+                            <div class="flex flex-col">
+                                <p class="text-base sm:text-xl font-bold">Chambre suite</p>
+                                <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center m-3">
+                            <div class="flex flex-col">
+                                <p class="text-base sm:text-xl font-bold">25.00 €</p>
+                                <p class="text-xs sm:text-lg text-[--color-fgSuccess]">Disponible</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center mt-4">
+                            <div class="flex flex-col">
+                                <img class="img-room w-10 h-10 items-end fgSuccessSvg hidden" src="icons/baseline-check.svg" alt="img check">
+                            </div>
+                        </div>
                     </div>
+                    <img class="w-full h-full object-cover" src="room.jpg" alt="img room">
                 </div>
-                <!-- Card 3 -->
-                <div id="card3" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
-                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/cat-face.png" alt="img">
-                    <div class="text-center m-3">
-                        <div class="text-xl font-bold truncate">Pixel</div>
+                <div id="card3" class="m-2 opacity-30 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 shadow">
+                    <div class="flex flex-row">
+                        <div class="flex flex-col m-3">
+                            <div class="flex flex-col">
+                                <p class="text-base sm:text-xl font-bold">Chambre suite</p>
+                                <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center m-3">
+                            <div class="flex flex-col">
+                                <p class="text-base sm:text-xl font-bold">25.00 €</p>
+                                <p class="text-xs sm:text-lg text-[--color-fgDanger]">Indisponible</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center mt-4">
+                            <div class="flex flex-col">
+                                <img class="w-10 h-10 items-end fgDanger" src="icons/cancelled.svg" alt="img check">
+                            </div>
+                        </div>
                     </div>
+                    <img class="w-full h-full object-cover" src="room.jpg" alt="img room">
                 </div>
-                <!-- Card 4 -->
-                <div id="card4" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
-                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/rabbit-face.svg" alt="img">
-                    <div class="text-center m-3">
-                        <div class="text-xl font-bold truncate">Nova</div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div id="card5" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
-                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/horse-face.svg" alt="img">
-                    <div class="text-center m-3">
-                        <div class="text-xl font-bold truncate">Foudre</div>
-                    </div>
-                </div>
-                <!-- Card Add -->
-                <div onclick="openModal('modal');" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
-                    <div class="flex flex-col items-center justify-center w-full h-full">
-                        <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                        <label class="mx-2 text-[--color-fgSoft] font-bold">Ajouter un animal</label>
-                    </div>
-                </div>
-                <!-- Card Add END-->
-                <script>
-                    function handleInteraction(event) {
-                        event.preventDefault();
-                        const card = this;
-                        const isSelected = card.classList.contains('selected');
-                        card.classList.toggle('selected', !isSelected);
-                        if (isSelected) {
-                            card.classList.remove('bg-sky-50');
-                            card.classList.remove('scale-105');
-                            card.classList.add('scale-100');
-                        } else {
-                            card.classList.add('bg-sky-50');
-                            card.classList.add('scale-105');
-                        }
-                    }
-                    const cards = document.querySelectorAll('.card');
-                    cards.forEach(card => {
-                        card.addEventListener('click', handleInteraction);
-                        card.addEventListener('touchstart', handleInteraction);
-                    });
-                </script>
             </div>
+            <script>
+                function toggleImageVisibility(event) {
+                    event.preventDefault();
+                    const card = this.closest('.room');
+                    const isSelected = card.classList.contains('selected');
+                    const checkImage = card.querySelector('.img-room');
+                    const allCards = document.querySelectorAll('.room');
+
+                    if (isSelected) {
+                        allCards.forEach(room => {
+                            room.addEventListener('click', toggleImageVisibility);
+                            room.addEventListener('touchstart', toggleImageVisibility);
+                            room.style.opacity = '1';
+                        });
+                    } else {
+                        allCards.forEach(room => {
+                            if (room !== card) {
+                                room.removeEventListener('click', toggleImageVisibility);
+                                room.removeEventListener('touchstart', toggleImageVisibility);
+                                room.style.opacity = '0.3';
+                            }
+                        });
+                    }
+                    card.classList.toggle('selected', !isSelected);
+                    if (isSelected) {
+                        card.classList.remove('bg-sky-50');
+                        card.classList.remove('scale-105');
+                        card.classList.add('scale-100');
+                        checkImage.classList.add('hidden');
+                    } else {
+                        card.classList.add('bg-sky-50');
+                        card.classList.add('scale-105');
+                        checkImage.classList.remove('hidden');
+                    }
+                }
+                const cards = document.querySelectorAll('.room');
+                cards.forEach(room => {
+                    room.addEventListener('click', toggleImageVisibility);
+                    room.addEventListener('touchstart', toggleImageVisibility);
+                });
+            </script>
         </div>
         <div class="flex justify-between">
-            <button type="button" onclick="location.href='home.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            <button type="button" onclick="location.href='new_resa_step_2.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Retour
             </button>
-            <button type="button" onclick="location.href='new_resa_step_2.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            <button type="button" onclick="location.href='new_resa_step_4.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Suivant
                 <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
             </button>
         </div>
         <!-- CONTENT END -->
-        <!-- MODAL BEGIN -->
-        <div id="modal" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-            <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
-                <div class="flex justify-end p-2">
-                    <button onclick="closeModal('modal');" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div id="content" class="flex justify-center">
-                    <div class="lg:w-full m-1">
-                        <div class="h-auto m-1 rounded border border-red-500">
-                            <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4 mt-2">
-                                Nouvel animal
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            window.openModal = function(modalId) {
-                document.getElementById(modalId).style.display = 'block'
-                document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
-            }
-            window.closeModal = function(modalId) {
-                document.getElementById(modalId).style.display = 'none'
-                document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
-            }
-        </script>
-        <!-- MODAL END -->
     </div>
 </main>
 </body>
