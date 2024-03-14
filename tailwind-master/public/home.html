@@ -70,139 +70,76 @@
     <h1 class="text-2xl text-[--color-fgSoft] font-bold">Chez Diane</h1>
   </div>
   <hr>
-  <div class="mt-4 sm:mt-12 mx-1 justify-left border border-[--color-fgSelected] rounded-lg">
+  <div class="mt-3 sm:mt-12 mx-1 justify-left border border-[--color-fgSelected] rounded-lg">
     <div class="flex m-4 items-center">
       <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/contract.svg" alt="contract">
       <h4 class="sm:text-2xl text-center text-[--color-fgSelected] font-bold">Aperçu de mes réservations en cours</h4>
     </div>
-    <div class="flex flex-col sm:flex-row justify-center">
+    <div class="cards-container flex flex-wrap flex-col-3 lg:flex-row justify-center shadow">
       <!-- RESA CARD BEGIN -->
-      <div>
-        <button class="border rounded-lg m-2 p-4 text-center">
-          <h4 class="text-left font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected]">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-            <p>Prise sur myKookie</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4">38.00 €</p>
-              <p class="text-[--color-fgDanger]">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-      </div>
-      <!-- RESA CARD END -->
-      <!-- RESA CARD BEGIN -->
-      <div>
-        <button class="border rounded-lg m-2 p-4 text-center">
-          <h4 class="text-left font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected]">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-            <p>Prise sur myKookie</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4">38.00 €</p>
-              <p class="text-[--color-fgDanger]">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-      </div>
-      <!-- RESA CARD END -->
-      <!-- RESA CARD BEGIN -->
-      <div>
-        <button class="border rounded-lg m-2 p-4 text-center">
-          <h4 class="text-left font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected]">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-            <p>Prise sur myKookie</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4">38.00 €</p>
-              <p class="text-[--color-fgDanger]">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-      </div>
+      <button class="border border-gray-300 bg-white rounded-lg m-2 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
+        <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
+        <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
+          <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
+          <p>En attente de validation par la pension</p>
+        </div>
+        <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+          <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
+          <p>Prise sur myKookie</p>
+        </div>
+        <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+          <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
+          <p>du 22/02/2024 au 23/02/2024</p>
+        </div>
+        <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+          <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
+          <p>Rebel</p>
+        </div>
+        <div class="items-center mb-2 flex flex-row">
+          <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
+          <span class="text-left">
+            <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
+            <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
+          </span>
+        </div>
+      </button>
       <!-- RESA CARD END -->
     </div>
   </div>
-  <div class="flex flex-col sm:flex-row justify-between between mt-6 sm:mt-10">
-    <div class="mx-1 sm:w-1/2 mr-2 mb-4 border border-[--color-fgSelected] rounded-lg text-center">
-      <div class="flex justify-center items-center">
+  <div class="flex flex-col md:flex-row justify-between between mt-4">
+    <div class="mx-1 sm:w-1/2 border border-[--color-fgSelected] rounded-lg text-center mb-4">
+      <div class="flex flex-col justify-center items-center h-full">
         <img class="w-10 h-10 mt-2 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
         <h4 class="text-lg sm:text-2xl mt-4 text-[--color-fgSelected] font-bold">Promotions en cours</h4>
+        <!-- PROMO CARD BEGIN -->
+        <div class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
+          <h4 class="text-[--color-fgSoft] font-bold mb-4">Promotion des vacances</h4>
+          <div class="flex items-center mb-2 text-[--color-fgSoft] font-bold">
+            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
+            <p>5.00 € sur le séjour</p>
+          </div>
+          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
+            <p>Réservez avant le 15/02/2024</p>
+          </div>
+          <div class="flex items-center text-left text-[--color-fgSoft] font-bold">
+            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
+            <p>Ne manquez pas cette offre pour votre été</p>
+          </div>
+        </div>
+        <!-- PROMO CARD END -->
       </div>
-      <!-- PROMO CARD BEGIN -->
-      <div class="border rounded-lg m-4 p-4 text-center">
-        <h4 class="font-bold mb-4">Promotion des vacances</h4>
-        <div class="flex items-center mb-2">
-          <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-          <p>5.00 € sur le séjour</p>
-        </div>
-        <div class="flex items-center text-left mb-2">
-          <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
-          <p>Réservez avant le 15/02/2024</p>
-        </div>
-        <div class="flex items-center text-left">
-          <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
-          <p>Ne manquez pas cette offre pour votre été</p>
-        </div>
-      </div>
-      <!-- PROMO CARD END -->
     </div>
-    <div class="mx-1 sm:w-1/2 border border-[--color-fgSelected] rounded-lg text-center">
-      <div class="flex justify-center items-center">
+    <div class="mx-1 sm:w-1/2 border border-[--color-fgSelected] rounded-lg text-center mb-4">
+      <div class="flex flex-col justify-center items-center h-full">
         <img class="w-10 h-10 mt-2 mr-2 fgSoftSvg" src="icons/attach.svg" alt="Paperclip">
-        <h4 class="text-lg sm:text-2xl mt-4 text-[--color-fgSelected] font-bold">Envoyer un document</h4>
+        <h4 class="text-lg text-[--color-fgSelected] font-bold sm:text-2xl mt-4 font-bold">Envoyer un document</h4>
+        <button class="border border-gray-300 bg-white rounded-lg m-4 p-4 transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
+          <p class="m-2 text-[--color-fgSoft] font-bold">Envoyez-nous directement des documents comme le carnet de santé de votre animal, Identification I-Cad, Ordonnances etc...</p>
+        </button>
       </div>
-      <button class="border rounded-lg m-4 p-4">
-        <p class="m-2">Envoyez-nous directement des documents comme le carnet de santé de votre animal, Identification I-Cad, Ordonnances etc....</p>
-      </button>
     </div>
   </div>
-
 </div>
 <!-- MOBILE FOOTER BEGIN -->
 <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
@@ -266,9 +203,9 @@
   });
   function adjustSidebarHeight() {
     if (window.innerWidth >= 768) {
-      var windowHeight = window.innerHeight;
-      var footerHeight = document.querySelector('footer').offsetHeight;
-      var adjustedHeight = windowHeight - footerHeight;
+      let windowHeight = window.innerHeight;
+      let footerHeight = document.querySelector('footer').offsetHeight;
+      let adjustedHeight = windowHeight - footerHeight;
 
       document.getElementById('default-sidebar').style.height = adjustedHeight + 'px';
     }
