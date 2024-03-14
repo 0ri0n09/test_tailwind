@@ -124,7 +124,7 @@
                                     <option disabled selected style="display:none;">Séléctionnez votre genre</option>
                                     <option value="Mr">Mr</option>
                                     <option value="Mme">Mme</option>
-                                    <option value="AutreR">Autre</option>
+                                    <option value="N/C">Non renseigné</option>
                                 </select>
                             </div>
                             <!-- Nom & Prénom -->
@@ -132,6 +132,7 @@
                                 <div class="w-1/2 mr-2">
                                     <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
                                 </div>
+                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
                                 <div class="w-1/2 ml-2">
                                     <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
                                 </div>
@@ -139,17 +140,16 @@
                             <!-- Numéro de téléphone portable-->
                             <div class="flex mb-4 items-center">
                                 <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-smartphone.svg" alt="smartphone">
-                                <div class="mr-2">
-                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                <div class="mr-2 w-15">
+                                    <select class="country-select bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
                                         <option disabled selected style="display:none;">Indicatif pays</option>
-                                        <option value="Mr">+33</option>
-                                        <option value="Mme">+99</option>
-                                        <option value="AutreR">+300</option>
                                     </select>
                                 </div>
+                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
                                 <div class="w-1/2 md:w-1/4 ml-2">
                                     <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro mobile"/>
                                 </div>
+                                <p class="ml-1 mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
                             </div>
                             <!-- Numéro de téléphone fixe-->
                             <div class="flex mb-4 items-center">
@@ -157,14 +157,13 @@
                                 <div class="mr-2">
                                     <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
                                         <option disabled selected style="display:none;">Indicatif pays</option>
-                                        <option value="Mr">+33</option>
-                                        <option value="Mme">+99</option>
-                                        <option value="AutreR">+300</option>
                                     </select>
                                 </div>
+                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
                                 <div class="w-1/2 md:w-1/4 ml-2">
                                     <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro autre"/>
                                 </div>
+                                <p class="ml-1 mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
                             </div>
                             <!-- Numéro de téléphone autre-->
                             <div class="flex mb-4 items-center">
@@ -172,15 +171,56 @@
                                 <div class="mr-2">
                                     <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
                                         <option disabled selected style="display:none;">Indicatif pays</option>
-                                        <option value="Mr">+33</option>
-                                        <option value="Mme">+99</option>
-                                        <option value="AutreR">+300</option>
                                     </select>
                                 </div>
+                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
                                 <div class="w-1/2 md:w-1/4 ml-2">
                                     <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro autre"/>
                                 </div>
+                                <p class="ml-1 mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
                             </div>
+                            <script>
+                                function fillSelect(selectElement, data) {
+                                    data.forEach(country => {
+                                        let countryCode = country.cca2;
+                                        let countryName = country.translations.fra.common || country.name.common;
+                                        if (countryName && countryName.length > 20) {
+                                            countryName = countryName.substring(0, 20) + '..';
+                                        }
+                                        console.log (countryName);
+                                        let countryNum = parseInt(country.idd.root).toString() + parseInt(country.idd.suffixes).toString();
+
+                                        let option = document.createElement('option');
+                                        option.value = countryNum;
+
+                                        let countryFlag = country.flags.png;
+                                        let img = document.createElement('img');
+                                        img.className = 'mr-2';
+                                        img.src = countryFlag;
+                                        img.alt = countryName;
+
+                                        let optionText = document.createTextNode(`(+${countryNum}) ${countryName}`);
+
+                                        option.appendChild(img);
+                                        option.appendChild(optionText);
+
+                                        if (countryCode === 'FR') {
+                                            selectElement.insertBefore(option, selectElement.firstChild);
+                                        } else if (countryNum.length <= 3){
+                                            selectElement.appendChild(option);
+                                        }
+                                    });
+                                }
+                                fetch('https://restcountries.com/v3.1/all')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        const selectElements = document.querySelectorAll('.country-select');
+                                        selectElements.forEach(select => {
+                                            fillSelect(select, data);
+                                        });
+                                    })
+                                    .catch(error => console.error('Erreur lors de la récupération des données :', error));
+                            </script>
                             <!-- Email-->
                             <div class="flex mb-4 items-center">
                                 <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg" alt="email">

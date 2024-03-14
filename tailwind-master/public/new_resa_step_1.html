@@ -206,12 +206,12 @@
                         const card = this;
                         const isSelected = card.classList.contains('selected');
                         card.classList.toggle('selected', !isSelected);
-                        if (!isSelected) {
-                            card.classList.add('bg-sky-50');
-                            card.classList.add('scale-105');
-                        } else {
+                        if (isSelected) {
                             card.classList.remove('bg-sky-50');
                             card.classList.remove('scale-105');
+                        } else {
+                            card.classList.add('bg-sky-50');
+                            card.classList.add('scale-105');
                         }
                     }
                     const cards = document.querySelectorAll('.card');
@@ -222,22 +222,11 @@
                 </script>
             </div>
         </div>
-        <div class="flex flex-row justify-center items-center m-4">
-            <img class="w-6 h-6 mr-2 fgSoftSvg" src="icons/crown.svg">
-            <h1 class="text-normal sm:text-lg text-center text-[--color-fgSoft] whitespace-nowrap">Demander un logement privatif</h1>
-            <label for="toggle" class="flex flex-row items-center cursor-pointer select-none ml-2">
-                <div class="relative">
-                    <input type="checkbox" id="toggle" class="peer sr-only"/>
-                    <div class="block h-8 w-14 rounded-full bg-gray-200 peer-checked:bg-[--color-kapp]"></div>
-                    <div class="absolute flex items-center justify-center w-5 h-6 transition bg-white rounded-full dot left-1 top-1 peer-checked:translate-x-7"></div>
-                </div>
-            </label>
-        </div>
         <div class="flex justify-between">
-            <button type="button" onclick="location.href='new_profile_step_2.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            <button type="button" onclick="location.href='home.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Retour
             </button>
-            <button type="button" onclick="location.href='home.html'" class="flex items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            <button type="button" onclick="location.href='new_resa_step_2.html'" class="flex items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Suivant
                 <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
             </button>
