@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <!-- Card Add -->
-                <div onclick="openModal('modal');" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
+                <div onclick="openModal('open-modal');" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
                     <div class="flex flex-col items-center justify-center w-full h-full">
                         <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
                         <p class="mx-2 text-[--color-fgSoft] font-bold">Ajouter un animal</p>
@@ -191,6 +191,10 @@
             </div>
         </div>
         <script>
+            document.getElementById('open-modal').addEventListener('click', function(event) {
+                openModal('modal');
+                event.preventDefault();
+            });
             window.openModal = function(modalId) {
                 document.getElementById(modalId).style.display = 'block'
                 document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
