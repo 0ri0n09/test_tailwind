@@ -42,7 +42,7 @@
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
                     <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
                 </button>
-                <button type="button" onclick="openModal('')" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                <button type="button" onclick="openModal('modalPromo')" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
                     <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
                 </button>
@@ -557,7 +557,66 @@
             </div>
         </div>
     </div>
+    <!-- MODAL PROMO BEGIN -->
+    <button id="open-modal" type="button" class="mb-3">
+        <svg class="h-6 w-6 fgSoftSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256">
+            <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.627 5.373,12 12,12c6.627,0 12,-5.373 12,-12c0,-6.627 -5.373,-12 -12,-12zM16,21h-2v-7h2zM15,11.5c-0.828,0 -1.5,-0.672 -1.5,-1.5c0,-0.828 0.672,-1.5 1.5,-1.5c0.828,0 1.5,0.672 1.5,1.5c0,0.828 -0.672,1.5 -1.5,1.5z"></path></g></g>
+        </svg>
+    </button>
 
+    <div id="modalPromo" class="fixed fixed hidden z-50 sm:inset-0 inset-y-[-3rem] bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+        <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-md bg-white max-w-md">
+            <div class="flex justify-end p-2">
+                <button onclick="closeModal('modalPromo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <img class="w-10 h-10 mt-2 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
+                    <h4 class="text-xl sm:text-2xl mt-4 text-[--color-fgSelected] font-bold">Promotions en cours</h4>
+                </div>
+                <!-- PROMO CARD BEGIN -->
+                <div class="border border-gray-300 bg-white rounded-lg m-2 p-4 text-center shadow">
+                    <h4 class="text-[--color-fgSoft] font-bold mb-4">Promotion des vacances</h4>
+                    <div class="flex items-center mb-2 text-[--color-fgSoft] font-bold">
+                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
+                        <p>5.00 € sur le séjour</p>
+                    </div>
+                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
+                        <p>Réservez avant le 15/02/2024</p>
+                    </div>
+                    <div class="flex items-center text-left text-[--color-fgSoft] font-bold">
+                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
+                        <p>Ne manquez pas cette offre pour votre été</p>
+                    </div>
+                </div>
+                <!-- PROMO CARD END -->
+            </div>
+
+        </div>
+    </div>
+    <!-- MODAL PROMO END -->
+
+    <script>
+    document.getElementById('open-modal').addEventListener('click', function(event) {
+        openModal('modalPromo');
+        event.preventDefault();
+    });
+    window.openModal = function (modalId) {
+        document.getElementById(modalId).style.display = 'block';
+        document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+    }
+    window.closeModal = function (modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+    }
+    </script>
     <!-- MOBILE FOOTER BEGIN
     <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
         <div class="flex justify-between items-center ml-8 mr-8">
