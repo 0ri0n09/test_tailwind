@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <!-- Card Add -->
-                <div onclick="openModal('modal');" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
+                <div onclick="openModal('open-modal');" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
                     <div class="flex flex-col items-center justify-center w-full h-full">
                         <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
                         <p class="mx-2 text-[--color-fgSoft] font-bold">Ajouter un animal</p>
@@ -126,7 +126,7 @@
         <div id="modal" class="fixed fixed hidden z-50 inset-0  bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
             <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
                 <div class="flex justify-end p-2">
-                    <button onclick="closeModal('modal');" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -176,68 +176,6 @@
                                 </div>
                             </div>
                             <!-- STEP BAR END -->
-                            <!-- Infos BEGIN-->
-                            <div class="px-4">
-                                <div class="flex items-center mb-3">
-                                    <div class="border-t border-gray-300 flex-1 mr-4"></div>
-                                    <svg class="w-8 h-8" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                                    <div class="border-t border-gray-300 flex-1 ml-4"></div>
-                                </div>
-                                <!-- Nom -->
-                                <div class="flex mb-4 items-center">
-                                    <div class="w-1/2 mr-2">
-                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
-                                    </div>
-                                </div>
-                                <!-- Genre et espèce -->
-                                <div class="flex mb-4 items-center">
-                                    <div class="mr-2">
-                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                            <option disabled selected style="display:none;">Genre</option>
-                                            <option value="">Mâle</option>
-                                            <option value="">Femelle</option>
-                                        </select>
-                                    </div>
-                                    <div class="mr-2">
-                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                            <option disabled selected style="display:none;">Espèce</option>
-                                            <option value="">Chien</option>
-                                            <option value="">Chat</option>
-                                            <option value="">NAC</option>
-                                            <option value="">Cheval</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- Race -->
-                                <div class="mb-4">
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom de la race"/>
-                                </div>
-                                <!-- N° Puce ou tatouage -->
-                                <div class="flex mb-4 items-center">
-                                    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/collar.svg" alt="Puce" />
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="N° de puce ou tatouage"/>
-                                </div>
-                                <!-- Remarques -->
-                                <div class="flex mb-4 items-center">
-                                    <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="#000000"></path> <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="#000000"></path> <path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44771 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> <path d="M6 18C6 17.4477 6.44772 17 7 17H11C11.5523 17 12 17.4477 12 18C12 18.5523 11.5523 19 11 19H7C6.44772 19 6 18.5523 6 18Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 2.34315 3.34315 1 5 1H19C20.6569 1 22 2.34315 22 4V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V4ZM5 3H19C19.5523 3 20 3.44771 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4C4 3.44772 4.44771 3 5 3Z" fill="#000000"></path> </g></svg>
-                                    <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d'autres informations que vous souhaitez partager avec nous ?"></textarea>
-                                </div>
-                                <!-- Alimentation -->
-                                <div class="flex mb-4 items-center">
-                                    <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="#000000"></path> <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="#000000"></path> <path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44771 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> <path d="M6 18C6 17.4477 6.44772 17 7 17H11C11.5523 17 12 17.4477 12 18C12 18.5523 11.5523 19 11 19H7C6.44772 19 6 18.5523 6 18Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 2.34315 3.34315 1 5 1H19C20.6569 1 22 2.34315 22 4V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V4ZM5 3H19C19.5523 3 20 3.44771 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4C4 3.44772 4.44771 3 5 3Z" fill="#000000"></path> </g></svg>
-                                    <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Dites nous quelles sont ses habitudes alimentaires ou allergie s'il y a lieu ?"></textarea>
-                                </div>
-                                <!-- Traitements -->
-                                <div class="flex mb-4 items-center">
-                                    <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="#000000"></path> <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="#000000"></path> <path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44771 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> <path d="M6 18C6 17.4477 6.44772 17 7 17H11C11.5523 17 12 17.4477 12 18C12 18.5523 11.5523 19 11 19H7C6.44772 19 6 18.5523 6 18Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 2.34315 3.34315 1 5 1H19C20.6569 1 22 2.34315 22 4V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V4ZM5 3H19C19.5523 3 20 3.44771 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4C4 3.44772 4.44771 3 5 3Z" fill="#000000"></path> </g></svg>
-                                    <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Y a t'il un traitement vétérinaire ou administration de médicaments à effectuer ?"></textarea>
-                                </div>
-                            </div>
-                            <!-- Infos END -->
-                            <div class="flex items-center ml-2 mb-2">
-                                <p class="text-xs text-[--color-fgSoft] italic">Les champs obligatoires à remplir sont marqués par</p>
-                                <p class="text-xs text-[--color-fgSoft] text-red-400 font-bold ml-1">*</p>
-                            </div>
                         </div>
                         <div class="flex justify-between m-1">
                             <button type="button" onclick="closeModal('modal')" class="flex items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
@@ -253,6 +191,10 @@
             </div>
         </div>
         <script>
+            document.getElementById('open-modal').addEventListener('click', function(event) {
+                openModal('modal');
+                event.preventDefault();
+            });
             window.openModal = function(modalId) {
                 document.getElementById(modalId).style.display = 'block'
                 document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
