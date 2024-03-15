@@ -71,9 +71,9 @@
                 <h1 class="text-2xl text-[--color-fgSoft] font-bold">Mon profil</h1>
             </div>
             <hr>
-            <div class="mt-20 flex flex-col justify-center">
+            <div class="mt-10 sm:mt-20 flex flex-col justify-center">
                 <div class="flex justify-center">
-                    <button class="w-40 h-40 flex flex-col m-2 p-4 border border-gray-300 rounded-lg justify-center items-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
+                    <button id="open-modal-profile" class="w-40 h-40 flex flex-col m-2 p-4 border border-gray-300 rounded-lg justify-center items-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105">
                         <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
                         <p class="text-[--color-fgSoft]">Modifier mon profil</p>
                     </button>
@@ -98,7 +98,7 @@
     </div>
 
     <!-- MODAL PASSWORD BEGIN -->
-    <div id="modal-password" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+    <div id="modal-password" class="fixed fixed hidden z-50 sm:inset-0 inset-y-[-3rem] bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
         <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-md bg-white max-w-md justify-center">
             <div class="flex justify-end p-2">
                 <button onclick="closeModal('modal-password')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
@@ -131,24 +131,456 @@
     </div>
     <!-- MODAL PASSWORD END -->
 
+    <!-- MODAL EDIT_PROFILE BEGIN -->
+    <div id="modal-profile" class="fixed fixed hidden z-50 sm:inset-0 inset-y-[-3rem] bg-gray-900 bg-opacity-60 overflow-y-auto h-screen w-full px-4 animate__animated animate__fadeIn animate__faster">
+        <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-md bg-white max-w-md justify-center">
+            <div class="flex justify-end p-2">
+                <button onclick="closeModal('modal-profile')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="p-3 pt-0 text-center">
+                    <h1 class="text-2xl text-[--color-kapp] mb-4">Modifier mon profil</h1>
+                    <hr class="mb-3">
+                    <div class="flex justify-center mb-3">
+                        <button type="button" onclick="displayBlockInfos();" class="flex items-center m-2 text-white border border-lg bg-[--color-kapp] hover:bg-cyan-500 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            Mes informations
+                        </button>
+                        <button type="button" onclick="displayBlockUrgence();" class="flex items-center m-2 text-white border border-lg bg-[--color-kapp] hover:bg-cyan-500 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            Contact d'urgence
+                        </button>
+                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const buttonInfos = document.getElementById('buttonInfos');
+                            const buttonUrgence = document.getElementById('buttonUrgence');
+                            const blockInfos = document.getElementById('blockInfos');
+
+                            blockInfos.classList.remove('hidden');
+                            buttonInfos.addEventListener('click', displayBlockInfos);
+                            buttonUrgence.addEventListener('click', displayBlockUrgence);
+                        });
+
+                        function displayBlockInfos() {
+                            const blockUrgence = document.getElementById('blockUrgence');
+                            const blockInfos = document.getElementById('blockInfos');
+                            blockUrgence.classList.add('hidden');
+                            blockInfos.classList.remove('hidden');
+                        }
+
+                        function displayBlockUrgence() {
+                            const blockInfos = document.getElementById('blockInfos');
+                            const blockUrgence = document.getElementById('blockUrgence');
+                            blockInfos.classList.add('hidden');
+                            blockUrgence.classList.remove('hidden');
+                        }
+
+                    </script>
+                    <div id="blockInfos" class="hidden flex justify-center">
+                        <div class="w-full">
+                            <div class="h-auto mb-3 rounded border border-gray-300 shadow">
+                                <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mb-4 mt-2">Mes informations</h3>
+                                <div class="px-4">
+                                    <div class="flex items-center mb-1">
+                                        <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
+                                        <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                    </div>
+                                    <!-- Nom & Prénom -->
+                                    <div class="flex mb-4 items-center">
+                                        <div class="w-1/2 mr-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                                        </div>
+                                        <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                        <div class="w-1/2 ml-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
+                                        </div>
+                                    </div>
+                                    <!-- Numéro de téléphone portable-->
+                                    <div class="w-full flex mb-4 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-smartphone.svg" alt="smartphone">
+                                        <div class="relative group">
+                                            <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+                                                <p id="selected-country" class="text-[--color-fgSoft]">Indicatif pays</p>
+                                                <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+                                            </button>
+                                            <div id="dropdown-menu" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+                                                <div class="space-y-1">
+                                                    <input id="search-input" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="mr-[-10px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                        <div class="w-1/2 ml-4">
+                                            <input id="numero-autre" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro mobile"/>
+                                        </div>
+                                        <p class="mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                    </div>
+                                    <!-- Numéro de téléphone fixe-->
+                                    <div class="w-full flex mb-4 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-phone.svg" alt="fixe">
+                                        <div class="relative group">
+                                            <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+                                                <p id="selected-country2" class="text-[--color-fgSoft]">Indicatif pays</p>
+                                                <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+                                            </button>
+                                            <div id="dropdown-menu2" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+                                                <div class="space-y-1">
+                                                    <input id="search-input2" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="mr-[-10px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                        <div class="w-1/2 ml-4">
+                                            <input id="numero-autre2" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro fixe"/>
+                                        </div>
+                                        <p class="mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                    </div>
+                                    <!-- Numéro de téléphone autre-->
+                                    <div class="w-full flex mb-4 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/walk.png" alt="other">
+                                        <div class="relative group">
+                                            <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+                                                <p id="selected-country3" class="text-[--color-fgSoft]">Indicatif pays</p>
+                                                <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+                                            </button>
+                                            <div id="dropdown-menu3" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+                                                <div class="space-y-1">
+                                                    <input id="search-input3" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="mr-[-10px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                        <div class="w-1/2 ml-4">
+                                            <input id="numero-autre3" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro autre"/>
+                                        </div>
+                                        <p class="mb-5 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                    </div>
+                                    <script>
+                                        function fillSelect(dropdownContent, data) {
+                                            data.forEach(country => {
+                                                let countryCode = country.cca2;
+                                                let countryName = country.translations.fra.common || country.name.common;
+                                                let countryNum = parseInt(country.idd.root).toString() + parseInt(country.idd.suffixes).toString();
+                                                if(countryNum.length <= 3) {
+                                                    const option = document.createElement('a');
+                                                    option.classList.add('block', 'px-4', 'py-2', 'text-gray-700', 'hover:bg-sky-100', 'active:bg-blue-100', 'cursor-pointer', 'rounded-md');
+                                                    option.textContent = `(+${countryNum}) ${countryName}`;
+                                                    option.addEventListener('click', () => {
+                                                        document.getElementById('selected-country').textContent = countryName;
+                                                        document.getElementById('dropdown-menu').classList.add('hidden');
+                                                        initDropdown(dropdownButton, dropdownMenu, searchInput);
+                                                    });
+                                                    dropdownContent.appendChild(option);
+                                                }
+                                            });
+                                        }
+
+                                        function initDropdown(dropdownButton, dropdownMenu, searchInput) {
+                                            let isOpen = false;
+                                            function toggleDropdown() {
+                                                isOpen = !isOpen;
+                                                dropdownMenu.classList.toggle('hidden', !isOpen);
+                                            }
+                                            dropdownButton.addEventListener('click', toggleDropdown);
+                                            searchInput.addEventListener('input', () => {
+                                                const searchTerm = searchInput.value.toLowerCase();
+                                                const items = dropdownMenu.querySelectorAll('a');
+
+                                                items.forEach((item) => {
+                                                    const text = item.textContent.toLowerCase();
+                                                    if (text.includes(searchTerm)) {
+                                                        item.style.display = 'block';
+                                                    } else {
+                                                        item.style.display = 'none';
+                                                    }
+                                                });
+                                            });
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                fetch('https://restcountries.com/v3.1/all')
+                                                    .then(response => response.json())
+                                                    .then(data => {
+                                                        const dropdownContent = dropdownMenu.querySelector('.space-y-1');
+                                                        fillSelect(dropdownContent, data);
+                                                    })
+                                                    .catch(error => console.error('Erreur lors de la récupération des données :', error));
+                                            });
+                                        }
+                                        const dropdownButton = document.querySelector('.dropdown-button');
+                                        const dropdownMenu = document.getElementById('dropdown-menu');
+                                        const searchInput = document.getElementById('search-input');
+                                        initDropdown(dropdownButton, dropdownMenu, searchInput);
+                                    </script>
+                                    <!-- Email-->
+                                    <div class="flex mb-4 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg" alt="email">
+                                        <div class="mr-2">
+                                            <h4 class="text-xl text-[--color-fgSoft] font-bold">monemail@gmail.com</h4>
+                                        </div>
+                                    </div>
+                                    <!-- Adresse -->
+                                    <div class="flex items-center mb-3">
+                                        <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                        <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-location_on.svg" alt="location">
+                                        <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Adresse"/>
+                                    </div>
+                                    <!-- Complément d'adresse -->
+                                    <div class="mb-4">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'adresse"/>
+                                    </div>
+                                    <!-- Code postal & Ville -->
+                                    <div class="flex mb-4">
+                                        <div class="w-1/2 mr-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postal"/>
+                                        </div>
+                                        <div class="w-full ml-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Ville"/>
+                                        </div>
+                                    </div>
+                                    <!-- Pays -->
+                                    <div class="mb-4">
+                                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Pays"/>
+                                    </div>
+                                </div>
+                                <div class="flex items-center ml-2 mb-2">
+                                    <p class="text-xs text-[--color-fgSoft] italic">Les champs obligatoires à remplir sont marqués par</p>
+                                    <p class="text-xs text-[--color-fgSoft] text-red-400 font-bold ml-1">*</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="blockUrgence" class="hidden flex justify-center">
+                        <div class="w-full">
+                            <div class="h-auto mb-3 rounded border border-gray-300 shadow">
+                                <div class="flex flex-row justify-center mt-4 mb-1">
+                                    <h3 class="mr-1 text-xl text-center font-bold text-[--color-fgSoft] mt-2">Contact d'urgence</h3>
+                                    <button id="tip" type="button" class="mb-3">
+                                        <svg class="h-6 w-6 fgSoftSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256">
+                                            <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.627 5.373,12 12,12c6.627,0 12,-5.373 12,-12c0,-6.627 -5.373,-12 -12,-12zM16,21h-2v-7h2zM15,11.5c-0.828,0 -1.5,-0.672 -1.5,-1.5c0,-0.828 0.672,-1.5 1.5,-1.5c0.828,0 1.5,0.672 1.5,1.5c0,0.828 -0.672,1.5 -1.5,1.5z"></path></g></g>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="px-4">
+                                    <div class="flex items-center mb-1">
+                                        <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                        <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
+                                        <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                    </div>
+                                    <!-- Nom & Prénom -->
+                                    <div class="flex mb-4 items-center">
+                                        <div class="w-1/2 mr-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                                        </div>
+                                        <div class="w-1/2 ml-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
+                                        </div>
+                                    </div>
+                                    <!-- Numéro de téléphone portable-->
+                                    <div class="w-full flex mb-4 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-smartphone.svg" alt="smartphone">
+                                        <div class="relative group">
+                                            <button class="dropdown-button flex flex-row p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 outline-none inline-block">
+                                                <p id="selected-country-urgence" class="text-[--color-fgSoft]">Indicatif pays</p>
+                                                <img class="w-5 h-5 fgSoftSvg" src="icons/baseline-keyboard_arrow_down.svg">
+                                            </button>
+                                            <div id="dropdown-menu-urgence" class="ml-[-0.8rem] z-50 hidden absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 border-2 border-[--color-kapp] shadow overflow-y-auto max-h-96">
+                                                <div class="space-y-1">
+                                                    <input id="search-input-urgence" class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-400 focus:outline-none" type="text" placeholder="Rechercher..." autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-1/2 ml-4">
+                                            <input id="numero-autre-urgence" type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Numéro mobile"/>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        function fillSelect(dropdownContent, data) {
+                                            data.forEach(country => {
+                                                let countryCode = country.cca2;
+                                                let countryName = country.translations.fra.common || country.name.common;
+                                                let countryNum = parseInt(country.idd.root).toString() + parseInt(country.idd.suffixes).toString();
+                                                if(countryNum.length <= 3) {
+                                                    const option = document.createElement('a');
+                                                    option.classList.add('block', 'px-4', 'py-2', 'text-gray-700', 'hover:bg-sky-100', 'active:bg-blue-100', 'cursor-pointer', 'rounded-md');
+                                                    option.textContent = `(+${countryNum}) ${countryName}`;
+                                                    option.addEventListener('click', () => {
+                                                        document.getElementById('selected-country').textContent = countryName;
+                                                        document.getElementById('dropdown-menu').classList.add('hidden');
+                                                        initDropdown(dropdownButton, dropdownMenu, searchInput);
+                                                    });
+                                                    dropdownContent.appendChild(option);
+                                                }
+                                            });
+                                        }
+
+                                        function initDropdown(dropdownButton, dropdownMenu, searchInput) {
+                                            let isOpen = false;
+                                            function toggleDropdown() {
+                                                isOpen = !isOpen;
+                                                dropdownMenu.classList.toggle('hidden', !isOpen);
+                                            }
+                                            dropdownButton.addEventListener('click', toggleDropdown);
+                                            searchInput.addEventListener('input', () => {
+                                                const searchTerm = searchInput.value.toLowerCase();
+                                                const items = dropdownMenu.querySelectorAll('a');
+
+                                                items.forEach((item) => {
+                                                    const text = item.textContent.toLowerCase();
+                                                    if (text.includes(searchTerm)) {
+                                                        item.style.display = 'block';
+                                                    } else {
+                                                        item.style.display = 'none';
+                                                    }
+                                                });
+                                            });
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                fetch('https://restcountries.com/v3.1/all')
+                                                    .then(response => response.json())
+                                                    .then(data => {
+                                                        const dropdownContent = dropdownMenu.querySelector('.space-y-1');
+                                                        fillSelect(dropdownContent, data);
+                                                    })
+                                                    .catch(error => console.error('Erreur lors de la récupération des données :', error));
+                                            });
+                                        }
+                                        const dropdownButton = document.querySelector('.dropdown-button');
+                                        const dropdownMenu = document.getElementById('dropdown-menu');
+                                        const searchInput = document.getElementById('search-input');
+                                        initDropdown(dropdownButton, dropdownMenu, searchInput);
+                                    </script>
+                                    <!-- Adresse -->
+                                    <div class="flex items-center mb-3">
+                                        <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                        <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-location_on.svg" alt="location">
+                                        <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Adresse"/>
+                                    </div>
+                                    <!-- Complément d'adresse -->
+                                    <div class="mb-4">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'adresse"/>
+                                    </div>
+                                    <!-- Code postal & Ville -->
+                                    <div class="flex mb-4">
+                                        <div class="w-1/2 mr-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postal"/>
+                                        </div>
+                                        <div class="w-full ml-2">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Ville"/>
+                                        </div>
+                                    </div>
+                                    <!-- Pays -->
+                                    <div class="mb-4">
+                                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Pays"/>
+                                    </div>
+                                    <!-- Remarques -->
+                                    <div class="flex mb-4 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Remarque ..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="flex items-center ml-2 mb-2">
+                                    <p class="text-xs text-[--color-fgSoft] italic">Les champs obligatoires à remplir sont marqués par</p>
+                                    <p class="text-xs text-[--color-fgSoft] text-red-400 font-bold ml-1">*</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button type="button" onclick="closeModal('modal-profile')" class="flex items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            Annuler
+                        </button>
+                        <button type="button" onclick="closeModal('modal-profile')" class="flex items-center text-white border border-lg bg-green-500 hover:bg-green-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            Enregistrer mon profil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL EDIT_PROFILE END -->
+
+    <!-- MODAL TIP BEGIN -->
+    <div id="modalTip" class="fixed fixed hidden z-50 inset-y-[-3rem] bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+        <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-md bg-white max-w-md">
+            <div class="flex justify-end p-2">
+                <button onclick="closeModal('modalTip')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 pt-0 text-center">
+                <h1 class="text-2xl text-[--color-kapp] mb-4">Important</h1>
+                <hr class="mb-8">
+                <h4 class="text-l text-gray-600 mb-6">Il est important et obligatoire de renseigner un contact d'urgence pour un séjour en pension pour animaux pour plusieurs raisons</h4>
+                <h4 class="text-l text-gray-600 mb-4">En cas d'urgence médicale :</h4>
+                <ul class="list-disc text-sm text-gray-600 mb-4 text-left">
+                    <li>Si votre animal a un problème de santé grave pendant son séjour, la pension aura besoin de vous contacter rapidement pour obtenir votre autorisation pour des soins vétérinaires.</li>
+                    <li>Si vous ne pouvez pas être joint, le contact d'urgence pourra prendre les décisions nécessaires pour le bien-être de votre animal.</li>
+                </ul>
+                <h4 class="text-l text-gray-600 mb-4">En cas de problème de comportement :</h4>
+                <ul class="list-disc text-sm text-gray-600 mb-4 text-left">
+                    <li>Si votre animal a des problèmes de comportement pendant son séjour, la pension peut avoir besoin de vous contacter pour obtenir des conseils ou de l'aide.</li>
+                    <li>Le contact d'urgence peut également venir chercher votre animal si la pension ne peut pas le gérer.</li>
+                </ul>
+                <h4 class="text-l text-gray-600 mb-4">En cas d'imprévu :</h4>
+                <ul class="list-disc text-sm text-gray-600 mb-4 text-left">
+                    <li>Si vous êtes en retard pour venir chercher votre animal, la pension aura besoin de vous contacter pour savoir quoi faire.</li>
+                    <li>Le contact d'urgence peut venir chercher votre animal si vous ne pouvez pas le faire vous-même.</li>
+                </ul>
+                <h4 class="text-l text-gray-600 mb-4">Pour la tranquilité d'esprit :</h4>
+                <ul class="list-disc text-sm text-gray-600 mb-4 text-left">
+                    <li>Savoir qu'il y a quelqu'un qui peut prendre soin de votre animal en cas d'urgence vous apportera une grande tranquillité d'esprit.</li>
+                    <li>Cela permettra également à la pension de se concentrer sur le bien-être de votre animal sans avoir à se soucier de vous contacter en cas de problème.</li>
+                </ul>
+                <h4 class="text-l text-gray-600 mb-4">Voici quelques conseils pour choisir un contact d'urgence :</h4>
+                <ul class="list-disc text-sm text-gray-600 mb-4 text-left">
+                    <li>Choisissez quelqu'un qui est fiable et qui peut être facilement joint.</li>
+                    <li>Assurez-vous que la personne est à l'aise avec les animaux et qu'elle est capable de prendre des décisions en cas d'urgence.</li>
+                    <li>Donnez à la personne toutes les informations nécessaires sur votre animal, y compris ses besoins médicaux et ses problèmes de comportement.</li>
+                    <p class="text-l text-gray-600 mb-4 mt-4">En renseignant un contact d'urgence pour un séjour en pension pour animaux, vous vous assurez que votre animal sera bien pris en charge en cas de problème.</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- MOBILE FOOTER BEGIN -->
     <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
         <div class="flex justify-between items-center ml-8 mr-8">
             <button type="button" onclick="window.location='home.html'" class="">
                 <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
             </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="window.location='new_resa_step_1.html'" class="">
                 <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-room_service.svg" alt="Reservation">
             </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="window.location='my_reservations.html'" class="">
                 <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/contract.svg" alt="Contract">
             </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="openModal('')" class="">
                 <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
             </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="window.location='my_pets.html'" class="">
                 <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-pets.svg" alt="Pet">
             </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="window.location='my_profile.html'" class="">
                 <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-person.svg" alt="Profile">
             </button>
@@ -203,8 +635,16 @@
     }
 </script>
 <script>
+    document.getElementById('tip').addEventListener('click', function(event) {
+        openModal('modalTip');
+        event.preventDefault();
+    });
     document.getElementById('open-modal-password').addEventListener('click', function(event) {
         openModal('modal-password');
+        event.preventDefault();
+    });
+    document.getElementById('open-modal-profile').addEventListener('click', function(event) {
+        openModal('modal-profile');
         event.preventDefault();
     });
     window.openModal = function (modalId) {
