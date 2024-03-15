@@ -1,0 +1,71 @@
+<div class="flex flex-row justify-center">
+    <div class="mx-6 md:mx-24 relative m-8 justify-center text-center">
+        <input id="time-input-1" type="text" class="w-full md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none shadow" placeholder="HH:MM">
+        <button class="absolute right-0 top-0 h-full px-3 time-picker-toggle">
+            <img class="h-5 w-5 fgSoftSvg" src="icons/time_start.png">
+        </button>
+        <div class="hidden absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10 shadow time-picker" data-time-input-id="time-input-1">
+            <div class="p-2 flex justify-between">
+                <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
+                <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
+            </div>
+            <div class="p-2 flex justify-between">
+                <button class="px-4 py-2 bg-white rounded-lg text-[--color-fgSelected] border border-[--color-fgSelected] hover:bg-[--color-fgSelected] hover:text-white time-picker-cancel">Annuler</button>
+                <button class="px-4 py-2 mr-2 bg-green-600 hover:bg-green-500 text-white rounded-lg time-picker-ok">OK</button>
+            </div>
+        </div>
+    </div>
+    <div class="mx-6 md:mx-24 relative m-8 justify-center text-center">
+        <input id="time-input-2" type="text" class="w-full md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none shadow" placeholder="HH:MM">
+        <button class="absolute right-0 top-0 h-full px-3 time-picker-toggle">
+            <img class="h-5 w-5 fgSoftSvg" src="icons/time_start.png">
+        </button>
+        <div class="hidden absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10 shadow time-picker" data-time-input-id="time-input-2">
+            <div class="p-2 flex justify-between">
+                <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
+                <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
+            </div>
+            <div class="p-2 flex justify-between">
+                <button class="px-4 py-2 bg-white rounded-lg text-[--color-fgSelected] border border-[--color-fgSelected] hover:bg-[--color-fgSelected] hover:text-white time-picker-cancel">Annuler</button>
+                <button class="px-4 py-2 mr-2 bg-green-600 hover:bg-green-500 text-white rounded-lg time-picker-ok">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const timePickerToggles = document.querySelectorAll('.time-picker-toggle');
+        const timePickers = document.querySelectorAll('.time-picker');
+        timePickerToggles.forEach((toggle, index) => {
+            toggle.addEventListener('click', function() {
+                timePickers[index].classList.toggle('hidden');
+            });
+        });
+        timePickers.forEach(picker => {
+            const hoursInput = picker.querySelector('.hours-input');
+            const minutesInput = picker.querySelector('.minutes-input');
+            const timePickerOk = picker.querySelector('.time-picker-ok');
+            const timePickerCancel = picker.querySelector('.time-picker-cancel');
+            const timeInputId = picker.dataset.timeInputId;
+            const timeInput = document.getElementById(timeInputId);
+
+            timePickerOk.addEventListener('click', function() {
+                const hours = hoursInput.value.padStart(2, '0');
+                const minutes = minutesInput.value.padStart(2, '0');
+                updateTimeInput(timeInput, hours, minutes);
+                picker.classList.add('hidden');
+            });
+            timePickerCancel.addEventListener('click', function() {
+                picker.classList.add('hidden');
+            });
+            [hoursInput, minutesInput].forEach(input => {
+                input.addEventListener('input', function() {
+                    this.value = this.value.replace(/\D/g, '').slice(0, 2);
+                });
+            });
+        });
+        function updateTimeInput(timeInput, hours, minutes) {
+            timeInput.value = `${hours}:${minutes}`;
+        }
+    });
+</script>
