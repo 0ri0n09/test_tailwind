@@ -185,8 +185,8 @@
         <!-- CONTENT END -->
 
         <!-- MODAL BEGIN -->
-        <div id="modal" class="fixed fixed hidden z-50 sm:inset-0 inset-y-[-3rem] bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-            <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
+        <div id="modal" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-screen w-full px-4 animate__animated animate__fadeIn animate__faster">
+            <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-md bg-white max-w-md justify-center">
                 <div class="flex justify-end p-2">
                     <button onclick="closeModal('modal');" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -196,14 +196,15 @@
                         </svg>
                     </button>
                 </div>
-                <div id="content" class="flex justify-center">
-                    <div class="lg:w-full m-1">
+                <div class="modal-content">
+                    <div class="p-3 pt-0 text-center">
                         <div class="h-auto m-1 rounded">
-                            <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4 mt-2">
+                            <h3 class="text-2xl text-center font-bold text-[--color-kapp] mb-4 mt-2">
                                 Nouvel animal
                             </h3>
+
                             <!-- STEP BAR BEGIN -->
-                            <div class="flex items-start max-w-screen-lg mx-auto mb-8 mt-4">
+                            <div class="flex items-start max-w-screen-lg mx-auto mb-4 mt-4">
                                 <div class="w-full">
                                     <div class="flex items-center w-full">
                                         <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
@@ -211,8 +212,8 @@
                                         </div>
                                         <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
                                     </div>
-                                    <div class="mt-2 mr-2">
-                                        <h6 class="text-base font-bold text-[--color-kapp] ml-[-0.4rem]">Profil</h6>
+                                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                                        <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-info.svg" alt="infos">
                                     </div>
                                 </div>
                                 <div class="w-full">
@@ -222,90 +223,297 @@
                                         </div>
                                         <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
                                     </div>
-                                    <div class="mt-2 mr-4">
-                                        <h6 class="text-base font-bold text-gray-300 ml-[-3rem]">Contact d'urgence</h6>
+                                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/sterilization.svg" alt="vaccin">
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="flex items-center">
+                                <div class="w-full">
+                                    <div class="flex items-center w-full">
                                         <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
                                             <span class="text-base text-white font-bold">3</span>
                                         </div>
+                                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
                                     </div>
-                                    <div class="mt-2">
-                                        <h6 class="text-base font-bold text-gray-300 ml-[-1rem]">Animaux</h6>
+                                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/veto.svg" alt="veto">
                                     </div>
                                 </div>
                             </div>
                             <!-- STEP BAR END -->
+
                             <!-- Infos BEGIN-->
-                            <div class="px-4">
-                                <div class="flex items-center mb-3">
-                                    <div class="border-t border-gray-300 flex-1 mr-4"></div>
-                                    <svg class="w-8 h-8" style="fill: var(--color-fgSoft)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                                    <div class="border-t border-gray-300 flex-1 ml-4"></div>
-                                </div>
-                                <!-- Nom -->
-                                <div class="flex mb-4 items-center">
-                                    <div class="w-1/2 mr-2">
-                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                            <div id="blockInfos" class="hidden flex">
+                                <div class="w-full">
+                                    <div class="h-auto mb-3 rounded border border-gray-300 shadow">
+                                        <div class="flex flex-row justify-center mt-4 mb-1">
+                                            <h3 class="mr-1 text-xl text-center font-bold text-[--color-fgSoft] mt-2">Informations de l'animal</h3>
+                                        </div>
+                                        <div class="px-4">
+                                            <div class="flex items-center mb-1">
+                                                <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                                <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-info.svg" alt="infos">
+                                                <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                            </div>
+                                            <!-- Nom -->
+                                            <div class="flex mb-4 items-center">
+                                                <div class="w-full mr-2">
+                                                    <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                                                </div>
+                                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                            </div>
+                                            <!-- Genre et espèce -->
+                                            <div class="flex mb-4 items-center">
+                                                <div class="mr-2">
+                                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                                        <option disabled selected style="display:none;">Genre</option>
+                                                        <option value="">Mâle</option>
+                                                        <option value="">Femelle</option>
+                                                    </select>
+                                                </div>
+                                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                                <div class="mr-2">
+                                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                                        <option disabled selected style="display:none;">Espèce</option>
+                                                        <option value="">Chien</option>
+                                                        <option value="">Chat</option>
+                                                        <option value="">NAC</option>
+                                                        <option value="">Cheval</option>
+                                                    </select>
+                                                </div>
+                                                <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                            </div>
+                                            <!-- Nom de la race-->
+                                            <div class="flex mb-4 items-center">
+                                                <div class="w-full mr-2">
+                                                    <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom de la race"/>
+                                                </div>
+                                            </div>
+                                            <!-- N° Puce ou tatouage -->
+                                            <div class="w-11/12 flex mb-4 items-center">
+                                                <div class="w-full mr-2 flex flex-row items-center">
+                                                    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/collar.svg" alt="Puce" />
+                                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="N° de puce ou tatouage"/>
+                                                </div>
+                                            </div>
+                                            <!-- Date de naissance & poids -->
+                                            <div class="flex mb-4">
+                                                <div class="flex flex-row w-full mr-2 items-center">
+                                                    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/age.svg" alt="age" />
+                                                    <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Date de naissance"/>
+                                                </div>
+                                                <div class="flex flex-row w-1/2 ml-2 items-center">
+                                                    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/weight.svg" alt="weight" />
+                                                    <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Poids"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Sterilisé -->
+                                        <div class="flex mb-4 ml-4 items-center">
+                                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/sterilization.svg" alt="sterilization" />
+                                            <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                                <option disabled selected style="display:none;">Stérilisé</option>
+                                                <option value="">Non renseigné</option>
+                                                <option value="">Oui</option>
+                                                <option value="">Non</option>
+                                            </select>
+                                            <p class="ml-[+1px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                        </div>
+                                        <!-- Copains-copines -->
+                                        <div class="flex mb-4 ml-4 items-center">
+                                            <div class="w-full flex flex-row items-center">
+                                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-warning.svg" alt="warning" />
+                                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                                    <option disabled selected style="display:none;">Copains-copines</option>
+                                                    <option value="">Non renseigné</option>
+                                                    <option value="">Ok copains-copines</option>
+                                                    <option value="">Ok copains - Pas ok copines</option>
+                                                    <option value="">Pas ok copains - Ok copines</option>
+                                                    <option value="">Pas ok copains-copines</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- Remarques -->
+                                        <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                            <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                                        </div>
+                                        <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/food.svg" alt="food">
+                                            <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Dites nous quelles sont ses habitudes alimentaires ou allergie s’il y a lieu ?"></textarea>
+                                        </div>
+                                        <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/pill.svg" alt="pill">
+                                            <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Y a t il un traitement vétérinaire ou administration de médicaments à effectuer ?"></textarea>
+                                        </div>
+                                        <div class="flex items-center ml-2 mb-2">
+                                            <p class="text-xs text-[--color-fgSoft] italic">Les champs obligatoires à remplir sont marqués par</p>
+                                            <p class="text-xs text-[--color-fgSoft] text-red-400 font-bold ml-1">*</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- Genre et espèce -->
-                                <div class="flex mb-4 items-center">
-                                    <div class="mr-2">
-                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                            <option disabled selected style="display:none;">Genre</option>
-                                            <option value="">Mâle</option>
-                                            <option value="">Femelle</option>
-                                        </select>
-                                    </div>
-                                    <div class="mr-2">
-                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                            <option disabled selected style="display:none;">Espèce</option>
-                                            <option value="">Chien</option>
-                                            <option value="">Chat</option>
-                                            <option value="">NAC</option>
-                                            <option value="">Cheval</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- Race -->
-                                <div class="mb-4">
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom de la race"/>
-                                </div>
-                                <!-- N° Puce ou tatouage -->
-                                <div class="flex mb-4 items-center">
-                                    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/collar.svg" alt="Puce" />
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="N° de puce ou tatouage"/>
-                                </div>
-                                <!-- Remarques -->
-                                <div class="flex mb-4 items-center">
-                                    <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="#000000"></path> <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="#000000"></path> <path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44771 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> <path d="M6 18C6 17.4477 6.44772 17 7 17H11C11.5523 17 12 17.4477 12 18C12 18.5523 11.5523 19 11 19H7C6.44772 19 6 18.5523 6 18Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 2.34315 3.34315 1 5 1H19C20.6569 1 22 2.34315 22 4V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V4ZM5 3H19C19.5523 3 20 3.44771 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4C4 3.44772 4.44771 3 5 3Z" fill="#000000"></path> </g></svg>
-                                    <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d'autres informations que vous souhaitez partager avec nous ?"></textarea>
-                                </div>
-                                <!-- Alimentation -->
-                                <div class="flex mb-4 items-center">
-                                    <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="#000000"></path> <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="#000000"></path> <path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44771 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> <path d="M6 18C6 17.4477 6.44772 17 7 17H11C11.5523 17 12 17.4477 12 18C12 18.5523 11.5523 19 11 19H7C6.44772 19 6 18.5523 6 18Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 2.34315 3.34315 1 5 1H19C20.6569 1 22 2.34315 22 4V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V4ZM5 3H19C19.5523 3 20 3.44771 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4C4 3.44772 4.44771 3 5 3Z" fill="#000000"></path> </g></svg>
-                                    <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Dites nous quelles sont ses habitudes alimentaires ou allergie s'il y a lieu ?"></textarea>
-                                </div>
-                                <!-- Traitements -->
-                                <div class="flex mb-4 items-center">
-                                    <svg class="w-8 h-8 mr-2" style="fill: var(--color-fgSoft)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="#000000"></path> <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="#000000"></path> <path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44771 15 7 15H17C17.5523 15 18 14.5523 18 14C18 13.4477 17.5523 13 17 13H7Z" fill="#000000"></path> <path d="M6 18C6 17.4477 6.44772 17 7 17H11C11.5523 17 12 17.4477 12 18C12 18.5523 11.5523 19 11 19H7C6.44772 19 6 18.5523 6 18Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 2.34315 3.34315 1 5 1H19C20.6569 1 22 2.34315 22 4V20C22 21.6569 20.6569 23 19 23H5C3.34315 23 2 21.6569 2 20V4ZM5 3H19C19.5523 3 20 3.44771 20 4V20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V4C4 3.44772 4.44771 3 5 3Z" fill="#000000"></path> </g></svg>
-                                    <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Y a t'il un traitement vétérinaire ou administration de médicaments à effectuer ?"></textarea>
                                 </div>
                             </div>
                             <!-- Infos END -->
-                            <div class="flex items-center ml-2 mb-2">
-                                <p class="text-xs text-[--color-fgSoft] italic">Les champs obligatoires à remplir sont marqués par</p>
-                                <p class="text-xs text-[--color-fgSoft] text-red-400 font-bold ml-1">*</p>
+
+                            <!-- Vaccins BEGIN-->
+                            <div id="blockVaccines" class="hidden flex">
+                                <div class="w-full">
+                                    <div class="h-auto mb-3 rounded border border-gray-300 shadow">
+                                        <div class="flex flex-row justify-center mt-4 mb-1">
+                                            <h3 class="mr-1 text-xl text-center font-bold text-[--color-fgSoft] mt-2">Vaccins de l'animal</h3>
+                                        </div>
+                                        <div class="px-4 mt-2">
+                                            <div class="w-full flex flex-col mb-4 items-center justify-center">
+                                                <!-- CHPPIL -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">CHPPIL</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Parvovirose -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Parvovirose</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Maladie de Carré : -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Maladie de Carré</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Maladie de Rubarth : -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Maladie de Rubarth</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Leptospirose -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Leptospirose</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Toux du chenil -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Toux du chenil</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Leishmaniose -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Leishmaniose</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Rage -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Rage</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Vermifuge -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Vermifuge</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                                <!-- Parasite Externe -->
+                                                <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                                    <p class="font-bold text-[--color-fgSoft] text-base">Parasite Externe</p>
+                                                    <div class="text-center my-2 sm:my-1 mx-2">
+                                                        <input type="text" readonly class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- Vaccins END -->
+
+                            <!-- Veto BEGIN -->
+                            <div id="blockVeto" class="w-full">
+                                <div class="h-auto mb-3 rounded border border-gray-300 shadow">
+                                    <div class="ml-4">
+                                        <div class="flex flex-row justify-center mt-4 mb-4">
+                                            <h3 class="mr-1 text-xl text-center font-bold text-[--color-fgSoft] mt-2">Informations de l'animal</h3>
+                                        </div>
+                                        <div class="w-10/12 flex flex-row mb-4 items-center">
+                                            <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/home.svg">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Clinique"/>
+                                        </div>
+                                        <div class="flex items-center mb-1">
+                                            <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                            <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-info.svg" alt="infos">
+                                            <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                        </div>
+                                        <!-- Nom -->
+                                        <div class="w-10/12 flex flex-row mb-4 items-center">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                                        </div>
+                                        <!-- Prénom -->
+                                        <div class="w-10/12 flex flex-row mb-4 items-center">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
+                                        </div>
+                                        <!-- Email -->
+                                        <div class="w-10/12 flex flex-row mb-4 items-center">
+                                            <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Email"/>
+                                        </div>
+                                        <!-- Addresse -->
+                                        <div class="flex items-center mb-1">
+                                            <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                            <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-location_on.svg" alt="location">
+                                            <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                        </div>
+                                        <!-- Addresse -->
+                                        <div class="w-10/12 flex flex-row mb-4 mr-2 items-center">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Addresse"/>
+                                        </div>
+                                        <!-- Compl -->
+                                        <div class="w-10/12  flex flex-row mb-4 items-center">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'addresse"/>
+                                        </div>
+                                        <!-- Code postale -->
+                                        <div class="w-1/3  flex flex-row mb-4 items-center">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postale"/>
+                                        </div>
+                                        <!-- Ville -->
+                                        <div class="w-10/12 flex flex-row mb-4 items-center">
+                                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Ville"/>
+                                        </div>
+                                        <!-- Pays -->
+                                        <div class="w-1/2  flex flex-row mb-4 items-center">
+                                            <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                                <option disabled selected style="display:none;">Sélectionnez votre pays</option>
+                                                <option value="">France</option>
+                                                <option value="">Belgique</option>
+                                            </select>
+                                        </div>
+                                        <!-- Remarque -->
+                                        <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                            <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Veto END -->
                         </div>
                         <div class="flex justify-between m-1">
-                            <button type="button" onclick="closeModal('modal')" class="flex items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            <button type="button" class="flex items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                                 Annuler
                             </button>
-                            <button type="button" onclick="location.href='new_resa_step_2.html'" class="flex items-center text-white border border-lg bg-[--color-bgClickable] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                            <button type="button" class="flex items-center text-white border border-lg bg-[--color-bgClickable] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                                 Suivant
                                 <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="arrow-right">
                             </button>
@@ -327,5 +535,89 @@
         <!-- MODAL END -->
     </div>
 </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const datePicker = document.getElementById('datepickerArrival');
+        const calendar = document.getElementById('calendarArrival');
+        let selectedDate = null;
+        datePicker.addEventListener('click', function () {
+            openModal('modalResaBegin');
+        });
+
+        function generateCalendar(year, month) {
+            const months = [
+                "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+            ];
+            const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const currentMonth = currentDate.getMonth();
+            const currentDay = currentDate.getDate();
+            const firstDayOfMonth = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            let calendarHTML = '<div class="flex justify-between mb-2">' +
+                '<img id="prevMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_left.svg">' +
+                '<div class="text-lg font-semibold text-[--color-kapp] font-bold">' + months[month] + ' ' + year + '</div>' +
+                '<img id="nextMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_right.svg">' +
+                '</div>';
+            calendarHTML += '<div class="grid grid-cols-7 gap-1">';
+            for (let day of days) {
+                calendarHTML += '<div class="m-1 text-center text-[--color-fgSoft] font-bold">' + day + '</div>';
+            }
+            for (let i = 0; i < firstDayOfMonth; i++) {
+                calendarHTML += '<div></div>';
+            }
+            for (let i = 1; i <= daysInMonth; i++) {
+                if (year === currentYear && month === currentMonth && i === currentDay) {
+                    calendarHTML += '<div class="p-1 text-center text-white cursor-pointer bg-[--color-fgSelected] rounded">' + i + '</div>';
+                } else {
+                    calendarHTML += '<div class="p-1 text-center text-[--color-fgSoft] cursor-pointer hover:bg-sky-100 rounded">' + i + '</div>';
+                }
+            }
+            calendarHTML += '</div>';
+            calendar.innerHTML = calendarHTML;
+            //Clics days
+            const dayElements = calendar.querySelectorAll('.text-center');
+            dayElements.forEach(function (dayElement) {
+                dayElement.addEventListener('click', function () {
+                    const selectedDay = parseInt(dayElement.textContent);
+                    selectedDate = new Date(year, month, selectedDay);
+                    datePicker.value = formatDate(selectedDate);
+                    closeModal('modalResaBegin')
+                });
+            });
+            // Btn prev & next
+            document.getElementById('prevMonth').addEventListener('click', function () {
+                month--;
+                if (month < 0) {
+                    year--;
+                    month = 11;
+                }
+                generateCalendar(year, month);
+            });
+            document.getElementById('nextMonth').addEventListener('click', function () {
+                month++;
+                if (month > 11) {
+                    year++;
+                    month = 0;
+                }
+                generateCalendar(year, month);
+            });
+        }
+
+        //Format date selected
+        function formatDate(date) {
+            const options = {year: 'numeric', month: '2-digit', day: '2-digit'};
+            return date.toLocaleDateString('fr-FR', options);
+        }
+
+        //Init calendar
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth();
+        generateCalendar(currentYear, currentMonth);
+    });
+</script>
 </body>
 </html>

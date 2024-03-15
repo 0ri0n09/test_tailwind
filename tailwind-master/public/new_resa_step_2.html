@@ -152,10 +152,10 @@
         <div class="flex flex-col sm:flex-row justify-center items-center h-auto mb-4 overflow-x-auto">
             <!-- DatePicker BEGIN -->
             <div class="text-center my-2 sm:my-1 mx-2">
-                <input type="text" id="datepickerArrival" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de début">
+                <input type="text" readonly id="datepickerArrival" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de début">
             </div>
             <div class="text-center my-2 sm:my-1 mx-2">
-                <input type="text" id="datepickerDeparture" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de fin">
+                <input type="text" readonly id="datepickerDeparture" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de fin">
             </div>
             <style>
                 #datepickerArrival::placeholder {
@@ -274,86 +274,6 @@
                             <hr>
                         </div>
                         <div id="calendarArrival" class="p-4"></div>
-                        <script>
-                            const datePicker = document.getElementById('datepickerArrival');
-                            const calendar = document.getElementById('calendarArrival');
-                            let selectedDate = null;
-                            datePicker.addEventListener('click', function() {
-                                openModal('modalResaBegin');
-                            });
-
-                            function generateCalendar(year, month) {
-                                const months = [
-                                    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-                                    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
-                                ];
-                                const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
-                                const currentDate = new Date();
-                                const currentYear = currentDate.getFullYear();
-                                const currentMonth = currentDate.getMonth();
-                                const currentDay = currentDate.getDate();
-                                const firstDayOfMonth = new Date(year, month, 1).getDay();
-                                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                                let calendarHTML = '<div class="flex justify-between mb-2">' +
-                                                        '<img id="prevMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_left.svg">' +
-                                                        '<div class="text-lg font-semibold text-[--color-kapp] font-bold">' + months[month] + ' ' + year + '</div>' +
-                                                        '<img id="nextMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_right.svg">' +
-                                                   '</div>';
-                                calendarHTML += '<div class="grid grid-cols-7 gap-1">';
-                                for (let day of days) {
-                                    calendarHTML += '<div class="m-1 text-center text-[--color-fgSoft] font-bold">' + day + '</div>';
-                                }
-                                for (let i = 0; i < firstDayOfMonth; i++) {
-                                    calendarHTML += '<div></div>';
-                                }
-                                for (let i = 1; i <= daysInMonth; i++) {
-                                    if (year === currentYear && month === currentMonth && i === currentDay) {
-                                        calendarHTML += '<div class="p-1 text-center text-white cursor-pointer bg-[--color-fgSelected] rounded">' + i + '</div>';
-                                    } else {
-                                        calendarHTML += '<div class="p-1 text-center text-[--color-fgSoft] cursor-pointer hover:bg-sky-100 rounded">' + i + '</div>';
-                                    }
-                                }
-                                calendarHTML += '</div>';
-                                calendar.innerHTML = calendarHTML;
-                                //Clics days
-                                const dayElements = calendar.querySelectorAll('.text-center');
-                                dayElements.forEach(function(dayElement) {
-                                    dayElement.addEventListener('click', function() {
-                                        const selectedDay = parseInt(dayElement.textContent);
-                                        selectedDate = new Date(year, month, selectedDay);
-                                        datePicker.value = formatDate(selectedDate);
-                                        closeModal('modalResaBegin')
-                                    });
-                                });
-                                // Btn prev & next
-                                document.getElementById('prevMonth').addEventListener('click', function() {
-                                    month--;
-                                    if (month < 0) {
-                                        year--;
-                                        month = 11;
-                                    }
-                                    generateCalendar(year, month);
-                                });
-                                document.getElementById('nextMonth').addEventListener('click', function() {
-                                    month++;
-                                    if (month > 11) {
-                                        year++;
-                                        month = 0;
-                                    }
-                                    generateCalendar(year, month);
-                                });
-                            }
-                            //Format date selected
-                            function formatDate(date) {
-                                const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-                                return date.toLocaleDateString('fr-FR', options);
-                            }
-                            //Init calendar
-                            const currentDate = new Date();
-                            const currentYear = currentDate.getFullYear();
-                            const currentMonth = currentDate.getMonth();
-                            generateCalendar(currentYear, currentMonth);
-                        </script>
                     </div>
                 </div>
             </div>
@@ -470,6 +390,86 @@
                 document.getElementById(modalId).style.display = 'none'
                 document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
             }
+        </script>
+        <script>
+            const datePicker = document.getElementById('datepickerArrival');
+            const calendar = document.getElementById('calendarArrival');
+            let selectedDate = null;
+            datePicker.addEventListener('click', function() {
+                openModal('modalResaBegin');
+            });
+
+            function generateCalendar(year, month) {
+                const months = [
+                    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+                ];
+                const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+                const currentDate = new Date();
+                const currentYear = currentDate.getFullYear();
+                const currentMonth = currentDate.getMonth();
+                const currentDay = currentDate.getDate();
+                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                let calendarHTML = '<div class="flex justify-between mb-2">' +
+                    '<img id="prevMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_left.svg">' +
+                    '<div class="text-lg font-semibold text-[--color-kapp] font-bold">' + months[month] + ' ' + year + '</div>' +
+                    '<img id="nextMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_right.svg">' +
+                    '</div>';
+                calendarHTML += '<div class="grid grid-cols-7 gap-1">';
+                for (let day of days) {
+                    calendarHTML += '<div class="m-1 text-center text-[--color-fgSoft] font-bold">' + day + '</div>';
+                }
+                for (let i = 0; i < firstDayOfMonth; i++) {
+                    calendarHTML += '<div></div>';
+                }
+                for (let i = 1; i <= daysInMonth; i++) {
+                    if (year === currentYear && month === currentMonth && i === currentDay) {
+                        calendarHTML += '<div class="p-1 text-center text-white cursor-pointer bg-[--color-fgSelected] rounded">' + i + '</div>';
+                    } else {
+                        calendarHTML += '<div class="p-1 text-center text-[--color-fgSoft] cursor-pointer hover:bg-sky-100 rounded">' + i + '</div>';
+                    }
+                }
+                calendarHTML += '</div>';
+                calendar.innerHTML = calendarHTML;
+                //Clics days
+                const dayElements = calendar.querySelectorAll('.text-center');
+                dayElements.forEach(function(dayElement) {
+                    dayElement.addEventListener('click', function() {
+                        const selectedDay = parseInt(dayElement.textContent);
+                        selectedDate = new Date(year, month, selectedDay);
+                        datePicker.value = formatDate(selectedDate);
+                        closeModal('modalResaBegin')
+                    });
+                });
+                // Btn prev & next
+                document.getElementById('prevMonth').addEventListener('click', function() {
+                    month--;
+                    if (month < 0) {
+                        year--;
+                        month = 11;
+                    }
+                    generateCalendar(year, month);
+                });
+                document.getElementById('nextMonth').addEventListener('click', function() {
+                    month++;
+                    if (month > 11) {
+                        year++;
+                        month = 0;
+                    }
+                    generateCalendar(year, month);
+                });
+            }
+            //Format date selected
+            function formatDate(date) {
+                const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                return date.toLocaleDateString('fr-FR', options);
+            }
+            //Init calendar
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const currentMonth = currentDate.getMonth();
+            generateCalendar(currentYear, currentMonth);
         </script>
     </div>
     <!-- MOBILE FOOTER BEGIN -->
