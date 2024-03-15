@@ -248,9 +248,9 @@
 <!-- MODAL REGISTER END -->
 <!-- MODAL PH INFO BEGIN -->
 <div id="modalPhInfo" class="fixed fixed mb-4 hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-    <div class="relative top-2 mx-auto shadow-xl rounded-md bg-white max-w-md border border-red-500">
+    <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md border border-red-500">
         <div class="m-2">
-            <div class="flex justify-end p-2">
+            <div class="flex justify-end p-2 sm:transform sm:scale-100">
                 <button onclick="closeModal('modalPhInfo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -265,7 +265,7 @@
                 <h4>Pension Féline et Canine</h4>
             </div>
             <!-- CARROUSEL BLOCK BEGIN -->
-            <div class="sm:ml-64 flex justify-center mt-4 border border-red-500">
+            <div class="flex justify-center items-center mt-4">
                 <div class="slider">
                     <!-- slide 1 -->
                     <div class="slide">
@@ -283,13 +283,12 @@
                     <div class="slide">
                         <img src="https://source.unsplash.com/random?landscape,city" alt="" />
                     </div>
-                    <!-- Control buttons -->
                 </div>
                 <button class="btn btn-next">
-                    <img class="w-20 h-20 mr-2 fgSoftSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="Puce" />
+                    <img class="w-20 mr-2 fgSoftSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="Puce" />
                 </button>
                 <button class="btn btn-prev">
-                    <img class="w-20 h-20 ml-2 fgSoftSvg" src="icons/baseline-keyboard_arrow_left.svg" alt="Puce" />
+                    <img class="w-20 ml-2 fgSoftSvg" src="icons/baseline-keyboard_arrow_left.svg" alt="Puce" />
                 </button>
             </div>
             <script>
@@ -551,7 +550,7 @@
                     </button>
                     <button type="button" onclick="closeModal('modal-password')" class="flex items-center text-white border border-lg bg-green-600 hover:bg-green-500 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                         Oui, envoyer le mail
-                        <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+                        <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="arrow">
                     </button>
                 </div>
                 <h4 class="text-l text-gray-600 mb-4">Après avoir cliqué sur le bouton ci-dessus rendez-vous dans votre messagerie pour y trouver le lien de réinitialisation.</h4>
