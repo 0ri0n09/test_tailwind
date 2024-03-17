@@ -53,7 +53,7 @@
                 </button>
                 <button type="button" onclick="window.location='my_profile.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
-                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mon profil</p>
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mon compte</p>
                 </button>
                 <button type="button" onclick="window.location='index.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-red-300 transition-transform transform scale-100 hover:scale-105 hover:bg-red-100">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/logout.svg" alt="logout">
@@ -71,19 +71,24 @@
             <h1 class="text-2xl text-[--color-fgSoft] font-bold">Mes réservations</h1>
         </div>
         <hr>
-        <div class="flex flex-col md:flex-row justify-center mt-4">
-            <button type="button" class="flex flex-row m-2 justify-center items-center text-[--color-fgSoft] border border-lg border-gray-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
-                <p class="text-[--color-fgSoft] font-bold">À venir</p>
-            </button>
-            <button type="button" class="flex flex-row m-2 justify-center items-center border border-lg border-gray-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
+        <div class="flex-col justify-center text-center">
+            <div class="flex flex-row justify-center mt-4">
+                <button type="button" class="flex flex-row m-1 justify-center items-center text-[--color-fgSoft] border border-lg border-gray-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
+                    <p class="text-[--color-fgSoft] font-bold">À venir</p>
+                </button>
+                <button type="button" class="flex flex-row m-1 justify-center items-center text-[--color-fgSoft] border border-lg border-gray-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
+                    <p class="text-[--color-fgSoft] font-bold">En cours</p>
+                </button>
+                <button type="button" class="flex flex-row m-1 justify-center items-center text-[--color-fgSoft] border border-lg border-gray-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
+                    <p class="text-[--color-fgSoft] font-bold">Terminées</p>
+                </button>
+            </div>
+            <button type="button" class="flex flex-row m-1 justify-center items-center border border-lg border-gray-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
                 <img class="w-6 h-6 fgSoftSvg" src="icons/signature.svg">
-                <p class="text-[--color-fgSoft] font-bold ml-2">Voir mes contrats de réservations à signer</p>
-            </button>
-            <button type="button" class="flex flex-row m-2 justify-center items-center text-[--color-fgSoft] border border-lg border-gray-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
-                <p class="text-[--color-fgSoft] font-bold">En cours</p>
+                <p class="text-[--color-fgSoft] font-bold ml-2">Mes contrats à signer</p>
             </button>
         </div>
-        <div class="w-full h-full mt-3 sm:mt-4 mx-1 justify-center">
+        <div class="w-full h-full mt-1 sm:mt-4 mx-1 justify-center">
             <div class="cards-container flex flex-wrap flex-col-3 lg:flex-row justify-center shadow">
                 <!-- RESA CARD BEGIN -->
                 <button class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
@@ -93,8 +98,28 @@
                         <p>En attente de validation par la pension</p>
                     </div>
                     <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-                        <p>Prise sur myKookie</p>
+                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
+                        <p>du 22/02/2024 au 23/02/2024</p>
+                    </div>
+                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+                        <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
+                        <p>Rebel</p>
+                    </div>
+                    <div class="items-center mb-2 flex flex-row">
+                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
+                        <span class="text-left">
+                            <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
+                            <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
+                        </span>
+                    </div>
+                </button>
+                <!-- RESA CARD END -->
+                <!-- RESA CARD BEGIN -->
+                <button class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
+                    <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
+                    <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
+                        <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
+                        <p>En attente de validation par la pension</p>
                     </div>
                     <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
                         <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
@@ -121,8 +146,28 @@
                         <p>En attente de validation par la pension</p>
                     </div>
                     <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-                        <p>Prise sur myKookie</p>
+                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
+                        <p>du 22/02/2024 au 23/02/2024</p>
+                    </div>
+                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+                        <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
+                        <p>Rebel</p>
+                    </div>
+                    <div class="items-center mb-2 flex flex-row">
+                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
+                        <span class="text-left">
+                            <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
+                            <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
+                        </span>
+                    </div>
+                </button>
+                <!-- RESA CARD END -->
+                <!-- RESA CARD BEGIN -->
+                <button class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
+                    <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
+                    <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
+                        <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
+                        <p>En attente de validation par la pension</p>
                     </div>
                     <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
                         <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
@@ -149,10 +194,6 @@
                         <p>En attente de validation par la pension</p>
                     </div>
                     <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-                        <p>Prise sur myKookie</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
                         <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
                         <p>du 22/02/2024 au 23/02/2024</p>
                     </div>
@@ -175,66 +216,6 @@
                     <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
                         <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
                         <p>En attente de validation par la pension</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-                        <p>Prise sur myKookie</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-                        <p>du 22/02/2024 au 23/02/2024</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-                        <p>Rebel</p>
-                    </div>
-                    <div class="items-center mb-2 flex flex-row">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-                        <span class="text-left">
-                            <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
-                            <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
-                        </span>
-                    </div>
-                </button>
-                <!-- RESA CARD END -->
-                <!-- RESA CARD BEGIN -->
-                <button class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-                    <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
-                        <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-                        <p>En attente de validation par la pension</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-                        <p>Prise sur myKookie</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-                        <p>du 22/02/2024 au 23/02/2024</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-                        <p>Rebel</p>
-                    </div>
-                    <div class="items-center mb-2 flex flex-row">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-                        <span class="text-left">
-                            <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
-                            <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
-                        </span>
-                    </div>
-                </button>
-                <!-- RESA CARD END -->
-                <!-- RESA CARD BEGIN -->
-                <button class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-                    <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
-                        <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-                        <p>En attente de validation par la pension</p>
-                    </div>
-                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-                        <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/round-smartphone.svg" alt="Smartphone">
-                        <p>Prise sur myKookie</p>
                     </div>
                     <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
                         <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">

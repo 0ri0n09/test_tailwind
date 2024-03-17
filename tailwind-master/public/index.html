@@ -248,7 +248,7 @@
 <!-- MODAL REGISTER END -->
 <!-- MODAL PH INFO BEGIN -->
 <div id="modalPhInfo" class="fixed fixed mb-4 hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-    <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md border border-red-500">
+    <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md">
         <div class="m-2">
             <div class="flex justify-end p-2 sm:transform sm:scale-100">
                 <button onclick="closeModal('modalPhInfo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
@@ -260,7 +260,7 @@
                 </button>
             </div>
             <div class="text-center">
-                <img class="w-auto h-auto mx-auto mb-6 mt-4" src="./logo_business.png" alt="Logo de votre business">
+                <img class="sm:w-1/2 sm:h-1/2 w-auto h-auto mx-auto mb-6 mt-4" src="./logo_business.png" alt="Logo de votre business">
                 <h5 class="font-bold">Chez Diane</h5>
                 <h4>Pension Féline et Canine</h4>
             </div>
@@ -269,7 +269,7 @@
                 <div class="slider">
                     <!-- slide 1 -->
                     <div class="slide">
-                        <img src="https://source.unsplash.com/random?landscape,mountain" alt=""/>
+                        <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
                     </div>
                     <!-- slide 2 -->
                     <div class="slide">
@@ -277,18 +277,22 @@
                     </div>
                     <!-- slide 3 -->
                     <div class="slide">
-                        <img src="https://source.unsplash.com/random?landscape,night" alt="" />
+                        <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
                     </div>
                     <!-- slide 4 -->
                     <div class="slide">
-                        <img src="https://source.unsplash.com/random?landscape,city" alt="" />
+                        <img src="https://source.unsplash.com/random?landscape,mountain" alt="" />
+                    </div>
+                    <!-- slide 5 -->
+                    <div class="slide">
+                        <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
                     </div>
                 </div>
-                <button class="btn btn-next">
-                    <img class="w-20 mr-2 fgSoftSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="Puce" />
+                <button class="btn btn-next right-3 sm:right-64">
+                    <img class="scale-150 fgkappSvg" src="icons/button-circle-round-arrow-next-svgrepo-com.svg" alt="next" />
                 </button>
-                <button class="btn btn-prev">
-                    <img class="w-20 ml-2 fgSoftSvg" src="icons/baseline-keyboard_arrow_left.svg" alt="Puce" />
+                <button class="btn btn-prev rotate-180 left-3 sm:left-64">
+                    <img class="scale-150 fgkappSvg" src="icons/button-circle-round-arrow-next-svgrepo-com.svg" alt="prev" />
                 </button>
             </div>
             <script>
@@ -348,7 +352,7 @@
                     max-width: 300px;
                     height: 200px;
                     position: relative;
-                    overflow: hidden; /* <===  */
+                    overflow: hidden;
                     border-radius: 15px;
                 }
                 .slide {
@@ -378,12 +382,7 @@
                 .btn:active {
                     transform: scale(1.1);
                 }
-                .btn-prev {
-                    left: 2%;
-                }
-                .btn-next {
-                    right: 2%;
-                }
+
             </style>
             <!-- CARROUSEL BLOCK END -->
             <div>
@@ -406,16 +405,16 @@
                     </h4>
                 </div>
                 <div>
-                    <h4 class="py-3 mb-4 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
+                    <h4 class="text-xs sm:text-base py-3 mb-2 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
                         <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-info.svg" alt="Puce" />
-                        Informations sur le professionnel
+                        <p class="">Informations sur le professionnel</p>
                     </h4>
-                    <h4 class="flex justify-center mb-4">
+                    <h4 class="text-xs sm:text-base items-center flex justify-center mb-4">
                         <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="Puce" />
                         Réservation sur place ou par email/téléphone
                     </h4>
-                    <h4 class="flex justify-center">
-                        <img class="w-8 h-8 mr-2 mb-8 fgSoftSvg" src="icons/signature.svg" alt="Puce" />
+                    <h4 class="mb-8 text-xs sm:text-base items-center flex justify-center">
+                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/signature.svg" alt="Puce" />
                         Signature dématérialisée des contrats
                     </h4>
                     <h4 class="text-center text-[--color-fgSoft] font-bold mb-4">Animaux acceptés</h4>
@@ -438,24 +437,24 @@
                         </div>
                     </div>
                     <h4 class="text-center text-[--color-fgSoft] font-bold mb-2">Services inclus dans le tarif</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2 justify-center">
-                        <div class="text-center flex flex-col items-center mr-2 mb-2">
+                    <div class="grid grid-cols-3 md:grid-cols-4 justify-center">
+                        <div class="text-center flex flex-col items-center mb-2">
                             <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/heater.svg" alt="Puce" />
                             <h4>Chauffage</h4>
                         </div>
-                        <div class="text-center flex flex-col items-center mr-2 mb-2">
+                        <div class="text-center flex flex-col items-center mb-2">
                             <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/pet_toys.svg" alt="Puce" />
                             <h4>Jouets</h4>
                         </div>
-                        <div class="text-center flex flex-col items-center mr-2 mb-2">
+                        <div class="text-center flex flex-col items-center mb-2">
                             <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/baseline-music_note.svg" alt="Puce" />
                             <h4>Musique</h4>
                         </div>
-                        <div class="text-center flex flex-col items-center mr-2 mb-2">
+                        <div class="text-center flex flex-col items-center mb-2">
                             <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/fountain.svg" alt="Puce" />
                             <h4>Fontaine</h4>
                         </div>
-                        <div class="text-center flex flex-col items-center mr-2 mb-2">
+                        <div class="text-center flex flex-col items-center mb-2">
                             <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/webcam.svg" alt="Puce" />
                             <h4>Caméra</h4>
                         </div>
