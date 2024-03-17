@@ -65,7 +65,7 @@
     <!-- SIDEBAR END -->
 
     <!-- CONTENT BEGIN -->
-    <div class="p-2 sm:ml-72">
+    <div id="content" class="p-2 sm:ml-72">
         <div class="p-1">
             <div class="flex items-end justify-center mb-3">
                 <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-pets.svg">
@@ -74,7 +74,7 @@
             <hr>
         </div>
         <div class="flex flex-col sm:flex-row md:mt-24 items-center h-auto mb-4 mt-2 overflow-x-auto">
-            <div class="flex flex-col sm:flex-row flex-wrap justify-center">
+            <div id="containerPets" class="flex flex-col sm:flex-row flex-wrap justify-center">
                 <!-- Card 1 -->
                 <div class="w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
                     <img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <!-- Card Add -->
-                <div onclick="openModal('open-modal');" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
+                <div id="addPetButton" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
                     <div class="flex flex-col items-center justify-center w-full h-full">
                         <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
                         <p class="mx-2 text-[--color-fgSoft] font-bold">Ajouter un animal</p>
@@ -122,78 +122,316 @@
         </div>
         <!-- CONTENT END -->
 
-        <!-- PET MODAL BEGIN -->
-        <div id="modal" class="fixed fixed hidden z-50 inset-0  bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-            <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
-                <div class="flex justify-end p-2">
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div id="content" class="flex justify-center">
-                    <div class="lg:w-full m-1">
-                        <div class="h-auto m-1 rounded">
-                            <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4 mt-2">
-                                Nouvel animal
-                            </h3>
-                            <!-- STEP BAR BEGIN -->
-                            <div class="flex items-start max-w-screen-lg mx-auto mb-8 mt-4">
-                                <div class="w-full">
-                                    <div class="flex items-center w-full">
-                                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
-                                            <span class="text-base text-white font-bold">1</span>
-                                        </div>
-                                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+        <!-- ADD PET END -->
+        <div class="container-add-pet w-full h-auto mb-4 text-center justify-center hidden">
+            <h1 class="flex flex-row flex-grow mb-4 text-2xl text-[--color-kapp] font-bold justify-center">Créer un animal</h1>
+
+            <div class="flex flex-col lg:flex-row flex-grow justify-center m-2">
+                <!-- Infos BEGIN-->
+                <div id="blockInfos" class="w-full flex flex-col mb-2 lg:mb-0 lg:mr-1">
+                    <div class="w-full h-full">
+                        <div class="h-full rounded border border-gray-300 shadow">
+                            <div class="flex flex-row justify-center mt-4 mb-1">
+                                <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mt-2">Informations de l'animal</h3>
+                            </div>
+                            <div class="px-4">
+                                <div class="flex items-center mb-1">
+                                    <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                    <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-pets.svg" alt="pets">
+                                    <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                </div>
+                                <!-- Nom -->
+                                <div class="flex mb-4 items-center">
+                                    <div class="w-full mr-2">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
                                     </div>
-                                    <div class="mt-2 mr-2">
-                                        <h6 class="text-base font-bold text-[--color-kapp] ml-[-0.4rem]">Profil</h6>
+                                    <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                </div>
+                                <!-- Genre et espèce -->
+                                <div class="flex mb-4 items-center">
+                                    <div class="mr-2">
+                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                            <option disabled selected style="display:none;">Genre</option>
+                                            <option value="">Mâle</option>
+                                            <option value="">Femelle</option>
+                                        </select>
+                                    </div>
+                                    <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                    <div class="mr-2">
+                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                            <option disabled selected style="display:none;">Espèce</option>
+                                            <option value="">Chien</option>
+                                            <option value="">Chat</option>
+                                            <option value="">NAC</option>
+                                            <option value="">Cheval</option>
+                                        </select>
+                                    </div>
+                                    <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                </div>
+                                <!-- Nom de la race-->
+                                <div class="flex mb-4 items-center">
+                                    <div class="w-full mr-2">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom de la race"/>
                                     </div>
                                 </div>
-                                <div class="w-full">
-                                    <div class="flex items-center w-full">
-                                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
-                                            <span class="text-base text-white font-bold">2</span>
-                                        </div>
-                                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
-                                    </div>
-                                    <div class="mt-2 mr-4">
-                                        <h6 class="text-base font-bold text-gray-300 ml-[-3rem]">Contact d'urgence</h6>
+                                <!-- N° Puce ou tatouage -->
+                                <div class="w-11/12 flex mb-4 items-center">
+                                    <div class="w-full mr-2 flex flex-row items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/collar.svg" alt="Puce" />
+                                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="N° de puce ou tatouage"/>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="flex items-center">
-                                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
-                                            <span class="text-base text-white font-bold">3</span>
-                                        </div>
+                                <!-- Date de naissance & poids -->
+                                <div class="flex mb-4">
+                                    <div class="flex flex-row w-full mr-2 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/age.svg" alt="age" />
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Date de naissance"/>
                                     </div>
-                                    <div class="mt-2">
-                                        <h6 class="text-base font-bold text-gray-300 ml-[-1rem]">Animaux</h6>
+                                    <div class="flex flex-row w-1/2 ml-2 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/weight.svg" alt="weight" />
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Poids"/>
                                     </div>
                                 </div>
                             </div>
-                            <!-- STEP BAR END -->
+                            <!-- Sterilisé -->
+                            <div class="flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/sterilization.svg" alt="sterilization" />
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                    <option disabled selected style="display:none;">Stérilisé</option>
+                                    <option value="">Non renseigné</option>
+                                    <option value="">Oui</option>
+                                    <option value="">Non</option>
+                                </select>
+                                <p class="ml-[+1px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                            </div>
+                            <!-- Copains-copines -->
+                            <div class="flex mb-4 ml-4 items-center">
+                                <div class="w-full flex flex-row items-center">
+                                    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-warning.svg" alt="warning" />
+                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                        <option disabled selected style="display:none;">Copains-copines</option>
+                                        <option value="">Non renseigné</option>
+                                        <option value="">Ok copains - copines</option>
+                                        <option value="">Pas ok copains - copines</option>
+                                        <option value="">Ok copains - Pas ok copines</option>
+                                        <option value="">Pas ok copains - Ok copines</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Remarques -->
+                            <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                            </div>
+                            <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/food.svg" alt="food">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Dites nous quelles sont ses habitudes alimentaires ou allergie s’il y a lieu ?"></textarea>
+                            </div>
+                            <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/pill.svg" alt="pill">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Y a t il un traitement vétérinaire ou administration de médicaments à effectuer ?"></textarea>
+                            </div>
+                            <div class="flex items-center ml-2 mb-2">
+                                <p class="text-xs text-[--color-fgSoft] italic">Les champs obligatoires à remplir sont marqués par</p>
+                                <p class="text-xs text-[--color-fgSoft] text-red-400 font-bold ml-1">*</p>
+                            </div>
                         </div>
-                        <div class="flex justify-between m-1">
-                            <button type="button" onclick="closeModal('modal')" class="flex items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-                                Annuler
-                            </button>
-                            <button type="button" onclick="location.href='new_resa_step_2.html'" class="flex items-center text-white border border-lg bg-[--color-bgClickable] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-                                Suivant
-                                <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg" alt="arrow-right">
-                            </button>
+                    </div>
+                </div>
+                <!-- Infos END -->
+
+                <!-- Vaccins BEGIN-->
+                <div id="blockVaccines" class="w-full flex flex-col lg:ml-1">
+                    <div class="w-full h-full">
+                        <div class="h-full rounded border border-gray-300 shadow">
+                            <div class="flex flex-row justify-center mt-4 mb-1">
+                                <h3 class="mr-1 text-xl text-center font-bold text-[--color-fgSoft] mt-2">Vaccins de l'animal</h3>
+                            </div>
+                            <div class="px-4 mt-2">
+                                <div class="w-full flex flex-col mb-4 items-center justify-center">
+                                    <!-- CHPPIL -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">CHPPIL</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Parvovirose -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Parvovirose</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Maladie de Carré : -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Maladie de Carré</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Maladie de Rubarth : -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Maladie de Rubarth</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Leptospirose -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Leptospirose</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Toux du chenil -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Toux du chenil</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Leishmaniose -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Leishmaniose</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Rage -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Rage</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Vermifuge -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Vermifuge</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Parasite Externe -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Parasite Externe</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vaccins END -->
+            </div>
+
+            <!-- Veto BEGIN -->
+            <div class="m-2">
+                <div id="blockVeto" class="w-full mb-4 rounded border border-gray-300 shadow">
+                    <div class="flex flex-row justify-center mt-2 mb-3">
+                        <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mt-2">Vétérinaire</h3>
+                    </div>
+                    <div class="flex items-center mb-3 mx-4">
+                        <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                        <img class="w-8 h-8 fgSoftSvg" src="icons/veto.svg" alt="infos">
+                        <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                    </div>
+                    <div class="h-auto w-full flex flex-col lg:flex-row">
+                        <div class="w-full flex flex-col ml-4 mr-4">
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/home.svg">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Clinique"/>
+                            </div>
+                            <!-- Nom -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                            </div>
+                            <!-- Prénom -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
+                            </div>
+                            <!-- Email -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Email"/>
+                            </div>
+                            <!-- Remarque -->
+                            <div class="w-11/12 flex mb-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                            </div>
+                        </div>
+                        <div class="w-full flex flex-col ml-4 mr-4">
+                            <!-- Addresse -->
+                            <div class="w-10/12 flex flex-row mb-4 mr-2 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Addresse"/>
+                            </div>
+                            <!-- Compl -->
+                            <div class="w-10/12  flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'addresse"/>
+                            </div>
+                            <!-- Code postale -->
+                            <div class="w-1/3  flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postale"/>
+                            </div>
+                            <!-- Ville -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Ville"/>
+                            </div>
+                            <!-- Pays -->
+                            <div class="w-1/2  flex flex-row mb-4 items-center">
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                    <option disabled selected style="display:none;">Sélectionnez le pays</option>
+                                    <option value="">France</option>
+                                    <option value="">Belgique</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Veto END -->
+
+            <div class="flex justify-center">
+                <button id="cancel-btn" type="button" class="flex flex-row mr-2 items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                    Annuler
+                </button>
+                <button id="save-btn" type="button" class="flex items-center text-white border border-lg bg-[--color-kapp] hover:bg-cyan-500 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                    <img class="w-6 h-6 mr-2 fgWhiteSvg" src="icons/baseline-add.svg">
+                    Ajouter mon animal
+                </button>
+            </div>
         </div>
+
         <script>
-            document.getElementById('open-modal').addEventListener('click', function(event) {
-                openModal('modal');
-                event.preventDefault();
+            document.addEventListener("DOMContentLoaded", function() {
+                const addPetButton = document.getElementById("addPetButton");
+                const containerAddPet = document.querySelector(".container-add-pet");
+                const saveButton = document.getElementById("save-btn");
+                const cancelButton = document.getElementById("cancel-btn");
+                const content = document.getElementById("content");
+
+                cancelButton.addEventListener("click", function() {
+                    containerAddPet.classList.add("hidden");
+                    content.scrollIntoView({ behavior: 'smooth' });
+                });
+                addPetButton.addEventListener("click", function() {
+                    containerAddPet.classList.remove("hidden");
+                    containerAddPet.scrollIntoView({ behavior: 'smooth' });
+                });
+                saveButton.addEventListener("click", function() {
+                    containerAddPet.classList.add("hidden");
+                    const newPetCard = document.createElement("div");
+                    newPetCard.classList.add("w-52", "h-56", "m-2", "bg-white", "rounded-lg", "overflow-hidden", "border", "border-gray-200", "transform", "transition-transform", "hover:scale-105", "hover:bg-sky-50", "cursor-pointer", "shadow");
+                    newPetCard.innerHTML = `<img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
+                                                <div class="text-center m-4">
+                                                    <div class="text-xl font-bold truncate">Saucisse</div>
+                                                </div>`;
+                    const containerPets = document.getElementById("containerPets");
+                    containerPets.insertBefore(newPetCard, addPetButton);
+                });
             });
             window.openModal = function(modalId) {
                 document.getElementById(modalId).style.display = 'block'
@@ -204,7 +442,8 @@
                 document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
             }
         </script>
-        <!-- PET MODAL END -->
+        <!-- ADD PET END -->
+
     </div>
     <!-- MOBILE FOOTER BEGIN
     <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
