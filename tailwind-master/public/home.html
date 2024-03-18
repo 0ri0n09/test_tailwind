@@ -20,7 +20,7 @@
       <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
     </svg>
   </button>
-  <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+  <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen max-h-screen overflow-y-auto bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <button id="close-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden z-50">
       <span class="sr-only">Open sidebar</span>
       <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -341,100 +341,40 @@
   </script>
   <!-- MODAL PH INFO END -->
   <!-- MODAL PROMO BEGIN -->
-  <div id="modalPromo" class="fixed fixed hidden z-50 sm:inset-0 inset-y-[-3rem] bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4">
-    <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md">
-      <div class="m-2">
-        <div class="flex justify-end p-2 sm:transform sm:scale-100">
+  <div id="modalPromo" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="relative sm:max-w-4xl sm:w-full bg-white shadow-xl rounded-md max-w-md w-full p-4">
+        <div class="absolute top-0 right-0 p-2">
           <button onclick="closeModal('modalPromo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
           </button>
         </div>
         <div class="text-center">
+          <h3 class="text-[--color-kapp] text-xl font-bold mt-2 mb-4">Promotions en cours</h3>
         </div>
-        <div class="flex justify-center items-center mt-4">
-          <div class="w-full m-1">
-            <div class="h-auto m-1 rounded">
-              <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4 mt-2">
-                Promotions en cours
-              </h3>
-            </div>
-            <!-- PROMO CARD BEGIN -->
-            <div class="border rounded-lg m-4 p-4 text-center">
-              <h4 class="font-bold mb-4">Promotion des vacances</h4>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-                <p>5.00 € sur le séjour</p>
-              </div>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
-                <p>Réservez avant le 15/02/2024</p>
-              </div>
-              <div class="flex items-center">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
-                <p>Ne manquez pas cette offre pour votre été</p>
-              </div>
-            </div>
-            <!-- PROMO CARD END -->
-            <!-- PROMO CARD BEGIN -->
-            <div class="border rounded-lg m-4 p-4 text-center">
-              <h4 class="font-bold mb-4">Promotion des vacances</h4>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-                <p>5.00 € sur le séjour</p>
-              </div>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
-                <p>Réservez avant le 15/02/2024</p>
-              </div>
-              <div class="flex items-center">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
-                <p>Ne manquez pas cette offre pour votre été</p>
-              </div>
-            </div>
-            <!-- PROMO CARD END -->
-            <!-- PROMO CARD BEGIN -->
-            <div class="border rounded-lg m-4 p-4 text-center">
-              <h4 class="font-bold mb-4">Promotion des vacances</h4>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-                <p>5.00 € sur le séjour</p>
-              </div>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
-                <p>Réservez avant le 15/02/2024</p>
-              </div>
-              <div class="flex items-center">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
-                <p>Ne manquez pas cette offre pour votre été</p>
-              </div>
-            </div>
-            <!-- PROMO CARD END -->
-            <!-- PROMO CARD BEGIN -->
-            <div class="border rounded-lg m-4 p-4 text-center">
-              <h4 class="font-bold mb-4">Promotion des vacances</h4>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-                <p>5.00 € sur le séjour</p>
-              </div>
-              <div class="flex items-center mb-2">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
-                <p>Réservez avant le 15/02/2024</p>
-              </div>
-              <div class="flex items-center">
-                <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
-                <p>Ne manquez pas cette offre pour votre été</p>
-              </div>
-            </div>
-            <!-- PROMO CARD END -->
+        <!-- RESA CARD BEGIN -->
+        <div class="border rounded-lg p-4 text-center">
+          <h4 class="font-bold mb-4">Promotion des vacances</h4>
+          <div class="flex items-center mb-2">
+            <img class="w-6 h-6 mr-4" src="icons/credits.svg" alt="Coins">
+            <p>5.00 € sur le séjour</p>
+          </div>
+          <div class="flex items-center mb-2">
+            <img class="w-6 h-6 mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
+            <p>Réservez avant le 15/02/2024</p>
+          </div>
+          <div class="flex items-center">
+            <img class="w-6 h-6 mr-4" src="icons/notes-icon.svg" alt="Notes">
+            <p>Ne manquez pas cette offre pour votre été</p>
           </div>
         </div>
+        <!-- RESA CARD END -->
       </div>
     </div>
   </div>
+
       <script>
         document.getElementById('promo').addEventListener('click', function(event) {
           openModal('modalPromo');
@@ -650,48 +590,52 @@
       </footer>
       <!-- MOBILE FOOTER END -->
       <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
-          const sidebar = document.getElementById("default-sidebar");
-          const sidebarOverlay = document.getElementById("sidebar-overlay");
-          const footer = document.querySelector('footer');
-          const closeSidebar = document.getElementById('close-sidebar');
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+  const sidebar = document.getElementById("default-sidebar");
+  const sidebarOverlay = document.getElementById("sidebar-overlay");
+  const footer = document.querySelector('footer');
+  const closeSidebar = document.getElementById('close-sidebar');
+  const modalPromo = document.getElementById('modalPromo');
 
-          closeSidebar.addEventListener("click", toggleSidebar);
-          sidebarButton.addEventListener("click", toggleSidebar);
+  closeSidebar.addEventListener("click", toggleSidebar);
+  sidebarButton.addEventListener("click", toggleSidebar);
 
-          document.addEventListener("click", function (event) {
-            if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
-              toggleSidebar();
-            }
-          });
+  document.addEventListener("click", function (event) {
+    if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target)) {
+      if (sidebar.classList.contains("translate-x-0")) {
+          toggleSidebar();
+      }
+    }
+  });
 
-          sidebarButton.addEventListener('click', toggleFooter);
+  sidebarButton.addEventListener('click', toggleFooter);
 
-          window.addEventListener('resize', adjustSidebarHeight);
-          window.addEventListener('load', adjustSidebarHeight);
+  window.addEventListener('resize', adjustSidebarHeight);
+  window.addEventListener('load', adjustSidebarHeight);
 
-          function toggleSidebar() {
-            sidebar.classList.toggle("translate-x-0");
-            sidebarOverlay.classList.toggle("opacity-50");
-            footer.classList.remove("hidden");
-          }
+  function toggleSidebar() {
+    sidebar.classList.toggle("translate-x-0");
+    sidebarOverlay.classList.toggle("opacity-50");
+    footer.classList.remove("hidden");
+  }
 
-          function toggleFooter() {
-            footer.classList.toggle('hidden');
-            sidebar.classList.toggle('h-full', footer.classList.contains('hidden'));
-          }
+  function toggleFooter() {
+    footer.classList.toggle('hidden');
+    sidebar.classList.toggle('h-full', footer.classList.contains('hidden'));
+  }
 
-          function adjustSidebarHeight() {
-            if (window.innerWidth >= 768) {
-              var windowHeight = window.innerHeight;
-              var footerHeight = footer.offsetHeight;
-              var adjustedHeight = windowHeight - footerHeight;
+  function adjustSidebarHeight() {
+    if (window.innerWidth >= 768) {
+      var windowHeight = window.innerHeight;
+      var footerHeight = footer.offsetHeight;
+      var adjustedHeight = windowHeight - footerHeight;
 
-              sidebar.style.height = adjustedHeight + 'px';
-            }
-          }
-        });
+      sidebar.style.height = adjustedHeight + 'px';
+    }
+  }
+});
+
       </script>
 </main>
 </body>
