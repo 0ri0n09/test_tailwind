@@ -221,13 +221,22 @@
                         const card = this;
                         const isSelected = card.classList.contains('selected');
                         card.classList.toggle('selected', !isSelected);
+                        const checkImg = card.querySelector('.check-img');
+
                         if (isSelected) {
                             card.classList.remove('bg-sky-50');
                             card.classList.remove('scale-105');
                             card.classList.add('scale-100');
+                            if (checkImg) {
+                                checkImg.remove(); // Supprimer l'image du check si elle existe
+                            }
                         } else {
                             card.classList.add('bg-sky-50');
                             card.classList.add('scale-105');
+                            const checkIcon = document.createElement('img');
+                            checkIcon.classList.add('absolute', 'bottom-2', 'right-2', 'h-8', 'w-8', 'fgSuccessSvg', 'check-img');
+                            checkIcon.src = 'icons/baseline-check.svg';
+                            card.appendChild(checkIcon);
                         }
                     }
                     const cards = document.querySelectorAll('.card');
