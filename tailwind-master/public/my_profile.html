@@ -21,6 +21,12 @@
         </svg>
     </button>
     <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+        <button id="close-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden z-50">
+            <span class="sr-only">Open sidebar</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+            </svg>
+        </button>
         <div class="h-full px-3 py-4 overflow-y-auto sm:border-r sm:border-gray-200">
             <div class="text-center">
                 <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo business">
@@ -42,7 +48,7 @@
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
                     <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
                 </button>
-                <button type="button" onclick="openModal('modalPromo')" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                <button type="button" onclick="openModal('open-modal-promo')" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
                     <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
                 </button>
@@ -157,13 +163,8 @@
                     </div>
                     <script>
                         document.addEventListener("DOMContentLoaded", function() {
-                            const buttonInfos = document.getElementById('buttonInfos');
-                            const buttonUrgence = document.getElementById('buttonUrgence');
                             const blockInfos = document.getElementById('blockInfos');
-
                             blockInfos.classList.remove('hidden');
-                            buttonInfos.addEventListener('click', displayBlockInfos);
-                            buttonUrgence.addEventListener('click', displayBlockUrgence);
                         });
 
                         function displayBlockInfos() {
@@ -272,7 +273,7 @@
                                                     option.classList.add('block', 'px-4', 'py-2', 'text-gray-700', 'hover:bg-sky-100', 'active:bg-blue-100', 'cursor-pointer', 'rounded-md');
                                                     option.textContent = `(+${countryNum}) ${countryName}`;
                                                     option.addEventListener('click', () => {
-                                                        document.getElementById('selected-country').textContent = countryName;
+                                                        document.getElementById('selected-country').textContent = `(+${countryNum}) ${countryName}`;
                                                         document.getElementById('dropdown-menu').classList.add('hidden');
                                                         initDropdown(dropdownButton, dropdownMenu, searchInput);
                                                     });
@@ -411,7 +412,7 @@
                                                     option.classList.add('block', 'px-4', 'py-2', 'text-gray-700', 'hover:bg-sky-100', 'active:bg-blue-100', 'cursor-pointer', 'rounded-md');
                                                     option.textContent = `(+${countryNum}) ${countryName}`;
                                                     option.addEventListener('click', () => {
-                                                        document.getElementById('selected-country').textContent = countryName;
+                                                        document.getElementById('selected-country').textContent = `(+${countryNum}) ${countryName}`;
                                                         document.getElementById('dropdown-menu').classList.add('hidden');
                                                         initDropdown(dropdownButton, dropdownMenu, searchInput);
                                                     });
@@ -556,12 +557,6 @@
         </div>
     </div>
     <!-- MODAL PROMO BEGIN -->
-    <button id="open-modal" type="button" class="mb-3">
-        <svg class="h-6 w-6 fgSoftSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256">
-            <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.627 5.373,12 12,12c6.627,0 12,-5.373 12,-12c0,-6.627 -5.373,-12 -12,-12zM16,21h-2v-7h2zM15,11.5c-0.828,0 -1.5,-0.672 -1.5,-1.5c0,-0.828 0.672,-1.5 1.5,-1.5c0.828,0 1.5,0.672 1.5,1.5c0,0.828 -0.672,1.5 -1.5,1.5z"></path></g></g>
-        </svg>
-    </button>
-
     <div id="modalPromo" class="fixed fixed hidden z-50 sm:inset-0 inset-y-[-3rem] bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
         <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-md bg-white max-w-md">
             <div class="flex justify-end p-2">
@@ -602,10 +597,6 @@
     <!-- MODAL PROMO END -->
 
     <script>
-    document.getElementById('open-modal').addEventListener('click', function(event) {
-        openModal('modalPromo');
-        event.preventDefault();
-    });
     window.openModal = function (modalId) {
         document.getElementById(modalId).style.display = 'block';
         document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
@@ -651,6 +642,12 @@
         const sidebar = document.getElementById("default-sidebar");
         const sidebarOverlay = document.getElementById("sidebar-overlay");
         const footer = document.querySelector('footer');
+        const closeSidebar = document.getElementById('close-sidebar');
+
+        closeSidebar.addEventListener("click", function () {
+            sidebar.classList.toggle("translate-x-0");
+            sidebarOverlay.classList.toggle("opacity-50");
+        });
         //Open
         sidebarButton.addEventListener("click", function () {
             sidebar.classList.toggle("translate-x-0");
@@ -704,14 +701,10 @@
         openModal('modal-profile');
         event.preventDefault();
     });
-    window.openModal = function (modalId) {
-        document.getElementById(modalId).style.display = 'block';
-        document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
-    }
-    window.closeModal = function (modalId) {
-        document.getElementById(modalId).style.display = 'none';
-        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
-    }
+    document.getElementById('open-modal-promo').addEventListener('click', function(event) {
+        openModal('modalPromo');
+        event.preventDefault();
+    });
 </script>
 </body>
 </html>
