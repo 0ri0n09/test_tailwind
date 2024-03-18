@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
 </head>
 <body>
-<main class="animate__animated animate__fadeIn">
+<main class="mb-20 animate__animated animate__fadeIn">
     <!-- SIDEBAR BEGIN -->
     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden">
         <span class="sr-only">Open sidebar</span>
@@ -20,7 +20,7 @@
             <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
         </svg>
     </button>
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen max-h-screen overflow-y-auto bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <button id="close-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden z-50">
             <span class="sr-only">Open sidebar</span>
             <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
         <div class="h-full px-3 py-4 overflow-y-auto sm:border-r sm:border-gray-200">
             <div class="text-center">
                 <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo business">
-                <button class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
+                <button id="phinfo" type="button" class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
                     <p class="text-white">Infos de l'établissement</p>
                 </button>
             </div>
@@ -48,7 +48,7 @@
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
                     <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
                 </button>
-                <button type="button" onclick="openModal('')" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                <button id="promo" type="button" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
                     <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
                 </button>
@@ -69,7 +69,327 @@
     </aside>
     <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
     <!-- SIDEBAR END -->
+    <!-- MODAL PROMO BEGIN -->
+    <div id="modalPromo" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="relative sm:max-w-4xl sm:w-full bg-white shadow-xl rounded-md max-w-md w-full p-4">
+                <div class="absolute top-0 right-0 p-2">
+                    <button onclick="closeModal('modalPromo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-[--color-kapp] text-xl font-bold mt-2 mb-4">Promotions en cours</h3>
+                </div>
+                <!-- RESA CARD BEGIN -->
+                <div class="border rounded-lg p-4 text-center">
+                    <h4 class="font-bold mb-4">Promotion des vacances</h4>
+                    <div class="flex items-center mb-2">
+                        <img class="w-6 h-6 mr-4" src="icons/credits.svg" alt="Coins">
+                        <p>5.00 € sur le séjour</p>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <img class="w-6 h-6 mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
+                        <p>Réservez avant le 15/02/2024</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-6 h-6 mr-4" src="icons/notes-icon.svg" alt="Notes">
+                        <p>Ne manquez pas cette offre pour votre été</p>
+                    </div>
+                </div>
+                <!-- RESA CARD END -->
+            </div>
+        </div>
+    </div>
 
+    <script>
+        document.getElementById('promo').addEventListener('click', function(event) {
+          openModal('modalPromo');
+          event.preventDefault();
+        });
+        window.openModal = function (modalId) {
+          document.getElementById(modalId).style.display = 'block';
+          document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+        }
+        window.closeModal = function (modalId) {
+          document.getElementById(modalId).style.display = 'none';
+          document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+        }
+      </script>
+    <!-- MODAL PROMO END -->
+    <!-- MODAL PH INFO BEGIN -->
+    <div id="modalPhInfo" class="fixed fixed mb-4 hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+        <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md">
+            <div class="m-2">
+                <div class="flex justify-end p-2 sm:transform sm:scale-100">
+                    <button onclick="closeModal('modalPhInfo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-center">
+                    <img class="sm:w-1/2 sm:h-1/2 w-auto h-auto mx-auto mb-6 mt-4" src="./logo_business.png" alt="Logo de votre business">
+                    <h5 class="font-bold">Chez Diane</h5>
+                    <h4>Pension Féline et Canine</h4>
+                </div>
+                <!-- CARROUSEL BLOCK BEGIN -->
+                <div class="flex justify-center items-center mt-4">
+                    <div class="slider">
+                        <!-- slide 1 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
+                        </div>
+                        <!-- slide 2 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,cars" alt="" />
+                        </div>
+                        <!-- slide 3 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
+                        </div>
+                        <!-- slide 4 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,mountain" alt="" />
+                        </div>
+                        <!-- slide 5 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
+                        </div>
+                    </div>
+                    <button class="btn btn-next right-0 md:right-40 lg:right-64">
+                        <img class="scale-150 fgkappSvg" src="icons/button-circle-round-arrow-next-svgrepo-com.svg" alt="next" />
+                    </button>
+                    <button class="btn btn-prev rotate-180 left-0 md:left-40 lg:left-64">
+                        <img class="scale-150 fgkappSvg" src="icons/button-circle-round-arrow-next-svgrepo-com.svg" alt="prev" />
+                    </button>
+                </div>
+                <script>
+                "use strict";
+                // Select all slides
+                const slides = document.querySelectorAll(".slide");
+
+                // loop through slides and set each slides translateX
+                slides.forEach((slide, indx) => {
+                    slide.style.transform = `translateX(${indx * 100}%)`;
+                });
+
+                // select next slide button
+                const nextSlide = document.querySelector(".btn-next");
+
+                // current slide counter
+                let curSlide = 0;
+                // maximum number of slides
+                let maxSlide = slides.length - 1;
+
+                // add event listener and navigation functionality
+                nextSlide.addEventListener("click", function () {
+                    // check if current slide is the last and reset current slide
+                    if (curSlide === maxSlide) {
+                        curSlide = 0;
+                    } else {
+                        curSlide++;
+                    }
+
+                    //   move slide by -100%
+                    slides.forEach((slide, indx) => {
+                        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                    });
+                });
+
+                // select next slide button
+                const prevSlide = document.querySelector(".btn-prev");
+
+                // add event listener and navigation functionality
+                prevSlide.addEventListener("click", function () {
+                    // check if current slide is the first and reset current slide to last
+                    if (curSlide === 0) {
+                        curSlide = maxSlide;
+                    } else {
+                        curSlide--;
+                    }
+
+                    //   move slide by 100%
+                    slides.forEach((slide, indx) => {
+                        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                    });
+                });
+            </script>
+                <style>
+                .slider {
+                    width: 80%;
+                    max-width: 300px;
+                    height: 200px;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 15px;
+                }
+                .slide {
+                    width: 100%;
+                    max-width: 800px;
+                    height: 350px;
+                    position: absolute;
+                    transition: all 0.5s;
+                }
+                .slide img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .btn {
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 50%;
+                    z-index: 10px;
+                    cursor: pointer;
+                    background-color: none;
+                    font-size: 18px;
+                }
+                .btn:active {
+                    transform: scale(1.1);
+                }
+
+            </style>
+                <!-- CARROUSEL BLOCK END -->
+                <div>
+                    <div>
+                        <h4 class="py-3 mb-4 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-contact_phone.svg" alt="Puce" />
+                            Contact
+                        </h4>
+                        <h4 class="flex justify-center mb-4">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/telephone-of-old-design.svg" alt="Puce" />
+                            <a href="tel:+330606060648">+330606060648</a>
+                        </h4>
+                        <h4 class="flex justify-center mb-4">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg" alt="Puce" />
+                            <a href="mailto:Monemail@monemail.com">Monemail@monemail.com</a>
+                        </h4>
+                        <h4 class="flex justify-center mb-4">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/link.svg" alt="Puce" />
+                            <a href="https://www.kookie.pet">https://www.kookie.pet</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <h4 class="text-xs sm:text-base py-3 mb-2 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-info.svg" alt="Puce" />
+                            <p class="">Informations sur le professionnel</p>
+                        </h4>
+                        <h4 class="text-center text-[--color-fgSoft] font-bold mb-4">Animaux acceptés</h4>
+                        <div class="flex justify-center mb-8">
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/dog-face.png" alt="Puce" />
+                                <h4>Chiens</h4>
+                            </div>
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/cat-face.png" alt="Puce" />
+                                <h4>Chats</h4>
+                            </div>
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/horse-face.svg" alt="Puce" />
+                                <h4>Chevaux</h4>
+                            </div>
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/rabbit-face.svg" alt="Puce" />
+                                <h4>Autres</h4>
+                            </div>
+                        </div>
+                        <h4 class="text-center text-[--color-fgSoft] font-bold mb-2">Services inclus dans le tarif</h4>
+                        <div class="grid grid-cols-3 md:grid-cols-4 justify-center">
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/heater.svg" alt="Puce" />
+                                <h4>Chauffage</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/pet_toys.svg" alt="Puce" />
+                                <h4>Jouets</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/baseline-music_note.svg" alt="Puce" />
+                                <h4>Musique</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/fountain.svg" alt="Puce" />
+                                <h4>Fontaine</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/webcam.svg" alt="Puce" />
+                                <h4>Webcam</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pb-4">
+                        <h4 class="py-3 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-schedule.svg" alt="Puce" />
+                            Horaires d'ouverture
+                        </h4>
+                        <div class="flex justify-center">
+                            <div class="text-center mr-16 mb-8">
+                                <h4>Lundi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+                            </div>
+                            <div class="text-center mb-8">
+                                <h4>Mardi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="text-center mr-16 mb-8">
+                                <h4>Mercredi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+
+                            </div>
+                            <div class="text-center mb-8">
+                                <h4>Jeudi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="text-center mr-16 mb-8">
+                                <h4>Vendredi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 12h
+                            </div>
+                            <div class="text-center mb-8">
+                                <h4>Samedi</h4>
+                                <h4 class="text-[--color-fgDanger] font-bold">Fermé</h4>
+                            </div>
+                        </div>
+                        <div class="text-center mb-8">
+                            <h4>Dimanche</h4>
+                            <h4 class="text-[--color-fgDanger] font-bold">Fermé</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.getElementById('phinfo').addEventListener('click', function(event) {
+        openModal('modalPhInfo');
+        event.preventDefault();
+    });
+    window.openModal = function (modalId) {
+        document.getElementById(modalId).style.display = 'block';
+        document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+    }
+    window.closeModal = function (modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+    }
+</script>
+    <!-- MODAL PH INFO END -->
     <!-- CONTENT BEGIN -->
     <div id="content" class="p-2 sm:ml-72">
         <div class="p-1">
@@ -423,7 +743,8 @@
         <!-- ADD PET END -->
 
     </div>
-    <!-- MOBILE FOOTER BEGIN
+</main>
+    <!-- MOBILE FOOTER BEGIN -->
     <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
         <div class="flex justify-between items-center ml-8 mr-8">
             <button type="button" onclick="window.location='home.html'" class="">
@@ -446,59 +767,54 @@
             </button>
         </div>
     </footer>
-    MOBILE FOOTER END -->
-</main>
+    <!-- MOBILE FOOTER END -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
-        const sidebar = document.getElementById("default-sidebar");
-        const sidebarOverlay = document.getElementById("sidebar-overlay");
-        const footer = document.querySelector('footer');
-        const closeSidebar = document.getElementById('close-sidebar');
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+  const sidebar = document.getElementById("default-sidebar");
+  const sidebarOverlay = document.getElementById("sidebar-overlay");
+  const footer = document.querySelector('footer');
+  const closeSidebar = document.getElementById('close-sidebar');
+  const modalPromo = document.getElementById('modalPromo');
+   const modalInfo = document.getElementById('modalPhInfo');
 
-        closeSidebar.addEventListener("click", function () {
-            sidebar.classList.toggle("translate-x-0");
-            sidebarOverlay.classList.toggle("opacity-50");
-        });
-        //Open
-        sidebarButton.addEventListener("click", function () {
-            sidebar.classList.toggle("translate-x-0");
-            sidebarOverlay.classList.toggle("opacity-50");
-        });
-        //Close
-        document.addEventListener("click", function (event) {
-            if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
-                if (sidebarOverlay.classList.contains("opacity-50")) {
-                    footer.classList.toggle('hidden');
-                }
-                sidebar.classList.remove("translate-x-0");
-                sidebar.classList.remove("border-r");
-                sidebarOverlay.classList.remove("opacity-50");
-            }
-        });
-        //Hide mobileFooter
-        window.addEventListener('resize', adjustSidebarHeight);
-        window.addEventListener('load', adjustSidebarHeight);
+  closeSidebar.addEventListener("click", toggleSidebar);
+  sidebarButton.addEventListener("click", toggleSidebar);
 
-        sidebarButton.addEventListener('click', () => {
-            footer.classList.toggle('hidden');
-
-            if (footer.classList.contains('hidden')) {
-                sidebar.classList.add('h-full');
-            } else {
-                sidebar.classList.remove('h-full');
-            }
-        });
-    });
-    function adjustSidebarHeight() {
-        if (window.innerWidth >= 768) {
-            var windowHeight = window.innerHeight;
-            var footerHeight = document.querySelector('footer').offsetHeight;
-            var adjustedHeight = windowHeight - footerHeight;
-
-            document.getElementById('default-sidebar').style.height = adjustedHeight + 'px';
-        }
+  document.addEventListener("click", function (event) {
+    if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target) && !modalInfo.contains(event.target)) {
+      if (sidebar.classList.contains("translate-x-0")) {
+          toggleSidebar();
+      }
     }
+  });
+
+  sidebarButton.addEventListener('click', toggleFooter);
+
+  window.addEventListener('resize', adjustSidebarHeight);
+  window.addEventListener('load', adjustSidebarHeight);
+
+  function toggleSidebar() {
+    sidebar.classList.toggle("translate-x-0");
+    sidebarOverlay.classList.toggle("opacity-50");
+    footer.classList.remove("hidden");
+  }
+
+  function toggleFooter() {
+    footer.classList.toggle('hidden');
+    sidebar.classList.toggle('h-full', footer.classList.contains('hidden'));
+  }
+
+  function adjustSidebarHeight() {
+    if (window.innerWidth >= 768) {
+      var windowHeight = window.innerHeight;
+      var footerHeight = footer.offsetHeight;
+      var adjustedHeight = windowHeight - footerHeight;
+
+      sidebar.style.height = adjustedHeight + 'px';
+    }
+  }
+});
 </script>
 </body>
 </html>

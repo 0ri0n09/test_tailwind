@@ -12,7 +12,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
 </head>
 <body>
-<main class="animate__animated animate__fadeIn">
+<main class="mb-20 animate__animated animate__fadeIn">
   <!-- SIDEBAR BEGIN -->
   <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden">
     <span class="sr-only">Open sidebar</span>
@@ -597,12 +597,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const footer = document.querySelector('footer');
   const closeSidebar = document.getElementById('close-sidebar');
   const modalPromo = document.getElementById('modalPromo');
+   const modalInfo = document.getElementById('modalPhInfo');
 
   closeSidebar.addEventListener("click", toggleSidebar);
   sidebarButton.addEventListener("click", toggleSidebar);
 
   document.addEventListener("click", function (event) {
-    if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target)) {
+    if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target) && !modalInfo.contains(event.target)) {
       if (sidebar.classList.contains("translate-x-0")) {
           toggleSidebar();
       }
@@ -635,7 +636,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
-
       </script>
 </main>
 </body>

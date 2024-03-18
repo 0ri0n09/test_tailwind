@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const footer = document.querySelector('footer');
   const closeSidebar = document.getElementById('close-sidebar');
   const modalPromo = document.getElementById('modalPromo');
+   const modalInfo = document.getElementById('modalPhInfo');
 
   closeSidebar.addEventListener("click", toggleSidebar);
   sidebarButton.addEventListener("click", toggleSidebar);
 
   document.addEventListener("click", function (event) {
-    if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target)) {
+    if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target) && !modalInfo.contains(event.target)) {
       if (sidebar.classList.contains("translate-x-0")) {
           toggleSidebar();
       }
