@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Accueil</title>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+      <html lang="fr">
+      <head>
+      <meta charset="UTF-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>Nouvelle réservation</title>
   <link href="./style.css" rel="stylesheet">
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -69,6 +73,55 @@
   </aside>
   <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
   <!-- SIDEBAR END -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+      const sidebar = document.getElementById("default-sidebar");
+      const sidebarOverlay = document.getElementById("sidebar-overlay");
+      const footer = document.querySelector('footer');
+      const closeSidebar = document.getElementById('close-sidebar');
+      const modalPromo = document.getElementById('modalPromo');
+      const modalInfo = document.getElementById('modalPhInfo');
+
+      closeSidebar.addEventListener("click", toggleSidebar);
+      sidebarButton.addEventListener("click", toggleSidebar);
+
+      document.addEventListener("click", function (event) {
+        if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target) && !modalInfo.contains(event.target)) {
+          if (sidebar.classList.contains("translate-x-0")) {
+            toggleSidebar();
+          }
+        }
+      });
+
+      sidebarButton.addEventListener('click', toggleFooter);
+
+      window.addEventListener('resize', adjustSidebarHeight);
+      window.addEventListener('load', adjustSidebarHeight);
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("translate-x-0");
+        sidebarOverlay.classList.toggle("opacity-50");
+        footer.classList.remove("hidden");
+      }
+
+      function toggleFooter() {
+        footer.classList.toggle('hidden');
+        sidebar.classList.toggle('h-full', footer.classList.contains('hidden'));
+      }
+
+      function adjustSidebarHeight() {
+        if (window.innerWidth >= 768) {
+          var windowHeight = window.innerHeight;
+          var footerHeight = footer.offsetHeight;
+          var adjustedHeight = windowHeight - footerHeight;
+
+          sidebar.style.height = adjustedHeight + 'px';
+        }
+      }
+    });
+  </script>
+  <!-- CONTENT BEGIN -->
   <!-- MODAL PH INFO BEGIN -->
   <div id="modalPhInfo" class="fixed fixed mb-4 hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
     <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md">
@@ -376,7 +429,7 @@
   </div>
 
   <script>
-    document.getElementById('promo').addEventListener('click', function(event) {
+    document.getElementById('promo' || 'promoFooter').addEventListener('click', function(event) {
       openModal('modalPromo');
       event.preventDefault();
     });
@@ -390,180 +443,78 @@
     }
   </script>
   <!-- MODAL PROMO END -->
-
   <div class="p-2 sm:ml-72">
-    <div class="flex items-end justify-center mb-3">
-      <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-home.svg" alt="home">
-      <h1 class="text-2xl text-[--color-fgSoft] font-bold">Accueil</h1>
-    </div>
-    <hr>
-    <div class="mt-3 sm:mt-12 mx-1 justify-left border border-gray-300 rounded-lg">
-      <div class="flex m-4 items-center justify-center">
-        <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/contract.svg" alt="contract">
-        <h4 class="text-xl sm:text-2xl text-center text-[--color-fgSoft] font-bold ">Mes réservations à venir</h4>
+    <div class="p-1">
+      <div class="flex items-end justify-center mb-3">
+        <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="romm_service">
+        <h1 class="text-2xl text-[--color-fgSoft] font-bold">Nouvelle réservation</h1>
       </div>
-      <div class="cards-container flex flex-wrap flex-col-3 lg:flex-row justify-center shadow">
-        <!-- RESA CARD BEGIN -->
-        <button onclick="location.href='my_reservations.html'" class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-          <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
-              <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-        <!-- RESA CARD END -->
-        <!-- RESA CARD BEGIN -->
-        <button onclick="location.href='my_reservations.html'" class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-          <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
-              <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-        <!-- RESA CARD END -->
-        <!-- RESA CARD BEGIN -->
-        <button onclick="location.href='my_reservations.html'" class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-          <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
-              <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-        <!-- RESA CARD END -->
-        <!-- RESA CARD BEGIN -->
-        <button onclick="location.href='my_reservations.html'" class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-          <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
-              <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-        <!-- RESA CARD END -->
-        <!-- RESA CARD BEGIN -->
-        <button onclick="location.href='my_reservations.html'" class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-          <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSelected] font-bold">
-            <img class="w-6 h-6 mr-4 fgSelectedSvg" src="icons/temporary.svg" alt="Hourglass">
-            <p>En attente de validation par la pension</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="calendar">
-            <p>du 22/02/2024 au 23/02/2024</p>
-          </div>
-          <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-            <img class="w-6 h-6 fgSoftSvg mr-4 " src="icons/baseline-pets.svg" alt="Pet">
-            <p>Rebel</p>
-          </div>
-          <div class="items-center mb-2 flex flex-row">
-            <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-            <span class="text-left">
-              <p class="mr-4 text-[--color-fgSoft] font-bold">38.00 €</p>
-              <p class="text-[--color-fgDanger] font-bold">(dont 30.00 € restant dû)</p>
-            </span>
-          </div>
-        </button>
-        <!-- RESA CARD END -->
-
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row justify-between between mt-4">
-      <div class="mx-1 sm:w-1/2 border border-gray-300 rounded-lg text-center mb-4 shadow">
-        <div class="flex flex-col h-full justify-center items-center ">
-          <div class="flex flex-row items-center">
-            <img class="w-10 h-10 mt-2 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
-            <h4 class="text-lg sm:text-2xl mt-4 text-[--color-fgSoft] font-bold">Promotions en cours</h4>
-          </div>
-          <!-- PROMO CARD BEGIN -->
-          <div class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center shadow">
-            <h4 class="text-[--color-fgSoft] font-bold mb-4">Promotion des vacances</h4>
-            <div class="flex items-center mb-2 text-[--color-fgSoft] font-bold">
-              <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-              <p>5.00 € sur le séjour</p>
+      <hr>
+      <!-- STEP BAR BEGIN -->
+      <div class="flex items-start max-w-screen-lg mx-auto mb-4 mt-4">
+        <div class="w-full">
+          <div class="flex items-center w-full">
+            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+              <span class="text-base text-white font-bold">1</span>
             </div>
-            <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-              <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
-              <p>Réservez avant le 15/02/2024</p>
-            </div>
-            <div class="flex items-center text-left text-[--color-fgSoft] font-bold">
-              <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
-              <p>Ne manquez pas cette offre pour votre été</p>
-            </div>
+            <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
           </div>
-          <!-- PROMO CARD END -->
+          <div class="mt-2 mr-2 ml-[0.2rem]">
+            <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-pets.svg" alt="pet">
+          </div>
+        </div>
+        <div class="w-full">
+          <div class="flex items-center w-full">
+            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+              <span class="text-base text-white font-bold">2</span>
+            </div>
+            <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+          </div>
+          <div class="mt-2 mr-2 ml-[0.2rem]">
+            <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-event.svg" alt="calendar">
+          </div>
+        </div>
+        <div class="w-full">
+          <div class="flex items-center w-full">
+            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+              <span class="text-base text-white font-bold">3</span>
+            </div>
+            <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+          </div>
+          <div class="mt-2 mr-2 ml-[0.2rem]">
+            <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-search.svg" alt="search">
+          </div>
+        </div>
+        <div class="w-full">
+          <div class="flex items-center w-full">
+            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+              <span class="text-base text-white font-bold">4</span>
+            </div>
+            <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+          </div>
+          <div class="mt-2 mr-2 ml-[0.2rem]">
+            <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/round-add_circle_outline.svg" alt="add">
+          </div>
         </div>
       </div>
-      <div class="mx-1 sm:w-1/2 border border-gray-300 rounded-lg text-center mb-4">
-        <div class="flex flex-col justify-center items-center h-full">
-          <div class="flex flex-row items-center">
-            <img class="w-10 h-10 mt-2 mr-2 fgSoftSvg" src="icons/attach.svg" alt="Paperclip">
-            <h4 class="text-lg text-[--color-fgSoft] font-bold sm:text-2xl mt-4 font-bold">Envoyer un document</h4>
-          </div>
-          <button class="border border-gray-300 bg-white rounded-lg m-6 p-4 transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
-            <p class="m-2 text-[--color-fgSoft] font-bold">Envoyez-nous directement des documents comme le carnet de santé de votre animal, Identification I-Cad, Ordonnances etc...</p>
-          </button>
-        </div>
-      </div>
+      <!-- STEP BAR END -->
     </div>
+    <div class="flex flex-col justify-center mb-4">
+      <h3 class="text-3xl text-center font-bold text-[--color-fgSelected]">
+        Prendre une assurance annulation
+      </h3>
+      <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
+    </div>
+    <div class="flex justify-between">
+      <button type="button" onclick="location.href='new_resa_step_6.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+        Retour
+      </button>
+      <button type="button" onclick="location.href='new_resa_step_stripe.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+        Suivant
+        <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+      </button>
+    </div>
+    <!-- CONTENT END -->
   </div>
   <!-- MOBILE FOOTER BEGIN -->
   <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
@@ -577,7 +528,7 @@
       <button type="button" onclick="window.location='my_reservations.html'" class="">
         <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/contract.svg" alt="Contract">
       </button>
-      <button type="button" onclick="openModal('')" class="">
+      <button id="promoFooter" type="button" class="">
         <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
       </button>
       <button type="button" onclick="window.location='my_pets.html'" class="">
@@ -589,54 +540,11 @@
     </div>
   </footer>
   <!-- MOBILE FOOTER END -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
-      const sidebar = document.getElementById("default-sidebar");
-      const sidebarOverlay = document.getElementById("sidebar-overlay");
-      const footer = document.querySelector('footer');
-      const closeSidebar = document.getElementById('close-sidebar');
-      const modalPromo = document.getElementById('modalPromo');
-      const modalInfo = document.getElementById('modalPhInfo');
-
-      closeSidebar.addEventListener("click", toggleSidebar);
-      sidebarButton.addEventListener("click", toggleSidebar);
-
-      document.addEventListener("click", function (event) {
-        if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target) && !modalInfo.contains(event.target)) {
-          if (sidebar.classList.contains("translate-x-0")) {
-            toggleSidebar();
-          }
-        }
-      });
-
-      sidebarButton.addEventListener('click', toggleFooter);
-
-      window.addEventListener('resize', adjustSidebarHeight);
-      window.addEventListener('load', adjustSidebarHeight);
-
-      function toggleSidebar() {
-        sidebar.classList.toggle("translate-x-0");
-        sidebarOverlay.classList.toggle("opacity-50");
-        footer.classList.remove("hidden");
-      }
-
-      function toggleFooter() {
-        footer.classList.toggle('hidden');
-        sidebar.classList.toggle('h-full', footer.classList.contains('hidden'));
-      }
-
-      function adjustSidebarHeight() {
-        if (window.innerWidth >= 768) {
-          var windowHeight = window.innerHeight;
-          var footerHeight = footer.offsetHeight;
-          var adjustedHeight = windowHeight - footerHeight;
-
-          sidebar.style.height = adjustedHeight + 'px';
-        }
-      }
-    });
-  </script>
 </main>
+</body>
+</html></title>
+</head>
+<body>
+
 </body>
 </html>

@@ -38,7 +38,7 @@
             <div class="text-center mt-4">
                 <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
-                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Tableau de bord</p>
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Accueil</p>
                 </button>
                 <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-green-100 pointer-events-none opacity-25">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-room_service.svg" alt="reservation">
@@ -301,31 +301,31 @@
     <!-- CONTENT END -->
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
-        const sidebar = document.getElementById("default-sidebar");
-        const sidebarOverlay = document.getElementById("sidebar-overlay");
-        const closeSidebar = document.getElementById('close-sidebar');
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+            const sidebar = document.getElementById("default-sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+            const closeSidebar = document.getElementById('close-sidebar');
 
-        closeSidebar.addEventListener("click", function () {
-            sidebar.classList.toggle("translate-x-0");
-            sidebarOverlay.classList.toggle("opacity-50");
+            closeSidebar.addEventListener("click", function () {
+                sidebar.classList.toggle("translate-x-0");
+                sidebarOverlay.classList.toggle("opacity-50");
+            });
+            //Open
+            sidebarButton.addEventListener("click", function () {
+                sidebar.classList.toggle("translate-x-0");
+                sidebarOverlay.classList.toggle("opacity-50");
+            });
+            //Close
+            document.addEventListener("click", function (event) {
+                if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
+                    sidebar.classList.remove("translate-x-0");
+                    sidebar.classList.remove("border-r");
+                    sidebarOverlay.classList.remove("opacity-50");
+                }
+            });
         });
-        //Open
-        sidebarButton.addEventListener("click", function () {
-            sidebar.classList.toggle("translate-x-0");
-            sidebarOverlay.classList.toggle("opacity-50");
-        });
-        //Close
-        document.addEventListener("click", function (event) {
-            if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target)) {
-                sidebar.classList.remove("translate-x-0");
-                sidebar.classList.remove("border-r");
-                sidebarOverlay.classList.remove("opacity-50");
-            }
-        });
-    });
-</script>
+    </script>
 </main>
 </body>
 </html>

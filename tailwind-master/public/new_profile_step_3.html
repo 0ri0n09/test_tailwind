@@ -37,7 +37,7 @@
             <div class="text-center mt-4">
                 <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 pointer-events-none opacity-25">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
-                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Tableau de bord</p>
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Accueil</p>
                 </button>
                 <button type="button" onclick="window.location='#'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-green-100 pointer-events-none opacity-25">
                     <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-room_service.svg" alt="reservation">
@@ -338,67 +338,67 @@
             <!-- Veto BEGIN -->
             <div class="m-2">
                 <div id="blockVeto" class="w-full mb-4 rounded border border-gray-300 shadow">
-                <div class="flex flex-row justify-center mt-2 mb-3">
-                    <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mt-2">Vétérinaire</h3>
-                </div>
-                <div class="flex items-center mb-3 mx-4">
-                    <div class="border-t border-gray-300 flex-1 mr-4"></div>
-                    <img class="w-8 h-8 fgSoftSvg" src="icons/veto.svg" alt="infos">
-                    <div class="border-t border-gray-300 flex-1 ml-4"></div>
-                </div>
-                <div class="h-auto w-full flex flex-col lg:flex-row">
-                    <div class="w-full flex flex-col ml-4 mr-4">
-                        <div class="w-10/12 flex flex-row mb-4 items-center">
-                            <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/home.svg">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Clinique"/>
+                    <div class="flex flex-row justify-center mt-2 mb-3">
+                        <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mt-2">Vétérinaire</h3>
+                    </div>
+                    <div class="flex items-center mb-3 mx-4">
+                        <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                        <img class="w-8 h-8 fgSoftSvg" src="icons/veto.svg" alt="infos">
+                        <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                    </div>
+                    <div class="h-auto w-full flex flex-col lg:flex-row">
+                        <div class="w-full flex flex-col ml-4 mr-4">
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/home.svg">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Clinique"/>
+                            </div>
+                            <!-- Nom -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                            </div>
+                            <!-- Prénom -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
+                            </div>
+                            <!-- Email -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Email"/>
+                            </div>
+                            <!-- Remarque -->
+                            <div class="w-11/12 flex mb-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                            </div>
                         </div>
-                        <!-- Nom -->
-                        <div class="w-10/12 flex flex-row mb-4 items-center">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
-                        </div>
-                        <!-- Prénom -->
-                        <div class="w-10/12 flex flex-row mb-4 items-center">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
-                        </div>
-                        <!-- Email -->
-                        <div class="w-10/12 flex flex-row mb-4 items-center">
-                            <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Email"/>
-                        </div>
-                        <!-- Remarque -->
-                        <div class="w-11/12 flex mb-4 items-center">
-                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
-                            <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                        <div class="w-full flex flex-col ml-4 mr-4">
+                            <!-- Addresse -->
+                            <div class="w-10/12 flex flex-row mb-4 mr-2 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Addresse"/>
+                            </div>
+                            <!-- Compl -->
+                            <div class="w-10/12  flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'addresse"/>
+                            </div>
+                            <!-- Code postale -->
+                            <div class="w-1/3  flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postale"/>
+                            </div>
+                            <!-- Ville -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Ville"/>
+                            </div>
+                            <!-- Pays -->
+                            <div class="w-1/2  flex flex-row mb-4 items-center">
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                    <option disabled selected style="display:none;">Sélectionnez le pays</option>
+                                    <option value="">France</option>
+                                    <option value="">Belgique</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-full flex flex-col ml-4 mr-4">
-                        <!-- Addresse -->
-                        <div class="w-10/12 flex flex-row mb-4 mr-2 items-center">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Addresse"/>
-                        </div>
-                        <!-- Compl -->
-                        <div class="w-10/12  flex flex-row mb-4 items-center">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'addresse"/>
-                        </div>
-                        <!-- Code postale -->
-                        <div class="w-1/3  flex flex-row mb-4 items-center">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postale"/>
-                        </div>
-                        <!-- Ville -->
-                        <div class="w-10/12 flex flex-row mb-4 items-center">
-                            <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Ville"/>
-                        </div>
-                        <!-- Pays -->
-                        <div class="w-1/2  flex flex-row mb-4 items-center">
-                            <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
-                                <option disabled selected style="display:none;">Sélectionnez le pays</option>
-                                <option value="">France</option>
-                                <option value="">Belgique</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
-            </div>
             </div>
             <!-- Veto END -->
 

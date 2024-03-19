@@ -117,6 +117,7 @@
             }
         });
     </script>
+    <!-- CONTENT BEGIN -->
     <!-- MODAL PH INFO BEGIN -->
     <div id="modalPhInfo" class="fixed fixed mb-4 hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
         <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md">
@@ -424,7 +425,7 @@
     </div>
 
     <script>
-        document.getElementById('promo').addEventListener('click', function(event) {
+        document.getElementById('promo' || 'promoFooter').addEventListener('click', function(event) {
             openModal('modalPromo');
             event.preventDefault();
         });
@@ -438,7 +439,6 @@
         }
     </script>
     <!-- MODAL PROMO END -->
-    <!-- CONTENT BEGIN -->
     <div class="p-2 sm:ml-72">
         <div class="p-1">
             <div class="flex items-end justify-center mb-3">
@@ -483,13 +483,13 @@
                 </div>
                 <div class="w-full">
                     <div class="flex items-center w-full">
-                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
                             <span class="text-base text-white font-bold">4</span>
                         </div>
-                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
                     </div>
                     <div class="mt-2 mr-2 ml-[0.2rem]">
-                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/round-add_circle_outline.svg" alt="add">
+                        <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/round-add_circle_outline.svg" alt="add">
                     </div>
                 </div>
             </div>
@@ -497,158 +497,120 @@
         </div>
         <div class="flex flex-col justify-center mb-4">
             <h3 class="text-3xl text-center font-bold text-[--color-fgSelected]">
-                Résultats de recherche
+                Confirmez votre demande de réservation
             </h3>
             <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
-            <h1 class="text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez un logement</h1>
         </div>
-        <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto justify-center">
-            <div class="cards-container flex flex-col sm:flex-row flex-wrap m-1 sm:m-4 justify-center">
-                <!-- Card 1 -->
-                <div id="card1" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
-                    <div class="flex flex-row">
-                        <div class="flex flex-col m-3">
-                            <div class="flex flex-col">
-                                <p class="text-base sm:text-xl font-bold">Chambre suite</p>
-                                <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
-                            </div>
+        <div>
+            <div class="w-full flex items-center justify-between justify-center mt-16">
+                <p class="ml-4">(1)</p>
+                <p class="ml-4 text-center">J’atteste avoir pris connaissance des conditions générales de vente de l’établissement, et déclare les accepter sans réserve.</p>
+                <div class="flex">
+                    <label for="toggle" class="flex flex-col items-center cursor-pointer select-none ml-2">
+                        <div class="relative">
+                            <input type="checkbox" id="toggle" class="peer sr-only"/>
+                            <div class="block h-8 w-14 rounded-full bg-gray-200 peer-checked:bg-[--color-kapp]"></div>
+                            <div class="absolute flex items-center justify-center w-5 h-6 transition bg-white rounded-full dot left-1 top-1 peer-checked:translate-x-7"></div>
                         </div>
-                        <div class="flex flex-col text-center m-3">
-                            <div class="flex flex-col">
-                                <p class="text-base sm:text-xl font-bold">25.00 €</p>
-                                <p class="text-xs sm:text-lg text-[--color-fgSuccess]">Disponible</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-center mt-4">
-                            <div class="flex flex-col">
-                                <img class="img-room w-10 h-10 items-end fgSuccessSvg hidden" src="icons/baseline-check.svg" alt="img check">
-                            </div>
-                        </div>
-                    </div>
-                    <img class="w-full h-full object-cover" src="room.jpg" alt="img room">
-                </div>
-                <div id="card2" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
-                    <div class="flex flex-row">
-                        <div class="flex flex-col m-3">
-                            <div class="flex flex-col">
-                                <p class="text-base sm:text-xl font-bold">Chambre suite</p>
-                                <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-center m-3">
-                            <div class="flex flex-col">
-                                <p class="text-base sm:text-xl font-bold">25.00 €</p>
-                                <p class="text-xs sm:text-lg text-[--color-fgSuccess]">Disponible</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-center mt-4">
-                            <div class="flex flex-col">
-                                <img class="img-room w-10 h-10 items-end fgSuccessSvg hidden" src="icons/baseline-check.svg" alt="img check">
-                            </div>
-                        </div>
-                    </div>
-                    <img class="w-full h-full object-cover" src="room.jpg" alt="img room">
-                </div>
-                <div id="card3" class="m-2 opacity-30 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 shadow">
-                    <div class="flex flex-row">
-                        <div class="flex flex-col m-3">
-                            <div class="flex flex-col">
-                                <p class="text-base sm:text-xl font-bold">Chambre suite</p>
-                                <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-center m-3">
-                            <div class="flex flex-col">
-                                <p class="text-base sm:text-xl font-bold">25.00 €</p>
-                                <p class="text-xs sm:text-lg text-[--color-fgDanger]">Indisponible</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-center mt-4">
-                            <div class="flex flex-col">
-                                <img class="w-10 h-10 items-end fgDanger" src="icons/cancelled.svg" alt="img check">
-                            </div>
-                        </div>
-                    </div>
-                    <img class="w-full h-full object-cover" src="room.jpg" alt="img room">
+                    </label>
+
+                    <div class="text-[--color-bgDanger] ml-1">*</div>
                 </div>
             </div>
-            <script>
-                function toggleImageVisibility(event) {
-                    event.preventDefault();
-                    const card = this.closest('.room');
-                    const isSelected = card.classList.contains('selected');
-                    const checkImage = card.querySelector('.img-room');
-                    const allCards = document.querySelectorAll('.room');
+            <div class="flex justify-center items-center">
+                <button class="flex flex-row border-2 border-[--color-fgSelected] rounded-3xl p-2">
+                    <a href="#" class="flex">
+                        <img class="w-6 h-6 mr-2 fgSelectedSvg" src="icons/see.svg" alt="eye">
+                        <p class="text-[--color-fgSelected]">CGV de Chez Diane</p>
+                    </a>
+                </button>
+            </div>
+            <div class="w-full flex items-center justify-between justify-center mt-16">
+                <p class="ml-4">(2)</p>
+                <p class="ml-4 text-center">Je certifie que tous les vaccins de mon animal seront à jour au début de la réservation</p>
+                <div class="flex">
+                    <label for="toggle2" class="flex flex-col items-center cursor-pointer select-none ml-2">
+                        <div class="relative">
+                            <input type="checkbox" id="toggle2" class="peer sr-only"/>
+                            <div class="block h-8 w-14 rounded-full bg-gray-200 peer-checked:bg-[--color-kapp]"></div>
+                            <div class="absolute flex items-center justify-center w-5 h-6 transition bg-white rounded-full dot left-1 top-1 peer-checked:translate-x-7"></div>
+                        </div>
+                    </label>
 
-                    if (isSelected) {
-                        allCards.forEach(room => {
-                            room.addEventListener('click', toggleImageVisibility);
-                            room.addEventListener('touchstart', toggleImageVisibility);
-                            room.style.opacity = '1';
-                        });
-                    } else {
-                        allCards.forEach(room => {
-                            if (room !== card) {
-                                room.removeEventListener('click', toggleImageVisibility);
-                                room.removeEventListener('touchstart', toggleImageVisibility);
-                                room.style.opacity = '0.3';
-                            }
-                        });
-                    }
-                    card.classList.toggle('selected', !isSelected);
-                    if (isSelected) {
-                        card.classList.remove('bg-sky-50');
-                        card.classList.remove('scale-105');
-                        card.classList.add('scale-100');
-                        checkImage.classList.add('hidden');
-                    } else {
-                        card.classList.add('bg-sky-50');
-                        card.classList.add('scale-105');
-                        checkImage.classList.remove('hidden');
-                    }
-                }
-                const cards = document.querySelectorAll('.room');
-                cards.forEach(room => {
-                    room.addEventListener('click', toggleImageVisibility);
-                    room.addEventListener('touchstart', toggleImageVisibility);
-                });
-            </script>
+                    <div class="text-[--color-bgDanger] ml-1">*</div>
+                </div>
+            </div>
+            <div class="flex text-sm mt-8 ml-8">
+                <p class="font-light">Les champs obligatoires à remplir sont marqués par</p>
+                <p class="ml-1 text-[--color-bgDanger]">*</p>
+            </div>
+        </div>
+        <hr class="w-full h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
+        <div>
+            <div class="w-full justify-center">
+                <div class="w-full flex justify-center">
+                    <p class="w-1/4 ">Montant des arrhes :</p>
+                    <p class="w-1/4 text-right">5 €</p>
+                </div>
+                <div class="w-full flex justify-center">
+                    <p class="w-1/4 ">Montant des frais de service :</p>
+                    <p class="w-1/4 text-right">7.20 €</p>
+                </div>
+                <div class="w-full flex justify-center">
+                    <p class="w-1/4 ">Montant à régler :</p>
+                    <p class="w-1/4 text-right">12.20 €</p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <div class="w-full flex justify-center items-center">
+                    <div class="w-1/4 flex ">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg" src="icons/credits.svg" alt="coins">
+                        <p class="ml-2 text-left">Montant total du séjour :</p>
+                    </div>
+                    <div class="w-1/4">
+                        <p class="text-[--color-bgSuccess] text-right">38.00 €</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <p class="text-[--color-bgSuccess]">Vous n'avez rien à régler pour l'instant</p>
+                </div>
+            </div>
         </div>
         <div class="flex justify-between">
-            <button type="button" onclick="location.href='new_resa_step_2.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            <button type="button" onclick="location.href='new_resa_step_5.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Retour
             </button>
-            <button type="button" onclick="location.href='new_resa_step_4.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            <button type="button" onclick="location.href='new_resa_step_koala.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Suivant
                 <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
             </button>
         </div>
         <!-- CONTENT END -->
     </div>
+    <!-- MOBILE FOOTER BEGIN -->
+    <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
+        <div class="flex justify-between items-center ml-8 mr-8">
+            <button type="button" onclick="window.location='home.html'" class="">
+                <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
+            </button>
+            <button type="button" onclick="window.location='new_resa_step_1.html'" class="">
+                <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-room_service.svg" alt="Reservation">
+            </button>
+            <button type="button" onclick="window.location='my_reservations.html'" class="">
+                <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/contract.svg" alt="Contract">
+            </button>
+            <button id="promoFooter" type="button" class="">
+                <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
+            </button>
+            <button type="button" onclick="window.location='my_pets.html'" class="">
+                <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-pets.svg" alt="Pet">
+            </button>
+            <button type="button" onclick="window.location='my_profile.html'" class="">
+                <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-person.svg" alt="Profile">
+            </button>
+        </div>
+    </footer>
+    <!-- MOBILE FOOTER END -->
 </main>
-<!-- MOBILE FOOTER BEGIN -->
-<footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
-    <div class="flex justify-between items-center ml-8 mr-8">
-        <button type="button" onclick="window.location='home.html'" class="">
-            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
-        </button>
-        <button type="button" onclick="window.location='new_resa_step_1.html'" class="">
-            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-room_service.svg" alt="Reservation">
-        </button>
-        <button type="button" onclick="window.location='my_reservations.html'" class="">
-            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/contract.svg" alt="Contract">
-        </button>
-        <button id="promo" type="button" class="">
-            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
-        </button>
-        <button type="button" onclick="window.location='my_pets.html'" class="">
-            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-pets.svg" alt="Pet">
-        </button>
-        <button type="button" onclick="window.location='my_profile.html'" class="">
-            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-person.svg" alt="Profile">
-        </button>
-    </div>
-</footer>
-<!-- MOBILE FOOTER END -->
 </body>
 </html>
