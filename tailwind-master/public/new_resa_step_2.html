@@ -440,7 +440,7 @@
     </script>
     <!-- MODAL PROMO END -->
     <!-- CONTENT BEGIN -->
-    <div class="p-2 sm:ml-72">
+    <div id="content" class="p-2 sm:ml-72">
         <div class="p-1">
             <div class="flex items-end justify-center mb-3">
                 <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="romm_service">
@@ -448,7 +448,7 @@
             </div>
             <hr>
             <!-- STEP BAR BEGIN -->
-            <div class="flex items-start max-w-screen-lg mx-auto mb-4 mt-4">
+            <div class="flex items-start mb-4 mt-4">
                 <div class="w-full">
                     <div class="flex items-center w-full">
                         <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
@@ -482,15 +482,58 @@
                         <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-search.svg" alt="search">
                     </div>
                 </div>
-                <div class="w-full">
+                <div class="lg:w-full">
                     <div class="flex items-center w-full">
                         <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
                             <span class="text-base text-white font-bold">4</span>
                         </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300 hidden lg:flex"></div>
+                    </div>
+                    <div class="w-full mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/round-add_circle_outline.svg" alt="add">
+                    </div>
+                </div>
+                <div class="w-full hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">5</span>
+                        </div>
                         <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
                     </div>
                     <div class="mt-2 mr-2 ml-[0.2rem]">
-                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/round-add_circle_outline.svg" alt="add">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-info.svg" alt="info">
+                    </div>
+                </div>
+                <div class="w-full hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">6</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/agree.svg" alt="hands">
+                    </div>
+                </div>
+                <div class="w-full hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">7</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/koala_mono.svg" alt="koala">
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">8</span>
+                        </div>
+                    </div>
+                    <div class="mt-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 fgSoftSvg opacity-50" src="icons/mark.svg" alt="star">
                     </div>
                 </div>
             </div>
@@ -522,12 +565,12 @@
             <!-- DatePicker END-->
         </div>
         <h1 class="mb-4 mt-8 text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez les horaires de début et fin du séjour</h1>
-        <div class="flex flex-row justify-center">
-            <div class="mx-6 md:mx-24 relative m-8 justify-center text-center">
-                <div class="relative">
+        <div class="flex flex-row lg:justify-center">
+            <div class="mx-6 lg:mx-24 relative m-8 justify-center text-center lg:w-auto">
+                <div class="flex ">
                     <input id="time-input-1" type="text" class="w-full md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none shadow" placeholder="HH:MM">
                     <button class="absolute right-0 top-0 h-full px-3 time-picker-toggle">
-                        <img class="h-5 w-5 fgSoftSvg" src="icons/time_start.png">
+                        <img class="h-5 w-5 fgSoftSvg" src="icons/time_start.png" alt="time">
                     </button>
                     <div class="hidden absolute left-0 mt-10 md:mt-0 md:left-full w-full md:w-auto bg-white border border-gray-300 rounded-md shadow-lg z-10 shadow time-picker" data-time-input-id="time-input-1">
                         <div class="p-2 flex justify-between">
@@ -541,11 +584,11 @@
                     </div>
                 </div>
             </div>
-            <div class="mx-6 md:mx-24 relative m-8 justify-center text-center">
+            <div class="mx-6 md:mx-24 relative m-8 justify-center text-center lg:w-auto">
                 <div class="relative">
                     <input id="time-input-2" type="text" class="w-full md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none shadow" placeholder="HH:MM">
                     <button class="absolute right-0 top-0 h-full px-3 time-picker-toggle">
-                        <img class="h-5 w-5 fgSoftSvg" src="icons/time_stop.png">
+                        <img class="h-5 w-5 fgSoftSvg" src="icons/time_stop.png" alt="time">
                     </button>
                     <div class="hidden absolute left-0 mt-10 md:mt-0 md:left-full w-full md:w-auto bg-white border border-gray-300 rounded-md shadow-lg z-10 shadow time-picker" data-time-input-id="time-input-2">
                         <div class="p-2 flex justify-between">
