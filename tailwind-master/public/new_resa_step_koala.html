@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title><!DOCTYPE html>
-    <html lang="fr">
-    <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Nouvelle réservation</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Nouvelle réservation</title>
   <link href="./style.css" rel="stylesheet">
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -548,47 +544,54 @@
       </h3>
       <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
     </div>
-    <div>
-      <!-- KOALA_CHOICE_BEGIN
-      <h1>Gardez l'esprit tranquille</h1>
+    <div class="w-full flex justify-center">
+      <div class="lg:w-4/5">
+        <div class="relative">
+          <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 hover:bg-gray-100" onclick="this.classList.toggle('bg-blue-200'); this.classList.toggle('border-blue-200')">
+            <div class="flex justify-between items-center">
+              <img src="icons/koala.svg" alt="koala">
+              <div class="text-center mx-auto"> <!-- Utilisation de mx-auto pour centrer le contenu -->
+                <h1 class="text-lg font-bold text-black leading-normal">Koala Flex</h1>
+                <h4 class="font-normal text-gray-600">powered by Koala</h4>
+              </div>
+              <p class="text-lg font-bold text-black whitespace-nowrap">+ 16.30€</p>
+            </div>
+            <div>
+              <ul class="pl-2 mt-4 mb-0 text-base list-disc">
+                <li class="mt-1">Protégz vos arrhes en cas d'annulation</li>
+                <li class="mt-1">Annulation sans motif ou justificatif</li>
+                <li class="mt-1">Jusqu'à 2 jours (48 h) avant le séjour</li>
+                <li class="mt-1">90 % des arrhes remboursées en 3 jours</li>
+              </ul>
+            </div>
+            <hr class="ml-4 mr-4 mb-2 mt-2">
+            <div class="text-center mb-4">
+              <div class="mb-8">
+                <p>En ajoutant <a class="font-bold">Koala Flex</a>, vous acceptez</p>
+              </div>
+              <a class="text-white bg-[--color-kapp] rounded-3xl p-4">
+                les CGV de Koala
+              </a>
+            </div>
+          </section>
 
-      <section class="RoundedTile KoalaTile WantsKoala_${kapp_wants_koala}" onClick="sendKeyVal ('WantsKoala', 'YES');">
-        <div class="Row">
-          <img src="/res/koala.svg" />
-          <h2>
-            Koala Flex<br />
-            <small>powered by Koala</small>
-          </h2>
-          <p class="Price">
-            +&nbsp;${kj_quote_price}
-          </p>
+          <div class="absolute top-[-8pt] left-1/2 transform -translate-x-1/2">
+            <p class="text-center text-xs text-orange-500 bg-orange-200 w-28 p-0.5">Recommandé</p>
+          </div>
         </div>
-        <ul>
-          <li>Protégez vos arrhes en cas d'annulation</li>
-          <li>Annulation sans motif ou justificatif</li>
-          <li>Jusqu’à 2 jours (48 h) avant le séjour</li>
-          <li>90 % des arrhes remboursées en 3 jours</li>
-        </ul>
-        <hr />
-        <p>
-          En ajoutant <b>Koala Flex</b>, vous acceptez<br />
-          <a href="${kj_document_url}" class="Button" target="_blank">les CGV de Koala</a>
-        </p>
-        <div class="RecommendedBadgeContainer">
-          <p class="RecommendedBadge">Recommandé</p>
-        </div>
-      </section>
-
-      <section class="RoundedTile NoKoalaTile WantsKoala_${kapp_wants_koala}" onClick="sendKeyVal ('WantsKoala', 'NO');">
-        <h2>
-          Non merci
-        </h2>
-        <ul>
-          <li>Je prends le risque de perdre les arrhes</li>
-        </ul>
-      </section>
-      KOALA_CHOICE_END -->
+        <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg">
+          <div class="text-center">
+            <h1 class="text-lg font-bold text-black leading-normal">Non merci</h1>
+          </div>
+          <div>
+            <ul class="pl-2 mt-4 mb-0 text-base list-disc" >
+              <li class="mt-1" >Je prends le risque de perdre les arrhes</li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
+
     <div class="flex justify-between">
       <button type="button" onclick="location.href='new_resa_step_6.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
         Retour
@@ -625,10 +628,5 @@
   </footer>
   <!-- MOBILE FOOTER END -->
 </main>
-</body>
-</html></title>
-</head>
-<body>
-
 </body>
 </html>

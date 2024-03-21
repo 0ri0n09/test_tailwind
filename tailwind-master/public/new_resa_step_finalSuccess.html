@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 <body>
 <main class="mb-20 animate__animated animate__fadeIn">
@@ -538,7 +539,7 @@
             </div>
             <!-- STEP BAR END -->
         </div>
-        <div class="w-full flex flex-col justify-center mb-4 mt-16">
+        <div class="w-full flex flex-col justify-center mb-8 mt-8">
             <div class="flex justify-center">
                 <div class="">
                     <img class="w-20 h-20 flex justify-center text-center fgSuccessSvg" src="icons/baseline-check.svg" alt="checkmark">
@@ -556,7 +557,7 @@
             </div>
             <div class="mt-4">
                 <h3 class="text-lg text-center">
-                    Dès validation de votre réservation , vous recevrez un email de confirmation.</h3>
+                    Après acceptation de votre demande par l'établissement, vous recevrez un email de validation.</h3>
             </div>
             <div class="mt-4">
                 <h3 class="text-lg text-center">
@@ -568,13 +569,53 @@
             <button type="button" onclick="location.href='new_resa_step_koala.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Retour
             </button>
-            <button type="button" onclick="location.href='new_resa_step_final.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-                Suivant
+            <button type="button" onclick="location.href='new_resa_step_final.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSuccess] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                Voir ma demande
                 <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
             </button>
         </div>
+        <div>
+            <script>
+                const count =1000,
+                    origins = [
+                        {y: 0.7},  // Origine 1
+                        {x: 0.7, y: 0.7},  // Origine 2
+                        {x: 0.6, y: 0.7},  // Origine 3
+                    ];
+
+                // Fonction pour vérifier la taille de l'écran et activer les origines en conséquence
+                function activateOrigins() {
+                    const screenWidth = window.innerWidth;
+                    const screenHeight = window.innerHeight;
+
+                    if (screenWidth < 768) { // Par exemple, si la largeur de l'écran est inférieure ou égale à 768 pixels
+                        fire(0.25, { spread: 26, startVelocity: 55, origin: origins[0] }); // Activer l'origine 1
+                    } else if (screenWidth < 1024) { // Si la largeur de l'écran est inférieure ou égale à 1024 pixels
+                        fire(0.2, { spread: 60, origin: origins[1] }); // Activer l'origine 2
+                    } else { // Pour les autres tailles d'écran
+                        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8, origin: origins[2] }); // Activer l'origine 3
+                        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2, origin: origins[3] }); // Activer l'origine 4
+                    }
+                }
+
+                // Fonction pour déclencher le feu d'artifice
+                function fire(particleRatio, opts) {
+                    confetti(
+                        Object.assign({}, opts, {
+                            particleCount: Math.floor(count * particleRatio),
+                        })
+                    );
+                }
+
+                // Appel de la fonction pour activer les origines au chargement de la page
+                window.onload = activateOrigins;
+            </script>
+
+
+        </div>
         <!-- CONTENT END -->
     </div>
+
     <!-- MOBILE FOOTER BEGIN -->
     <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
         <div class="flex justify-between items-center ml-8 mr-8">
