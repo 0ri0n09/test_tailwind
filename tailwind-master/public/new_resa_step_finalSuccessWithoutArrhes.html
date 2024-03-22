@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 <body>
 <main class="mb-20 animate__animated animate__fadeIn">
@@ -442,7 +443,7 @@
   <div class="p-2 sm:ml-72">
     <div class="p-1">
       <div class="flex items-end justify-center mb-3">
-        <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="romm_service">
+        <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="room_service">
         <h1 class="text-2xl text-[--color-fgSoft] font-bold">Nouvelle réservation</h1>
       </div>
       <hr>
@@ -527,101 +528,94 @@
         </div>
         <div class="">
           <div class="flex items-center w-full">
-            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
               <span class="text-base text-white font-bold">8</span>
             </div>
           </div>
           <div class="mt-2 ml-[0.2rem]">
-            <img class="w-6 h-6 fgSoftSvg opacity-50" src="icons/mark.svg" alt="star">
+            <img class="w-6 h-6 fgkappSvg" src="icons/mark.svg" alt="star">
           </div>
         </div>
       </div>
       <!-- STEP BAR END -->
     </div>
-    <div class="flex flex-col justify-center mb-4">
-      <h3 class="text-3xl text-center font-bold text-[--color-fgSelected]">
-        Gardez l'esprit tranquille
-      </h3>
-      <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
-    </div>
-    <div class="w-full flex justify-center">
-      <div class="lg:w-4/5">
-        <div class="relative">
-          <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 hover:bg-[#e1fde4] clickable-section" onclick="toggleSelection(this)" ontouchstart="toggleSelection(this)">
-            <div class="flex justify-between items-center">
-              <img src="icons/koala.svg" alt="koala">
-              <div class="text-center ml-4">
-                <h1 class="text-lg font-bold text-black leading-normal">Koala Flex</h1>
-                <h4 class="font-normal text-gray-600">powered by Koala</h4>
-              </div>
-              <p class="text-lg font-bold text-black whitespace-nowrap">+ 16.30€</p>
-            </div>
-
-            <div>
-              <ul class="pl-2 mt-4 mb-0 text-base list-disc">
-                <li class="mt-1">Protégz vos arrhes en cas d'annulation</li>
-                <li class="mt-1">Annulation sans motif ou justificatif</li>
-                <li class="mt-1">Jusqu'à 2 jours (48 h) avant le séjour</li>
-                <li class="mt-1">90 % des arrhes remboursées en 3 jours</li>
-              </ul>
-            </div>
-            <hr class="ml-4 mr-4 mb-2 mt-2">
-            <div class="text-center mb-4">
-              <div class="mb-8">
-                <p>En ajoutant <a class="font-bold">Koala Flex</a>, vous acceptez</p>
-              </div>
-              <a class="text-white bg-[--color-kapp] rounded-3xl p-4">
-                les CGV de Koala
-              </a>
-            </div>
-          </section>
-
-          <div class="absolute top-[-8pt] left-1/2 transform -translate-x-1/2">
-            <p class="text-center text-xs text-orange-500 bg-orange-200 w-28 p-0.5">Recommandé</p>
-          </div>
+    <div class="w-full flex flex-col justify-center mb-8 mt-8">
+      <div class="flex justify-center">
+        <div class="">
+          <img class="w-20 h-20 flex justify-center text-center fgSuccessSvg" src="icons/baseline-check.svg" alt="checkmark">
         </div>
-        <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 hover:bg-[#e1fde4] clickable-section" onclick="toggleSelection(this)" ontouchstart="toggleSelection(this)">
-          <div class="text-center">
-            <h1 class="text-lg font-bold text-black leading-normal">Non merci</h1>
-          </div>
-          <div>
-            <ul class="pl-2 mt-4 mb-0 text-base list-disc" >
-              <li class="mt-1" >Je prends le risque de perdre les arrhes</li>
-            </ul>
-          </div>
-        </section>
+      </div>
+      <div>
+        <h3 class="text-3xl text-center font-bold text-[--color-fgSuccess]">
+          Votre demande à été terminé avec succès !
+        </h3>
+      </div>
+      <div class="mt-8">
+        <h3 class="text-lg text-center">
+          Vous allez recevoir un email résumant votre demande de réservation.
+        </h3>
+      </div>
+      <div class="mt-4">
+        <h3 class="text-lg text-center">
+          Après acceptation de votre demande par l'établissement, vous recevrez un email de validation.</h3>
+      </div>
+      <div class="mt-4">
+        <h3 class="text-lg text-center">
+
+          Pensez à vérifier votre boite de courriers indésirables si vous ne recevez pas les emails.</h3>
       </div>
     </div>
-    <script>
-      let selectedSection = null;
-
-      function toggleSelection(section) {
-        if (selectedSection === section) {
-          // Désélectionner la section actuellement sélectionnée
-          selectedSection.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
-          selectedSection = null;
-        } else {
-          // Désélectionner la section précédemment sélectionnée
-          if (selectedSection !== null) {
-            selectedSection.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
-          }
-          // Appliquer les styles à la nouvelle section sélectionnée
-          section.classList.add('bg-[#e1fde4]', 'border-[#32a080]');
-          selectedSection = section;
-        }
-      }
-    </script>
     <div class="flex justify-between">
-      <button type="button" onclick="location.href='new_resa_step_6.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+      <button type="button" onclick="location.href='new_resa_step_koala.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
         Retour
       </button>
-      <button type="button" onclick="location.href='new_resa_step_stripe.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-        Suivant
+      <button type="button" onclick="location.href='new_resa_step_final.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSuccess] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+        Voir ma demande
         <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
       </button>
     </div>
+    <div>
+      <script>
+        const count =1000,
+                origins = [
+                  {y: 0.7},  // Origine 1
+                  {x: 0.7, y: 0.7},  // Origine 2
+                  {x: 0.6, y: 0.7},  // Origine 3
+                ];
+
+        // Fonction pour vérifier la taille de l'écran et activer les origines en conséquence
+        function activateOrigins() {
+          const screenWidth = window.innerWidth;
+          const screenHeight = window.innerHeight;
+
+          if (screenWidth < 768) { // Par exemple, si la largeur de l'écran est inférieure ou égale à 768 pixels
+            fire(0.25, { spread: 26, startVelocity: 55, origin: origins[0] }); // Activer l'origine 1
+          } else if (screenWidth < 1024) { // Si la largeur de l'écran est inférieure ou égale à 1024 pixels
+            fire(0.2, { spread: 60, origin: origins[1] }); // Activer l'origine 2
+          } else { // Pour les autres tailles d'écran
+            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8, origin: origins[2] }); // Activer l'origine 3
+            fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2, origin: origins[3] }); // Activer l'origine 4
+          }
+        }
+
+        // Fonction pour déclencher le feu d'artifice
+        function fire(particleRatio, opts) {
+          confetti(
+                  Object.assign({}, opts, {
+                    particleCount: Math.floor(count * particleRatio),
+                  })
+          );
+        }
+
+        // Appel de la fonction pour activer les origines au chargement de la page
+        window.onload = activateOrigins;
+      </script>
+
+
+    </div>
     <!-- CONTENT END -->
   </div>
+
   <!-- MOBILE FOOTER BEGIN -->
   <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
     <div class="flex justify-between items-center ml-8 mr-8">

@@ -442,7 +442,7 @@
   <div class="p-2 sm:ml-72">
     <div class="p-1">
       <div class="flex items-end justify-center mb-3">
-        <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="romm_service">
+        <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="room_service">
         <h1 class="text-2xl text-[--color-fgSoft] font-bold">Nouvelle réservation</h1>
       </div>
       <hr>
@@ -527,96 +527,36 @@
         </div>
         <div class="">
           <div class="flex items-center w-full">
-            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+            <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
               <span class="text-base text-white font-bold">8</span>
             </div>
           </div>
           <div class="mt-2 ml-[0.2rem]">
-            <img class="w-6 h-6 fgSoftSvg opacity-50" src="icons/mark.svg" alt="star">
+            <img class="w-6 h-6 fgkappSvg" src="icons/mark.svg" alt="star">
           </div>
         </div>
       </div>
       <!-- STEP BAR END -->
     </div>
-    <div class="flex flex-col justify-center mb-4">
-      <h3 class="text-3xl text-center font-bold text-[--color-fgSelected]">
-        Gardez l'esprit tranquille
-      </h3>
-      <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
-    </div>
-    <div class="w-full flex justify-center">
-      <div class="lg:w-4/5">
-        <div class="relative">
-          <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 hover:bg-[#e1fde4] clickable-section" onclick="toggleSelection(this)" ontouchstart="toggleSelection(this)">
-            <div class="flex justify-between items-center">
-              <img src="icons/koala.svg" alt="koala">
-              <div class="text-center ml-4">
-                <h1 class="text-lg font-bold text-black leading-normal">Koala Flex</h1>
-                <h4 class="font-normal text-gray-600">powered by Koala</h4>
-              </div>
-              <p class="text-lg font-bold text-black whitespace-nowrap">+ 16.30€</p>
-            </div>
-
-            <div>
-              <ul class="pl-2 mt-4 mb-0 text-base list-disc">
-                <li class="mt-1">Protégz vos arrhes en cas d'annulation</li>
-                <li class="mt-1">Annulation sans motif ou justificatif</li>
-                <li class="mt-1">Jusqu'à 2 jours (48 h) avant le séjour</li>
-                <li class="mt-1">90 % des arrhes remboursées en 3 jours</li>
-              </ul>
-            </div>
-            <hr class="ml-4 mr-4 mb-2 mt-2">
-            <div class="text-center mb-4">
-              <div class="mb-8">
-                <p>En ajoutant <a class="font-bold">Koala Flex</a>, vous acceptez</p>
-              </div>
-              <a class="text-white bg-[--color-kapp] rounded-3xl p-4">
-                les CGV de Koala
-              </a>
-            </div>
-          </section>
-
-          <div class="absolute top-[-8pt] left-1/2 transform -translate-x-1/2">
-            <p class="text-center text-xs text-orange-500 bg-orange-200 w-28 p-0.5">Recommandé</p>
-          </div>
+    <div class="w-full flex flex-col justify-center mb-4 mt-16">
+      <div class="flex justify-center">
+        <div class="">
+          <img class="w-20 h-20 flex justify-center text-center fgDangerSvg" src="icons/baseline-clear.svg" alt="checkmark">
         </div>
-        <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 hover:bg-[#e1fde4] clickable-section" onclick="toggleSelection(this)" ontouchstart="toggleSelection(this)">
-          <div class="text-center">
-            <h1 class="text-lg font-bold text-black leading-normal">Non merci</h1>
-          </div>
-          <div>
-            <ul class="pl-2 mt-4 mb-0 text-base list-disc" >
-              <li class="mt-1" >Je prends le risque de perdre les arrhes</li>
-            </ul>
-          </div>
-        </section>
+      </div>
+      <div>
+        <h3 class="text-3xl text-center font-bold text-[--color-fgDanger]">
+          L'établissement n'a plus de place !
+        </h3>
       </div>
     </div>
-    <script>
-      let selectedSection = null;
-
-      function toggleSelection(section) {
-        if (selectedSection === section) {
-          // Désélectionner la section actuellement sélectionnée
-          selectedSection.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
-          selectedSection = null;
-        } else {
-          // Désélectionner la section précédemment sélectionnée
-          if (selectedSection !== null) {
-            selectedSection.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
-          }
-          // Appliquer les styles à la nouvelle section sélectionnée
-          section.classList.add('bg-[#e1fde4]', 'border-[#32a080]');
-          selectedSection = section;
-        }
-      }
-    </script>
     <div class="flex justify-between">
-      <button type="button" onclick="location.href='new_resa_step_6.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-        Retour
+      <button type="button" onclick="location.href='home.html'" class="flex flex-row items-center text-[--color-fgDanger] border border-lg border-[--color-fgDanger] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+        Abandonner
+        <img class="w-6 h-6 flex justify-center text-center fgDangerSvg" src="icons/baseline-clear.svg" alt="checkmark">
       </button>
-      <button type="button" onclick="location.href='new_resa_step_stripe.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-        Suivant
+      <button type="button" onclick="location.href='new_resa_step_1.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-kapp] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+        Réessayer
         <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
       </button>
     </div>
