@@ -544,6 +544,7 @@
       </h3>
       <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
     </div>
+    <!-- KOALA END -->
     <div class="w-full flex justify-center">
       <div class="lg:w-4/5">
         <div class="relative">
@@ -610,24 +611,19 @@
           }
         }
       }
-
       function selectSection(sectionId) {
         const section = document.getElementById(sectionId);
         section.classList.add('bg-[#e1fde4]', 'border-[#32a080]');
         selectedSectionId = sectionId;
       }
-
       function deselectSection(sectionId) {
         const section = document.getElementById(sectionId);
         section.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
         selectedSectionId = null;
       }
-
       let startX = null;
-
-
     </script>
-
+    <!-- KOALA END -->
     <div class="flex justify-between">
       <button type="button" onclick="location.href='new_resa_step_6.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
         Retour

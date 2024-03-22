@@ -548,7 +548,7 @@
         <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto justify-center">
             <div class="cards-container flex flex-col sm:flex-row flex-wrap m-1 sm:m-4 justify-center">
                 <!-- Card 1 -->
-                <div id="card1" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                <div id="card1" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card1')" ontouchstart="handleTouchStart(event, 'card1')" ontouchmove="handleTouchMove(event, 'card1')">
                     <div class="flex flex-row">
                         <div class="flex flex-col m-3">
                             <div class="flex flex-col">
@@ -570,7 +570,7 @@
                     </div>
                     <img class="w-full h-full object-cover" src="room.jpg" alt="img room">
                 </div>
-                <div id="card2" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                <div id="card2" class="room m-2 w-sm h-72 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')">
                     <div class="flex flex-row">
                         <div class="flex flex-col m-3">
                             <div class="flex flex-col">
@@ -616,45 +616,51 @@
                 </div>
             </div>
             <script>
-                function toggleImageVisibility(event) {
-                    event.preventDefault();
-                    const card = this.closest('.room');
-                    const isSelected = card.classList.contains('selected');
-                    const checkImage = card.querySelector('.img-room');
-                    const allCards = document.querySelectorAll('.room');
+                let selectedCardId = null;
+                let touchMoveInProgress = false;
 
-                    if (isSelected) {
-                        allCards.forEach(room => {
-                            room.addEventListener('click', toggleImageVisibility);
-                            room.addEventListener('touchstart', toggleImageVisibility);
-                            room.style.opacity = '1';
-                        });
-                    } else {
-                        allCards.forEach(room => {
-                            if (room !== card) {
-                                room.removeEventListener('click', toggleImageVisibility);
-                                room.removeEventListener('touchstart', toggleImageVisibility);
-                                room.style.opacity = '0.3';
+                function toggleSelection(cardId) {
+                    if (!touchMoveInProgress) {
+                        if (selectedCardId === cardId) {
+                            deselectCard(cardId);
+                        } else {
+                            if (selectedCardId !== null) {
+                                deselectCard(selectedCardId);
                             }
-                        });
-                    }
-                    card.classList.toggle('selected', !isSelected);
-                    if (isSelected) {
-                        card.classList.remove('bg-sky-50');
-                        card.classList.remove('scale-105');
-                        card.classList.add('scale-100');
-                        checkImage.classList.add('hidden');
-                    } else {
-                        card.classList.add('bg-sky-50');
-                        card.classList.add('scale-105');
-                        checkImage.classList.remove('hidden');
+                            selectCard(cardId);
+                        }
                     }
                 }
-                const cards = document.querySelectorAll('.room');
-                cards.forEach(room => {
-                    room.addEventListener('click', toggleImageVisibility);
-                    room.addEventListener('touchstart', toggleImageVisibility);
-                });
+
+                function selectCard(cardId) {
+                    const card = document.getElementById(cardId);
+                    card.classList.add('bg-[#e1fde4]', 'border-[#32a080]');
+                    selectedCardId = cardId;
+                }
+
+                function deselectCard(cardId) {
+                    const card = document.getElementById(cardId);
+                    card.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
+                    selectedCardId = null;
+                }
+
+                let startX = null;
+
+                function handleTouchStart(event, cardId) {
+                    const card = document.getElementById(cardId);
+                    if (selectedCardId !== null && selectedCardId !== cardId) {
+                        deselectCard(selectedCardId);
+                    }
+                    touchMoveInProgress = false;
+                }
+
+                function handleTouchMove(event, cardId) {
+                    let threshold = 10; // Réglage de la sensibilité du seuil de déplacement
+
+                    if (Math.abs(event.touches[0].clientX - startX) > threshold) {
+                        touchMoveInProgress = true;
+                    }
+                }
             </script>
         </div>
         <div class="flex justify-between">
