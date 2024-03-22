@@ -547,9 +547,8 @@
     <div class="w-full flex justify-center">
       <div class="lg:w-4/5">
         <div class="relative">
-          <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 lg:hover:bg-[#e1fde4] clickable-section"
-                   onclick="toggleSelection(this)" ontouchstart="handleTouchStart(event, this)"
-                   ontouchmove="handleTouchMove(event)">
+          <section id="section1" class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 lg:hover:bg-[#e1fde4] clickable-section" onclick="toggleSelection('section1')" ontouchstart="handleTouchStart(event, 'section1')" ontouchmove="handleTouchMove(event, 'section1')">
+
             <div class="flex justify-between items-center">
               <img src="icons/koala.svg" alt="koala">
               <div class="text-center ml-4">
@@ -582,9 +581,8 @@
             <p class="text-center text-xs text-orange-500 bg-orange-200 w-28 p-0.5">Recommandé</p>
           </div>
         </div>
-        <section class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 lg:hover:bg-[#e1fde4] clickable-section"
-                 onclick="toggleSelection(this)" ontouchstart="handleTouchStart(event, this)"
-                 ontouchmove="handleTouchMove(event)">
+        <section id="section2" class="p-4 m-4 cursor-pointer border border-gray-300 rounded-lg shadow-lg transition-colors duration-300 lg:hover:bg-[#e1fde4] clickable-section" onclick="toggleSelection('section2')" ontouchstart="handleTouchStart(event, 'section2')" ontouchmove="handleTouchMove(event, 'section2')">
+
           <div class="text-center">
             <h1 class="text-lg font-bold text-black leading-normal">Non merci</h1>
           </div>
@@ -597,39 +595,39 @@
       </div>
     </div>
     <script>
-      let selectedSection = null;
+      let selectedSectionId = null;
+      let touchMoveInProgress = false;
 
-      function toggleSelection(section) {
-        if (selectedSection === section) {
-          // Désélectionner la section actuellement sélectionnée
-          selectedSection.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
-          selectedSection = null;
-        } else {
-          // Désélectionner la section précédemment sélectionnée
-          if (selectedSection !== null) {
-            selectedSection.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
+      function toggleSelection(sectionId) {
+        if (!touchMoveInProgress) {
+          if (selectedSectionId === sectionId) {
+            deselectSection(sectionId);
+          } else {
+            if (selectedSectionId !== null) {
+              deselectSection(selectedSectionId);
+            }
+            selectSection(sectionId);
           }
-          // Appliquer les styles à la nouvelle section sélectionnée
-          section.classList.add('bg-[#e1fde4]', 'border-[#32a080]');
-          selectedSection = section;
         }
       }
 
-      let startX;
-
-      function handleTouchStart(event, section) {
-        startX = event.touches[0].clientX;
+      function selectSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.classList.add('bg-[#e1fde4]', 'border-[#32a080]');
+        selectedSectionId = sectionId;
       }
 
-      function handleTouchMove(event) {
-        let threshold = 10; // Réglage de la sensibilité du seuil de déplacement
-
-        if (Math.abs(event.touches[0].clientX - startX) > threshold) {
-          // Annuler la sélection si le déplacement dépasse le seuil
-          selectedSection = null;
-        }
+      function deselectSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.classList.remove('bg-[#e1fde4]', 'border-[#32a080]');
+        selectedSectionId = null;
       }
+
+      let startX = null;
+
+
     </script>
+
     <div class="flex justify-between">
       <button type="button" onclick="location.href='new_resa_step_6.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
         Retour
