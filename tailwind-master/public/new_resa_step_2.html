@@ -661,10 +661,8 @@
                     <img class="h-5 w-5 mr-2 fgSoftSvg" src="icons/login.svg">
                     <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Arrivée à</h1>
                 </div>
-                <div class="timePicker flex p-2 justify-center items-center">
-                    <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
-                    <p class="ml-2">:</p>
-                    <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
+                <div class="timePicker p-2 flex justify-center items-center">
+                    <input type="time" min="08:30" max="18:00" step="300" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 8:30 à 13:00</p>
@@ -677,9 +675,7 @@
                     <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Départ à</h1>
                 </div>
                 <div class="timePicker p-2 flex justify-center items-center">
-                    <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
-                    <p class="ml-2">:</p>
-                    <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
+                    <input type="time" min="09h30" max="18:00" step="300" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 9:30 à 13:00</p>
@@ -687,27 +683,7 @@
                 </div>
             </div>
         </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const hoursInputs = document.querySelectorAll('.hours-input');
-                const minutesInputs = document.querySelectorAll('.minutes-input');
 
-                hoursInputs.forEach(input => {
-                    input.addEventListener('input', function () {
-                        if (this.value.length > 2 || parseInt(this.value) < 0 || parseInt(this.value) > 23) {
-                            this.value = 'MM';
-                        }
-                    });
-                });
-                minutesInputs.forEach(input => {
-                    input.addEventListener('input', function () {
-                        if (this.value.length > 2 || parseInt(this.value) < 0 || parseInt(this.value) > 59) {
-                            this.value = 'MM';
-                        }
-                    });
-                });
-            });
-        </script>
         <div class="flex justify-between">
             <button type="button" onclick="location.href='new_resa_step_1.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                 Retour
