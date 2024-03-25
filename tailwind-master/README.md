@@ -32,23 +32,21 @@ void Theme::doRecomputePalette (void) {
 
 //////////////////////////////////// TO DO /////////////////////////////////////////
 
-- Horloge des résa, bloquer les heures et minutes à 23h59
+
 - Modifier SVG round-circle-add + webcam
 - Sur le dashboard, mes résa à venir, si beaucoup de résa, envisager un accordeon avec un bouton "voir plus"
 - Faire une modal détails d'une résa
 - Pour les modals, comme la sidebar, fermer la modal si on clique en dehors du layout
-- Sur mobile/tablette/ecran scrolllable, quand tu es sur la sélection d'un animal (new resa par exemple), tu ne peux pas scroller sur tactile, la sélection t'en empeche, donc remplacer par un bouton +, puis X pour palier ce soucis
+- Sur mobile/tablette/ecran scrollable, quand tu es sur la sélection d'un animal (new resa par exemple), tu ne peux pas scroller sur tactile, la sélection t'en empeche, donc remplacer par un bouton +, puis X pour palier ce soucis
 - Footer/ sidebar, mettre en valeur le picto de la page actuelle
 - Sur tablette, faire une sidebar déployable (comme sur mobile), mais voir si on peut pas faire une deployable avec picto déja apparent, comme footer mobile mais sur le coté
-- Horloge, choix de l'heure caché sur tablette et mobile
-- Horloge, mini popup pas responsive
-- Horloge, faire en sorte que les ":" se mettent seules quand on a rempli les heures
 - Finir routing footer
-- A la création du compte, empecher le copier coller des infos
 - Creation compte, script pour check si les infos sont similaires
 - Carrousel promo dashboard
 - Finir new resa + responsive
 - New resa, responsive cassé sur tablette
+- Calendar
+- Enlever la sidebar en tablette, afficher le footer mobile
 
 //////////////////////////////////// DONE /////////////////////////////////////////
 
@@ -60,3 +58,7 @@ void Theme::doRecomputePalette (void) {
 - Problème du footer mobile, avec le menu burger quand la sidebar est ouverte, ça casse l'apparition/disparition du footer
 - Footer qui cache les boutons suivant/retour
 - A la création du compte, empecher le copier coller des infos
+- Horloge, choix de l'heure caché sur tablette et mobile
+- Horloge, mini popup pas responsive
+- Horloge, faire en sorte que les ":" se mettent seules quand on a rempli les heures
+- Horloge des résa, bloquer les heures et minutes à 23h59

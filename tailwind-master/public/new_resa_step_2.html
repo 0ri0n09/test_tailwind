@@ -548,7 +548,7 @@
         <h1 class="mb-4 text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez la date de début et fin du séjour</h1>
         <div class="flex flex-col sm:flex-row justify-center items-center h-auto mb-4 overflow-x-auto">
             <div class="flex justify-center mt-4 w-full">
-                <div id="calendar" class="w-full sm:w-1/2 bg-white m-0.5 sm:p-4 border rounded shadow"></div>
+                <div id="calendar" class="w-full md:w-4/5 bg-white m-0.5 sm:p-4 border rounded shadow"></div>
             </div>
         </div>
         <div id="selectedDates" class="flex justify-center mt-1 mb-2 text-lg text-center text-[--color-kapp] text-sm sm:text-xl"></div>
@@ -567,8 +567,8 @@
                     "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
                     "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
                 ];
-                const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
-                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                const days = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
+                const firstDayOfMonth = new Date(year, month, 1).getDay()-1;
                 const daysInMonth = new Date(year, month + 1, 0).getDate();
 
                 let calendarHTML = '<div class="flex justify-between mb-2 mt-2">' +
@@ -655,26 +655,26 @@
         </script>
         <h1 class="mb-4 mt-8 text-lg text-center text-[--color-fgSoft] opacity-70">Entrez les horaires d'arrivée et de départ</h1>
         <div class="flex flex-row justify-center mb-2">
-            <div class="w-full sm:w-1/3 m-1 bg-white border border-gray-300 rounded-md shadow">
+            <div class="w-full sm:w-2/3 m-1 bg-white border border-gray-300 rounded-md shadow">
                 <div class="flex flex-row items-center justify-center">
                     <img class="h-5 w-5 mr-2 fgSoftSvg" src="icons/login.svg">
                     <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Arrivée à</h1>
                 </div>
                 <div class="timePicker p-2 flex justify-center items-center">
-                    <input type="time" min="08:30" max="18:00" step="300" class="w-2/3 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
+                    <input type="time" min="08:30" max="18:00" step="300" class="w-4/5 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 8:30 à 13:00</p>
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 14:30 à 18:00</p>
                 </div>
             </div>
-            <div class="w-full sm:w-1/3 m-1 bg-white border border-gray-300 rounded-md shadow">
+            <div class="w-full sm:w-2/3 m-1 bg-white border border-gray-300 rounded-md shadow">
                 <div class="flex flex-row items-center justify-center">
                     <img class="h-5 w-5 mr-2 fgSoftSvg" src="icons/logout.svg">
                     <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Départ à</h1>
                 </div>
                 <div class="timePicker p-2 flex justify-center items-center">
-                    <input type="time" min="09h30" max="18:00" step="300" class="w-2/3 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
+                    <input type="time" min="09h30" max="18:00" step="300" class="w-4/5 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 9:30 à 13:00</p>
