@@ -545,256 +545,22 @@
             </h3>
             <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
         </div>
-        <h1 class="mb-4 text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez les dates de début et fin du séjour</h1>
+        <h1 class="mb-4 text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez la date de début et fin du séjour</h1>
         <div class="flex flex-col sm:flex-row justify-center items-center h-auto mb-4 overflow-x-auto">
-            <!-- DatePicker BEGIN -->
-            <div class="text-center my-2 sm:my-1 mx-2">
-                <input type="text" readonly id="datepickerArrival" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de début">
+            <div class="flex justify-center mt-4 w-full">
+                <div id="calendar" class="w-full sm:w-1/2 bg-white m-0.5 sm:p-4 border rounded shadow"></div>
             </div>
-            <div class="text-center my-2 sm:my-1 mx-2">
-                <input type="text" readonly id="datepickerDeparture" class="w-48 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Date de fin">
-            </div>
-            <style>
-                #datepickerArrival::placeholder {
-                    font-weight: bold;
-                }
-                #datepickerDeparture::placeholder {
-                    font-weight: bold;
-                }
-            </style>
-            <!-- DatePicker END-->
         </div>
-        <h1 class="mb-4 mt-8 text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez les horaires de début et fin du séjour</h1>
-        <div class="flex flex-row lg:justify-center">
-            <div class="mx-6 lg:mx-24 relative m-8 justify-center text-center lg:w-auto">
-                <div class="flex ">
-                    <input id="time-input-1" type="text" class="w-full md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none shadow" placeholder="HH:MM">
-                    <button class="absolute right-0 top-0 h-full px-3 time-picker-toggle">
-                        <img class="h-5 w-5 fgSoftSvg" src="icons/time_start.png" alt="time">
-                    </button>
-                    <div class="hidden absolute left-0 mt-10 md:mt-0 md:left-full w-full md:w-auto bg-white border border-gray-300 rounded-md shadow-lg z-10 shadow time-picker" data-time-input-id="time-input-1">
-                        <div class="p-2 flex justify-between">
-                            <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
-                            <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
-                        </div>
-                        <div class="p-2 flex justify-between">
-                            <button class="px-4 py-2 bg-white rounded-lg text-[--color-fgSelected] border border-[--color-fgSelected] hover:bg-[--color-fgSelected] hover:text-white time-picker-cancel">Annuler</button>
-                            <button class="px-4 py-2 mr-2 bg-green-600 hover:bg-green-500 text-white rounded-lg time-picker-ok">OK</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mx-6 md:mx-24 relative m-8 justify-center text-center lg:w-auto">
-                <div class="relative">
-                    <input id="time-input-2" type="text" class="w-full md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none shadow" placeholder="HH:MM">
-                    <button class="absolute right-0 top-0 h-full px-3 time-picker-toggle">
-                        <img class="h-5 w-5 fgSoftSvg" src="icons/time_stop.png" alt="time">
-                    </button>
-                    <div class="hidden absolute left-0 mt-10 md:mt-0 md:left-full w-full md:w-auto bg-white border border-gray-300 rounded-md shadow-lg z-10 shadow time-picker" data-time-input-id="time-input-2">
-                        <div class="p-2 flex justify-between">
-                            <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
-                            <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
-                        </div>
-                        <div class="p-2 flex justify-between">
-                            <button class="px-4 py-2 bg-white rounded-lg text-[--color-fgSelected] border border-[--color-fgSelected] hover:bg-[--color-fgSelected] hover:text-white time-picker-cancel">Annuler</button>
-                            <button class="px-4 py-2 mr-2 bg-green-600 hover:bg-green-500 text-white rounded-lg time-picker-ok">OK</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="selectedDates" class="flex justify-center mt-1 mb-2 text-lg text-center text-[--color-kapp] text-sm sm:text-xl"></div>
+        <div class="flex justify-center mt-1">
+            <button id="resetButton" class="items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2">Effacer les dates</button>
         </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const timePickerToggles = document.querySelectorAll('.time-picker-toggle');
-                const timePickers = document.querySelectorAll('.time-picker');
-                timePickerToggles.forEach((toggle, index) => {
-                    toggle.addEventListener('click', function() {
-                        timePickers[index].classList.toggle('hidden');
-                    });
-                });
-                timePickers.forEach(picker => {
-                    const hoursInput = picker.querySelector('.hours-input');
-                    const minutesInput = picker.querySelector('.minutes-input');
-                    const timePickerOk = picker.querySelector('.time-picker-ok');
-                    const timePickerCancel = picker.querySelector('.time-picker-cancel');
-                    const timeInputId = picker.dataset.timeInputId;
-                    const timeInput = document.getElementById(timeInputId);
-
-                    timePickerOk.addEventListener('click', function() {
-                        const hours = hoursInput.value.padStart(2, '0');
-                        const minutes = minutesInput.value.padStart(2, '0');
-                        updateTimeInput(timeInput, hours, minutes);
-                        picker.classList.add('hidden');
-                    });
-                    timePickerCancel.addEventListener('click', function() {
-                        picker.classList.add('hidden');
-                    });
-                    [hoursInput, minutesInput].forEach(input => {
-                        input.addEventListener('input', function() {
-                            this.value = this.value.replace(/\D/g, '').slice(0, 2);
-                        });
-                    });
-                });
-                function updateTimeInput(timeInput, hours, minutes) {
-                    timeInput.value = `${hours}:${minutes}`;
-                }
-            });
-        </script>
-        <div class="flex justify-between">
-            <button type="button" onclick="location.href='new_resa_step_1.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-                Retour
-            </button>
-            <button type="button" onclick="location.href='new_resa_step_3.html'" class="flex items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-                Suivant
-                <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
-            </button>
-        </div>
-        <!-- CONTENT END -->
-        <!-- MODAL BEGIN -->
-        <div id="modalResaBegin" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-            <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
-                <div class="flex justify-end p-2">
-                    <button onclick="closeModal('modalResaBegin');" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div id="content" class="flex flex-col m-1 justify-center items-center">
-                    <div class="lg:w-full h-96">
-                        <div class="h-auto m-1 rounded">
-                            <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4">
-                                Date de début du séjour
-                            </h3>
-                            <hr>
-                        </div>
-                        <div id="calendarArrival" class="p-4"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- MODAL END -->
-        <!-- MODAL BEGIN -->
-        <div id="modalResaEnd" class="fixed fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
-            <div class="relative top-10 mx-auto shadow-xl rounded-md bg-white max-w-2xl">
-                <div class="flex justify-end p-2">
-                    <button onclick="closeModal('modalResaEnd');" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div id="content2" class="flex flex-col m-1 justify-center items-center">
-                    <div class="lg:w-full h-96">
-                        <div class="h-auto m-1 rounded">
-                            <h3 class="text-xl text-center font-bold text-[--color-kapp] mb-4">
-                                Date de fin du séjour
-                            </h3>
-                            <hr>
-                        </div>
-                        <div id="calendarDeparture" class="p-4"></div>
-                        <script>
-                            const datePickerDeparture = document.getElementById('datepickerDeparture');
-                            const calendarDeparture = document.getElementById('calendarDeparture');
-                            let selectedDateEnd = null;
-                            datePickerDeparture.addEventListener('click', function() {
-                                openModal('modalResaEnd');
-                            });
-
-                            function generateCalendar(year, month) {
-                                const months = [
-                                    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-                                    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
-                                ];
-                                const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
-                                const currentYear = currentDate.getFullYear();
-                                const currentMonth = currentDate.getMonth();
-                                const currentDay = currentDate.getDate();
-                                const firstDayOfMonth = new Date(year, month, 1).getDay();
-                                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                                let calendarHTML = '<div class="flex justify-between mb-2">' +
-                                    '<img id="prevMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_left.svg">' +
-                                    '<div class="text-lg font-semibold text-[--color-kapp] font-bold">' + months[month] + ' ' + year + '</div>' +
-                                    '<img id="nextMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_right.svg">' +
-                                    '</div>';
-                                calendarHTML += '<div class="grid grid-cols-7 gap-1">';
-                                for (let day of days) {
-                                    calendarHTML += '<div class="m-1 text-center text-[--color-fgSoft] font-bold">' + day + '</div>';
-                                }
-                                for (let i = 0; i < firstDayOfMonth; i++) {
-                                    calendarHTML += '<div></div>';
-                                }
-                                for (let i = 1; i <= daysInMonth; i++) {
-                                    if (year === currentYear && month === currentMonth && i === currentDay) {
-                                        calendarHTML += '<div class="p-1 text-center text-white cursor-pointer bg-[--color-fgSelected] rounded">' + i + '</div>';
-                                    } else {
-                                        calendarHTML += '<div class="p-1 text-center text-[--color-fgSoft] cursor-pointer hover:bg-sky-100 rounded">' + i + '</div>';
-                                    }
-                                }
-                                calendarHTML += '</div>';
-                                calendarDeparture.innerHTML = calendarHTML;
-                                //Clics days
-                                const dayElements = calendarDeparture.querySelectorAll('.text-center');
-                                dayElements.forEach(function(dayElement) {
-                                    dayElement.addEventListener('click', function() {
-                                        const selectedDayEnd = parseInt(dayElement.textContent);
-                                        selectedDateEnd = new Date(year, month, selectedDayEnd);
-                                        datePickerDeparture.value = formatDate(selectedDateEnd);
-                                        closeModal('modalResaEnd')
-                                    });
-                                });
-                                // Btn prev & next
-                                document.getElementById('prevMonth').addEventListener('click', function() {
-                                    month--;
-                                    if (month < 0) {
-                                        year--;
-                                        month = 11;
-                                    }
-                                    generateCalendar(year, month);
-                                });
-                                document.getElementById('nextMonth').addEventListener('click', function() {
-                                    month++;
-                                    if (month > 11) {
-                                        year++;
-                                        month = 0;
-                                    }
-                                    generateCalendar(year, month);
-                                });
-                            }
-                            //Format date selected
-                            function formatDate(date) {
-                                const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-                                return date.toLocaleDateString('fr-FR', options);
-                            }
-                            //Init calendar
-                            generateCalendar(currentYear, currentMonth);
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- MODAL END -->
-        <script>
-            window.openModal = function(modalId) {
-                document.getElementById(modalId).style.display = 'block'
-                document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
-            }
-            window.closeModal = function(modalId) {
-                document.getElementById(modalId).style.display = 'none'
-                document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
-            }
-        </script>
-        <script>
-            const datePicker = document.getElementById('datepickerArrival');
-            const calendar = document.getElementById('calendarArrival');
-            let selectedDate = null;
-            datePicker.addEventListener('click', function() {
-                openModal('modalResaBegin');
-            });
+            const calendar = document.getElementById('calendar');
+            const selectedDatesContainer = document.getElementById('selectedDates');
+            const resetButton = document.getElementById('resetButton');
+            let startDate = null;
+            let endDate = null;
 
             function generateCalendar(year, month) {
                 const months = [
@@ -802,44 +568,58 @@
                     "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
                 ];
                 const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
-                const currentDate = new Date();
-                const currentYear = currentDate.getFullYear();
-                const currentMonth = currentDate.getMonth();
-                const currentDay = currentDate.getDate();
                 const firstDayOfMonth = new Date(year, month, 1).getDay();
                 const daysInMonth = new Date(year, month + 1, 0).getDate();
-                let calendarHTML = '<div class="flex justify-between mb-2">' +
-                    '<img id="prevMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_left.svg">' +
-                    '<div class="text-lg font-semibold text-[--color-kapp] font-bold">' + months[month] + ' ' + year + '</div>' +
-                    '<img id="nextMonth" class="w-8 h-8 fgkappSvg cursor-pointer" src="icons/baseline-keyboard_arrow_right.svg">' +
-                    '</div>';
+
+                let calendarHTML = '<div class="flex justify-between mb-2 mt-2">' +
+                                        '<img id="prevMonth" class="w-8 h-8 cursor-pointer fgkappSvg" src="icons/baseline-keyboard_arrow_left.svg">' +
+                                        '<div class="text-[--color-kapp] text-lg font-semibold">' + months[month] + ' ' + year + '</div>' +
+                                        '<img id="nextMonth" class="w-8 h-8 cursor-pointer fgkappSvg" src="icons/baseline-keyboard_arrow_right.svg">' +
+                                   '</div>';
                 calendarHTML += '<div class="grid grid-cols-7 gap-1">';
                 for (let day of days) {
-                    calendarHTML += '<div class="m-1 text-center text-[--color-fgSoft] font-bold">' + day + '</div>';
+                    calendarHTML += '<div class="m-1 text-center font-bold">' + day + '</div>';
                 }
                 for (let i = 0; i < firstDayOfMonth; i++) {
                     calendarHTML += '<div></div>';
                 }
                 for (let i = 1; i <= daysInMonth; i++) {
+                    let dayClass = "p-1 text-center cursor-pointer hover:bg-cyan-400 hover:text-white rounded";
                     if (year === currentYear && month === currentMonth && i === currentDay) {
-                        calendarHTML += '<div class="p-1 text-center text-white cursor-pointer bg-[--color-fgSelected] rounded">' + i + '</div>';
-                    } else {
-                        calendarHTML += '<div class="p-1 text-center text-[--color-fgSoft] cursor-pointer hover:bg-sky-100 rounded">' + i + '</div>';
+                        dayClass = "p-1 text-center text-white cursor-pointer bg-gray-400 rounded";
                     }
+                    calendarHTML += '<div class="' + dayClass + '">' + i + '</div>';
                 }
                 calendarHTML += '</div>';
                 calendar.innerHTML = calendarHTML;
-                //Clics days
+
                 const dayElements = calendar.querySelectorAll('.text-center');
                 dayElements.forEach(function(dayElement) {
                     dayElement.addEventListener('click', function() {
                         const selectedDay = parseInt(dayElement.textContent);
-                        selectedDate = new Date(year, month, selectedDay);
-                        datePicker.value = formatDate(selectedDate);
-                        closeModal('modalResaBegin')
+                        const selectedDate = new Date(year, month, selectedDay);
+                        if (!startDate) {
+                            startDate = selectedDate;
+                            this.classList.add('bg-cyan-400', 'text-white');
+                        } else if (!endDate && selectedDate > startDate) {
+                            endDate = selectedDate;
+                            this.classList.add('bg-cyan-400', 'text-white');
+                            const allDays = calendar.querySelectorAll('.text-center');
+                            allDays.forEach(date => {
+                                const dateObj = new Date(year, month, parseInt(date.textContent));
+                                if (dateObj > startDate && dateObj < endDate) {
+                                    date.classList.add('bg-cyan-400');
+                                    date.classList.add('text-white');
+                                }
+                            });
+                            const selectedDates = document.createElement('div');
+                            selectedDates.textContent = "Du " + formatDate(startDate) + " au " + formatDate(endDate);
+                            selectedDatesContainer.innerHTML = '';
+                            selectedDatesContainer.appendChild(selectedDates);
+                            calendar.classList.add('pointer-events-none');
+                        }
                     });
                 });
-                // Btn prev & next
                 document.getElementById('prevMonth').addEventListener('click', function() {
                     month--;
                     if (month < 0) {
@@ -857,16 +637,96 @@
                     generateCalendar(year, month);
                 });
             }
-            //Format date selected
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const currentMonth = currentDate.getMonth();
+            const currentDay = currentDate.getDate();
+            generateCalendar(currentYear, currentMonth);
             function formatDate(date) {
                 const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
                 return date.toLocaleDateString('fr-FR', options);
             }
-            //Init calendar
-            const currentDate = new Date();
-            const currentYear = currentDate.getFullYear();
-            const currentMonth = currentDate.getMonth();
-            generateCalendar(currentYear, currentMonth);
+            resetButton.addEventListener('click', function() {
+                startDate = null;
+                endDate = null;
+                generateCalendar(currentYear, currentMonth);
+                selectedDatesContainer.innerHTML = '';
+                calendar.classList.remove('pointer-events-none');
+            });
+        </script>
+        <h1 class="mb-4 mt-8 text-lg text-center text-[--color-fgSoft] opacity-70">Entrez les horaires d'arrivée et de départ</h1>
+        <div class="flex flex-row justify-center mb-2">
+            <div class="w-full sm:w-1/3 m-1 bg-white border border-gray-300 rounded-md shadow">
+                <div class="flex flex-row items-center justify-center">
+                    <img class="h-5 w-5 mr-2 fgSoftSvg" src="icons/login.svg">
+                    <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Arrivée à</h1>
+                </div>
+                <div class="timePicker flex p-2 justify-center items-center">
+                    <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
+                    <p class="ml-2">:</p>
+                    <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
+                </div>
+                <div class="flex flex-col justify-center items-center p-1">
+                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 8:30 à 13:00</p>
+                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 14:30 à 18:00</p>
+                </div>
+            </div>
+            <div class="w-full sm:w-1/3 m-1 bg-white border border-gray-300 rounded-md shadow">
+                <div class="flex flex-row items-center justify-center">
+                    <img class="h-5 w-5 mr-2 fgSoftSvg" src="icons/logout.svg">
+                    <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Départ à</h1>
+                </div>
+                <div class="timePicker p-2 flex justify-center items-center">
+                    <input type="number" min="0" max="23" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input" placeholder="HH">
+                    <p class="ml-2">:</p>
+                    <input type="number" min="0" max="59" class="w-1/2 ml-2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none minutes-input" placeholder="MM">
+                </div>
+                <div class="flex flex-col justify-center items-center p-1">
+                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 9:30 à 13:00</p>
+                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 15:00 à 18:00</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hoursInputs = document.querySelectorAll('.hours-input');
+                const minutesInputs = document.querySelectorAll('.minutes-input');
+
+                hoursInputs.forEach(input => {
+                    input.addEventListener('input', function () {
+                        if (this.value.length > 2 || parseInt(this.value) < 0 || parseInt(this.value) > 23) {
+                            this.value = 'MM';
+                        }
+                    });
+                });
+                minutesInputs.forEach(input => {
+                    input.addEventListener('input', function () {
+                        if (this.value.length > 2 || parseInt(this.value) < 0 || parseInt(this.value) > 59) {
+                            this.value = 'MM';
+                        }
+                    });
+                });
+            });
+        </script>
+        <div class="flex justify-between">
+            <button type="button" onclick="location.href='new_resa_step_1.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                Retour
+            </button>
+            <button type="button" onclick="location.href='new_resa_step_3.html'" class="flex items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                Suivant
+                <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+            </button>
+        </div>
+        <!-- CONTENT END -->
+        <script>
+            window.openModal = function(modalId) {
+                document.getElementById(modalId).style.display = 'block'
+                document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+            }
+            window.closeModal = function(modalId) {
+                document.getElementById(modalId).style.display = 'none'
+                document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+            }
         </script>
     </div>
     <!-- MOBILE FOOTER BEGIN -->
