@@ -553,7 +553,7 @@
         </div>
         <div id="selectedDates" class="flex justify-center mt-1 mb-2 text-lg text-center text-[--color-kapp] text-sm sm:text-xl"></div>
         <div class="flex justify-center mt-1">
-            <button id="resetButton" class="items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2">Effacer les dates</button>
+            <button id="resetButton" class="items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2">Revenir à aujourd'hui</button>
         </div>
         <script>
             const calendar = document.getElementById('calendar');
@@ -616,7 +616,6 @@
                             selectedDates.textContent = "Du " + formatDate(startDate) + " au " + formatDate(endDate);
                             selectedDatesContainer.innerHTML = '';
                             selectedDatesContainer.appendChild(selectedDates);
-                            calendar.classList.add('pointer-events-none');
                         }
                     });
                 });
@@ -636,6 +635,7 @@
                     }
                     generateCalendar(year, month);
                 });
+
             }
             const currentDate = new Date();
             const currentYear = currentDate.getFullYear();
@@ -651,7 +651,6 @@
                 endDate = null;
                 generateCalendar(currentYear, currentMonth);
                 selectedDatesContainer.innerHTML = '';
-                calendar.classList.remove('pointer-events-none');
             });
         </script>
         <h1 class="mb-4 mt-8 text-lg text-center text-[--color-fgSoft] opacity-70">Entrez les horaires d'arrivée et de départ</h1>
@@ -662,7 +661,7 @@
                     <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Arrivée à</h1>
                 </div>
                 <div class="timePicker p-2 flex justify-center items-center">
-                    <input type="time" min="08:30" max="18:00" step="300" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
+                    <input type="time" min="08:30" max="18:00" step="300" class="w-2/3 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 8:30 à 13:00</p>
@@ -675,7 +674,7 @@
                     <h1 class="mb-1 mt-2 text-lg text-center text-[--color-fgSoft]">Départ à</h1>
                 </div>
                 <div class="timePicker p-2 flex justify-center items-center">
-                    <input type="time" min="09h30" max="18:00" step="300" class="w-1/2 md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
+                    <input type="time" min="09h30" max="18:00" step="300" class="w-2/3 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 9:30 à 13:00</p>

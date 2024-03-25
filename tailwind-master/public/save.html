@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Nouvelle réservation</title>
+    <link href="./style.css" rel="stylesheet">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+</head>
+<body>
+<main class="mb-20 animate__animated animate__fadeIn">
+    <!-- SIDEBAR BEGIN -->
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+        </svg>
+    </button>
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-72 h-screen max-h-screen overflow-y-auto bg-white transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+        <button id="close-sidebar" type="button" class="bg-[--color-kapp] inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden z-50">
+            <span class="sr-only">Open sidebar</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+            </svg>
+        </button>
+        <div class="h-full px-3 py-4 overflow-y-auto sm:border-r sm:border-gray-200">
+            <div class="text-center">
+                <img class="w-auto h-auto mx-auto mb-6 mt-4 rounded rounded-lg" src="logo_business.png" alt="Logo business">
+                <button id="phinfo" type="button" class="inline-flex items-center mt-2 mb-2 px-3 py-2 bg-[--color-kapp] rounded-lg transition-transform transform scale-100 hover:bg-cyan-500 hover:scale-105">
+                    <p class="text-white">Infos de l'établissement</p>
+                </button>
+            </div>
+            <hr class="mt-2 h-px mx-auto w-48 bg-gray-200">
+            <div class="text-center mt-4">
+                <button type="button" onclick="window.location='home.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Accueil</p>
+                </button>
+                <button type="button" onclick="window.location='new_resa_step_1.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-room_service.svg" alt="reservation">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Réserver un séjour</p>
+                </button>
+                <button type="button" onclick="window.location='my_reservations.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/contract.svg" alt="contract">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Voir mes Réservations</p>
+                </button>
+                <button id="promo" type="button" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="promotions">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Promotions en cours</p>
+                </button>
+                <button type="button" onclick="window.location='my_pets.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-pets.svg" alt="pets">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mes animaux</p>
+                </button>
+                <button type="button" onclick="window.location='my_profile.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-gray-300 transition-transform transform scale-100 hover:scale-105 hover:bg-cyan-100 hover:border-[--color-kapp]">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/baseline-person.svg" alt="person">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Mon compte</p>
+                </button>
+                <button type="button" onclick="window.location='index.html'" class="w-64 h-12 px-4 py-2 mb-4 inline-flex justify-start items-center rounded-lg border border-2 border-red-300 transition-transform transform scale-100 hover:scale-105 hover:bg-red-100">
+                    <img class="h-8 w-8 mr-4 fgSoftSvg" src="icons/logout.svg" alt="logout">
+                    <p class="text-[--color-fgSoft] font-bold whitespace-nowrap overflow-hidden">Se déconnecter</p>
+                </button>
+            </div>
+        </div>
+    </aside>
+    <div class="fixed top-0 left-0 z-30 w-full h-full bg-black opacity-0 transition-opacity pointer-events-none" id="sidebar-overlay"></div>
+    <!-- SIDEBAR END -->
+    <!-- MODAL PH INFO BEGIN -->
+    <div id="modalPhInfo" class="fixed fixed mb-4 hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+        <div class="relative top-2 mx-auto sm:max-w-4xl shadow-xl rounded-md bg-white max-w-md">
+            <div class="m-2">
+                <div class="flex justify-end p-2 sm:transform sm:scale-100">
+                    <button onclick="closeModal('modalPhInfo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-center">
+                    <img class="sm:w-1/2 sm:h-1/2 w-auto h-auto mx-auto mb-6 mt-4" src="./logo_business.png" alt="Logo de votre business">
+                    <h5 class="font-bold">Chez Diane</h5>
+                    <h4>Pension Féline et Canine</h4>
+                </div>
+                <!-- CARROUSEL BLOCK BEGIN -->
+                <div class="flex justify-center items-center mt-4">
+                    <div class="slider">
+                        <!-- slide 1 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
+                        </div>
+                        <!-- slide 2 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,cars" alt="" />
+                        </div>
+                        <!-- slide 3 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
+                        </div>
+                        <!-- slide 4 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,mountain" alt="" />
+                        </div>
+                        <!-- slide 5 -->
+                        <div class="slide">
+                            <img src="https://source.unsplash.com/random?landscape,night" alt=""/>
+                        </div>
+                    </div>
+                    <button class="btn btn-next right-0 md:right-40 lg:right-64">
+                        <img class="scale-150 fgkappSvg" src="icons/button-circle-round-arrow-next-svgrepo-com.svg" alt="next" />
+                    </button>
+                    <button class="btn btn-prev rotate-180 left-0 md:left-40 lg:left-64">
+                        <img class="scale-150 fgkappSvg" src="icons/button-circle-round-arrow-next-svgrepo-com.svg" alt="prev" />
+                    </button>
+                </div>
+                <script>
+                    "use strict";
+                    // Select all slides
+                    const slides = document.querySelectorAll(".slide");
+
+                    // loop through slides and set each slides translateX
+                    slides.forEach((slide, indx) => {
+                        slide.style.transform = `translateX(${indx * 100}%)`;
+                    });
+
+                    // select next slide button
+                    const nextSlide = document.querySelector(".btn-next");
+
+                    // current slide counter
+                    let curSlide = 0;
+                    // maximum number of slides
+                    let maxSlide = slides.length - 1;
+
+                    // add event listener and navigation functionality
+                    nextSlide.addEventListener("click", function () {
+                        // check if current slide is the last and reset current slide
+                        if (curSlide === maxSlide) {
+                            curSlide = 0;
+                        } else {
+                            curSlide++;
+                        }
+
+                        //   move slide by -100%
+                        slides.forEach((slide, indx) => {
+                            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                        });
+                    });
+
+                    // select next slide button
+                    const prevSlide = document.querySelector(".btn-prev");
+
+                    // add event listener and navigation functionality
+                    prevSlide.addEventListener("click", function () {
+                        // check if current slide is the first and reset current slide to last
+                        if (curSlide === 0) {
+                            curSlide = maxSlide;
+                        } else {
+                            curSlide--;
+                        }
+
+                        //   move slide by 100%
+                        slides.forEach((slide, indx) => {
+                            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                        });
+                    });
+                </script>
+                <style>
+                    .slider {
+                        width: 80%;
+                        max-width: 300px;
+                        height: 200px;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 15px;
+                    }
+                    .slide {
+                        width: 100%;
+                        max-width: 800px;
+                        height: 350px;
+                        position: absolute;
+                        transition: all 0.5s;
+                    }
+                    .slide img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    .btn {
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 50%;
+                        z-index: 10px;
+                        cursor: pointer;
+                        background-color: none;
+                        font-size: 18px;
+                    }
+                    .btn:active {
+                        transform: scale(1.1);
+                    }
+
+                </style>
+                <!-- CARROUSEL BLOCK END -->
+                <div>
+                    <div>
+                        <h4 class="py-3 mb-4 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-contact_phone.svg" alt="Puce" />
+                            Contact
+                        </h4>
+                        <h4 class="flex justify-center mb-4">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/telephone-of-old-design.svg" alt="Puce" />
+                            <a href="tel:+330606060648">+330606060648</a>
+                        </h4>
+                        <h4 class="flex justify-center mb-4">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg" alt="Puce" />
+                            <a href="mailto:Monemail@monemail.com">Monemail@monemail.com</a>
+                        </h4>
+                        <h4 class="flex justify-center mb-4">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/link.svg" alt="Puce" />
+                            <a href="https://www.kookie.pet">https://www.kookie.pet</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <h4 class="text-xs sm:text-base py-3 mb-2 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-info.svg" alt="Puce" />
+                            <p class="">Informations sur le professionnel</p>
+                        </h4>
+                        <h4 class="text-center text-[--color-fgSoft] font-bold mb-4">Animaux acceptés</h4>
+                        <div class="flex justify-center mb-8">
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/dog-face.png" alt="Puce" />
+                                <h4>Chiens</h4>
+                            </div>
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/cat-face.png" alt="Puce" />
+                                <h4>Chats</h4>
+                            </div>
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/horse-face.svg" alt="Puce" />
+                                <h4>Chevaux</h4>
+                            </div>
+                            <div class="text-center">
+                                <img class="w-16 h-16 mx-2" src="icons/rabbit-face.svg" alt="Puce" />
+                                <h4>Autres</h4>
+                            </div>
+                        </div>
+                        <h4 class="text-center text-[--color-fgSoft] font-bold mb-2">Services inclus dans le tarif</h4>
+                        <div class="grid grid-cols-3 md:grid-cols-4 justify-center">
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/heater.svg" alt="Puce" />
+                                <h4>Chauffage</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/pet_toys.svg" alt="Puce" />
+                                <h4>Jouets</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/baseline-music_note.svg" alt="Puce" />
+                                <h4>Musique</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/fountain.svg" alt="Puce" />
+                                <h4>Fontaine</h4>
+                            </div>
+                            <div class="text-center flex flex-col items-center mb-2">
+                                <img class="w-8 h-8 mr-2 fgSelectedSvg" src="icons/webcam.svg" alt="Puce" />
+                                <h4>Webcam</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pb-4">
+                        <h4 class="py-3 flex items-center text-l text-[--color-fgSoft] font-bold before:flex-[1_1_0%] before:border-t before:border-gray-500 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-500 after:ms-6">
+                            <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-schedule.svg" alt="Puce" />
+                            Horaires d'ouverture
+                        </h4>
+                        <div class="flex justify-center">
+                            <div class="text-center mr-16 mb-8">
+                                <h4>Lundi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+                            </div>
+                            <div class="text-center mb-8">
+                                <h4>Mardi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="text-center mr-16 mb-8">
+                                <h4>Mercredi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+
+                            </div>
+                            <div class="text-center mb-8">
+                                <h4>Jeudi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 19h
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="text-center mr-16 mb-8">
+                                <h4>Vendredi</h4>
+                                <h4 class="text-[--color-fgSuccess] font-bold">Ouvert</h4>
+                                de 8h à 12h
+                            </div>
+                            <div class="text-center mb-8">
+                                <h4>Samedi</h4>
+                                <h4 class="text-[--color-fgDanger] font-bold">Fermé</h4>
+                            </div>
+                        </div>
+                        <div class="text-center mb-8">
+                            <h4>Dimanche</h4>
+                            <h4 class="text-[--color-fgDanger] font-bold">Fermé</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('phinfo').addEventListener('click', function(event) {
+            openModal('modalPhInfo');
+            event.preventDefault();
+        });
+        window.openModal = function (modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+        }
+        window.closeModal = function (modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+        }
+    </script>
+    <!-- MODAL PH INFO END -->
+    <!-- MODAL PROMO BEGIN -->
+    <div id="modalPromo" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="relative sm:max-w-4xl sm:w-full bg-white shadow-xl rounded-md max-w-md w-full p-4">
+                <div class="absolute top-0 right-0 p-2">
+                    <button onclick="closeModal('modalPromo')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-[--color-kapp] text-xl font-bold mt-2 mb-4">Promotions en cours</h3>
+                </div>
+                <!-- RESA CARD BEGIN -->
+                <div class="border rounded-lg p-4 text-center">
+                    <h4 class="font-bold mb-4">Promotion des vacances</h4>
+                    <div class="flex items-center mb-2">
+                        <img class="w-6 h-6 mr-4" src="icons/credits.svg" alt="Coins">
+                        <p>5.00 € sur le séjour</p>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <img class="w-6 h-6 mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
+                        <p>Réservez avant le 15/02/2024</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-6 h-6 mr-4" src="icons/notes-icon.svg" alt="Notes">
+                        <p>Ne manquez pas cette offre pour votre été</p>
+                    </div>
+                </div>
+                <!-- RESA CARD END -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('promo').addEventListener('click', function(event) {
+            openModal('modalPromo');
+            event.preventDefault();
+        });
+        window.openModal = function (modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+        }
+        window.closeModal = function (modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+        }
+    </script>
+    <!-- MODAL PROMO END -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebarButton = document.querySelector("[data-drawer-toggle='default-sidebar']");
+            const sidebar = document.getElementById("default-sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+            const footer = document.querySelector('footer');
+            const closeSidebar = document.getElementById('close-sidebar');
+            const modalPromo = document.getElementById('modalPromo');
+            const modalInfo = document.getElementById('modalPhInfo');
+
+            closeSidebar.addEventListener("click", toggleSidebar);
+            sidebarButton.addEventListener("click", toggleSidebar);
+
+            document.addEventListener("click", function (event) {
+                if (!sidebar.contains(event.target) && !sidebarButton.contains(event.target) && !modalPromo.contains(event.target) && !modalInfo.contains(event.target)) {
+                    if (sidebar.classList.contains("translate-x-0")) {
+                        toggleSidebar();
+                    }
+                }
+            });
+
+            sidebarButton.addEventListener('click', toggleFooter);
+
+            window.addEventListener('resize', adjustSidebarHeight);
+            window.addEventListener('load', adjustSidebarHeight);
+
+            function toggleSidebar() {
+                sidebar.classList.toggle("translate-x-0");
+                sidebarOverlay.classList.toggle("opacity-50");
+                footer.classList.remove("hidden");
+            }
+
+            function toggleFooter() {
+                footer.classList.toggle('hidden');
+                sidebar.classList.toggle('h-full', footer.classList.contains('hidden'));
+            }
+
+            function adjustSidebarHeight() {
+                if (window.innerWidth >= 768) {
+                    var windowHeight = window.innerHeight;
+                    var footerHeight = footer.offsetHeight;
+                    var adjustedHeight = windowHeight - footerHeight;
+
+                    sidebar.style.height = adjustedHeight + 'px';
+                }
+            }
+        });
+
+    </script>
+    <!-- CONTENT BEGIN -->
+    <div id="content" class="p-2 sm:ml-72">
+        <div class="p-1">
+            <div class="flex items-end justify-center mb-3">
+                <img class="w-10 h-10 mr-2 fgSoftSvg" src="icons/baseline-room_service.svg" alt="romm_service">
+                <h1 class="text-2xl text-[--color-fgSoft] font-bold">Nouvelle réservation</h1>
+            </div>
+            <hr>
+            <!-- STEP BAR BEGIN -->
+            <div class="flex items-start mb-4 mt-4">
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-[--color-kapp] p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">1</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-[--color-kapp]"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgkappSvg" src="icons/baseline-pets.svg" alt="pet">
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">2</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-event.svg" alt="calendar">
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">3</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-search.svg" alt="search">
+                    </div>
+                </div>
+                <div class="lg:w-full">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">4</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300 hidden lg:flex"></div>
+                    </div>
+                    <div class="w-full mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/round-add_circle_outline.svg" alt="add">
+                    </div>
+                </div>
+                <div class="w-full hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">5</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/baseline-info.svg" alt="info">
+                    </div>
+                </div>
+                <div class="w-full hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">6</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/agree.svg" alt="hands">
+                    </div>
+                </div>
+                <div class="w-full hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">7</span>
+                        </div>
+                        <div class="w-full h-1 mx-4 rounded-lg bg-gray-300"></div>
+                    </div>
+                    <div class="mt-2 mr-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 mr-2 fgSoftSvg opacity-50" src="icons/koala_mono.svg" alt="koala">
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="flex items-center w-full">
+                        <div class="w-8 h-8 shrink-0 mx-[-1px] bg-gray-300 p-1.5 flex items-center justify-center rounded-full">
+                            <span class="text-base text-white font-bold">8</span>
+                        </div>
+                    </div>
+                    <div class="mt-2 ml-[0.2rem]">
+                        <img class="w-6 h-6 fgSoftSvg opacity-50" src="icons/mark.svg" alt="star">
+                    </div>
+                </div>
+            </div>
+            <!-- STEP BAR END -->
+        </div>
+        <div class="flex flex-col justify-center mb-4">
+            <h3 class="text-3xl text-center font-bold text-[--color-fgSelected]">
+                Pour qui ?
+            </h3>
+            <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
+            <h1 class="text-lg text-center text-[--color-fgSoft] opacity-70">Effectuer une réservation par espèce</h1>
+            <div class="flex flex-row justify-center mt-2">
+                <button type="button" class="flex flex-row mr-1 items-center text-[--color-fgSoft] border border-lg border-[--color-fgSoft] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
+                    <img class="w-6 h-6 mr-2 fgSoftSvg" src="icons/dog-face-outline.svg">
+                    Mes chiens
+                </button>
+                <button type="button" class="flex flex-row ml-1 items-center text-[--color-fgSoft] border border-lg border-[--color-fgSoft] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105 hover:border-[--color-fgSelected]">
+                    <img class="w-6 h-6 mr-2 fgSoftSvg" src="icons/cat-face-outline.svg">
+                    Mes chats
+                </button>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto justify-center">
+            <div id="container-pets" class="cards-container flex flex-col sm:flex-row flex-wrap justify-center">
+                <!-- Card 1 -->
+                <div id="card1" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
+                    <div class="text-center m-4">
+                        <div class="text-xl font-bold truncate">Saucisse</div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div id="card2" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/dog-face.png" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">NomArallongeTresL</div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div id="card3" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/cat-face.png" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">Pixel</div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div id="card4" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/rabbit-face.svg" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">Nova</div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div id="card5" class="card w-52 h-56 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/horse-face.svg" alt="img">
+                    <div class="text-center m-3">
+                        <div class="text-xl font-bold truncate">Foudre</div>
+                    </div>
+                </div>
+                <!-- Card Add -->
+                <div id="add-pet" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
+                    <div class="flex flex-col items-center justify-center w-full h-full">
+                        <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <label class="mx-2 text-[--color-fgSoft] font-bold">Ajouter un animal</label>
+                    </div>
+                </div>
+                <!-- Card Add END-->
+                <script>
+                    function handleInteraction(event) {
+                        event.preventDefault();
+                        const card = this;
+                        const isSelected = card.classList.contains('selected');
+                        card.classList.toggle('selected', !isSelected);
+                        const checkImg = card.querySelector('.check-img');
+
+                        if (isSelected) {
+                            card.classList.remove('bg-sky-50');
+                            card.classList.remove('scale-105');
+                            card.classList.add('scale-100');
+                            if (checkImg) {
+                                checkImg.remove(); // Supprimer l'image du check si elle existe
+                            }
+                        } else {
+                            card.classList.add('bg-sky-50');
+                            card.classList.add('scale-105');
+                            const checkIcon = document.createElement('img');
+                            checkIcon.classList.add('absolute', 'bottom-2', 'right-2', 'h-8', 'w-8', 'fgSuccessSvg', 'check-img');
+                            checkIcon.src = 'icons/baseline-check.svg';
+                            card.appendChild(checkIcon);
+                        }
+                    }
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(card => {
+                        card.addEventListener('click', handleInteraction);
+                        card.addEventListener('touchstart', handleInteraction);
+                    });
+                </script>
+            </div>
+        </div>
+
+        <!-- ADD PET BEGIN-->
+        <div class="container-add-pet w-full h-auto mb-4 text-center justify-center hidden">
+            <h1 class="flex flex-row flex-grow mb-4 text-2xl text-[--color-kapp] font-bold justify-center">Créer un animal</h1>
+
+            <div class="flex flex-col lg:flex-row flex-grow justify-center m-2">
+                <!-- Infos BEGIN-->
+                <div id="blockInfos" class="w-full flex flex-col mb-2 lg:mb-0 lg:mr-1">
+                    <div class="w-full h-full">
+                        <div class="h-full rounded border border-gray-300 shadow">
+                            <div class="flex flex-row justify-center mt-4 mb-1">
+                                <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mt-2">Informations de l'animal</h3>
+                            </div>
+                            <div class="px-4">
+                                <div class="flex items-center mb-1">
+                                    <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                                    <img class="w-8 h-8 fgSoftSvg" src="icons/baseline-pets.svg" alt="pets">
+                                    <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                                </div>
+                                <!-- Nom -->
+                                <div class="flex mb-4 items-center">
+                                    <div class="w-full mr-2">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                                    </div>
+                                    <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                </div>
+                                <!-- Genre et espèce -->
+                                <div class="flex mb-4 items-center">
+                                    <div class="mr-2">
+                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                            <option disabled selected style="display:none;">Genre</option>
+                                            <option value="">Mâle</option>
+                                            <option value="">Femelle</option>
+                                        </select>
+                                    </div>
+                                    <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                    <div class="mr-2">
+                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                            <option disabled selected style="display:none;">Espèce</option>
+                                            <option value="">Chien</option>
+                                            <option value="">Chat</option>
+                                            <option value="">NAC</option>
+                                            <option value="">Cheval</option>
+                                        </select>
+                                    </div>
+                                    <p class="ml-[-5px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                                </div>
+                                <!-- Nom de la race-->
+                                <div class="flex mb-4 items-center">
+                                    <div class="w-full mr-2">
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom de la race"/>
+                                    </div>
+                                </div>
+                                <!-- N° Puce ou tatouage -->
+                                <div class="w-11/12 flex mb-4 items-center">
+                                    <div class="w-full mr-2 flex flex-row items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/collar.svg" alt="Puce" />
+                                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="N° de puce ou tatouage"/>
+                                    </div>
+                                </div>
+                                <!-- Date de naissance & poids -->
+                                <div class="flex mb-4">
+                                    <div class="flex flex-row w-full mr-2 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/age.svg" alt="age" />
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Date de naissance"/>
+                                    </div>
+                                    <div class="flex flex-row w-1/2 ml-2 items-center">
+                                        <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/weight.svg" alt="weight" />
+                                        <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Poids"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sterilisé -->
+                            <div class="flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/sterilization.svg" alt="sterilization" />
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                    <option disabled selected style="display:none;">Stérilisé</option>
+                                    <option value="">Non renseigné</option>
+                                    <option value="">Oui</option>
+                                    <option value="">Non</option>
+                                </select>
+                                <p class="ml-[+1px] mb-5 mr-1 text-xl text-[--color-fgDanger] font-bold">*</p>
+                            </div>
+                            <!-- Copains-copines -->
+                            <div class="flex mb-4 ml-4 items-center">
+                                <div class="w-full flex flex-row items-center">
+                                    <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-warning.svg" alt="warning" />
+                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                        <option disabled selected style="display:none;">Copains-copines</option>
+                                        <option value="">Non renseigné</option>
+                                        <option value="">Ok copains - copines</option>
+                                        <option value="">Pas ok copains - copines</option>
+                                        <option value="">Ok copains - Pas ok copines</option>
+                                        <option value="">Pas ok copains - Ok copines</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Remarques -->
+                            <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                            </div>
+                            <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/food.svg" alt="food">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Dites nous quelles sont ses habitudes alimentaires ou allergie s’il y a lieu ?"></textarea>
+                            </div>
+                            <div class="w-11/12 flex mb-4 ml-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/pill.svg" alt="pill">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Y a t il un traitement vétérinaire ou administration de médicaments à effectuer ?"></textarea>
+                            </div>
+                            <div class="flex items-center ml-2 mb-2">
+                                <p class="text-xs text-[--color-fgSoft] italic">Les champs obligatoires à remplir sont marqués par</p>
+                                <p class="text-xs text-[--color-fgSoft] text-red-400 font-bold ml-1">*</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Infos END -->
+
+                <!-- Vaccins BEGIN-->
+                <div id="blockVaccines" class="w-full flex flex-col lg:ml-1">
+                    <div class="w-full h-full">
+                        <div class="h-full rounded border border-gray-300 shadow">
+                            <div class="flex flex-row justify-center mt-4 mb-1">
+                                <h3 class="mr-1 text-xl text-center font-bold text-[--color-fgSoft] mt-2">Vaccins de l'animal</h3>
+                            </div>
+                            <div class="px-4 mt-2">
+                                <div class="w-full flex flex-col mb-4 items-center justify-center">
+                                    <!-- CHPPIL -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">CHPPIL</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Toux du chenil -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Toux du chenil</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Leishmaniose -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Leishmaniose</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Rage -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Rage</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Vermifuge -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Vermifuge</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                    <!-- Parasite Externe -->
+                                    <div class="w-full flex flex-row mr-2 items-center justify-between">
+                                        <p class="font-bold text-[--color-fgSoft] text-sm lg:text-lg">Parasite Externe</p>
+                                        <div class="text-center my-2 sm:my-1 mx-1">
+                                            <input type="text" readonly class="w-40 py-2 px-3 text-center rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:border-[--color-kapp} shadow cursor-pointer readonly" placeholder="Non renseigné">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vaccins END -->
+            </div>
+
+            <!-- Veto BEGIN -->
+            <div class="m-2">
+                <div id="blockVeto" class="w-full mb-4 rounded border border-gray-300 shadow">
+                    <div class="flex flex-row justify-center mt-2 mb-3">
+                        <h3 class="text-xl text-center font-bold text-[--color-fgSoft] mt-2">Vétérinaire</h3>
+                    </div>
+                    <div class="flex items-center mb-3 mx-4">
+                        <div class="border-t border-gray-300 flex-1 mr-4"></div>
+                        <img class="w-8 h-8 fgSoftSvg" src="icons/veto.svg" alt="infos">
+                        <div class="border-t border-gray-300 flex-1 ml-4"></div>
+                    </div>
+                    <div class="h-auto w-full flex flex-col lg:flex-row">
+                        <div class="w-full flex flex-col ml-4 mr-4">
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/home.svg">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Clinique"/>
+                            </div>
+                            <!-- Nom -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Nom"/>
+                            </div>
+                            <!-- Prénom -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Prénom"/>
+                            </div>
+                            <!-- Email -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <img class="h-8 w-8 mr-2 fgSoftSvg" src="icons/baseline-email.svg">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Email"/>
+                            </div>
+                            <!-- Remarque -->
+                            <div class="w-11/12 flex mb-4 items-center">
+                                <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/round-notes.svg" alt="notes">
+                                <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Avez-vous d’autres informations que vous souhaitez partager avec nous ?"></textarea>
+                            </div>
+                        </div>
+                        <div class="w-full flex flex-col ml-4 mr-4">
+                            <!-- Addresse -->
+                            <div class="w-10/12 flex flex-row mb-4 mr-2 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Addresse"/>
+                            </div>
+                            <!-- Compl -->
+                            <div class="w-10/12  flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Complément d'addresse"/>
+                            </div>
+                            <!-- Code postale -->
+                            <div class="w-1/3  flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Code postale"/>
+                            </div>
+                            <!-- Ville -->
+                            <div class="w-10/12 flex flex-row mb-4 items-center">
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none" placeholder="Ville"/>
+                            </div>
+                            <!-- Pays -->
+                            <div class="w-1/2  flex flex-row mb-4 items-center">
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-300 p-2.5 outline-none inline-block">
+                                    <option disabled selected style="display:none;">Sélectionnez le pays</option>
+                                    <option value="">France</option>
+                                    <option value="">Belgique</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Veto END -->
+
+            <div class="flex justify-center mb-3">
+                <button id="cancel-btn" type="button" class="flex flex-row mr-2 items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                    Annuler
+                </button>
+                <button id="save-btn" type="button" class="flex items-center text-white border border-lg bg-[--color-kapp] hover:bg-cyan-500 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                    <img class="w-6 h-6 mr-2 fgWhiteSvg" src="icons/baseline-add.svg">
+                    Ajouter mon animal
+                </button>
+            </div>
+            <hr>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const addPetButton = document.getElementById("add-pet");
+                const containerAddPet = document.querySelector(".container-add-pet");
+                const saveButton = document.getElementById("save-btn");
+                const cancelButton = document.getElementById("cancel-btn");
+                const content = document.getElementById("content");
+
+                cancelButton.addEventListener("click", function() {
+                    containerAddPet.classList.add("hidden");
+                    content.scrollIntoView({ behavior: 'smooth' });
+                });
+                addPetButton.addEventListener("click", function() {
+                    containerAddPet.classList.remove("hidden");
+                    containerAddPet.scrollIntoView({ behavior: 'smooth' });
+                });
+                saveButton.addEventListener("click", function() {
+                    containerAddPet.classList.add("hidden");
+                    const newPetCard = document.createElement("div");
+                    newPetCard.classList.add("w-52", "h-56", "m-2", "bg-white", "rounded-lg", "overflow-hidden", "border", "border-gray-200", "transform", "transition-transform", "hover:scale-105", "hover:bg-sky-50", "cursor-pointer", "shadow");
+                    newPetCard.innerHTML = `<img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
+                                                <div class="text-center m-4">
+                                                    <div class="text-xl font-bold truncate">Saucisse</div>
+                                                </div>
+                                                `;
+                    const containerPets = document.getElementById("container-pets");
+                    containerPets.insertBefore(newPetCard, addPetButton);
+                });
+            });
+        </script>
+        <!-- ADD PET END -->
+
+        <div class="flex justify-between">
+            <button type="button" onclick="location.href='home.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                Retour
+            </button>
+            <button type="button" onclick="location.href='new_resa_step_2.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                Suivant
+                <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+            </button>
+        </div>
+        <!-- CONTENT END -->
+    </div>
+</main>
+<!-- MOBILE FOOTER BEGIN -->
+<footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
+    <div class="flex justify-between items-center ml-8 mr-8">
+        <button type="button" onclick="window.location='home.html'" class="">
+            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-dashboard.svg" alt="dashboard">
+        </button>
+        <button type="button" onclick="window.location='new_resa_step_1.html'" class="">
+            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-room_service.svg" alt="Reservation">
+        </button>
+        <button type="button" onclick="window.location='my_reservations.html'" class="">
+            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/contract.svg" alt="Contract">
+        </button>
+        <button id="" type="button" class="">
+            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
+        </button>
+        <button type="button" onclick="window.location='my_pets.html'" class="">
+            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-pets.svg" alt="Pet">
+        </button>
+        <button type="button" onclick="window.location='my_profile.html'" class="">
+            <img class="h-8 w-8 mr-4 fgWhiteSvg" src="icons/baseline-person.svg" alt="Profile">
+        </button>
+    </div>
+</footer>
+<!-- MOBILE FOOTER END -->
+</body>
+</html>
