@@ -637,10 +637,9 @@
                             }
                         }
                     }
-
                     function selectCard(cardId) {
                         const card = document.getElementById(cardId);
-                        card.classList.add('bg-sky-300');
+                        card.classList.add('bg-sky-50', 'scale-105', 'bg-sky-50');
                         selectedCardIds.push(cardId);
 
                         // Changer les images d'ajout et de suppression
@@ -651,10 +650,9 @@
                             clearImage.classList.remove('hidden');
                         }
                     }
-
                     function deselectCard(cardId) {
                         const card = document.getElementById(cardId);
-                        card.classList.remove('bg-sky-300');
+                        card.classList.remove('bg-sky-50', 'scale-105', 'bg-sky-50');
                         selectedCardIds = selectedCardIds.filter(id => id !== cardId);
 
                         // Changer les images d'ajout et de suppression
@@ -665,14 +663,10 @@
                             clearImage.classList.add('hidden');
                         }
                     }
-
                     function isSelected(cardId) {
                         return selectedCardIds.includes(cardId);
                     }
-
-                    let startX = null;
                 </script>
-
             </div>
         </div>
 
