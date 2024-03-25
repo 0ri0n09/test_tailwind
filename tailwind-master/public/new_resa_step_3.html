@@ -574,8 +574,60 @@
                     </div>
                 </div>
                 <!-- Card 1 end -->
-
-
+                <!-- Card 2 begin -->
+                <div id="card2" class="room m-2 sm:h-72 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')">
+                    <div class="flex flex-row ">
+                        <div class="flex justify-between w-full">
+                            <div class="flex flex-col m-3">
+                                <div class="flex flex-col">
+                                    <p class="text-base sm:text-xl font-bold">Chambre suite</p>
+                                    <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col text-center m-3 lg:text-right">
+                                <div class="flex flex-col">
+                                    <p class="text-base sm:text-xl font-bold">25.00 €</p>
+                                    <p class="text-xs sm:text-lg text-[--color-fgSuccess]">Disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="w-full sm:max-h-40 object-cover" src="room.jpg" alt="img room">
+                    <div class="flex flex-row justify-center items-center p-1">
+                        <img  class="add-image w-10 h-10 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <p class="add text-2xl text-[--color-fgSuccess] font-bold">CHOISIR</p>
+                        <img  class="clear-image w-8 h-8 m-1 border-2 border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                        <p class="clear text-2xl text-[--color-fgDanger] font-bold hidden">RETIRER</p>
+                    </div>
+                </div>
+                <!-- Card 2 end -->
+                <!-- Card 3 begin -->
+                <div id="card3" class="room m-2 sm:h-72 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')">
+                    <div class="flex flex-row ">
+                        <div class="flex justify-between w-full">
+                            <div class="flex flex-col m-3">
+                                <div class="flex flex-col">
+                                    <p class="text-base sm:text-xl font-bold">Chambre suite</p>
+                                    <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col text-center m-3 lg:text-right">
+                                <div class="flex flex-col">
+                                    <p class="text-base sm:text-xl font-bold">25.00 €</p>
+                                    <p class="text-xs sm:text-lg text-[--color-fgSuccess]">Disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="w-full sm:max-h-40 object-cover" src="room.jpg" alt="img room">
+                    <div class="flex flex-row justify-center items-center p-1">
+                        <img  class="add-image w-10 h-10 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <p class="add text-2xl text-[--color-fgSuccess] font-bold">CHOISIR</p>
+                        <img  class="clear-image w-8 h-8 m-1 border-2 border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                        <p class="clear text-2xl text-[--color-fgDanger] font-bold hidden">RETIRER</p>
+                    </div>
+                </div>
+                <!-- Card 3 end -->
             </div>
             <script>
                 let selectedCardId = null;
@@ -630,8 +682,6 @@
                         clear.classList.add('hidden');
                     }
                 }
-
-                let startX = null;
             </script>
         </div>
         <div class="flex justify-between">
