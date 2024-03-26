@@ -553,7 +553,7 @@
         </div>
         <div id="selectedDates" class="flex justify-center mt-1 mb-2 text-lg text-center text-[--color-kapp] text-sm sm:text-xl"></div>
         <div class="flex justify-center mt-1">
-            <button id="resetButton" class="items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2">Revenir à aujourd'hui</button>
+            <button id="resetButton" class="items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2">RESET TEST</button>
         </div>
         <script>
             const calendar = document.getElementById('calendar');
@@ -576,7 +576,7 @@
                                         '<div class="text-[--color-kapp] text-lg font-semibold">' + months[month] + ' ' + year + '</div>' +
                                         '<img id="nextMonth" class="w-8 h-8 cursor-pointer fgkappSvg" src="icons/baseline-keyboard_arrow_right.svg">' +
                                    '</div>';
-                calendarHTML += '<div class="grid grid-cols-7 gap-1">';
+                calendarHTML += '<div class="grid grid-cols-7 gap-1 mb-2">';
                 for (let day of days) {
                     calendarHTML += '<div class="m-1 text-center font-bold">' + day + '</div>';
                 }
@@ -651,6 +651,7 @@
                 endDate = null;
                 generateCalendar(currentYear, currentMonth);
                 selectedDatesContainer.innerHTML = '';
+
             });
         </script>
         <h1 class="mb-4 mt-8 text-lg text-center text-[--color-fgSoft] opacity-70">Entrez les horaires d'arrivée et de départ</h1>
@@ -664,7 +665,7 @@
                     <input type="time" min="08:30" max="18:00" step="300" class="w-4/5 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
-                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 8:30 à 13:00</p>
+                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 08:30 à 13:00</p>
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 14:30 à 18:00</p>
                 </div>
             </div>
@@ -677,7 +678,7 @@
                     <input type="time" min="09h30" max="18:00" step="300" class="w-4/5 sm:w-2/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none hours-input">
                 </div>
                 <div class="flex flex-col justify-center items-center p-1">
-                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 9:30 à 13:00</p>
+                    <p class="text-[--color-fgDanger] sm:text-base text-sm">de 09:30 à 13:00</p>
                     <p class="text-[--color-fgDanger] sm:text-base text-sm">de 15:00 à 18:00</p>
                 </div>
             </div>

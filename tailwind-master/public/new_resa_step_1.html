@@ -558,15 +558,18 @@
         </div>
         <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto justify-center">
             <div id="container-pets" class="cards-container flex flex-col sm:flex-row flex-wrap justify-center">
+
                 <!-- Card 1 -->
-                <div id="card1" class="card w-52 h-60 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow"  onclick="toggleSelection('card1')" ontouchstart="handleTouchStart(event, 'card1')" ontouchmove="handleTouchMove(event, 'card1')">
-                    <img class="w-full max-h-36 mt-1 object-cover" src="dog_teckel.jpg" alt="img">
-                    <div class="text-center mt-3">
+                <div class="w-52 h-60 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
+                    <div class="text-center m-4 mb-0">
                         <div class="text-xl font-bold truncate">Saucisse</div>
                     </div>
-                    <div class="flex justify-center">
-                        <img  class="add-image w-10 h-10 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                        <img  class="clear-image w-8 h-8 m-1 border-2 border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                    <div class="flex flex-row justify-center items-center p-2">
+                        <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <p class="add text-xl text-[--color-fgSuccess]">Choisir</p>
+                        <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                        <p class="clear text-xl text-[--color-fgDanger] hidden">Retirer</p>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -575,20 +578,24 @@
                     <div class="text-center mt-3">
                         <div class="text-xl font-bold truncate">NomArallongeTresL</div>
                     </div>
-                    <div class="flex justify-center">
-                        <img  class="add-image w-10 h-10 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                        <img  class="clear-image w-8 h-8 m-1 border-2 border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                    <div class="flex flex-row justify-center items-center p-2">
+                        <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <p class="add text-xl text-[--color-fgSuccess]">Choisir</p>
+                        <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                        <p class="clear text-xl text-[--color-fgDanger] hidden">Retirer</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div id="card3" class="card w-52 h-60 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')">
-                    <img class="w-full max-h-36 mt-1 object-contain" src="icons/cat-face.png" alt="img">
-                    <div class="text-center mt-3">
+                <div class="w-52 h-60 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow">
+                    <img class="w-full max-h-36 object-contain" src="icons/cat-face.png" alt="img">
+                    <div class="text-center m-4 mb-0">
                         <div class="text-xl font-bold truncate">Pixel</div>
                     </div>
-                    <div class="flex justify-center">
-                        <img  class="add-image w-10 h-10 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                        <img  class="clear-image w-8 h-8 m-1 border-2 border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                    <div class="flex flex-row justify-center items-center p-2">
+                        <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <p class="add text-xl text-[--color-fgSuccess]">Choisir</p>
+                        <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                        <p class="clear text-xl text-[--color-fgDanger] hidden">Retirer</p>
                     </div>
                 </div>
                 <!-- Card 4 -->
@@ -597,24 +604,28 @@
                     <div class="text-center mt-3">
                         <div class="text-xl font-bold truncate">Nova</div>
                     </div>
-                    <div class="flex justify-center">
-                        <img  class="add-image w-10 h-10 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                        <img  class="clear-image w-8 h-8 m-1 border-2 border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                    <div class="flex flex-row justify-center items-center p-2">
+                        <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <p class="add text-xl text-[--color-fgSuccess]">Choisir</p>
+                        <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                        <p class="clear text-xl text-[--color-fgDanger] hidden">Retirer</p>
                     </div>
                 </div>
                 <!-- Card 5 -->
-                <div id="card5" class="card w-52 h-60 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow"  onclick="toggleSelection('card5')" ontouchstart="handleTouchStart(event, 'card5')" ontouchmove="handleTouchMove(event, 'card5')">
+                <div id="card5" class="card w-52 h-60 m-2 bg-white rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card5')" ontouchstart="handleTouchStart(event, 'card5')" ontouchmove="handleTouchMove(event, 'card5')">
                     <img class="w-full max-h-36 mt-1 object-contain" src="icons/horse-face.svg" alt="img">
                     <div class="text-center mt-3">
                         <div class="text-xl font-bold truncate">Foudre</div>
                     </div>
-                    <div class="flex justify-center">
-                        <img  class="add-image w-10 h-10 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                        <img  class="clear-image w-8 h-8 m-1 border-2 border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                    <div class="flex flex-row justify-center items-center p-2">
+                        <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                        <p class="add text-xl text-[--color-fgSuccess]">Choisir</p>
+                        <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                        <p class="clear text-xl text-[--color-fgDanger] hidden">Retirer</p>
                     </div>
                 </div>
                 <!-- Card Add -->
-                <div id="add-pet" class="w-52 h-56 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow">
+                <div id="add-pet" class="w-52 h-60 m-2 flex-shrink-0 rounded rounded-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105 hover:bg-gray-50 cursor-pointer shadow" ontouchstart="handleTouchStart(event, 'card5')" ontouchmove="handleTouchMove(event, 'add')">
                     <div class="flex flex-col items-center justify-center w-full h-full">
                         <img class="w-28 h-28 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
                         <label class="mx-2 text-[--color-fgSoft] font-bold">Ajouter un animal</label>
@@ -622,7 +633,7 @@
                 </div>
                 <!-- Card Add END-->
                 <script>
-                    let selectedCardIds = [];
+                    let selectedCardId = null;
                     let touchMoveInProgress = false;
 
                     function toggleSelection(cardId) {
@@ -630,41 +641,48 @@
                         const isAvailable = !card.querySelector('.text-[--color-fgDanger]');
 
                         if (!touchMoveInProgress && isAvailable) {
-                            if (isSelected(cardId)) {
+                            if (selectedCardId === cardId) {
                                 deselectCard(cardId);
                             } else {
+                                if (selectedCardId !== null) {
+                                    deselectCard(selectedCardId);
+                                }
                                 selectCard(cardId);
                             }
                         }
                     }
                     function selectCard(cardId) {
                         const card = document.getElementById(cardId);
-                        card.classList.add('bg-sky-50', 'scale-105', 'bg-sky-50');
-                        selectedCardIds.push(cardId);
+                        card.classList.add('bg-sky-50');
+                        selectedCardId = cardId;
 
                         // Changer les images d'ajout et de suppression
+                        const add = card.querySelector('.add');
                         const addImage = card.querySelector('.add-image');
                         const clearImage = card.querySelector('.clear-image');
+                        const clear = card.querySelector('.clear');
                         if (addImage && clearImage) {
                             addImage.classList.add('hidden');
+                            add.classList.add('hidden');
                             clearImage.classList.remove('hidden');
+                            clear.classList.remove('hidden');
                         }
                     }
                     function deselectCard(cardId) {
                         const card = document.getElementById(cardId);
-                        card.classList.remove('bg-sky-50', 'scale-105', 'bg-sky-50');
-                        selectedCardIds = selectedCardIds.filter(id => id !== cardId);
+                        card.classList.remove('bg-sky-50');
+                        selectedCardId = null;
 
-                        // Changer les images d'ajout et de suppression
+                        const add = card.querySelector('.add');
                         const addImage = card.querySelector('.add-image');
+                        const clear = card.querySelector('.clear');
                         const clearImage = card.querySelector('.clear-image');
                         if (addImage && clearImage) {
                             addImage.classList.remove('hidden');
+                            add.classList.remove('hidden');
                             clearImage.classList.add('hidden');
+                            clear.classList.add('hidden');
                         }
-                    }
-                    function isSelected(cardId) {
-                        return selectedCardIds.includes(cardId);
                     }
                 </script>
             </div>
@@ -944,12 +962,17 @@
                 saveButton.addEventListener("click", function() {
                     containerAddPet.classList.add("hidden");
                     const newPetCard = document.createElement("div");
-                    newPetCard.classList.add("w-52", "h-56", "m-2", "bg-white", "rounded-lg", "overflow-hidden", "border", "border-gray-200", "transform", "transition-transform", "hover:scale-105", "hover:bg-sky-50", "cursor-pointer", "shadow");
+                    newPetCard.classList.add("w-52", "h-60", "m-2", "bg-white", "rounded-lg", "overflow-hidden", "border", "border-gray-200", "transform", "transition-transform", "hover:scale-105", "hover:bg-sky-50", "cursor-pointer", "shadow");
                     newPetCard.innerHTML = `<img class="w-full max-h-36 object-cover" src="dog_teckel.jpg" alt="img">
-                                                <div class="text-center m-4">
-                                                    <div class="text-xl font-bold truncate">Saucisse</div>
-                                                </div>
-                                                `;
+                                            <div class="text-center m-4 mb-0">
+                                                <div class="text-xl font-bold truncate">Saucisse</div>
+                                            </div>
+                                            <div class="flex flex-row justify-center items-center p-2">
+                                                <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                                                <p class="add text-xl text-[--color-fgSuccess]">Choisir</p>
+                                                <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                                                <p class="clear text-xl text-[--color-fgDanger] hidden">Retirer</p>
+                                            </div>`;
                     const containerPets = document.getElementById("container-pets");
                     containerPets.insertBefore(newPetCard, addPetButton);
                 });

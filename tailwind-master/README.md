@@ -43,7 +43,7 @@ void Theme::doRecomputePalette (void) {
 - Finir routing footer
 - Carrousel promo dashboard
 - Finir new resa services
-- Calendar à transfomer en date range picker
+- Calendar à transformer en date range picker
 - Enlever la sidebar en tablette, afficher le footer mobile
 
 //////////////////////////////////// DONE /////////////////////////////////////////
@@ -51,7 +51,7 @@ void Theme::doRecomputePalette (void) {
 - Remplacer label "caméra" par "webcam"
 - Vaccins, mettre les calendriers (Pas mis pour éviter la surcharge de code en attendant les components)
 - Vaccins chiens, enlever certains vaccins
-- Bouton du carrousel placé differement selon les supports
+- Bouton du carrousel placé différement selon les supports
 - Finir le routing de la sidebar (modalInfo + modalPromo)
 - Problème du footer mobile, avec le menu burger quand la sidebar est ouverte, ça casse l'apparition/disparition du footer
 - Footer qui cache les boutons suivant/retour
