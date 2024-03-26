@@ -546,9 +546,9 @@
             <h1 class="text-lg text-center text-[--color-fgSoft] opacity-70">Sélectionnez un logement</h1>
         </div>
         <div class="flex flex-col sm:flex-row items-center h-auto mb-4 overflow-x-auto justify-center">
-            <div class="cards-container flex flex-col sm:flex-row flex-wrap m-1 sm:m-4 justify-center">
+            <div class="cards-container w-full flex p-2 flex-col sm:flex-row flex-wrap sm:m-4 justify-center">
                 <!-- Card 1 begin -->
-                <div id="card1" class="room w-full sm:w-96 m-2 sm:h-64 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card1')" ontouchstart="handleTouchStart(event, 'card1')" ontouchmove="handleTouchMove(event, 'card1')">
+                <div id="card1" class="room w-full my-2 sm:m-3 sm:w-96 sm:h-64 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card1')" ontouchstart="handleTouchStart(event, 'card1')" ontouchmove="handleTouchMove(event, 'card1')">
                     <div class="flex flex-row ">
                         <div class="flex justify-between w-full">
                             <div class="flex flex-col m-3">
@@ -575,7 +575,7 @@
                 </div>
                 <!-- Card 1 end -->
                 <!-- Card 2 begin -->
-                <div id="card2" class="room w-full sm:w-96 m-2 sm:h-64 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')">
+                <div id="card2" class="room w-full my-1 sm:m-3 sm:w-96 sm:h-64 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')">
                     <div class="flex flex-row ">
                         <div class="flex justify-between w-full">
                             <div class="flex flex-col m-3">
@@ -601,17 +601,17 @@
                     </div>
                 </div>
                 <!-- Card 2 end -->
-                <!-- Card 2 begin -->
-                <div id="card3" class="room w-full sm:w-96 m-2 sm:h-64 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')">
+                <!-- Card 3 begin -->
+                <div id="card3" class="room w-full my-2 sm:m-3 sm:w-96 sm:h-64 bg-white rounded-lg overflow-hidden border border-gray-300 transform transition-transform md:hover:scale-105 md:hover:bg-sky-50 cursor-pointer shadow" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')">
                     <div class="flex flex-row ">
                         <div class="flex justify-between w-full">
-                            <div class="flex flex-col m-3">
+                            <div class="flex flex-col m-3 w-2/3">
                                 <div class="flex flex-col">
-                                    <p class="text-base sm:text-xl font-bold">Chambre suite</p>
-                                    <p class="text-xs sm:text-base text-[--color-fgSoft]">Une chambre 3 places de 25m²</p>
+                                    <p class="text-base sm:text-xl font-bold truncate truncate">Chambre nom à rallonge</p>
+                                    <p class="text-xs sm:text-base text-[--color-fgSoft] truncate">Une chambre 3 places de 25m²</p>
                                 </div>
                             </div>
-                            <div class="flex flex-col text-center m-3 lg:text-right">
+                            <div class="flex flex-col text-center m-3 lg:text-right w-2/3">
                                 <div class="flex flex-col">
                                     <p class="text-base sm:text-xl font-bold">25.00 €</p>
                                     <p class="text-xs sm:text-lg text-[--color-fgSuccess]">Disponible</p>
@@ -627,7 +627,7 @@
                         <p class="clear text-xl text-[--color-fgDanger] hidden">Retirer</p>
                     </div>
                 </div>
-                <!-- Card 2 end -->
+                <!-- Card 3 end -->
             </div>
             <script>
                 let selectedCardId = null;
@@ -650,7 +650,7 @@
                 }
                 function selectCard(cardId) {
                     const card = document.getElementById(cardId);
-                    card.classList.add('bg-sky-50');
+                    card.classList.add('bg-sky-50', 'scale-105');
                     selectedCardId = cardId;
 
                     // Changer les images d'ajout et de suppression
@@ -667,7 +667,7 @@
                 }
                 function deselectCard(cardId) {
                     const card = document.getElementById(cardId);
-                    card.classList.remove('bg-sky-50');
+                    card.classList.remove('bg-sky-50', 'scale-105');
                     selectedCardId = null;
 
                     // Changer les images d'ajout et de suppression
