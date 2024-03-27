@@ -34,20 +34,19 @@ void Theme::doRecomputePalette (void) {
 
 
 - Modifier SVG round-circle-add + webcam
-- Sur le dashboard, mes résa à venir, si beaucoup de résa, envisager un accordeon avec un bouton "voir plus"
+- Finir card services
 - Faire une modale détails d'une résa
 - Pour les modales, comme la sidebar, fermer la modal si on clique en dehors du layout
 - Sur mobile/tablette/ecran scrollable, quand tu es sur la sélection d'un animal (new resa par exemple), tu ne peux pas scroller sur tactile, la sélection t'en empeche, donc remplacer par un bouton +, puis X pour palier ce soucis
 - Footer / sidebar, mettre en valeur le picto de la page actuelle
-- Sur tablette, faire une sidebar déployable (comme sur mobile), mais voir si on peut pas faire une deployable avec picto déja apparent, comme footer mobile mais sur le coté
 - Finir routing footer
-- Carrousel promo dashboard
 - Finir new resa services
 - Calendar à transformer en date range picker
 - Enlever la sidebar en tablette, afficher le footer mobile
 
 //////////////////////////////////// DONE /////////////////////////////////////////
 
+- Carrousel promo dashboard
 - Remplacer label "caméra" par "webcam"
 - Vaccins, mettre les calendriers (Pas mis pour éviter la surcharge de code en attendant les components)
 - Vaccins chiens, enlever certains vaccins
