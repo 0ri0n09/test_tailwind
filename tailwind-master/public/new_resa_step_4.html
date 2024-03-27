@@ -565,9 +565,9 @@
                         <div class="flex flex-row items-center justify-center">
                             <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/refresh-24px.svg">
                             <p class="mr-2 text-[--color-fgSoft]">Répéter</p>
-                            <img class="w-6 h-6 border rounded-full fgSoftSvg" onclick="decrement('repeat1')" src="icons/baseline-remove.svg">
+                            <img class="w-6 h-6 border rounded-full fgSoftSvg" ontouchstart="decrement('repeat1')" onclick="decrement('repeat1')" src="icons/baseline-remove.svg">
                             <input id="repeat1" min="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
-                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg" onclick="increment('repeat1')" src="icons/baseline-add.svg">
+                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg" ontouchstart="increment('repeat1')" onclick="increment('repeat1')" src="icons/baseline-add.svg">
                             <p class="mr-1 text-[--color-fgSoft]">fois par jour</p>
                         </div>
                         <div class="container-pets flex justify-center">
