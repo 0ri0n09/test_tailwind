@@ -544,20 +544,20 @@
             </h3>
             <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
         </div>
-        <div class="lg:flex lg:w-full justify-center">
+        <div class="lg:flex lg:w-full justify-center text-[--color-fgSoft] font-bold opacity-80">
             <div class="justify-center mb-4  lg:ml-2 lg:w-1/3">
                 <img class="w-auto h-auto max-w-full max-h-full mr-2 rounded-lg" src="room.jpg" alt="room">
             </div>
             <div class="lg:w-2/3 justify-center ml-4">
                 <div class="flex w-full items-center">
-                    <img class="w-6 h-6  fgSoftSvg" src="icons/baseline-pets.svg" alt="paw">
-                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSelected] mr-2">
+                    <img class="w-6 h-6 fgSoftSvg" src="icons/baseline-pets.svg" alt="paw">
+                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSoft] mr-2">
                     <img class="w-12 h-12 mr-2 rounded-full border-2 border-[--color-fgSelected]" src="dog_teckel.jpg" alt="pet">
                     <h4>Saucisse</h4>
                 </div>
                 <div class="flex w-full items-center mt-4">
                     <img class="w-6 h-6 fgSoftSvg" src="icons/room.svg" alt="room">
-                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSelected] mr-2">
+                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSoft] mr-2">
                     <div>
                         <h4>Bronze</h4>
                         <p>Logement 4.5m² avec jardin non couvert</p>
@@ -565,16 +565,16 @@
                 </div>
                 <div class="flex w-full items-center mt-4">
                     <img class="w-6 h-6 fgSoftSvg" src="icons/baseline-calendar_today.svg" alt="calendar">
-                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSelected] mr-2">
+                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSoft] mr-2">
                     <p>Du 22/02/2024 au 23/03/2024 (durée du séjour : 2 jours)</p>
                 </div>
-                <div class="flex w-full items-center">
+                <div class="opts flex w-full items-center">
                     <img class="w-6 h-6 fgSoftSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSelected] mr-2">
-                    <div class="flex">
-                        <div class="flex flex-wrap justify-center lg:justify-start">
+                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSoft] mr-2">
+                    <div class="flex w-full">
+                        <div class="flex flex-wrap justify-center w-full">
                             <!-- RESA SERVICE CARD BEGIN -->
-                            <div class="w-full md:w-1/2">
+                            <div id="opt1" class="opt w-full md:w-1/3">
                                 <div class="border-2 border-[--color-fgSelected] rounded-lg m-2">
                                     <div class="w-full sm:justify-between items-center p-1">
                                         <div class="flex items-center">
@@ -589,14 +589,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex justify-center m-1">
+                                    <div class="remove flex justify-center m-1 cursor-pointer">
                                         <img class="w-6 h-6 ml-2 mr-2 rounded-full border-2 border-[--color-fgDanger] fgDangerSvg" src="icons/baseline-clear.svg" alt="cancel">
                                     </div>
                                 </div>
                             </div>
                             <!-- RESA SERVICE CARD END -->
                             <!-- RESA SERVICE CARD BEGIN -->
-                            <div class="w-full md:w-1/2">
+                            <div id="opt2" class="opt w-full md:w-1/3">
                                 <div class="border-2 border-[--color-fgSelected] rounded-lg m-2">
                                     <div class="w-full sm:justify-between items-center p-1">
                                         <div class="flex items-center">
@@ -611,14 +611,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex justify-center m-1">
+                                    <div class="remove flex justify-center m-1 cursor-pointer">
                                         <img class="w-6 h-6 ml-2 mr-2 rounded-full border-2 border-[--color-fgDanger] fgDangerSvg" src="icons/baseline-clear.svg" alt="cancel">
                                     </div>
                                 </div>
                             </div>
                             <!-- RESA SERVICE CARD END -->
                             <!-- RESA SERVICE CARD BEGIN -->
-                            <div class="w-full md:w-1/2">
+                            <div id="opt3" class="opt w-full md:w-1/3">
                                 <div class="border-2 border-[--color-fgSelected] rounded-lg m-2">
                                     <div class="w-full sm:justify-between items-center p-1">
                                         <div class="flex items-center">
@@ -633,42 +633,19 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex justify-center m-1">
-                                        <img class="w-6 h-6 ml-2 mr-2 rounded-full border-2 border-[--color-fgDanger] fgDangerSvg" src="icons/baseline-clear.svg" alt="cancel">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- RESA SERVICE CARD END -->
-                            <!-- RESA SERVICE CARD BEGIN -->
-                            <div class="w-full md:w-1/2">
-                                <div class="border-2 border-[--color-fgSelected] rounded-lg m-2">
-                                    <div class="w-full sm:justify-between items-center p-1">
-                                        <div class="flex items-center">
-                                            <img class="w-12 h-12 ml-2 mr-2 rounded-full border-2 border-[--color-kapp]" src="dog_teckel.jpg" alt="dog">
-                                            <h4>Saucisse</h4>
-                                        </div>
-                                        <div class="flex justify-between ml-2 mr-2">
-                                            <h3 class="font-bold w-3/4">Brossage chien</h3>
-                                            <div class="flex">
-                                                <h3 class="mr-2">10.00</h3>
-                                                <h3 class="mr-2">€</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-center m-1">
+                                    <div class="remove flex justify-center m-1 cursor-pointer" >
                                         <img class="w-6 h-6 ml-2 mr-2 rounded-full border-2 border-[--color-fgDanger] fgDangerSvg" src="icons/baseline-clear.svg" alt="cancel">
                                     </div>
                                 </div>
                             </div>
                             <!-- RESA SERVICE CARD END -->
                         </div>
-
                     </div>
                 </div>
                 <div class="w-full flex items-center mt-4">
                     <img class="w-6 h-6 fgSoftSvg" src="icons/notes-icon.svg" alt="notes">
-                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSelected] mr-2">
-                    <div  class="w-full ">
+                    <hr class="rotate-90 w-6 border-3 border-[--color-fgSoft] mr-2">
+                    <div class="w-full ">
                         <textarea id="autoresizing-textarea" placeholder="Ajouter une demande spéciale" class="autoresize-textarea w-full border-2 border-[--color-fgBorder] rounded-lg p-2"></textarea>
                     </div>
                 </div>
@@ -683,13 +660,29 @@
                     this.style.height = 'auto';
                     this.style.height = this.scrollHeight + 'px';
                 }
-            });
 
+                const removeButtons = document.querySelectorAll('.remove');
+                removeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const opt = button.closest('.opt');
+                        if (opt) {
+                            opt.remove();
+                            const remainingOpts = document.querySelectorAll('.opt');
+                            if (remainingOpts.length === 0) {
+                                const optsParent = document.querySelector('.opts');
+                                if (optsParent) {
+                                    optsParent.remove();
+                                }
+                            }
+                        }
+                    });
+                });
+            });
         </script>
         <hr class="w-full h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
         <div class="-w-full flex justify-center justify-between lg:text-xl mt-2 mb-8">
             <div class="w-full lg:w-1/2 text-center">
-                <p>Montant total du séjour :</p>
+                <p class="text-[--color-fgSoft] font-bold">Montant total du séjour :</p>
             </div>
             <div class="w-1/2 text-center text-[--color-bgSuccess] font-bold">
                 <p>38.00 €</p>
