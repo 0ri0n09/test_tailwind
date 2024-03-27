@@ -453,33 +453,110 @@
       </div>
       <div id="noResa" class="text-center text-[--color-fgSoft] font-bold mb-4 opacity-50 hidden">Aucune réservation</div>
     </div>
-    <div class="container flex flex-col md:flex-row justify-between between mt-4">
-      <div class="cards-promo-container mx-1 sm:w-1/2 border border-gray-300 rounded-lg text-center mb-4 shadow">
+    <div class="container flex flex-col xl:flex-row justify-between between mt-4">
+      <div class="cards-promo-container mx-1 xl:w-1/2 border border-gray-300 rounded-lg text-center mb-4 shadow">
         <div class="flex flex-col h-full justify-center items-center ">
           <div class="flex flex-row items-center">
             <img class="w-10 h-10 mt-2 mr-4 fgSoftSvg" src="icons/baseline-card_giftcard.svg" alt="Promo">
-            <h4 class="text-lg sm:text-2xl mt-4 text-[--color-fgSoft] font-bold">Promotions en cours</h4>
+            <h4 class="text-lg sm:text-2xl mt-4 mb-4 text-[--color-fgSoft] font-bold">Promotions en cours</h4>
           </div>
-          <!-- PROMO CARD BEGIN -->
-          <div class="border border-gray-300 bg-white rounded-lg m-4 p-4 text-center shadow">
-            <h4 class="text-[--color-fgSoft] font-bold mb-4">Promotion des vacances</h4>
-            <div class="flex items-center mb-2 text-[--color-fgSoft] font-bold">
-              <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
-              <p>5.00 € sur le séjour</p>
-            </div>
-            <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
-              <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
-              <p>Réservez avant le 15/02/2024</p>
-            </div>
-            <div class="flex items-center text-left text-[--color-fgSoft] font-bold">
-              <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
-              <p>Ne manquez pas cette offre pour votre été</p>
+          <div class="w-11/12 mb-4 p-2">
+            <div id="carousel" class="relative overflow-hidden">
+              <div class="w-full flex justify-center h-48">
+                <!-- Item 1 -->
+                <div class="card bg-white duration-700 rounded-lg border border-gray-300 animate__animated animate__fadeIn ">
+                  <div class="p-4">
+                    <h4 class="text-[--color-fgSoft] font-bold mb-4 mt-2">Promotion des vacances</h4>
+                    <div class="flex items-center mb-2 text-[--color-fgSoft] font-bold">
+                      <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
+                      <p>5.00 € sur le séjour</p>
+                    </div>
+                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+                      <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
+                      <p>Réservez avant le 15/02/2024</p>
+                    </div>
+                    <div class="flex items-center text-left text-[--color-fgSoft] font-bold">
+                      <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
+                      <p>Ne manquez pas cette offre pour vos vacances</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="card hidden bg-white duration-700 rounded-lg border border-gray-300 animate__animated animate__fadeIn">
+                  <div class="p-4">
+                    <h4 class="text-[--color-fgSoft] font-bold mb-4 mt-2">Promotion d'été</h4>
+                    <div class="flex items-center mb-2 text-[--color-fgSoft] font-bold">
+                      <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/credits.svg" alt="Coins">
+                      <p>10.00 € sur le séjour</p>
+                    </div>
+                    <div class="flex items-center text-left mb-2 text-[--color-fgSoft] font-bold">
+                      <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/baseline-calendar_today.svg" alt="Calendar">
+                      <p>Réservez avant le 20/05/2024</p>
+                    </div>
+                    <div class="flex items-center text-left text-[--color-fgSoft] font-bold">
+                      <img class="w-6 h-6 fgSoftSvg mr-4" src="icons/notes-icon.svg" alt="Notes">
+                      <p>Ne manquez pas cette offre pour votre été</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Slider controls -->
+              <button id="prev" type="button" class="flex absolute top-[15px] left-1 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-200">
+                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button id="next" type="button" class="flex absolute top-[15px] right-1 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-200">
+                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
             </div>
           </div>
-          <!-- PROMO CARD END -->
         </div>
       </div>
-      <div class="mx-1 sm:w-1/2 border border-gray-300 rounded-lg text-center mb-4">
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const carousel = document.getElementById('carousel');
+          const prevButton = document.getElementById('prev');
+          const nextButton = document.getElementById('next');
+          const cards = carousel.querySelectorAll('.card');
+
+          let currentIndex = 0;
+          const maxIndex = cards.length - 1;
+
+          function showCard(index) {
+            cards.forEach((card, i) => {
+              if (i === index) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          }
+
+          prevButton.addEventListener('click', function () {
+            if (currentIndex > 0) {
+              currentIndex--;
+            } else {
+              currentIndex = maxIndex;
+            }
+            showCard(currentIndex);
+          });
+
+          nextButton.addEventListener('click', function () {
+            if (currentIndex < maxIndex) {
+              currentIndex++;
+            } else {
+              currentIndex = 0;
+            }
+            showCard(currentIndex);
+          });
+        });
+      </script>
+      <div class="mx-1 xl:w-1/2 border border-gray-300 rounded-lg text-center mb-4">
         <div class="flex flex-col justify-center items-center h-full">
           <div class="flex flex-row items-center">
             <img class="w-10 h-10 mt-2 mr-2 fgSoftSvg" src="icons/attach.svg" alt="Paperclip">
