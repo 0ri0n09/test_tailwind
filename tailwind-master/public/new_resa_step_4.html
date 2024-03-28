@@ -553,7 +553,7 @@
         <div class="flex flex-col items-center h-auto mb-4 justify-center">
             <div class="opts-container w-full flex p-1 flex-col md:flex-row flex-wrap sm:m-2 justify-center">
                 <!-- Service 1 -->
-                <div class="option w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
+                <div class="w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
                     <img class="w-full h-28 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
                     <div class="flex flex-col flex-grow p-2 text-center justify-center">
                         <div class="flex flex-col items-center justify-center">
@@ -590,7 +590,7 @@
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="option w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
+                <div class="w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
                     <img class="w-full h-28 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
                     <div class="flex flex-col flex-grow p-2 text-center justify-center">
                         <div class="flex flex-col items-center justify-center">
@@ -636,7 +636,7 @@
             </div>
             <div class="opts-selected w-full flex p-1 flex-col md:flex-row flex-wrap sm:m-2 justify-center">
                 <!-- Selected 1 -->
-                <div id="selected1" class="option w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
+                <div class="option w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
                     <img class="w-full h-28 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
                     <div class="flex flex-col flex-grow p-2 text-center justify-center">
                         <div class="flex flex-col items-center justify-center">
@@ -694,19 +694,38 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-row justify-center mt-1">
+            <div id="noServicesSelected" class="flex justify-center text-center hidden">
+                <p class="text-[--color-fgSoft] opacity-80">Aucun service sélectionné</p>
+            </div>
+            <div id="total" class="flex flex-row justify-center">
                 <p class="text-xl text-[--color-fgSelected] font-bold mr-1">Total des services :</p>
                 <p class="text-xl text-[--color-fgSelected] font-bold">50 €</p>
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const cards = document.querySelectorAll('.option');
+                cards.forEach(function(card) {
+                    const deleteButton = card.querySelector('.clear');
+                    deleteButton.addEventListener('click', function() {
+                        card.remove();
+                        const remainingCards = document.querySelectorAll('.option');
+                        console.log(remainingCards)
+                        console.log(remainingCards.length)
+                        if (remainingCards.length === 0) {
+                            document.getElementById('noServicesSelected').classList.toggle('hidden');
+                            document.getElementById('total').classList.toggle('hidden');
+                        }
+                    });
+                });
+            });
+        </script>
         <style>
-            /* Masquer les flèches d'incrémentation et de décrémentation */
             input[type="number"]::-webkit-inner-spin-button,
             input[type="number"]::-webkit-outer-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
             }
-            /* Masquer les flèches d'incrémentation et de décrémentation pour Firefox */
             input[type="number"] {
                 -moz-appearance: textfield;
             }
