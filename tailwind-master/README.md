@@ -33,8 +33,10 @@ void Theme::doRecomputePalette (void) {
 //////////////////////////////////// TO DO /////////////////////////////////////////
 
 
-- Modifier SVG round-circle-add + webcam
 - Finir card services
+- Mandatory race
+- Modifier SVG round-circle-add + webcam
+- Checker les touchstart pour mobile et tablette
 - Faire une modale détails d'une résa
 - Pour les modales, comme la sidebar, fermer la modal si on clique en dehors du layout
 - Sur mobile/tablette/ecran scrollable, quand tu es sur la sélection d'un animal (new resa par exemple), tu ne peux pas scroller sur tactile, la sélection t'en empeche, donc remplacer par un bouton +, puis X pour palier ce soucis
