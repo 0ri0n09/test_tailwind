@@ -662,18 +662,26 @@
                         <div class="flex flex-row mt-4 items-center justify-left mb-1">
                             <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/baseline-calendar_today.svg">
                             <p class="mr-2 text-[--color-fgSoft]">Pendant</p>
-                            <img class="w-6 h-6 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
-                            <input type="number" min="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
-                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
-                            <p class="mr-1 text-[--color-fgSoft]">jour(s)</p>
+                            <button class="decrementBtn  w-6 h-6 border rounded-full fgSoftSvg">
+                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
+                            </button>
+                            <input type="number" min="0" value="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
+                            <button class="incrementBtn w-6 h-6 border rounded-full fgSoftSvg">
+                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
+                            </button>
+                            <p class="ml-2 text-[--color-fgSoft]">jour(s)</p>
                         </div>
                         <div class="flex flex-row items-center justify-left">
                             <img class="w-8 h-8 mr-2 fgSoftSvg" src="icons/refresh-24px.svg">
                             <p class="mr-2.5 text-[--color-fgSoft]">Répéter</p>
-                            <img class="w-6 h-6 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
-                            <input id="repeat1" type="number" min="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
-                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
-                            <p class="mr-1 text-sm text-[--color-fgSoft]">fois par jour</p>
+                            <button class="decrementBtn  w-6 h-6 border rounded-full fgSoftSvg">
+                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
+                            </button>
+                            <input type="number" min="0" value="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
+                            <button class="incrementBtn w-6 h-6 border rounded-full fgSoftSvg">
+                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
+                            </button>
+                            <p class="ml-2 text-sm text-[--color-fgSoft]">fois par jour</p>
                         </div>
                         <div class="flex flex-row justify-center mt-1">
                             <p class="text-[--color-fgSoft] font-bold mr-1">Sous-total :</p>
@@ -691,6 +699,18 @@
                 <p class="text-xl text-[--color-fgSelected] font-bold">50 €</p>
             </div>
         </div>
+        <style>
+            /* Masquer les flèches d'incrémentation et de décrémentation */
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            /* Masquer les flèches d'incrémentation et de décrémentation pour Firefox */
+            input[type="number"] {
+                -moz-appearance: textfield;
+            }
+        </style>
         <script>
             let touchMoveInProgress = false;
             function toggleSelection(cardId) {
@@ -739,7 +759,28 @@
             }
         </script>
         <script>
-
+            document.addEventListener("DOMContentLoaded", function() {
+                const decrementButtons = document.querySelectorAll('.decrementBtn');
+                const incrementButtons = document.querySelectorAll('.incrementBtn');
+                decrementButtons.forEach(button => {
+                    button.addEventListener('click', decrementCounter);
+                });
+                incrementButtons.forEach(button => {
+                    button.addEventListener('click', incrementCounter);
+                });
+                function decrementCounter() {
+                    const input = this.nextElementSibling;
+                    if (input && parseInt(input.value) > 0) {
+                        input.value = parseInt(input.value) - 1;
+                    }
+                }
+                function incrementCounter() {
+                    const input = this.previousElementSibling;
+                    if (input) {
+                        input.value = parseInt(input.value) + 1;
+                    }
+                }
+            });
         </script>
         <div class="flex justify-between">
             <button type="button" onclick="location.href='new_resa_step_3.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
