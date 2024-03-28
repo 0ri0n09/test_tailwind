@@ -557,13 +557,12 @@
                     <img class="w-full h-28 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
                     <div class="flex flex-col flex-grow p-2 text-center justify-center">
                         <div class="flex flex-col items-center justify-center">
-                            <p class="text-xl text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
-                            <p class="text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
+                            <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
+                            <p class="text-sm text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
                         </div>
                         <div class="container-pets flex flex-wrap justify-center">
                             <div id="card1" class="pet flex flex-col w-5/12 p-1 m-1 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card1')" ontouchstart="handleTouchStart(event, 'card1')" ontouchmove="handleTouchMove(event, 'card1')" data-selected="false">
                                 <div class="flex flex-col items-center justify-center">
-                                    <img class="w-12 h-12 rounded-full border-2 border-[--color-kapp]" src="dog_teckel.jpg" alt="dog">
                                     <p class="truncate text-base text[--color-fgSoft]">Saucisse</p>
                                 </div>
                                 <div class="flex flex-row justify-center items-center p-0.5">
@@ -573,15 +572,14 @@
                                     <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
                                 </div>
                             </div>
-                            <div id="card2" class="pet flex flex-col w-5/12 p-1 m-1 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')" data-selected="false">
+                            <div id="card2" class="pet flex flex-col w-5/12 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')" data-selected="false">
                                 <div class="flex flex-col items-center">
-                                    <img class="w-12 h-12 rounded-full border-2 border-[--color-kapp]" src="dog_teckel.jpg" alt="dog">
-                                    <p class="truncate text-base text[--color-fgSoft]">Pixel</p>
+                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Pixel</p>
                                 </div>
-                                <div class="flex flex-row justify-center items-center p-0.5">
-                                    <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                                <div class="flex flex-row justify-center items-center">
+                                    <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
                                     <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
-                                    <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                                    <img class="clear-image w-4 h-4 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
                                     <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
                                 </div>
                             </div>
@@ -590,32 +588,30 @@
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
-                    <img class="w-full h-28 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
-                    <div class="flex flex-col flex-grow p-2 text-center justify-center">
-                        <div class="flex flex-col items-center justify-center">
-                            <p class="text-xl text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
-                            <p class="text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
+                <div class="w-full flex flex-col h-1/6 lg:w-5/12 lg:flex-row m-0 items-center bg-white border border-gray-300 rounded-lg shadow border border-red-500">
+                    <img class="m-0 w-full h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-fill border border-blue-500" src="room.jpg" alt="room">
+                    <div class="flex flex-col flex-grow text-center justify-center">
+                        <div class="flex flex-col items-center justify-center mx-0.5">
+                            <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
+                            <p class="text-sm text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
                         </div>
                         <div class="container-pets flex flex-wrap justify-center">
-                            <div id="card3" class="pet flex flex-col w-5/12 p-1 m-1 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')" data-selected="false">
+                            <div id="card3" class="pet flex flex-col w-5/12 h-12 mx-0.5 my-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')" data-selected="false">
                                 <div class="flex flex-col items-center justify-center">
-                                    <img class="w-12 h-12 rounded-full border-2 border-[--color-kapp]" src="dog_teckel.jpg" alt="dog">
-                                    <p class="truncate text-base text[--color-fgSoft]">Saucisse</p>
+                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Saucisse</p>
                                 </div>
-                                <div class="flex flex-row justify-center items-center p-0.5">
+                                <div class="flex flex-row justify-center items-center">
                                     <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
                                     <p class="add m-0.5 text-sm text-[--color-fgSuccess]">Ajouter</p>
                                     <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
                                     <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
                                 </div>
                             </div>
-                            <div id="card4" class="pet flex flex-col w-5/12 p-1 m-1 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card4')" ontouchstart="handleTouchStart(event, 'card4')" ontouchmove="handleTouchMove(event, 'card4')" data-selected="false">
+                            <div id="card4" class="pet flex flex-col w-5/12 h-12 mx-0.5 my-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card4')" ontouchstart="handleTouchStart(event, 'card4')" ontouchmove="handleTouchMove(event, 'card4')" data-selected="false">
                                 <div class="flex flex-col items-center justify-center">
-                                    <img class="w-12 h-12 rounded-full border-2 border-[--color-kapp]" src="dog_teckel.jpg" alt="dog">
-                                    <p class="truncate text-base text[--color-fgSoft]">Pixel</p>
+                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Pixel</p>
                                 </div>
-                                <div class="flex flex-row justify-center items-center p-0.5">
+                                <div class="flex flex-row justify-center items-center">
                                     <img class="add-image w-5 h-5 m-1 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
                                     <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
                                     <img class="clear-image w-4 h-4 m-1 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
@@ -624,8 +620,8 @@
                             </div>
                         </div>
                         <div class="flex flex-row justify-center mt-1">
-                            <p class="text-[--color-fgSoft] font-bold mr-1">Prix unitaire :</p>
-                            <p class="text-[--color-fgSoft] font-bold">10 €</p>
+                            <p class="text-sm text-[--color-fgSoft] font-bold mr-1">Prix unitaire :</p>
+                            <p class="text-sm text-[--color-fgSoft] font-bold">10 €</p>
                         </div>
                     </div>
                 </div>
