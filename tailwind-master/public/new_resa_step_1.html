@@ -638,8 +638,6 @@
                     function toggleSelection(cardId) {
                         const card = document.getElementById(cardId);
                         const isSelected = card.getAttribute('data-selected') === 'true';
-                        console.log(isSelected)
-
                         if (!touchMoveInProgress) {
                             if (isSelected) {
                                 deselectCard(cardId);
