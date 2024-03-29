@@ -416,7 +416,7 @@
                 </button>
             </div>
             <div class="w-full h-full mt-1 sm:mt-4 mx-1 justify-center animate__animated animate__fadeIn">
-                <div id="resas-container" class="resas-container flex flex-wrap flex-col-3 lg:flex-row justify-center shadow">
+                <div id="resas-container" class="resas-container flex flex-wrap flex-col-3 lg:flex-row justify-center">
                     <!-- RESA CARD BEGIN -->
                     <button class="resa border border-gray-300 bg-white rounded-lg m-4 p-4 text-center transition-transform transform scale-100 hover:bg-cyan-50 hover:scale-105 shadow">
                         <h4 class="text-left text-[--color-fgSoft] font-bold mb-4">Réservation n°422</h4>
@@ -792,7 +792,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex sm:block justify-left my-2 sm:my-1">
+            <div id="back" class="flex justify-left my-2 sm:my-1 hidden">
                 <button onclick="location.href='my_reservations.html'" type="button" class="flex flex-row mr-2 items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
                     <p>Retour</p>
                 </button>
@@ -808,9 +808,11 @@
                         const resasContainer = document.getElementById('resas-container');
                         const containerResasDetails = document.getElementById('container-resas-details');
                         const filters = document.getElementById('filters');
+                        const back = document.getElementById('back');
                         containerResasDetails.classList.toggle('hidden');
                         resasContainer.classList.toggle('hidden');
                         filters.classList.toggle('hidden');
+                        back.classList.toggle('hidden');
                     });
                 });
             });
