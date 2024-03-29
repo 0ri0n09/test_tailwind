@@ -1,0 +1,18 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const textarea = document.getElementById('autoresizing-textarea');
+        TextArea.addEventListener('input', autoResize, false);
+
+        function autoResize() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        }
+    });
+</script>
+
+<div class="flex flex-col justify-start items-start">
+    <div class="flex flex-row items-center w-full sm:w-2/3">
+        <img class="w-6 h-6 mr-4 fgSoftSvg" src="icons/notes-icon.svg" alt="notes">
+        <textarea id="autoresizing-textarea" placeholder="Ajouter une demande spéciale" class="autoresize-textarea w-full border-2 border-[--color-fgBorder] rounded-lg p-2"></textarea>
+    </div>
+</div>

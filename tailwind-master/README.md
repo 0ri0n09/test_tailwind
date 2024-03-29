@@ -33,21 +33,22 @@ void Theme::doRecomputePalette (void) {
 //////////////////////////////////// TO DO /////////////////////////////////////////
 
 
-- Finir card services
-- Mandatory race
-- Modifier SVG round-circle-add + webcam
+
 - Checker les touchstart pour mobile et tablette
-- Faire une modale détails d'une résa
-- Pour les modales, comme la sidebar, fermer la modal si on clique en dehors du layout
+- Modifier SVG round-circle-add + webcam
+- Pour les modales, comme la sidebar, fermer la modale si on clique en dehors du layout
 - Sur mobile/tablette/ecran scrollable, quand tu es sur la sélection d'un animal (new resa par exemple), tu ne peux pas scroller sur tactile, la sélection t'en empeche, donc remplacer par un bouton +, puis X pour palier ce soucis
 - Footer / sidebar, mettre en valeur le picto de la page actuelle
 - Finir routing footer
-- Finir new resa services
 - Calendar à transformer en date range picker
 - Enlever la sidebar en tablette, afficher le footer mobile
 
 //////////////////////////////////// DONE /////////////////////////////////////////
 
+- Finir new resa services
+- Faire une modale détails d'une résa
+- Mandatory race
+- Finir card services
 - Carrousel promo dashboard
 - Remplacer label "caméra" par "webcam"
 - Vaccins, mettre les calendriers (Pas mis pour éviter la surcharge de code en attendant les components)
