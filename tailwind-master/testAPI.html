@@ -6,22 +6,26 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
 <form id="form1">
-    <input type="text" name="" id="addr" placeholder="Chercher une adresse">
+    <div class="relative ml-2 mr-2 mt-2 mb-1 rounded-md shadow-lg bg-white ring-1 p-2 border-1 border-[--color-kapp]">
+        <input id="Street" class="w-full px-4 py-2 text-gray-800 rounded-lg focus:outline-none" type="text" placeholder="Voie" autocomplete="off">
+        <input id="Code" class="w-full px-4 py-2 text-gray-800 rounded-lg focus:outline-none" type="text" placeholder="Code postal" autocomplete="off">
+        <input id="City" class="w-full px-4 py-2 text-gray-800 rounded-lg focus:outline-none" type="text" placeholder="Ville" autocomplete="off">
+        <div id="dropdown" class="absolute top-full left-0 mt-1 w-full rounded-lg shadow bg-white hidden p-2">
+            <select id="addressList" class="w-full overflow-hidden" size="5"></select>
+        </div>
+    </div>
 </form>
-
-<div id="dropdown" style="display: none;">
-    <select id="addressList"></select>
-</div>
 
 <script>
     function searchAddress() {
         const apiUrl = 'https://api-adresse.data.gouv.fr/search/';
-        const address = document.getElementById('addr').value;
+        const address = document.getElementById('Street').value;
         const url = `${apiUrl}?q=${encodeURIComponent(address)}`;
-
         fetch(url)
             .then(response => {
                 if (!response.ok) {
@@ -31,38 +35,75 @@
             })
             .then(data => {
                 displayAddresses(data);
+                console.log(data);
             })
             .catch(error => {
                 console.error('Erreur:', error);
             });
     }
+    let listAddresses = [];
 
     function displayAddresses(data) {
-        const dropdown = document.getElementById('dropdown');
         const addressList = document.getElementById('addressList');
-
         addressList.innerHTML = '';
+
 
         if (data.features && data.features.length > 0) {
             data.features.forEach(feature => {
                 const option = document.createElement('option');
-                option.value = feature.properties.label;
+                listAddresses.push({city:feature.properties.city, street:feature.properties.housenumber+' '+feature.properties.street, postcode:feature.properties.postcode});
                 option.textContent = feature.properties.label;
+                option.value = listAddresses.length - 1;
+                option.classList.add('p-2', 'hover:bg-sky-100', 'rounded-lg');
                 addressList.appendChild(option);
             });
 
-            dropdown.style.display = 'block';
+            document.getElementById('dropdown').classList.remove('hidden');
+            adjustDropdownSize(addressList);
         } else {
-            dropdown.style.display = 'none';
+            document.getElementById('dropdown').classList.add('hidden');
         }
     }
-    document.getElementById('addr').addEventListener('input', function(event) {
+    function adjustDropdownSize(addressList) {
+        const numOptions = addressList.options.length;
+        addressList.size = numOptions > 5 ? 5 : numOptions;
+    }
+    document.getElementById('Street').addEventListener('input', function(event) {
         searchAddress();
+        document.getElementById('dropdown').classList.remove('hidden');
     });
+
+    document.getElementById('addressList').addEventListener('change', function() {
+        const selectedIndex = this.value;
+        const selectedAddress = listAddresses[selectedIndex];
+        document.getElementById('Street').value = selectedAddress.street;
+        document.getElementById('City').value = selectedAddress.city;
+        document.getElementById('Code').value = selectedAddress.postcode;
+        document.getElementById('dropdown').classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('dropdown');
+        const addressList = document.getElementById('addressList');
+        const streetInput = document.getElementById('Street');
+
+        if (!dropdown.contains(event.target) && event.target !== addressList && event.target !== streetInput) {
+            if (!dropdown.classList.contains('hidden')) {
+                dropdown.classList.add('hidden');
+            }
+        }
+    });
+    document.getElementById('Street').addEventListener('input', function(event) {
+        const streetInputValue = this.value.trim();
+
+        if (streetInputValue.length < 4) {
+            document.getElementById('dropdown').classList.add('hidden');
+            return;
+        }
+        searchAddress();
+        document.getElementById('dropdown').classList.remove('hidden');
+    });
+
 </script>
-
-
-
-
 </body>
 </html>
