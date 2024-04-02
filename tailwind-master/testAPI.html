@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form id="form1">
+    <input type="text" name="" id="addr" placeholder="Chercher une adresse">
+</form>
+
+<div id="dropdown" style="display: none;">
+    <select id="addressList"></select>
+</div>
+
+<script>
+    function searchAddress() {
+        const apiUrl = 'https://api-adresse.data.gouv.fr/search/';
+        const address = document.getElementById('addr').value;
+        const url = `${apiUrl}?q=${encodeURIComponent(address)}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de la requête à l\'API');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayAddresses(data);
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
+    }
+
+    function displayAddresses(data) {
+        const dropdown = document.getElementById('dropdown');
+        const addressList = document.getElementById('addressList');
+
+        addressList.innerHTML = '';
+
+        if (data.features && data.features.length > 0) {
+            data.features.forEach(feature => {
+                const option = document.createElement('option');
+                option.value = feature.properties.label;
+                option.textContent = feature.properties.label;
+                addressList.appendChild(option);
+            });
+
+            dropdown.style.display = 'block';
+        } else {
+            dropdown.style.display = 'none';
+        }
+    }
+    document.getElementById('addr').addEventListener('input', function(event) {
+        searchAddress();
+    });
+</script>
+
+
+
+
+</body>
+</html>
