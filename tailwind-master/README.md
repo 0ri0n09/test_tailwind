@@ -32,16 +32,16 @@ void Theme::doRecomputePalette (void) {
 
 //////////////////////////////////// TO DO /////////////////////////////////////////
 
-- Enlever la sidebar en tablette, afficher le footer mobile
+- Calendar à transformer en date range picker
 - Checker les touchstart pour mobile et tablette
 - Modifier SVG round-circle-add + webcam
 - Pour les modales, comme la sidebar, fermer la modale si on clique en dehors du layout
 - Sur mobile/tablette/ecran scrollable, quand tu es sur la sélection d'un animal (new resa par exemple), tu ne peux pas scroller sur tactile, la sélection t'en empeche, donc remplacer par un bouton +, puis X pour palier ce soucis
 - Footer / sidebar, mettre en valeur le picto de la page actuelle
-- Calendar à transformer en date range picker
 
-//////////////////////////////////// DONE /////////////////////////////////////////
+  //////////////////////////////////// DONE /////////////////////////////////////////
 
+- Enlever la sidebar en tablette, afficher le footer mobile
 - Finir new resa services
 - Faire une modale détails d'une résa
 - Mandatory race
