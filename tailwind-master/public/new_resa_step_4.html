@@ -553,292 +553,366 @@
         <div class="flex flex-col items-center h-auto mb-4 justify-center">
             <div class="opts-container w-full flex p-1 flex-col md:flex-row flex-wrap sm:m-2 justify-center">
                 <!-- Service 1 -->
-                <div class="w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
-                    <img class="w-full h-16 lg:w-1/3 lg:h-full rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
-                    <div class="flex flex-col flex-grow text-center justify-center">
-                        <div class="flex flex-col items-center justify-center">
-                            <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
-                            <p class="text-sm my-0.5 mx-0.5 text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
-                        </div>
-                        <div class="container-pets flex flex-wrap sm:p-1 justify-center">
-                            <div id="card1" class="pet flex flex-col w-5/12 mx-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card1')" ontouchstart="handleTouchStart(event, 'card1')" ontouchmove="handleTouchMove(event, 'card1')" data-selected="false">
-                                <div class="flex flex-col items-center">
-                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Saucisse</p>
-                                </div>
-                                <div class="flex flex-row justify-center items-center">
-                                    <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                                    <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
-                                    <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
-                                    <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
-                                </div>
-                            </div>
-                            <div id="card2" class="pet flex flex-col w-5/12 mx-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')" data-selected="false">
-                                <div class="flex flex-col items-center">
-                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Pixel</p>
-                                </div>
-                                <div class="flex flex-row justify-center items-center">
-                                    <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                                    <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
-                                    <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
-                                    <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
-                                </div>
+                <div id="open-modal" class="w-1/3 flex-col m-1 items-center bg-white border border-gray-300 rounded-lg shadow cursor-pointer hover:bg-sky-100">
+                    <div class="w-full flex items-center justify-center ">
+                        <img class="m-2 w-16 h-16 h-full rounded-full border-2 border-[--color-kapp]" src="brossage-chien.jpg" alt="room">
+                        <p class="ml-4 flex justify-center text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
+                    </div>
+                    <div class="w-full flex flex-col flex-grow justify-center">
+                        <div class="w-full ml-4 mr-4 flex flex-col items-center justify-center">
+                            <p class="text-sm my-0.5 mx-0.5 text-[--color-fgSoft] overflow-hidden line-clamp-1">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
+                            <p class="font-medium hover:underline">Voir plus</p>
+                            <div class="flex">
+                                <p class="mt-4 text-sm text-[--color-fgSoft] font-bold">Prix unitaire : 10 €</p>
                             </div>
                         </div>
-                        <p class="text-sm text-[--color-fgSoft] font-bold">Prix unitaire : 10 €</p>
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
-                    <img class="w-full h-16 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
-                    <div class="flex flex-col flex-grow text-center justify-center">
-                        <div class="flex flex-col items-center justify-center">
-                            <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
-                            <p class="text-sm my-0.5 text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
-                        </div>
-                        <div class="container-pets flex flex-wrap sm:p-1 justify-center">
-                            <div id="card3" class="pet flex flex-col w-5/12 mx-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')" data-selected="false">
-                                <div class="flex flex-col items-center">
-                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Saucisse</p>
-                                </div>
-                                <div class="flex flex-row justify-center items-center">
-                                    <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                                    <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
-                                    <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
-                                    <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
-                                </div>
-                            </div>
-                            <div id="card4" class="pet flex flex-col w-5/12 mx-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card4')" ontouchstart="handleTouchStart(event, 'card4')" ontouchmove="handleTouchMove(event, 'card4')" data-selected="false">
-                                <div class="flex flex-col items-center">
-                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Pixel</p>
-                                </div>
-                                <div class="flex flex-row justify-center items-center">
-                                    <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                                    <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
-                                    <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
-                                    <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
-                                </div>
+                <div id="open-modal" class="w-1/3 flex-col m-1 items-center bg-white border border-gray-300 rounded-lg shadow cursor-pointer hover:bg-sky-100">
+                    <div class="w-full flex items-center justify-center ">
+                        <img class="m-2 w-16 h-16 h-full rounded-full border-2 border-[--color-kapp]" src="brossage-chien.jpg" alt="room">
+                        <p class="ml-4 flex justify-center text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
+                    </div>
+                    <div class="w-full flex flex-col flex-grow justify-center">
+                        <div class="w-full ml-4 mr-4 flex flex-col items-center justify-center">
+                            <p class="text-sm my-0.5 mx-0.5 text-[--color-fgSoft] overflow-hidden line-clamp-1">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
+                            <p class="font-medium hover:underline">Voir plus</p>
+                            <div class="flex">
+                                <p class="mt-4 text-sm text-[--color-fgSoft] font-bold">Prix unitaire : 10 €</p>
                             </div>
                         </div>
-                        <p class="text-sm text-[--color-fgSoft] font-bold">Prix unitaire : 15 €</p>
                     </div>
                 </div>
                 <!-- Service 3 -->
-                <div class="w-full flex flex-col lg:w-5/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
-                    <img class="w-full h-16 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
-                    <div class="flex flex-col flex-grow text-center justify-center">
-                        <div class="flex flex-col items-center justify-center">
-                            <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
-                            <p class="text-sm my-0.5 text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
-                        </div>
-                        <div class="container-pets flex flex-wrap sm:p-1 justify-center">
-                            <div id="card5" class="pet flex flex-col w-5/12 mx-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card5')" ontouchstart="handleTouchStart(event, 'card5')" ontouchmove="handleTouchMove(event, 'card5')" data-selected="false">
-                                <div class="flex flex-col items-center">
-                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Saucisse</p>
-                                </div>
-                                <div class="flex flex-row justify-center items-center">
-                                    <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                                    <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
-                                    <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
-                                    <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
-                                </div>
-                            </div>
-                            <div id="card6" class="pet flex flex-col w-5/12 mx-0.5 border border-gray-300 rounded-lg items-center cursor-pointer" onclick="toggleSelection('card6')" ontouchstart="handleTouchStart(event, 'card6')" ontouchmove="handleTouchMove(event, 'card6')" data-selected="false">
-                                <div class="flex flex-col items-center">
-                                    <p class="truncate text-sm text[--color-fgSoft] font-bold">Pixel</p>
-                                </div>
-                                <div class="flex flex-row justify-center items-center">
-                                    <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
-                                    <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
-                                    <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
-                                    <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-sm text-[--color-fgSoft] font-bold">Prix unitaire : 20 €</p>
+                <div id="open-modal" class="w-1/3 flex-col m-1 items-center bg-white border border-gray-300 rounded-lg shadow cursor-pointer hover:bg-sky-100">
+                    <div class="w-full flex items-center justify-center ">
+                        <img class="m-2 w-16 h-16 h-full rounded-full border-2 border-[--color-kapp]" src="brossage-chien.jpg" alt="room">
+                        <p class="ml-4 flex justify-center text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
                     </div>
-                </div>
-            </div>
-            <div class="justify-center mt-2">
-                <h3 class="text-xl text-center font-bold text-[--color-fgSelected]">Services sélectionnés</h3>
-                <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
-            </div>
-            <div class="opts-selected w-full flex p-1 flex-col md:flex-row flex-wrap sm:m-2 justify-center">
-                <!-- Selected 1 -->
-                <div class="option w-full flex flex-col lg:w-7/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
-                    <img class="w-full h-16 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
-                    <div class="flex flex-col flex-grow p-2 text-center justify-center">
-                        <div class="flex flex-col items-center justify-center">
-                            <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
-                        </div>
-                        <div class="flex flex-row items-center justify-center">
-                            <div class="mr-3">
-                                <p class="text-sm text-[--color-fgSoft] font-bold">Pour</p>
+                    <div class="w-full flex flex-col flex-grow justify-center">
+                        <div class="w-full ml-4 mr-4 flex flex-col items-center justify-center">
+                            <p class="text-sm my-0.5 mx-0.5 text-[--color-fgSoft] overflow-hidden line-clamp-1">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
+                            <p class="font-medium hover:underline">Voir plus</p>
+                            <div class="flex">
+                                <p class="mt-4 text-sm text-[--color-fgSoft] font-bold">Prix unitaire : 10 €</p>
                             </div>
-                            <div class="pets flex flex-wrap p-0.5">
-                                <div class="flex flex-row items-center justify-center">
-                                    <img class="w-9 h-9 mr-1 rounded-full border-2 border-[--color-kapp]" src="dog_teckel.jpg" alt="dog">
-                                    <p class="truncate text-base text[--color-fgSoft] font-bold">Pixel</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex p-0.5 justify-center items-center border border-gary-300 rounded-lg cursor-pointer">
-                            <div class="flex items-center h-5 mr-0.5">
-                                <input id="everyday" type="checkbox" value="3" class="w-4 h-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-3 focus:ring-blue-300"/>
-                            </div>
-                            <label for="everyday" class="ml-0.5 text-xs text-[--color-fgSoft]">Appliquer pour chaque jour du séjour</label>
-                        </div>
-                        <div class="flex flex-row mt-0.5 items-center justify-left">
-                            <img class="w-5 h-5 mr-2 fgSoftSvg" src="icons/baseline-calendar_today.svg">
-                            <p class="text-sm mr-2 text-[--color-fgSoft]">Pendant</p>
-                            <button class="decrementBtn  w-6 h-6 border rounded-full fgSoftSvg">
-                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
-                            </button>
-                            <input type="number" min="0" value="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
-                            <button class="incrementBtn w-6 h-6 border rounded-full fgSoftSvg">
-                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
-                            </button>
-                            <p class="text-sm ml-2 text-[--color-fgSoft]">jour(s)</p>
-                        </div>
-                        <div class="flex flex-row mt-0.5 items-center justify-left">
-                            <img class="w-5 h-5 mr-2 fgSoftSvg" src="icons/refresh-24px.svg">
-                            <p class="text-sm mr-2.5 text-[--color-fgSoft]">Répéter</p>
-                            <button class="decrementBtn  w-6 h-6 border rounded-full fgSoftSvg">
-                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
-                            </button>
-                            <input type="number" min="0" value="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
-                            <button class="incrementBtn w-6 h-6 border rounded-full fgSoftSvg">
-                                <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
-                            </button>
-                            <p class="text-sm ml-2 text-[--color-fgSoft]">jour(s)</p>
-                        </div>
-                        <div class="flex flex-row justify-center">
-                            <p class="text-sm text-[--color-fgSoft] font-bold mr-1">Sous-total :</p>
-                            <p class="text-sm text-[--color-fgSoft] font-bold">10 €</p>
-                        </div>
-                        <div class="flex flex-row justify-center items-center mx-8 p-0.5 rounded-lg bg-red-50/50 border border-red-300 transform transition-transform hover:scale-105 cursor-pointer">
-                            <img class="clear-image w-5 h-5 m-1 fgDangerSvg" src="icons/trash.svg" alt="clear">
-                            <p class="clear text-sm text-[--color-fgDanger]">Supprimer</p>
                         </div>
                     </div>
                 </div>
+                <!-- Service 4 -->
+                <div id="open-modal" class="w-1/3 flex-col m-1 items-center bg-white border border-gray-300 rounded-lg shadow cursor-pointer hover:bg-sky-100">
+                    <div class="w-full flex items-center justify-center ">
+                        <img class="m-2 w-16 h-16 h-full rounded-full border-2 border-[--color-kapp]" src="brossage-chien.jpg" alt="room">
+                        <p class="ml-4 flex justify-center text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
+                    </div>
+                    <div class="w-full flex flex-col flex-grow justify-center">
+                        <div class="w-full ml-4 mr-4 flex flex-col items-center justify-center">
+                            <p class="text-sm my-0.5 mx-0.5 text-[--color-fgSoft] overflow-hidden line-clamp-1">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soitVotre précieux compagnon à quatre pattes mérite le meilleur soin qui soit</p>
+                            <p class="font-medium hover:underline">Voir plus</p>
+                            <div class="flex">
+                                <p class="mt-4 text-sm text-[--color-fgSoft] font-bold">Prix unitaire : 10 €</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MODAL BEGIN -->
+                <div id="modal1" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+                    <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-lg bg-white max-w-md">
+                        <button onclick="closeModal('modal1')" type="button" class="absolute top-2 right-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="modal-content">
+                            <img class="w-full h-full object-contain rounded-t-lg" src="brossage-chien.jpg" alt="room">
+                            <div class="w-full flex flex-col items-center rounded-lg bg-white p-4">
+                                <div class="flex flex-col items-center">
+                                    <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
+                                    <p class="text-sm my-0.5 mx-0.5 text-[--color-fgSoft]">Votre précieux compagnon à quatre pattes mérite le meilleur soin qui soi</p>
+                                </div>
+                                <p class="text-sm text-[--color-fgSoft] font-bold mt-2">Prix unitaire : 10 €</p>
+                                <div class="w-full container-pets flex flex-wrap justify-center mt-2">
+                                    <div id="card1" class="pet flex flex-col w-1/4 border border-gray-300 rounded-lg items-center cursor-pointer m-2" onclick="toggleSelection('card1')" ontouchstart="handleTouchStart(event, 'card1')" ontouchmove="handleTouchMove(event, 'card1')" data-selected="false">
+                                        <div class="w-full flex flex-col items-center p-1">
+                                            <p class="w-full truncate text-ellipsis text-sm text[--color-fgSoft] font-bold">SaucisseSaucisseSaucisseSaucisse</p>
+                                        </div>
+                                        <div class="flex flex-row justify-center items-center">
+                                            <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                                            <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
+                                            <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                                            <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
+                                        </div>
+                                    </div>
+                                    <div id="card2" class="pet flex flex-col w-1/4 border border-gray-300 rounded-lg items-center cursor-pointer m-2" onclick="toggleSelection('card2')" ontouchstart="handleTouchStart(event, 'card2')" ontouchmove="handleTouchMove(event, 'card2')" data-selected="false">
+                                        <div class="w-full flex flex-col items-center p-1">
+                                            <p class="w-full truncate text-ellipsis text-sm text[--color-fgSoft] font-bold">SaucisseSaucisseSaucisseSaucisse</p>
+                                        </div>
+                                        <div class="flex flex-row justify-center items-center">
+                                            <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                                            <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
+                                            <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                                            <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
+                                        </div>
+                                    </div>
+                                    <div id="card3" class="pet flex flex-col w-1/4 border border-gray-300 rounded-lg items-center cursor-pointer m-2" onclick="toggleSelection('card3')" ontouchstart="handleTouchStart(event, 'card3')" ontouchmove="handleTouchMove(event, 'card3')" data-selected="false">
+                                        <div class="w-full flex flex-col items-center p-1">
+                                            <p class="w-full truncate text-ellipsis text-sm text[--color-fgSoft] font-bold">SaucisseSaucisseSaucisseSaucisse</p>
+                                        </div>
+                                        <div class="flex flex-row justify-center items-center">
+                                            <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                                            <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
+                                            <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                                            <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
+                                        </div>
+                                    </div>
+                                    <div id="card4" class="pet flex flex-col w-1/4 border border-gray-300 rounded-lg items-center cursor-pointer m-2" onclick="toggleSelection('card4')" ontouchstart="handleTouchStart(event, 'card4')" ontouchmove="handleTouchMove(event, 'card4')" data-selected="false">
+                                        <div class="w-full flex flex-col items-center p-1">
+                                            <p class="w-full truncate text-ellipsis text-sm text[--color-fgSoft] font-bold">SaucisseSaucisseSaucisseSaucisse</p>
+                                        </div>
+                                        <div class="flex flex-row justify-center items-center">
+                                            <img class="add-image w-5 h-5 fgSuccessSvg" src="icons/round-add_circle_outline.svg" alt="add">
+                                            <p class="add text-sm text-[--color-fgSuccess]">Ajouter</p>
+                                            <img class="clear-image w-4 h-4 m-0.5 border border-[--color-fgDanger] rounded-full fgDangerSvg hidden" src="icons/baseline-clear.svg" alt="clear">
+                                            <p class="clear text-sm text-[--color-fgDanger] hidden">Retirer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="open-modal2" type="button" class="flex m-2 sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                                    Suivant
+                                    <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="noServicesSelected" class="flex justify-center text-center hidden">
-                <p class="text-[--color-fgSoft] opacity-80">Aucun service sélectionné</p>
+            <!-- MODAL END -->
+                <!-- MODAL BEGIN -->
+                <div id="modal2" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 animate__animated animate__fadeIn animate__faster">
+                    <div class="relative mt-24 bottom-10 mx-auto shadow-xl rounded-lg bg-white max-w-md">
+                        <button onclick="closeModal('modal2')" type="button" class="absolute top-2 right-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="modal-content ">
+                            <img class="w-full h-full object-contain rounded-t-lg" src="brossage-chien.jpg" alt="room">
+                            <div class="w-full flex flex-col items-center rounded-lg bg-white p-4">
+                            </div>
+                            <div>
+                                <button type="button" class="flex m-2 sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+                                    Valider
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="total" class="flex flex-row justify-center">
-                <p class="text-xl text-[--color-fgSelected] font-bold mr-1">Total des services :</p>
-                <p class="text-xl text-[--color-fgSelected] font-bold">50 €</p>
+            <!-- MODAL END -->
+            <script>
+                document.getElementById('open-modal').addEventListener('click', function(event) {
+                    openModal('modal1');
+                    event.preventDefault();
+                });
+                document.getElementById('open-modal2').addEventListener('click', function(event) {
+                    closeModal('modal1')
+                    openModal('modal2');
+                    event.preventDefault();
+                });
+                window.openModal = function (modalId) {
+                    document.getElementById(modalId).style.display = 'block';
+                    document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+                }
+                window.closeModal = function (modalId) {
+                    document.getElementById(modalId).style.display = 'none';
+                    document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+                }
+            </script>
+        </div>
+        <div class="justify-center mt-2">
+            <h3 class="text-xl text-center font-bold text-[--color-fgSelected]">Services sélectionnés</h3>
+            <hr class="w-72 h-1 mx-auto my-2 border-3 border-[--color-fgSelected]">
+        </div>
+        <div class="opts-selected w-full flex p-1 flex-col md:flex-row flex-wrap sm:m-2 justify-center">
+            <!-- Selected 1 -->
+            <div class="option w-full flex flex-col lg:w-7/12 lg:flex-row md:m-2 my-1 items-center bg-white border border-gray-300 rounded-lg shadow">
+                <img class="w-full h-16 lg:h-full lg:w-1/3 rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none object-cover" src="room.jpg" alt="room">
+                <div class="flex flex-col flex-grow p-2 text-center justify-center">
+                    <div class="flex flex-col items-center justify-center">
+                        <p class="text-base text-[--color-fgSoft] font-bold">Brossage chien petite taille</p>
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                        <div class="mr-3">
+                            <p class="text-sm text-[--color-fgSoft] font-bold">Pour</p>
+                        </div>
+                        <div class="pets flex flex-wrap p-0.5">
+                            <div class="flex flex-row items-center justify-center">
+                                <img class="w-9 h-9 mr-1 rounded-full border-2 border-[--color-kapp]" src="dog_teckel.jpg" alt="dog">
+                                <p class="truncate text-base text[--color-fgSoft] font-bold">Pixel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex p-0.5 justify-center items-center border border-gary-300 rounded-lg cursor-pointer">
+                        <div class="flex items-center h-5 mr-0.5">
+                            <input id="everyday" type="checkbox" value="3" class="w-4 h-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-3 focus:ring-blue-300"/>
+                        </div>
+                        <label for="everyday" class="ml-0.5 text-xs text-[--color-fgSoft]">Appliquer pour chaque jour du séjour</label>
+                    </div>
+                    <div class="flex flex-row mt-0.5 items-center justify-left">
+                        <img class="w-5 h-5 mr-2 fgSoftSvg" src="icons/baseline-calendar_today.svg">
+                        <p class="text-sm mr-2 text-[--color-fgSoft]">Pendant</p>
+                        <button class="decrementBtn  w-6 h-6 border rounded-full fgSoftSvg">
+                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
+                        </button>
+                        <input type="number" min="0" value="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
+                        <button class="incrementBtn w-6 h-6 border rounded-full fgSoftSvg">
+                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
+                        </button>
+                        <p class="text-sm ml-2 text-[--color-fgSoft]">jour(s)</p>
+                    </div>
+                    <div class="flex flex-row mt-0.5 items-center justify-left">
+                        <img class="w-5 h-5 mr-2 fgSoftSvg" src="icons/refresh-24px.svg">
+                        <p class="text-sm mr-2.5 text-[--color-fgSoft]">Répéter</p>
+                        <button class="decrementBtn  w-6 h-6 border rounded-full fgSoftSvg">
+                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-remove.svg">
+                        </button>
+                        <input type="number" min="0" value="0" class="font-bold text-center mx-2 w-10 h-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="0" inputmode="numeric"/>
+                        <button class="incrementBtn w-6 h-6 border rounded-full fgSoftSvg">
+                            <img class="w-6 h-6 mr-2 border rounded-full fgSoftSvg cursor-pointer" src="icons/baseline-add.svg">
+                        </button>
+                        <p class="text-sm ml-2 text-[--color-fgSoft]">jour(s)</p>
+                    </div>
+                    <div class="flex flex-row justify-center">
+                        <p class="text-sm text-[--color-fgSoft] font-bold mr-1">Sous-total :</p>
+                        <p class="text-sm text-[--color-fgSoft] font-bold">10 €</p>
+                    </div>
+                    <div class="flex flex-row justify-center items-center mx-8 p-0.5 rounded-lg bg-red-50/50 border border-red-300 transform transition-transform hover:scale-105 cursor-pointer">
+                        <img class="clear-image w-5 h-5 m-1 fgDangerSvg" src="icons/trash.svg" alt="clear">
+                        <p class="clear text-sm text-[--color-fgDanger]">Supprimer</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const cards = document.querySelectorAll('.option');
-                cards.forEach(function(card) {
-                    const deleteButton = card.querySelector('.clear');
-                    deleteButton.addEventListener('click', function() {
-                        card.remove();
-                        const remainingCards = document.querySelectorAll('.option');
-                        console.log(remainingCards)
-                        console.log(remainingCards.length)
-                        if (remainingCards.length === 0) {
-                            document.getElementById('noServicesSelected').classList.toggle('hidden');
-                            document.getElementById('total').classList.toggle('hidden');
-                        }
-                    });
-                });
-            });
-        </script>
-        <style>
-            input[type="number"]::-webkit-inner-spin-button,
-            input[type="number"]::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-            input[type="number"] {
-                -moz-appearance: textfield;
-            }
-        </style>
-        <script>
-            let touchMoveInProgress = false;
-            function toggleSelection(cardId) {
-                const card = document.getElementById(cardId);
-                const isSelected = card.getAttribute('data-selected') === 'true';
-                if (!touchMoveInProgress) {
-                    if (isSelected) {
-                        deselectCard(cardId);
-                    } else {
-                        selectCard(cardId);
-                    }
-                }
-            }
-            function selectCard(cardId) {
-                const card = document.getElementById(cardId);
-                card.classList.add('bg-sky-50');
-                card.setAttribute('data-selected', 'true');
-
-                // Changer les images d'ajout et de suppression
-                const add = card.querySelector('.add');
-                const addImage = card.querySelector('.add-image');
-                const clearImage = card.querySelector('.clear-image');
-                const clear = card.querySelector('.clear');
-                if (addImage && clearImage) {
-                    addImage.classList.add('hidden');
-                    add.classList.add('hidden');
-                    clearImage.classList.remove('hidden');
-                    clear.classList.remove('hidden');
-                }
-            }
-            function deselectCard(cardId) {
-                const card = document.getElementById(cardId);
-                card.classList.remove('bg-sky-50');
-                card.setAttribute('data-selected', 'false');
-
-                const add = card.querySelector('.add');
-                const addImage = card.querySelector('.add-image');
-                const clear = card.querySelector('.clear');
-                const clearImage = card.querySelector('.clear-image');
-                if (addImage && clearImage) {
-                    addImage.classList.remove('hidden');
-                    add.classList.remove('hidden');
-                    clearImage.classList.add('hidden');
-                    clear.classList.add('hidden');
-                }
-            }
-        </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const decrementButtons = document.querySelectorAll('.decrementBtn');
-                const incrementButtons = document.querySelectorAll('.incrementBtn');
-                decrementButtons.forEach(button => {
-                    button.addEventListener('click', decrementCounter);
-                });
-                incrementButtons.forEach(button => {
-                    button.addEventListener('click', incrementCounter);
-                });
-                function decrementCounter() {
-                    const input = this.nextElementSibling;
-                    if (input && parseInt(input.value) > 0) {
-                        input.value = parseInt(input.value) - 1;
-                    }
-                }
-                function incrementCounter() {
-                    const input = this.previousElementSibling;
-                    if (input) {
-                        input.value = parseInt(input.value) + 1;
-                    }
-                }
-            });
-        </script>
-        <div class="flex justify-between">
-            <button type="button" onclick="location.href='new_resa_step_3.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-                Retour
-            </button>
-            <button type="button" onclick="location.href='new_resa_step_5.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
-                Suivant
-                <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
-            </button>
+        <div id="noServicesSelected" class="flex justify-center text-center hidden">
+            <p class="text-[--color-fgSoft] opacity-80">Aucun service sélectionné</p>
         </div>
-        <!-- CONTENT END -->
+        <div id="total" class="flex flex-row justify-center">
+            <p class="text-xl text-[--color-fgSelected] font-bold mr-1">Total des services :</p>
+            <p class="text-xl text-[--color-fgSelected] font-bold">50 €</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.option');
+            cards.forEach(function(card) {
+                const deleteButton = card.querySelector('.clear');
+                deleteButton.addEventListener('click', function() {
+                    card.remove();
+                    const remainingCards = document.querySelectorAll('.option');
+                    console.log(remainingCards)
+                    console.log(remainingCards.length)
+                    if (remainingCards.length === 0) {
+                        document.getElementById('noServicesSelected').classList.toggle('hidden');
+                        document.getElementById('total').classList.toggle('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+    <script>
+        let touchMoveInProgress = false;
+        function toggleSelection(cardId) {
+            const card = document.getElementById(cardId);
+            const isSelected = card.getAttribute('data-selected') === 'true';
+            if (!touchMoveInProgress) {
+                if (isSelected) {
+                    deselectCard(cardId);
+                } else {
+                    selectCard(cardId);
+                }
+            }
+        }
+        function selectCard(cardId) {
+            const card = document.getElementById(cardId);
+            card.classList.add('bg-sky-50');
+            card.setAttribute('data-selected', 'true');
+
+            // Changer les images d'ajout et de suppression
+            const add = card.querySelector('.add');
+            const addImage = card.querySelector('.add-image');
+            const clearImage = card.querySelector('.clear-image');
+            const clear = card.querySelector('.clear');
+            if (addImage && clearImage) {
+                addImage.classList.add('hidden');
+                add.classList.add('hidden');
+                clearImage.classList.remove('hidden');
+                clear.classList.remove('hidden');
+            }
+        }
+        function deselectCard(cardId) {
+            const card = document.getElementById(cardId);
+            card.classList.remove('bg-sky-50');
+            card.setAttribute('data-selected', 'false');
+
+            const add = card.querySelector('.add');
+            const addImage = card.querySelector('.add-image');
+            const clear = card.querySelector('.clear');
+            const clearImage = card.querySelector('.clear-image');
+            if (addImage && clearImage) {
+                addImage.classList.remove('hidden');
+                add.classList.remove('hidden');
+                clearImage.classList.add('hidden');
+                clear.classList.add('hidden');
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const decrementButtons = document.querySelectorAll('.decrementBtn');
+            const incrementButtons = document.querySelectorAll('.incrementBtn');
+            decrementButtons.forEach(button => {
+                button.addEventListener('click', decrementCounter);
+            });
+            incrementButtons.forEach(button => {
+                button.addEventListener('click', incrementCounter);
+            });
+            function decrementCounter() {
+                const input = this.nextElementSibling;
+                if (input && parseInt(input.value) > 0) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            }
+            function incrementCounter() {
+                const input = this.previousElementSibling;
+                if (input) {
+                    input.value = parseInt(input.value) + 1;
+                }
+            }
+        });
+    </script>
+    <div class="flex justify-between">
+        <button type="button" onclick="location.href='new_resa_step_3.html'" class="flex flex-row items-center text-[--color-bgClickable] border border-lg border-[--color-bgClickable] hover:text-white hover:bg-[--color-bgClickable] font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            Retour
+        </button>
+        <button type="button" onclick="location.href='new_resa_step_5.html'" class="flex sm:mr-4 items-center text-white border border-lg bg-[--color-fgSelected] hover:bg-orange-400 font-medium inline-flex items-center text-center rounded-lg px-2 py-2 transition-transform transform scale-100 hover:scale-105">
+            Suivant
+            <img class="w-6 h-6 fgWhiteSvg" src="icons/baseline-keyboard_arrow_right.svg">
+        </button>
+    </div>
+    <!-- CONTENT END -->
     </div>
     <!-- MOBILE FOOTER BEGIN -->
     <footer class="fixed bottom-0 left-0 z-50 w-full bg-[--color-kapp] text-white text-center text-xs py-4 block md:hidden">
